@@ -1,0 +1,11 @@
+----------------------------------------------------------------------
+Report for cell infinitas.TECH
+Register bits:  4 of 2352 (0.170%)
+I/O cells:      49
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                            FD1S3AX         4          100.0
+                                GSR         1          100.0
+                                 IB        16          100.0
+                                 OB        33          100.0
+                              TOTAL        54

@@ -1,0 +1,57 @@
+NOTE Copyright (C), 1992-2010, Lattice Semiconductor Corporation *
+NOTE All Rights Reserved *
+NOTE DATE CREATED: Mon Jan 29 15:20:03 2018 *
+NOTE DESIGN NAME: infinitas *
+NOTE DEVICE NAME: LCMXO2-2000HC-4TQFP100 *
+NOTE PIN ASSIGNMENTS *
+NOTE PINS pll_clkref : 87 : out *
+NOTE PINS pll_wclkref : 76 : out *
+NOTE PINS dsp_mclk : 97 : out *
+NOTE PINS dsp_bclkin0 : 14 : out *
+NOTE PINS dsp_lrckin0 : 13 : out *
+NOTE PINS dsp_tdmin0 : 12 : out *
+NOTE PINS dsp_tdmin1 : 8 : out *
+NOTE PINS dsp_tdmin2 : 2 : out *
+NOTE PINS dsp_tdmin3 : 98 : out *
+NOTE PINS dsp_bclkout0 : 28 : out *
+NOTE PINS dsp_lrckout0 : 29 : out *
+NOTE PINS exp_mdo1 : 71 : out *
+NOTE PINS exp_bclk1 : 70 : out *
+NOTE PINS exp_lrck1 : 69 : out *
+NOTE PINS exp_mclk1 : 68 : out *
+NOTE PINS exp_mdo2 : 66 : out *
+NOTE PINS exp_bclk2 : 65 : out *
+NOTE PINS exp_lrck2 : 64 : out *
+NOTE PINS exp_mclk2 : 63 : out *
+NOTE PINS exp_mdo3 : 61 : out *
+NOTE PINS exp_bclk3 : 60 : out *
+NOTE PINS exp_lrck3 : 59 : out *
+NOTE PINS exp_mclk3 : 58 : out *
+NOTE PINS exp_mdo4 : 54 : out *
+NOTE PINS exp_bclk4 : 53 : out *
+NOTE PINS exp_lrck4 : 52 : out *
+NOTE PINS exp_mclk4 : 51 : out *
+NOTE PINS x_tdmin1 : 41 : out *
+NOTE PINS x_tdmin2 : 40 : out *
+NOTE PINS x_tdmin3 : 39 : out *
+NOTE PINS x_tdmin4 : 38 : out *
+NOTE PINS x_mclk : 32 : out *
+NOTE PINS wclkout : 30 : out *
+NOTE PINS clkin : 4 : in *
+NOTE PINS dsp_tdmout0 : 27 : in *
+NOTE PINS dsp_tdmout1 : 21 : in *
+NOTE PINS dsp_tdmout2 : 18 : in *
+NOTE PINS dsp_tdmout3 : 15 : in *
+NOTE PINS exp_mdi1 : 75 : in *
+NOTE PINS exp_mdi2 : 67 : in *
+NOTE PINS exp_mdi3 : 62 : in *
+NOTE PINS exp_mdi4 : 57 : in *
+NOTE PINS x_lrck : 43 : in *
+NOTE PINS x_bclk : 42 : in *
+NOTE PINS x_tdmout1 : 34 : in *
+NOTE PINS x_tdmout2 : 35 : in *
+NOTE PINS x_tdmout3 : 36 : in *
+NOTE PINS x_tdmout4 : 37 : in *
+NOTE PINS wclkin : 31 : in *
+NOTE CONFIGURATION MODE: NONE *
+NOTE COMPRESSION: on *

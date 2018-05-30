@@ -1,0 +1,110 @@
+
+Loading design for application trce from file infinitas_impl1_map.ncd.
+Design name: infinitas
+NCD version: 3.3
+Vendor:      LATTICE
+Device:      LCMXO2-2000HC
+Package:     TQFP100
+Performance: 4
+Loading device for application trce from file 'xo2c2000.nph' in environment: C:/lscc/diamond/3.9_x64/ispfpga.
+Package Status:                     Final          Version 1.44.
+Performance Hardware Data Status:   Final          Version 34.4.
+Setup and Hold Report
+
+--------------------------------------------------------------------------------
+Lattice TRACE Report - Setup, Version Diamond (64-bit) 3.9.0.99.2
+Mon Jan 29 15:19:52 2018
+
+Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
+Copyright (c) 1995 AT&T Corp.   All rights reserved.
+Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
+Copyright (c) 2001 Agere Systems   All rights reserved.
+Copyright (c) 2002-2017 Lattice Semiconductor Corporation,  All rights reserved.
+
+Report Information
+------------------
+Command line:    trce -v 1 -gt -mapchkpnt 0 -sethld -o infinitas_impl1.tw1 -gui -msgset C:/lattice/infinitas/promote.xml infinitas_impl1_map.ncd infinitas_impl1.prf 
+Design file:     infinitas_impl1_map.ncd
+Preference file: infinitas_impl1.prf
+Device,speed:    LCMXO2-2000HC,4
+Report level:    verbose report, limited to 1 item per preference
+--------------------------------------------------------------------------------
+
+BLOCK ASYNCPATHS
+BLOCK RESETPATHS
+--------------------------------------------------------------------------------
+
+
+
+================================================================================
+Preference: Default path enumeration
+            38 items scored, 0 timing errors detected.
+--------------------------------------------------------------------------------
+
+Report:    7.392ns delay clkin to exp_mclk4
+
+   Name    Fanout   Delay (ns)          Site               Resource
+PADI_DEL    ---     1.132          4.PAD to        4.PADDI clkin
+ROUTE         7   e 3.463        4.PADDI to       51.PADDO x_mclk_c_c
+DOPAD_DEL   ---     2.797       51.PADDO to         51.PAD exp_mclk4
+                  --------
+                    7.392   (53.2% logic, 46.8% route), 2 logic levels.
+
+Report:  368.460MHz is the maximum frequency for this preference.
+
+Report:    7.392ns is the maximum delay for this preference.
+
+
+================================================================================
+Preference: Default net enumeration
+            21 items scored, 0 timing errors detected.
+--------------------------------------------------------------------------------
+
+Report:    3.463ns maximum delay on x_mclk_c_c
+
+           Delays             Connection(s)
+         e 2.431ns          4.PADDI to 32.PADDO        
+         e 3.463ns          4.PADDI to 51.PADDO        
+         e 2.900ns          4.PADDI to 58.PADDO        
+         e 3.026ns          4.PADDI to 63.PADDO        
+         e 2.425ns          4.PADDI to 68.PADDO        
+         e 1.961ns          4.PADDI to 97.PADDO        
+         e 2.305ns          4.PADDI to 87.PADDO        
+
+Report:    3.463ns is the maximum delay for this preference.
+
+Report Summary
+--------------
+----------------------------------------------------------------------------
+Preference                              |   Constraint|       Actual|Levels
+----------------------------------------------------------------------------
+                                        |             |             |
+Default path enumeration                |     0.000 ns|     7.392 ns|   0  
+                                        |             |             |
+Default net enumeration                 |     0.000 ns|     3.463 ns|   0  
+                                        |             |             |
+----------------------------------------------------------------------------
+
+
+All preferences were met.
+
+
+Clock Domains Analysis
+------------------------
+
+Found 1 clocks:
+
+Clock Domain: exp_bclk4_c_c   Source: x_bclk.PAD   Loads: 8
+   No transfer within this clock domain is found
+
+
+Timing summary (Setup):
+---------------
+
+Timing errors: 0  Score: 0
+Cumulative negative slack: 0
+
+Constraints cover 42 paths, 21 nets, and 39 connections (100.00% coverage)
+
+--------------------------------------------------------------------------------
+
