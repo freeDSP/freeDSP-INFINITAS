@@ -1,0 +1,22 @@
+<preCompilationAnalysis file="/Users/rkn/Documents/xTIMEcomposer/workspace/module_locks/src/swlock.c">
+  <fCall global="true" name="swlock_init"/>
+  <fCall global="true" name="swlock_init.nstackwords"/>
+  <fCall global="true" name="swlock_init.maxcores"/>
+  <fCall global="true" name="swlock_init.maxtimers"/>
+  <fCall global="true" name="swlock_init.maxchanends"/>
+  <fCall global="true" name="swlock_acquire"/>
+  <fCall global="true" name="swlock_acquire.nstackwords"/>
+  <fCall global="true" name="swlock_try_acquire.nstackwords"/>
+  <fCall global="true" name="swlock_acquire.maxcores"/>
+  <fCall global="true" name="swlock_try_acquire.maxcores"/>
+  <fCall global="true" name="swlock_acquire.maxtimers"/>
+  <fCall global="true" name="swlock_try_acquire.maxtimers"/>
+  <fCall global="true" name="swlock_acquire.maxchanends"/>
+  <fCall global="true" name="swlock_try_acquire.maxchanends"/>
+  <fCall global="true" name="swlock_release"/>
+  <fCall global="true" name="swlock_release.nstackwords"/>
+  <fCall global="true" name="swlock_release.maxcores"/>
+  <fCall global="true" name="swlock_release.maxtimers"/>
+  <fCall global="true" name="swlock_release.maxchanends"/>
+  <fCall global="true" name="swlock_try_acquire"/>
+</preCompilationAnalysis>

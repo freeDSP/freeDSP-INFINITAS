@@ -1,0 +1,118 @@
+<preCompilationAnalysis file="/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_midi/src/usb_midi.h">
+<fDef name="delay_microseconds" global="true" noreturn="false" doNotSpecialize="true" numParams="1"/>
+<fDef name="delay_milliseconds" global="true" noreturn="false" doNotSpecialize="true" numParams="1"/>
+<fDef name="delay_seconds" global="true" noreturn="false" doNotSpecialize="true" numParams="1"/>
+<fDef name="midi_get_ack_or_data" global="true" noreturn="false" doNotSpecialize="false" numParams="3"/>
+<fDef name="midi_send_ack" global="true" noreturn="false" doNotSpecialize="false" numParams="1"/>
+<fCall name="delay_ticks_longlong" global="true" numArgs="1">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="delay_ticks_longlong" global="true" numArgs="1">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="delay_ticks_longlong" global="true" numArgs="1">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="__builtin_testct" global="true" numArgs="1">
+  <arg num="0">
+    <passThroughArg param="0" caller="midi_get_ack_or_data" global="true"/>
+    <values>
+    </values>
+  </arg>
+</fCall>
+<fCall name="__builtin_inct" global="true" numArgs="1">
+  <arg num="0">
+    <passThroughArg param="0" caller="midi_get_ack_or_data" global="true"/>
+    <values>
+    </values>
+  </arg>
+</fCall>
+<fCall name="__builtin_in_uchar" global="true" numArgs="1">
+  <arg num="0">
+    <passThroughArg param="0" caller="midi_get_ack_or_data" global="true"/>
+    <values>
+    </values>
+  </arg>
+</fCall>
+<fCall name="__builtin_in_uchar" global="true" numArgs="1">
+  <arg num="0">
+    <passThroughArg param="0" caller="midi_get_ack_or_data" global="true"/>
+    <values>
+    </values>
+  </arg>
+</fCall>
+<fCall name="__builtin_in_uchar" global="true" numArgs="1">
+  <arg num="0">
+    <passThroughArg param="0" caller="midi_get_ack_or_data" global="true"/>
+    <values>
+    </values>
+  </arg>
+</fCall>
+<fCall name="__builtin_in_uint" global="true" numArgs="1">
+  <arg num="0">
+    <passThroughArg param="0" caller="midi_get_ack_or_data" global="true"/>
+    <values>
+    </values>
+  </arg>
+</fCall>
+<fCall name="__builtin_outct" global="true" numArgs="2">
+  <arg num="0">
+    <passThroughArg param="0" caller="midi_send_ack" global="true"/>
+    <values>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="intval"><intval isSigned="true" val="20"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="__builtin_out_uchar" global="true" numArgs="2">
+  <arg num="0">
+    <passThroughArg param="0" caller="midi_send_ack" global="true"/>
+    <values>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="intval"><intval isSigned="true" val="0"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="__builtin_out_uchar" global="true" numArgs="2">
+  <arg num="0">
+    <passThroughArg param="0" caller="midi_send_ack" global="true"/>
+    <values>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="intval"><intval isSigned="true" val="0"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="__builtin_out_uchar" global="true" numArgs="2">
+  <arg num="0">
+    <passThroughArg param="0" caller="midi_send_ack" global="true"/>
+    <values>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="intval"><intval isSigned="true" val="0"/></value>
+    </values>
+  </arg>
+</fCall>
+</preCompilationAnalysis>

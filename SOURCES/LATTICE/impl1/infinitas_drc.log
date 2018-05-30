@@ -1,0 +1,50 @@
+Results of NGD DRC are available in infinitas_drc.log.
+Loading NGL library 'C:/lscc/diamond/3.9_x64/ispfpga/xo2c00a/data/xo2alib.ngl'...
+Loading NGL library 'C:/lscc/diamond/3.9_x64/ispfpga/xo2c00/data/xo2clib.ngl'...
+Loading NGL library 'C:/lscc/diamond/3.9_x64/ispfpga/mg5g00/data/mg5glib.ngl'...
+Loading NGL library 'C:/lscc/diamond/3.9_x64/ispfpga/or5g00/data/orc5glib.ngl'...
+
+
+Running DRC...
+
+WARNING - synthesis: logical net 'nrst' has no load.
+WARNING - synthesis: input pad net 'nrst' has no legal load.
+WARNING - synthesis: logical net 'scl' has no load.
+WARNING - synthesis: input pad net 'scl' has no legal load.
+WARNING - synthesis: logical net 'sda' has no load.
+WARNING - synthesis: input pad net 'sda' has no legal load.
+WARNING - synthesis: logical net 'pll_clk' has no load.
+WARNING - synthesis: input pad net 'pll_clk' has no legal load.
+WARNING - synthesis: logical net 'pll_locked' has no load.
+WARNING - synthesis: input pad net 'pll_locked' has no legal load.
+WARNING - synthesis: logical net 'dsp_bclkin1' has no load.
+WARNING - synthesis: input pad net 'dsp_bclkin1' has no legal load.
+WARNING - synthesis: logical net 'dsp_lrckin1' has no load.
+WARNING - synthesis: input pad net 'dsp_lrckin1' has no legal load.
+WARNING - synthesis: logical net 'dsp_bclkin2' has no load.
+WARNING - synthesis: input pad net 'dsp_bclkin2' has no legal load.
+WARNING - synthesis: logical net 'dsp_lrckin2' has no load.
+WARNING - synthesis: input pad net 'dsp_lrckin2' has no legal load.
+WARNING - synthesis: logical net 'dsp_bclkin3' has no load.
+WARNING - synthesis: input pad net 'dsp_bclkin3' has no legal load.
+WARNING - synthesis: logical net 'dsp_lrckin3' has no load.
+WARNING - synthesis: input pad net 'dsp_lrckin3' has no legal load.
+WARNING - synthesis: logical net 'dsp_bclkout1' has no load.
+WARNING - synthesis: input pad net 'dsp_bclkout1' has no legal load.
+WARNING - synthesis: logical net 'dsp_lrckout1' has no load.
+WARNING - synthesis: input pad net 'dsp_lrckout1' has no legal load.
+WARNING - synthesis: logical net 'dsp_bclkout2' has no load.
+WARNING - synthesis: input pad net 'dsp_bclkout2' has no legal load.
+WARNING - synthesis: logical net 'dsp_lrckout2' has no load.
+WARNING - synthesis: input pad net 'dsp_lrckout2' has no legal load.
+WARNING - synthesis: logical net 'dsp_bclkout3' has no load.
+WARNING - synthesis: input pad net 'dsp_bclkout3' has no legal load.
+WARNING - synthesis: logical net 'dsp_lrckout3' has no load.
+WARNING - synthesis: input pad net 'dsp_lrckout3' has no legal load.
+WARNING - synthesis: DRC complete with 34 warnings.
+
+Design Results:
+     57 blocks expanded
+completed the first expansion
+All blocks are expanded and NGD expansion is successful.
+Writing NGD file infinitas_impl1.ngd.

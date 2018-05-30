@@ -1,0 +1,7 @@
+<preCompilationAnalysis file="../src/extensions/adau1452.c">
+  <fCall global="true" name="adau1452_downloadFirmware"/>
+  <fCall global="true" name="adau1452_downloadFirmware.nstackwords"/>
+  <fCall global="true" name="adau1452_downloadFirmware.maxcores"/>
+  <fCall global="true" name="adau1452_downloadFirmware.maxtimers"/>
+  <fCall global="true" name="adau1452_downloadFirmware.maxchanends"/>
+</preCompilationAnalysis>

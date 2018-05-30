@@ -1,0 +1,1308 @@
+<preCompilationAnalysis file="/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/endpoint0/audiorequests.xc">
+<fDef name="longMul" global="false" unit="/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/endpoint0/audiorequests.xc" noreturn="false" doNotSpecialize="false" numParams="3"/>
+<fDef name="storeFreq" global="false" unit="/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/endpoint0/audiorequests.xc" noreturn="false" doNotSpecialize="false" numParams="3"/>
+<fDef name="storeInt" global="false" unit="/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/endpoint0/audiorequests.xc" noreturn="false" doNotSpecialize="false" numParams="3"/>
+<fDef name="storeShort" global="false" unit="/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/endpoint0/audiorequests.xc" noreturn="false" doNotSpecialize="false" numParams="3"/>
+<fDef name="updateMasterVol" global="false" unit="/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/endpoint0/audiorequests.xc" noreturn="false" doNotSpecialize="false" numParams="2"/>
+<fDef name="updateVol" global="false" unit="/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/endpoint0/audiorequests.xc" noreturn="false" doNotSpecialize="false" numParams="3"/>
+<fDef name="AudioClassRequests_2" global="true" noreturn="false" doNotSpecialize="false" numParams="6"/>
+<fDef name="FeedbackStabilityDelay" global="true" noreturn="false" doNotSpecialize="false" numParams="0"/>
+<fDef name="XUD_SetReady_In" global="true" noreturn="false" doNotSpecialize="true" numParams="3"/>
+<fDef name="XUD_SetReady_InPtr" global="true" noreturn="false" doNotSpecialize="true" numParams="3"/>
+<fDef name="XUD_SetReady_Out" global="true" noreturn="false" doNotSpecialize="true" numParams="2"/>
+<fDef name="XUD_SetReady_OutPtr" global="true" noreturn="false" doNotSpecialize="true" numParams="2"/>
+<fDef name="array_to_xc_ptr" global="true" noreturn="false" doNotSpecialize="true" numParams="1"/>
+<fDef name="delay_microseconds" global="true" noreturn="false" doNotSpecialize="true" numParams="1"/>
+<fDef name="delay_milliseconds" global="true" noreturn="false" doNotSpecialize="true" numParams="1"/>
+<fDef name="delay_seconds" global="true" noreturn="false" doNotSpecialize="true" numParams="1"/>
+<fCall name="delay_ticks_longlong" global="true" numArgs="1">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="delay_ticks_longlong" global="true" numArgs="1">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="delay_ticks_longlong" global="true" numArgs="1">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="__builtin_zext" global="true" numArgs="2">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="intval"><intval isSigned="true" val="7"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="XUD_SetReady_InPtr" global="true" numArgs="3">
+  <arg num="0">
+    <passThroughArg param="0" caller="XUD_SetReady_In" global="true"/>
+    <values>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="2">
+    <passThroughArg param="2" caller="XUD_SetReady_In" global="true"/>
+    <values>
+    </values>
+  </arg>
+</fCall>
+<fCall name="storeInt" global="false" unit="/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/endpoint0/audiorequests.xc" numArgs="3">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <passThroughArg param="1" caller="storeFreq" global="false" unit="/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/endpoint0/audiorequests.xc"/>
+    <values>
+    </values>
+  </arg>
+  <arg num="2">
+    <passThroughArg param="2" caller="storeFreq" global="false" unit="/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/endpoint0/audiorequests.xc"/>
+    <values>
+    </values>
+  </arg>
+</fCall>
+<fCall name="storeInt" global="false" unit="/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/endpoint0/audiorequests.xc" numArgs="3">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <passThroughArg param="1" caller="storeFreq" global="false" unit="/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/endpoint0/audiorequests.xc"/>
+    <values>
+    </values>
+  </arg>
+  <arg num="2">
+    <passThroughArg param="2" caller="storeFreq" global="false" unit="/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/endpoint0/audiorequests.xc"/>
+    <values>
+    </values>
+  </arg>
+</fCall>
+<fCall name="storeInt" global="false" unit="/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/endpoint0/audiorequests.xc" numArgs="3">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <passThroughArg param="1" caller="storeFreq" global="false" unit="/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/endpoint0/audiorequests.xc"/>
+    <values>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="intval"><intval isSigned="true" val="0"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="__builtin_timer_after" global="true" numArgs="2">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="array_to_xc_ptr" global="true" numArgs="1">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="array_to_xc_ptr" global="true" numArgs="1">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="db_to_mult" global="true" numArgs="3">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="intval"><intval isSigned="true" val="8"/></value>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="intval"><intval isSigned="true" val="29"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="db_to_mult" global="true" numArgs="3">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="intval"><intval isSigned="true" val="8"/></value>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="intval"><intval isSigned="true" val="29"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="longMul" global="false" unit="/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/endpoint0/audiorequests.xc" numArgs="3">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="intval"><intval isSigned="true" val="29"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="db_to_mult" global="true" numArgs="3">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="intval"><intval isSigned="true" val="8"/></value>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="intval"><intval isSigned="true" val="29"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="db_to_mult" global="true" numArgs="3">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="intval"><intval isSigned="true" val="8"/></value>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="intval"><intval isSigned="true" val="29"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="longMul" global="false" unit="/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/endpoint0/audiorequests.xc" numArgs="3">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="intval"><intval isSigned="true" val="29"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="array_to_xc_ptr" global="true" numArgs="1">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="array_to_xc_ptr" global="true" numArgs="1">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="updateMasterVol" global="false" unit="/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/endpoint0/audiorequests.xc" numArgs="2">
+  <arg num="0">
+    <passThroughArg param="0" caller="updateVol" global="false" unit="/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/endpoint0/audiorequests.xc"/>
+    <values>
+    </values>
+  </arg>
+  <arg num="1">
+    <passThroughArg param="2" caller="updateVol" global="false" unit="/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/endpoint0/audiorequests.xc"/>
+    <values>
+    </values>
+  </arg>
+</fCall>
+<fCall name="db_to_mult" global="true" numArgs="3">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="intval"><intval isSigned="true" val="8"/></value>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="intval"><intval isSigned="true" val="29"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="db_to_mult" global="true" numArgs="3">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="intval"><intval isSigned="true" val="8"/></value>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="intval"><intval isSigned="true" val="29"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="longMul" global="false" unit="/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/endpoint0/audiorequests.xc" numArgs="3">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="intval"><intval isSigned="true" val="29"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="db_to_mult" global="true" numArgs="3">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="intval"><intval isSigned="true" val="8"/></value>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="intval"><intval isSigned="true" val="29"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="db_to_mult" global="true" numArgs="3">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="intval"><intval isSigned="true" val="8"/></value>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="intval"><intval isSigned="true" val="29"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="longMul" global="false" unit="/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/endpoint0/audiorequests.xc" numArgs="3">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="intval"><intval isSigned="true" val="29"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="XUD_GetBuffer" global="true" numArgs="3">
+  <arg num="0">
+    <passThroughArg param="0" caller="AudioClassRequests_2" global="true"/>
+    <values>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="__builtin_out_uint" global="true" numArgs="2">
+  <arg num="0">
+    <passThroughArg param="3" caller="AudioClassRequests_2" global="true"/>
+    <values>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="intval"><intval isSigned="true" val="4"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="__builtin_out_uint" global="true" numArgs="2">
+  <arg num="0">
+    <passThroughArg param="3" caller="AudioClassRequests_2" global="true"/>
+    <values>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="__builtin_chkct" global="true" numArgs="2">
+  <arg num="0">
+    <passThroughArg param="3" caller="AudioClassRequests_2" global="true"/>
+    <values>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="intval"><intval isSigned="true" val="1"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="FeedbackStabilityDelay" global="true" numArgs="0">
+</fCall>
+<fCall name="XUD_DoSetRequestStatus" global="true" numArgs="1">
+  <arg num="0">
+    <passThroughArg param="1" caller="AudioClassRequests_2" global="true"/>
+    <values>
+    </values>
+  </arg>
+</fCall>
+<fCall name="XUD_DoGetRequest" global="true" numArgs="5">
+  <arg num="0">
+    <passThroughArg param="0" caller="AudioClassRequests_2" global="true"/>
+    <values>
+    </values>
+  </arg>
+  <arg num="1">
+    <passThroughArg param="1" caller="AudioClassRequests_2" global="true"/>
+    <values>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="3">
+    <values>
+      <value type="intval"><intval isSigned="true" val="4"/></value>
+    </values>
+  </arg>
+  <arg num="4">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="XUD_DoGetRequest" global="true" numArgs="5">
+  <arg num="0">
+    <passThroughArg param="0" caller="AudioClassRequests_2" global="true"/>
+    <values>
+    </values>
+  </arg>
+  <arg num="1">
+    <passThroughArg param="1" caller="AudioClassRequests_2" global="true"/>
+    <values>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="3">
+    <values>
+      <value type="intval"><intval isSigned="true" val="1"/></value>
+    </values>
+  </arg>
+  <arg num="4">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="__builtin_out_uint" global="true" numArgs="2">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="intval"><intval isSigned="true" val="3"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="__builtin_out_uint" global="true" numArgs="2">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="intval"><intval isSigned="true" val="1"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="__builtin_outct" global="true" numArgs="2">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="intval"><intval isSigned="true" val="1"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="__builtin_in_uint" global="true" numArgs="1">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="__builtin_chkct" global="true" numArgs="2">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="intval"><intval isSigned="true" val="1"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="XUD_DoGetRequest" global="true" numArgs="5">
+  <arg num="0">
+    <passThroughArg param="0" caller="AudioClassRequests_2" global="true"/>
+    <values>
+    </values>
+  </arg>
+  <arg num="1">
+    <passThroughArg param="1" caller="AudioClassRequests_2" global="true"/>
+    <values>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="3">
+    <values>
+      <value type="intval"><intval isSigned="true" val="1"/></value>
+    </values>
+  </arg>
+  <arg num="4">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="__builtin_out_uint" global="true" numArgs="2">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="intval"><intval isSigned="true" val="3"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="__builtin_out_uint" global="true" numArgs="2">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="intval"><intval isSigned="true" val="1"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="__builtin_outct" global="true" numArgs="2">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="intval"><intval isSigned="true" val="1"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="__builtin_in_uint" global="true" numArgs="1">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="__builtin_chkct" global="true" numArgs="2">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="intval"><intval isSigned="true" val="1"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="XUD_DoGetRequest" global="true" numArgs="5">
+  <arg num="0">
+    <passThroughArg param="0" caller="AudioClassRequests_2" global="true"/>
+    <values>
+    </values>
+  </arg>
+  <arg num="1">
+    <passThroughArg param="1" caller="AudioClassRequests_2" global="true"/>
+    <values>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="3">
+    <values>
+      <value type="intval"><intval isSigned="true" val="1"/></value>
+    </values>
+  </arg>
+  <arg num="4">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="XUD_GetBuffer" global="true" numArgs="3">
+  <arg num="0">
+    <passThroughArg param="0" caller="AudioClassRequests_2" global="true"/>
+    <values>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="__builtin_out_uint" global="true" numArgs="2">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="intval"><intval isSigned="true" val="1"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="__builtin_out_uint" global="true" numArgs="2">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="__builtin_outct" global="true" numArgs="2">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="intval"><intval isSigned="true" val="1"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="XUD_DoSetRequestStatus" global="true" numArgs="1">
+  <arg num="0">
+    <passThroughArg param="1" caller="AudioClassRequests_2" global="true"/>
+    <values>
+    </values>
+  </arg>
+</fCall>
+<fCall name="__builtin_out_uint" global="true" numArgs="2">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="intval"><intval isSigned="true" val="0"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="__builtin_outct" global="true" numArgs="2">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="intval"><intval isSigned="true" val="1"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="__builtin_in_uint" global="true" numArgs="1">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="__builtin_chkct" global="true" numArgs="2">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="intval"><intval isSigned="true" val="1"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="XUD_DoGetRequest" global="true" numArgs="5">
+  <arg num="0">
+    <passThroughArg param="0" caller="AudioClassRequests_2" global="true"/>
+    <values>
+    </values>
+  </arg>
+  <arg num="1">
+    <passThroughArg param="1" caller="AudioClassRequests_2" global="true"/>
+    <values>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="3">
+    <values>
+      <value type="intval"><intval isSigned="true" val="1"/></value>
+    </values>
+  </arg>
+  <arg num="4">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="XUD_GetBuffer" global="true" numArgs="3">
+  <arg num="0">
+    <passThroughArg param="0" caller="AudioClassRequests_2" global="true"/>
+    <values>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="updateVol" global="false" unit="/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/endpoint0/audiorequests.xc" numArgs="3">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="2">
+    <passThroughArg param="4" caller="AudioClassRequests_2" global="true"/>
+    <values>
+    </values>
+  </arg>
+</fCall>
+<fCall name="XUD_DoSetRequestStatus" global="true" numArgs="1">
+  <arg num="0">
+    <passThroughArg param="1" caller="AudioClassRequests_2" global="true"/>
+    <values>
+    </values>
+  </arg>
+</fCall>
+<fCall name="updateVol" global="false" unit="/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/endpoint0/audiorequests.xc" numArgs="3">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="2">
+    <passThroughArg param="4" caller="AudioClassRequests_2" global="true"/>
+    <values>
+    </values>
+  </arg>
+</fCall>
+<fCall name="XUD_DoSetRequestStatus" global="true" numArgs="1">
+  <arg num="0">
+    <passThroughArg param="1" caller="AudioClassRequests_2" global="true"/>
+    <values>
+    </values>
+  </arg>
+</fCall>
+<fCall name="XUD_DoGetRequest" global="true" numArgs="5">
+  <arg num="0">
+    <passThroughArg param="0" caller="AudioClassRequests_2" global="true"/>
+    <values>
+    </values>
+  </arg>
+  <arg num="1">
+    <passThroughArg param="1" caller="AudioClassRequests_2" global="true"/>
+    <values>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="3">
+    <values>
+      <value type="intval"><intval isSigned="true" val="2"/></value>
+    </values>
+  </arg>
+  <arg num="4">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="XUD_DoGetRequest" global="true" numArgs="5">
+  <arg num="0">
+    <passThroughArg param="0" caller="AudioClassRequests_2" global="true"/>
+    <values>
+    </values>
+  </arg>
+  <arg num="1">
+    <passThroughArg param="1" caller="AudioClassRequests_2" global="true"/>
+    <values>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="3">
+    <values>
+      <value type="intval"><intval isSigned="true" val="2"/></value>
+    </values>
+  </arg>
+  <arg num="4">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="XUD_GetBuffer" global="true" numArgs="3">
+  <arg num="0">
+    <passThroughArg param="0" caller="AudioClassRequests_2" global="true"/>
+    <values>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="updateVol" global="false" unit="/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/endpoint0/audiorequests.xc" numArgs="3">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="2">
+    <passThroughArg param="4" caller="AudioClassRequests_2" global="true"/>
+    <values>
+    </values>
+  </arg>
+</fCall>
+<fCall name="XUD_DoSetRequestStatus" global="true" numArgs="1">
+  <arg num="0">
+    <passThroughArg param="1" caller="AudioClassRequests_2" global="true"/>
+    <values>
+    </values>
+  </arg>
+</fCall>
+<fCall name="updateVol" global="false" unit="/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/endpoint0/audiorequests.xc" numArgs="3">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="2">
+    <passThroughArg param="4" caller="AudioClassRequests_2" global="true"/>
+    <values>
+    </values>
+  </arg>
+</fCall>
+<fCall name="XUD_DoSetRequestStatus" global="true" numArgs="1">
+  <arg num="0">
+    <passThroughArg param="1" caller="AudioClassRequests_2" global="true"/>
+    <values>
+    </values>
+  </arg>
+</fCall>
+<fCall name="XUD_DoGetRequest" global="true" numArgs="5">
+  <arg num="0">
+    <passThroughArg param="0" caller="AudioClassRequests_2" global="true"/>
+    <values>
+    </values>
+  </arg>
+  <arg num="1">
+    <passThroughArg param="1" caller="AudioClassRequests_2" global="true"/>
+    <values>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="3">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="4">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="XUD_DoGetRequest" global="true" numArgs="5">
+  <arg num="0">
+    <passThroughArg param="0" caller="AudioClassRequests_2" global="true"/>
+    <values>
+    </values>
+  </arg>
+  <arg num="1">
+    <passThroughArg param="1" caller="AudioClassRequests_2" global="true"/>
+    <values>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="3">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="4">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="storeFreq" global="false" unit="/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/endpoint0/audiorequests.xc" numArgs="3">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="storeFreq" global="false" unit="/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/endpoint0/audiorequests.xc" numArgs="3">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="storeFreq" global="false" unit="/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/endpoint0/audiorequests.xc" numArgs="3">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="storeShort" global="false" unit="/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/endpoint0/audiorequests.xc" numArgs="3">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="intval"><intval isSigned="true" val="0"/></value>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="XUD_DoGetRequest" global="true" numArgs="5">
+  <arg num="0">
+    <passThroughArg param="0" caller="AudioClassRequests_2" global="true"/>
+    <values>
+    </values>
+  </arg>
+  <arg num="1">
+    <passThroughArg param="1" caller="AudioClassRequests_2" global="true"/>
+    <values>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="3">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="4">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="storeShort" global="false" unit="/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/endpoint0/audiorequests.xc" numArgs="3">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="intval"><intval isSigned="true" val="0"/></value>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="intval"><intval isSigned="true" val="1"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="storeShort" global="false" unit="/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/endpoint0/audiorequests.xc" numArgs="3">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="intval"><intval isSigned="true" val="2"/></value>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="intval"><intval isSigned="true" val="33024"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="storeShort" global="false" unit="/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/endpoint0/audiorequests.xc" numArgs="3">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="intval"><intval isSigned="true" val="4"/></value>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="intval"><intval isSigned="true" val="0"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="storeShort" global="false" unit="/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/endpoint0/audiorequests.xc" numArgs="3">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="intval"><intval isSigned="true" val="6"/></value>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="intval"><intval isSigned="true" val="256"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="XUD_DoGetRequest" global="true" numArgs="5">
+  <arg num="0">
+    <passThroughArg param="0" caller="AudioClassRequests_2" global="true"/>
+    <values>
+    </values>
+  </arg>
+  <arg num="1">
+    <passThroughArg param="1" caller="AudioClassRequests_2" global="true"/>
+    <values>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="3">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="4">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="storeShort" global="false" unit="/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/endpoint0/audiorequests.xc" numArgs="3">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="intval"><intval isSigned="true" val="0"/></value>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="intval"><intval isSigned="true" val="1"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="storeShort" global="false" unit="/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/endpoint0/audiorequests.xc" numArgs="3">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="intval"><intval isSigned="true" val="2"/></value>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="intval"><intval isSigned="true" val="33024"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="storeShort" global="false" unit="/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/endpoint0/audiorequests.xc" numArgs="3">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="intval"><intval isSigned="true" val="4"/></value>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="intval"><intval isSigned="true" val="0"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="storeShort" global="false" unit="/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/endpoint0/audiorequests.xc" numArgs="3">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="intval"><intval isSigned="true" val="6"/></value>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="intval"><intval isSigned="true" val="256"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="XUD_DoGetRequest" global="true" numArgs="5">
+  <arg num="0">
+    <passThroughArg param="0" caller="AudioClassRequests_2" global="true"/>
+    <values>
+    </values>
+  </arg>
+  <arg num="1">
+    <passThroughArg param="1" caller="AudioClassRequests_2" global="true"/>
+    <values>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="3">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="4">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+</preCompilationAnalysis>

@@ -1,0 +1,405 @@
+<preCompilationAnalysis file="/Users/rkn/Documents/xTIMEcomposer/workspace/module_dfu/src/dfu.xc">
+<fDef name="DFU_Abort" global="false" unit="/Users/rkn/Documents/xTIMEcomposer/workspace/module_dfu/src/dfu.xc" noreturn="false" doNotSpecialize="false" numParams="1"/>
+<fDef name="DFU_CloseFlash" global="false" unit="/Users/rkn/Documents/xTIMEcomposer/workspace/module_dfu/src/dfu.xc" noreturn="false" doNotSpecialize="false" numParams="1"/>
+<fDef name="DFU_ClrStatus" global="false" unit="/Users/rkn/Documents/xTIMEcomposer/workspace/module_dfu/src/dfu.xc" noreturn="false" doNotSpecialize="false" numParams="1"/>
+<fDef name="DFU_Detach" global="false" unit="/Users/rkn/Documents/xTIMEcomposer/workspace/module_dfu/src/dfu.xc" noreturn="false" doNotSpecialize="false" numParams="3"/>
+<fDef name="DFU_Dnload" global="false" unit="/Users/rkn/Documents/xTIMEcomposer/workspace/module_dfu/src/dfu.xc" noreturn="false" doNotSpecialize="false" numParams="6"/>
+<fDef name="DFU_GetState" global="false" unit="/Users/rkn/Documents/xTIMEcomposer/workspace/module_dfu/src/dfu.xc" noreturn="false" doNotSpecialize="false" numParams="4"/>
+<fDef name="DFU_GetStatus" global="false" unit="/Users/rkn/Documents/xTIMEcomposer/workspace/module_dfu/src/dfu.xc" noreturn="false" doNotSpecialize="false" numParams="4"/>
+<fDef name="DFU_OpenFlash" global="false" unit="/Users/rkn/Documents/xTIMEcomposer/workspace/module_dfu/src/dfu.xc" noreturn="false" doNotSpecialize="false" numParams="0"/>
+<fDef name="DFU_Upload" global="false" unit="/Users/rkn/Documents/xTIMEcomposer/workspace/module_dfu/src/dfu.xc" noreturn="false" doNotSpecialize="false" numParams="4"/>
+<fDef name="GetDFUFlag" global="false" unit="/Users/rkn/Documents/xTIMEcomposer/workspace/module_dfu/src/dfu.xc" noreturn="false" doNotSpecialize="false" numParams="0"/>
+<fDef name="SetDFUFlag" global="false" unit="/Users/rkn/Documents/xTIMEcomposer/workspace/module_dfu/src/dfu.xc" noreturn="false" doNotSpecialize="false" numParams="1"/>
+<fDef name="XMOS_DFU_LoadState" global="false" unit="/Users/rkn/Documents/xTIMEcomposer/workspace/module_dfu/src/dfu.xc" noreturn="false" doNotSpecialize="false" numParams="0"/>
+<fDef name="XMOS_DFU_RevertFactory" global="false" unit="/Users/rkn/Documents/xTIMEcomposer/workspace/module_dfu/src/dfu.xc" noreturn="false" doNotSpecialize="false" numParams="1"/>
+<fDef name="XMOS_DFU_SaveState" global="false" unit="/Users/rkn/Documents/xTIMEcomposer/workspace/module_dfu/src/dfu.xc" noreturn="false" doNotSpecialize="false" numParams="0"/>
+<fDef name="XMOS_DFU_SelectImage" global="false" unit="/Users/rkn/Documents/xTIMEcomposer/workspace/module_dfu/src/dfu.xc" noreturn="false" doNotSpecialize="false" numParams="2"/>
+<fDef name="DFUDelay" global="true" noreturn="false" doNotSpecialize="false" numParams="1"/>
+<fDef name="DFUDeviceRequests" global="true" noreturn="false" doNotSpecialize="false" numParams="7"/>
+<fDef name="DFUHandler" global="true" noreturn="false" doNotSpecialize="false" numParams="2"/>
+<fDef name="DFUReportResetState" global="true" noreturn="false" doNotSpecialize="false" numParams="1"/>
+<fDef name="XUD_SetReady_In" global="true" noreturn="false" doNotSpecialize="true" numParams="3"/>
+<fDef name="XUD_SetReady_InPtr" global="true" noreturn="false" doNotSpecialize="true" numParams="3"/>
+<fDef name="XUD_SetReady_Out" global="true" noreturn="false" doNotSpecialize="true" numParams="2"/>
+<fDef name="XUD_SetReady_OutPtr" global="true" noreturn="false" doNotSpecialize="true" numParams="2"/>
+<fDef name="delay_microseconds" global="true" noreturn="false" doNotSpecialize="true" numParams="1"/>
+<fDef name="delay_milliseconds" global="true" noreturn="false" doNotSpecialize="true" numParams="1"/>
+<fDef name="delay_seconds" global="true" noreturn="false" doNotSpecialize="true" numParams="1"/>
+<fCall name="delay_ticks_longlong" global="true" numArgs="1">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="delay_ticks_longlong" global="true" numArgs="1">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="delay_ticks_longlong" global="true" numArgs="1">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="__builtin_zext" global="true" numArgs="2">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="intval"><intval isSigned="true" val="7"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="XUD_SetReady_InPtr" global="true" numArgs="3">
+  <arg num="0">
+    <passThroughArg param="0" caller="XUD_SetReady_In" global="true"/>
+    <values>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="2">
+    <passThroughArg param="2" caller="XUD_SetReady_In" global="true"/>
+    <values>
+    </values>
+  </arg>
+</fCall>
+<fCall name="__builtin_timer_after" global="true" numArgs="2">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="DFUCustomFlashEnable" global="true" numArgs="0">
+</fCall>
+<fCall name="flash_cmd_init" global="true" numArgs="0">
+</fCall>
+<fCall name="DFUCustomFlashDisable" global="true" numArgs="0">
+</fCall>
+<fCall name="flash_cmd_deinit" global="true" numArgs="0">
+</fCall>
+<fCall name="DFU_OpenFlash" global="false" unit="/Users/rkn/Documents/xTIMEcomposer/workspace/module_dfu/src/dfu.xc" numArgs="0">
+</fCall>
+<fCall name="DFU_OpenFlash" global="false" unit="/Users/rkn/Documents/xTIMEcomposer/workspace/module_dfu/src/dfu.xc" numArgs="0">
+</fCall>
+<fCall name="flash_cmd_write_page_data" global="true" numArgs="1">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="flash_cmd_write_page" global="true" numArgs="1">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="flash_cmd_erase_all" global="true" numArgs="0">
+</fCall>
+<fCall name="flash_cmd_write_page" global="true" numArgs="1">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="flash_cmd_write_page_data" global="true" numArgs="1">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="DFU_OpenFlash" global="false" unit="/Users/rkn/Documents/xTIMEcomposer/workspace/module_dfu/src/dfu.xc" numArgs="0">
+</fCall>
+<fCall name="flash_cmd_read_page" global="true" numArgs="1">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="flash_cmd_read_page_data" global="true" numArgs="1">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="GetDFUFlag" global="false" unit="/Users/rkn/Documents/xTIMEcomposer/workspace/module_dfu/src/dfu.xc" numArgs="0">
+</fCall>
+<fCall name="DFU_CloseFlash" global="false" unit="/Users/rkn/Documents/xTIMEcomposer/workspace/module_dfu/src/dfu.xc" numArgs="1">
+  <arg num="0">
+    <passThroughArg param="0" caller="DFUReportResetState" global="true"/>
+    <values>
+    </values>
+  </arg>
+</fCall>
+<fCall name="DFU_OpenFlash" global="false" unit="/Users/rkn/Documents/xTIMEcomposer/workspace/module_dfu/src/dfu.xc" numArgs="0">
+</fCall>
+<fCall name="flash_cmd_erase_all" global="true" numArgs="0">
+</fCall>
+<fCall name="__builtin_timer_after" global="true" numArgs="2">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="DFU_Detach" global="false" unit="/Users/rkn/Documents/xTIMEcomposer/workspace/module_dfu/src/dfu.xc" numArgs="3">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <passThroughArg param="1" caller="DFUHandler" global="true"/>
+    <values>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="DFU_Dnload" global="false" unit="/Users/rkn/Documents/xTIMEcomposer/workspace/module_dfu/src/dfu.xc" numArgs="6">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="3">
+    <passThroughArg param="1" caller="DFUHandler" global="true"/>
+    <values>
+    </values>
+  </arg>
+  <arg num="4">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="5">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="DFU_Upload" global="false" unit="/Users/rkn/Documents/xTIMEcomposer/workspace/module_dfu/src/dfu.xc" numArgs="4">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="3">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="DFU_GetStatus" global="false" unit="/Users/rkn/Documents/xTIMEcomposer/workspace/module_dfu/src/dfu.xc" numArgs="4">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="2">
+    <passThroughArg param="1" caller="DFUHandler" global="true"/>
+    <values>
+    </values>
+  </arg>
+  <arg num="3">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="DFU_ClrStatus" global="false" unit="/Users/rkn/Documents/xTIMEcomposer/workspace/module_dfu/src/dfu.xc" numArgs="1">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="DFU_GetState" global="false" unit="/Users/rkn/Documents/xTIMEcomposer/workspace/module_dfu/src/dfu.xc" numArgs="4">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="2">
+    <passThroughArg param="1" caller="DFUHandler" global="true"/>
+    <values>
+    </values>
+  </arg>
+  <arg num="3">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="DFU_Abort" global="false" unit="/Users/rkn/Documents/xTIMEcomposer/workspace/module_dfu/src/dfu.xc" numArgs="1">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="XMOS_DFU_RevertFactory" global="false" unit="/Users/rkn/Documents/xTIMEcomposer/workspace/module_dfu/src/dfu.xc" numArgs="1">
+  <arg num="0">
+    <passThroughArg param="1" caller="DFUHandler" global="true"/>
+    <values>
+    </values>
+  </arg>
+</fCall>
+<fCall name="XMOS_DFU_SelectImage" global="false" unit="/Users/rkn/Documents/xTIMEcomposer/workspace/module_dfu/src/dfu.xc" numArgs="2">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <passThroughArg param="1" caller="DFUHandler" global="true"/>
+    <values>
+    </values>
+  </arg>
+</fCall>
+<fCall name="XMOS_DFU_SaveState" global="false" unit="/Users/rkn/Documents/xTIMEcomposer/workspace/module_dfu/src/dfu.xc" numArgs="0">
+</fCall>
+<fCall name="XMOS_DFU_LoadState" global="false" unit="/Users/rkn/Documents/xTIMEcomposer/workspace/module_dfu/src/dfu.xc" numArgs="0">
+</fCall>
+<fCall name="XUD_GetBuffer" global="true" numArgs="3">
+  <arg num="0">
+    <passThroughArg param="0" caller="DFUDeviceRequests" global="true"/>
+    <values>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="HandleDfuRequest" global="true" interface="i_dfu" numArgs="4">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="3">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="SetDFUFlag" global="false" unit="/Users/rkn/Documents/xTIMEcomposer/workspace/module_dfu/src/dfu.xc" numArgs="1">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="XUD_DoGetRequest" global="true" numArgs="5">
+  <arg num="0">
+    <passThroughArg param="0" caller="DFUDeviceRequests" global="true"/>
+    <values>
+    </values>
+  </arg>
+  <arg num="1">
+    <passThroughArg param="1" caller="DFUDeviceRequests" global="true"/>
+    <values>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="3">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="4">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="XUD_DoSetRequestStatus" global="true" numArgs="1">
+  <arg num="0">
+    <passThroughArg param="1" caller="DFUDeviceRequests" global="true"/>
+    <values>
+    </values>
+  </arg>
+</fCall>
+</preCompilationAnalysis>

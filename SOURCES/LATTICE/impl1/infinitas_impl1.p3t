@@ -1,0 +1,5 @@
+-rem
+-distrce
+-log "infinitas_impl1.log"
+-o "infinitas_impl1.csv"
+-pr "infinitas_impl1.prf"

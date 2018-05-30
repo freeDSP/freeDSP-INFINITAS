@@ -1,0 +1,7 @@
+<preCompilationAnalysis file="/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/hostactive/hostactive.c">
+  <fCall global="true" name="UserHostActive"/>
+  <fCall global="true" name="UserHostActive.nstackwords"/>
+  <fCall global="true" name="UserHostActive.maxcores"/>
+  <fCall global="true" name="UserHostActive.maxtimers"/>
+  <fCall global="true" name="UserHostActive.maxchanends"/>
+</preCompilationAnalysis>

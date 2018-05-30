@@ -1,0 +1,23 @@
+<preCompilationAnalysis file="/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/xuduser/xuduser.c">
+  <fCall global="true" name="XUD_UserSuspend"/>
+  <fCall global="true" name="XUD_UserSuspend.nstackwords"/>
+  <fCall global="true" name="UserAudioStreamStop.nstackwords"/>
+  <fCall global="true" name="UserHostActive.nstackwords"/>
+  <fCall global="true" name="XUD_UserSuspend.maxcores"/>
+  <fCall global="true" name="UserAudioStreamStop.maxcores"/>
+  <fCall global="true" name="UserHostActive.maxcores"/>
+  <fCall global="true" name="XUD_UserSuspend.maxtimers"/>
+  <fCall global="true" name="UserAudioStreamStop.maxtimers"/>
+  <fCall global="true" name="UserHostActive.maxtimers"/>
+  <fCall global="true" name="XUD_UserSuspend.maxchanends"/>
+  <fCall global="true" name="UserAudioStreamStop.maxchanends"/>
+  <fCall global="true" name="UserHostActive.maxchanends"/>
+  <fCall global="true" name="XUD_UserResume"/>
+  <fCall global="true" name="XUD_UserResume.nstackwords"/>
+  <fCall global="true" name="XUD_UserResume.maxcores"/>
+  <fCall global="true" name="XUD_UserResume.maxtimers"/>
+  <fCall global="true" name="XUD_UserResume.maxchanends"/>
+  <fCall global="true" name="UserAudioStreamStop"/>
+  <fCall global="true" name="UserHostActive"/>
+  <fCall global="true" name="g_currentConfig"/>
+</preCompilationAnalysis>

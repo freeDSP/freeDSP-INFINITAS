@@ -1,0 +1,421 @@
+<preCompilationAnalysis file="/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/mixer/mixer.xc">
+<fDef name="GetSamplesFromDevice" global="false" unit="/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/mixer/mixer.xc" noreturn="false" doNotSpecialize="true" numParams="1"/>
+<fDef name="GetSamplesFromHost" global="false" unit="/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/mixer/mixer.xc" noreturn="false" doNotSpecialize="true" numParams="1"/>
+<fDef name="GiveSamplesToDevice" global="false" unit="/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/mixer/mixer.xc" noreturn="false" doNotSpecialize="true" numParams="3"/>
+<fDef name="GiveSamplesToHost" global="false" unit="/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/mixer/mixer.xc" noreturn="false" doNotSpecialize="true" numParams="3"/>
+<fDef name="mixer1" global="false" unit="/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/mixer/mixer.xc" noreturn="true" doNotSpecialize="false" numParams="3"/>
+<fDef name="array_to_xc_ptr" global="true" noreturn="false" doNotSpecialize="true" numParams="1"/>
+<fDef name="delay_microseconds" global="true" noreturn="false" doNotSpecialize="true" numParams="1"/>
+<fDef name="delay_milliseconds" global="true" noreturn="false" doNotSpecialize="true" numParams="1"/>
+<fDef name="delay_seconds" global="true" noreturn="false" doNotSpecialize="true" numParams="1"/>
+<fDef name="mixer" global="true" noreturn="false" doNotSpecialize="false" numParams="3"/>
+<fCall name="delay_ticks_longlong" global="true" numArgs="1">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="delay_ticks_longlong" global="true" numArgs="1">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="delay_ticks_longlong" global="true" numArgs="1">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="__builtin_out_uint" global="true" numArgs="2">
+  <arg num="0">
+    <passThroughArg param="0" caller="GiveSamplesToHost" global="false" unit="/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/mixer/mixer.xc"/>
+    <values>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="__builtin_in_uint" global="true" numArgs="1">
+  <arg num="0">
+    <passThroughArg param="0" caller="GetSamplesFromHost" global="false" unit="/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/mixer/mixer.xc"/>
+    <values>
+    </values>
+  </arg>
+</fCall>
+<fCall name="__builtin_out_uint" global="true" numArgs="2">
+  <arg num="0">
+    <passThroughArg param="0" caller="GiveSamplesToDevice" global="false" unit="/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/mixer/mixer.xc"/>
+    <values>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="__builtin_in_uint" global="true" numArgs="1">
+  <arg num="0">
+    <passThroughArg param="0" caller="GetSamplesFromDevice" global="false" unit="/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/mixer/mixer.xc"/>
+    <values>
+    </values>
+  </arg>
+</fCall>
+<fCall name="__builtin_in_uint" global="true" numArgs="1">
+  <arg num="0">
+    <passThroughArg param="2" caller="mixer1" global="false" unit="/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/mixer/mixer.xc"/>
+    <values>
+    </values>
+  </arg>
+</fCall>
+<fCall name="__builtin_out_uint" global="true" numArgs="2">
+  <arg num="0">
+    <passThroughArg param="0" caller="mixer1" global="false" unit="/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/mixer/mixer.xc"/>
+    <values>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="__builtin_in_uint_byref" global="true" numArgs="2">
+  <arg num="0">
+    <passThroughArg param="1" caller="mixer1" global="false" unit="/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/mixer/mixer.xc"/>
+    <values>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="__builtin_in_uint" global="true" numArgs="1">
+  <arg num="0">
+    <passThroughArg param="1" caller="mixer1" global="false" unit="/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/mixer/mixer.xc"/>
+    <values>
+    </values>
+  </arg>
+</fCall>
+<fCall name="__builtin_chkct" global="true" numArgs="2">
+  <arg num="0">
+    <passThroughArg param="1" caller="mixer1" global="false" unit="/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/mixer/mixer.xc"/>
+    <values>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="intval"><intval isSigned="true" val="1"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="__builtin_out_uint" global="true" numArgs="2">
+  <arg num="0">
+    <passThroughArg param="1" caller="mixer1" global="false" unit="/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/mixer/mixer.xc"/>
+    <values>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="__builtin_outct" global="true" numArgs="2">
+  <arg num="0">
+    <passThroughArg param="1" caller="mixer1" global="false" unit="/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/mixer/mixer.xc"/>
+    <values>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="intval"><intval isSigned="true" val="1"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="__builtin_in_uint" global="true" numArgs="1">
+  <arg num="0">
+    <passThroughArg param="1" caller="mixer1" global="false" unit="/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/mixer/mixer.xc"/>
+    <values>
+    </values>
+  </arg>
+</fCall>
+<fCall name="__builtin_chkct" global="true" numArgs="2">
+  <arg num="0">
+    <passThroughArg param="1" caller="mixer1" global="false" unit="/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/mixer/mixer.xc"/>
+    <values>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="intval"><intval isSigned="true" val="1"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="__builtin_out_uint" global="true" numArgs="2">
+  <arg num="0">
+    <passThroughArg param="1" caller="mixer1" global="false" unit="/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/mixer/mixer.xc"/>
+    <values>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="__builtin_outct" global="true" numArgs="2">
+  <arg num="0">
+    <passThroughArg param="1" caller="mixer1" global="false" unit="/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/mixer/mixer.xc"/>
+    <values>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="intval"><intval isSigned="true" val="1"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="__builtin_testct" global="true" numArgs="1">
+  <arg num="0">
+    <passThroughArg param="0" caller="mixer1" global="false" unit="/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/mixer/mixer.xc"/>
+    <values>
+    </values>
+  </arg>
+</fCall>
+<fCall name="__builtin_inct" global="true" numArgs="1">
+  <arg num="0">
+    <passThroughArg param="0" caller="mixer1" global="false" unit="/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/mixer/mixer.xc"/>
+    <values>
+    </values>
+  </arg>
+</fCall>
+<fCall name="__builtin_in_uint" global="true" numArgs="1">
+  <arg num="0">
+    <passThroughArg param="0" caller="mixer1" global="false" unit="/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/mixer/mixer.xc"/>
+    <values>
+    </values>
+  </arg>
+</fCall>
+<fCall name="__builtin_outct" global="true" numArgs="2">
+  <arg num="0">
+    <passThroughArg param="2" caller="mixer1" global="false" unit="/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/mixer/mixer.xc"/>
+    <values>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="__builtin_out_uint" global="true" numArgs="2">
+  <arg num="0">
+    <passThroughArg param="2" caller="mixer1" global="false" unit="/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/mixer/mixer.xc"/>
+    <values>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="__builtin_outct" global="true" numArgs="2">
+  <arg num="0">
+    <passThroughArg param="2" caller="mixer1" global="false" unit="/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/mixer/mixer.xc"/>
+    <values>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="__builtin_out_uint" global="true" numArgs="2">
+  <arg num="0">
+    <passThroughArg param="2" caller="mixer1" global="false" unit="/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/mixer/mixer.xc"/>
+    <values>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="__builtin_in_uint" global="true" numArgs="1">
+  <arg num="0">
+    <passThroughArg param="0" caller="mixer1" global="false" unit="/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/mixer/mixer.xc"/>
+    <values>
+    </values>
+  </arg>
+</fCall>
+<fCall name="__builtin_out_uint" global="true" numArgs="2">
+  <arg num="0">
+    <passThroughArg param="2" caller="mixer1" global="false" unit="/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/mixer/mixer.xc"/>
+    <values>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="__builtin_in_uint" global="true" numArgs="1">
+  <arg num="0">
+    <passThroughArg param="0" caller="mixer1" global="false" unit="/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/mixer/mixer.xc"/>
+    <values>
+    </values>
+  </arg>
+</fCall>
+<fCall name="__builtin_chkct" global="true" numArgs="2">
+  <arg num="0">
+    <passThroughArg param="2" caller="mixer1" global="false" unit="/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/mixer/mixer.xc"/>
+    <values>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="intval"><intval isSigned="true" val="1"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="__builtin_outct" global="true" numArgs="2">
+  <arg num="0">
+    <passThroughArg param="0" caller="mixer1" global="false" unit="/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/mixer/mixer.xc"/>
+    <values>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="intval"><intval isSigned="true" val="1"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="GiveSamplesToDevice" global="false" unit="/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/mixer/mixer.xc" numArgs="3">
+  <arg num="0">
+    <passThroughArg param="2" caller="mixer1" global="false" unit="/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/mixer/mixer.xc"/>
+    <values>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="GetSamplesFromDevice" global="false" unit="/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/mixer/mixer.xc" numArgs="1">
+  <arg num="0">
+    <passThroughArg param="2" caller="mixer1" global="false" unit="/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/mixer/mixer.xc"/>
+    <values>
+    </values>
+  </arg>
+</fCall>
+<fCall name="GetSamplesFromHost" global="false" unit="/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/mixer/mixer.xc" numArgs="1">
+  <arg num="0">
+    <passThroughArg param="0" caller="mixer1" global="false" unit="/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/mixer/mixer.xc"/>
+    <values>
+    </values>
+  </arg>
+</fCall>
+<fCall name="GiveSamplesToHost" global="false" unit="/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/mixer/mixer.xc" numArgs="3">
+  <arg num="0">
+    <passThroughArg param="0" caller="mixer1" global="false" unit="/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/mixer/mixer.xc"/>
+    <values>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="array_to_xc_ptr" global="true" numArgs="1">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="array_to_xc_ptr" global="true" numArgs="1">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="array_to_xc_ptr" global="true" numArgs="1">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="array_to_xc_ptr" global="true" numArgs="1">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="array_to_xc_ptr" global="true" numArgs="1">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="array_to_xc_ptr" global="true" numArgs="1">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="array_to_xc_ptr" global="true" numArgs="1">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="mixer1" global="false" unit="/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/mixer/mixer.xc" numArgs="3" impId="0">
+  <arg num="0">
+    <passThroughArg param="0" caller="mixer" global="true"/>
+    <values>
+    </values>
+  </arg>
+  <arg num="1">
+    <passThroughArg param="2" caller="mixer" global="true"/>
+    <values>
+    </values>
+  </arg>
+  <arg num="2">
+    <passThroughArg param="1" caller="mixer" global="true"/>
+    <values>
+    </values>
+  </arg>
+</fCall>
+</preCompilationAnalysis>

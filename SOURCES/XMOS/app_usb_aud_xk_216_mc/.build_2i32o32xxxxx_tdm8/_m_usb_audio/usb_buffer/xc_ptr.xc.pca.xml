@@ -1,0 +1,3 @@
+<preCompilationAnalysis file="/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/usb_buffer/xc_ptr.xc">
+<fDef name="array_to_xc_ptr" global="true" noreturn="false" doNotSpecialize="false" numParams="1"/>
+</preCompilationAnalysis>

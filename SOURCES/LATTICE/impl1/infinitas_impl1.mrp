@@ -1,0 +1,402 @@
+
+          Lattice Mapping Report File for Design Module 'infinitas'
+
+
+Design Information
+------------------
+
+Command line:   map -a MachXO2 -p LCMXO2-2000HC -t TQFP100 -s 4 -oc Commercial
+     infinitas_impl1.ngd -o infinitas_impl1_map.ncd -pr infinitas_impl1.prf -mp
+     infinitas_impl1.mrp -lpf C:/lattice/infinitas/impl1/infinitas_impl1.lpf
+     -lpf C:/lattice/infinitas/infinitas.lpf -c 0 -gui -msgset
+     C:/lattice/infinitas/promote.xml 
+Target Vendor:  LATTICE
+Target Device:  LCMXO2-2000HCTQFP100
+Target Performance:   4
+Mapper:  xo2c00,  version:  Diamond (64-bit) 3.9.0.99.2
+Mapped on:  01/29/18  15:19:50
+
+Design Summary
+--------------
+
+   Number of registers:      4 out of  2352 (0%)
+      PFU registers:            4 out of  2112 (0%)
+      PIO registers:            0 out of   240 (0%)
+   Number of SLICEs:         2 out of  1056 (0%)
+      SLICEs as Logic/ROM:      2 out of  1056 (0%)
+      SLICEs as RAM:            0 out of   792 (0%)
+      SLICEs as Carry:          0 out of  1056 (0%)
+   Number of LUT4s:          1 out of  2112 (0%)
+      Number used as logic LUTs:          1
+      Number used as distributed RAM:     0
+      Number used as ripple logic:        0
+      Number used as shift registers:     0
+   Number of PIO sites used: 49 + 4(JTAG) out of 80 (66%)
+   Number of block RAMs:  0 out of 8 (0%)
+   Number of GSRs:  0 out of 1 (0%)
+   EFB used :       No
+   JTAG used :      No
+   Readback used :  No
+   Oscillator used :  No
+   Startup used :   No
+   POR :            On
+   Bandgap :        On
+   Number of Power Controller:  0 out of 1 (0%)
+   Number of Dynamic Bank Controller (BCINRD):  0 out of 6 (0%)
+   Number of Dynamic Bank Controller (BCLVDSO):  0 out of 1 (0%)
+   Number of DCCA:  0 out of 8 (0%)
+   Number of DCMA:  0 out of 2 (0%)
+   Number of PLLs:  0 out of 1 (0%)
+   Number of DQSDLLs:  0 out of 2 (0%)
+   Number of CLKDIVC:  0 out of 4 (0%)
+   Number of ECLKSYNCA:  0 out of 4 (0%)
+   Number of ECLKBRIDGECS:  0 out of 2 (0%)
+   Notes:-
+      1. Total number of LUT4s = (Number of logic LUT4s) + 2*(Number of
+     distributed RAMs) + 2*(Number of ripple logic)
+      2. Number of logic LUT4s does not include count of distributed RAM and
+     ripple logic.
+   Number of clocks:  1
+     Net exp_bclk4_c_c: 2 loads, 2 rising, 0 falling (Driver: PIO x_bclk )
+   Number of Clock Enables:  0
+   Number of LSRs:  0
+
+                                    Page 1
+
+
+
+
+Design:  infinitas                                     Date:  01/29/18  15:19:50
+
+Design Summary (cont)
+---------------------
+   Number of nets driven by tri-state buffers:  0
+   Top 10 highest fanout non-clock nets:
+     Net x_mclk_c_c: 7 loads
+     Net exp_lrck4_c_c: 6 loads
+     Net dsp_tdmin0_c_c: 1 loads
+     Net exp_mdi1_c: 1 loads
+     Net exp_mdi3_c: 1 loads
+     Net exp_mdi4_c: 1 loads
+     Net pll_wclkref_c_c: 1 loads
+     Net x_tdmin1_c: 1 loads
+     Net x_tdmin3_c: 1 loads
+     Net x_tdmin4_c: 1 loads
+
+
+
+
+   Number of warnings:  49
+   Number of errors:    0
+     
+
+Design Errors/Warnings
+----------------------
+
+WARNING - map: C:/lattice/infinitas/infinitas.lpf(16): Semantic error in "IOBUF
+     PORT "dsp_bclkin1" IO_TYPE=LVCMOS33 ;": Port "dsp_bclkin1" does not exist
+     in the design. This preference has been disabled.
+WARNING - map: C:/lattice/infinitas/infinitas.lpf(17): Semantic error in "IOBUF
+     PORT "dsp_bclkin2" IO_TYPE=LVCMOS33 ;": Port "dsp_bclkin2" does not exist
+     in the design. This preference has been disabled.
+WARNING - map: C:/lattice/infinitas/infinitas.lpf(18): Semantic error in "IOBUF
+     PORT "dsp_bclkin3" IO_TYPE=LVCMOS33 ;": Port "dsp_bclkin3" does not exist
+     in the design. This preference has been disabled.
+WARNING - map: C:/lattice/infinitas/infinitas.lpf(19): Semantic error in "IOBUF
+     PORT "dsp_bclkin4" IO_TYPE=LVCMOS33 ;": Port "dsp_bclkin4" does not exist
+     in the design. This preference has been disabled.
+WARNING - map: C:/lattice/infinitas/infinitas.lpf(21): Semantic error in "IOBUF
+     PORT "dsp_bclkout1" IO_TYPE=LVCMOS33 ;": Port "dsp_bclkout1" does not exist
+     in the design. This preference has been disabled.
+WARNING - map: C:/lattice/infinitas/infinitas.lpf(22): Semantic error in "IOBUF
+     PORT "dsp_bclkout2" IO_TYPE=LVCMOS33 ;": Port "dsp_bclkout2" does not exist
+     in the design. This preference has been disabled.
+WARNING - map: C:/lattice/infinitas/infinitas.lpf(23): Semantic error in "IOBUF
+     PORT "dsp_bclkout3" IO_TYPE=LVCMOS33 ;": Port "dsp_bclkout3" does not exist
+     in the design. This preference has been disabled.
+WARNING - map: C:/lattice/infinitas/infinitas.lpf(25): Semantic error in "IOBUF
+     PORT "dsp_lrckin1" IO_TYPE=LVCMOS33 ;": Port "dsp_lrckin1" does not exist
+     in the design. This preference has been disabled.
+WARNING - map: C:/lattice/infinitas/infinitas.lpf(26): Semantic error in "IOBUF
+     PORT "dsp_lrckin2" IO_TYPE=LVCMOS33 ;": Port "dsp_lrckin2" does not exist
+     in the design. This preference has been disabled.
+WARNING - map: C:/lattice/infinitas/infinitas.lpf(27): Semantic error in "IOBUF
+     PORT "dsp_lrckin3" IO_TYPE=LVCMOS33 ;": Port "dsp_lrckin3" does not exist
+     in the design. This preference has been disabled.
+WARNING - map: C:/lattice/infinitas/infinitas.lpf(28): Semantic error in "IOBUF
+     PORT "dsp_lrckin4" IO_TYPE=LVCMOS33 ;": Port "dsp_lrckin4" does not exist
+     in the design. This preference has been disabled.
+
+                                    Page 2
+
+
+
+
+Design:  infinitas                                     Date:  01/29/18  15:19:50
+
+Design Errors/Warnings (cont)
+-----------------------------
+WARNING - map: C:/lattice/infinitas/infinitas.lpf(30): Semantic error in "IOBUF
+     PORT "dsp_lrckout1" IO_TYPE=LVCMOS33 ;": Port "dsp_lrckout1" does not exist
+     in the design. This preference has been disabled.
+WARNING - map: C:/lattice/infinitas/infinitas.lpf(31): Semantic error in "IOBUF
+     PORT "dsp_lrckout2" IO_TYPE=LVCMOS33 ;": Port "dsp_lrckout2" does not exist
+     in the design. This preference has been disabled.
+WARNING - map: C:/lattice/infinitas/infinitas.lpf(32): Semantic error in "IOBUF
+     PORT "dsp_lrckout3" IO_TYPE=LVCMOS33 ;": Port "dsp_lrckout3" does not exist
+     in the design. This preference has been disabled.
+WARNING - map: C:/lattice/infinitas/infinitas.lpf(38): Semantic error in "IOBUF
+     PORT "dsp_tdmin4" IO_TYPE=LVCMOS33 ;": Port "dsp_tdmin4" does not exist in
+     the design. This preference has been disabled.
+WARNING - map: input pad net 'nrst' has no legal load.
+WARNING - map: input pad net 'scl' has no legal load.
+WARNING - map: input pad net 'sda' has no legal load.
+WARNING - map: input pad net 'pll_clk' has no legal load.
+WARNING - map: input pad net 'pll_locked' has no legal load.
+WARNING - map: input pad net 'dsp_bclkin1' has no legal load.
+WARNING - map: input pad net 'dsp_lrckin1' has no legal load.
+WARNING - map: input pad net 'dsp_bclkin2' has no legal load.
+WARNING - map: input pad net 'dsp_lrckin2' has no legal load.
+WARNING - map: input pad net 'dsp_bclkin3' has no legal load.
+WARNING - map: input pad net 'dsp_lrckin3' has no legal load.
+WARNING - map: input pad net 'dsp_bclkout1' has no legal load.
+WARNING - map: input pad net 'dsp_lrckout1' has no legal load.
+WARNING - map: input pad net 'dsp_bclkout2' has no legal load.
+WARNING - map: input pad net 'dsp_lrckout2' has no legal load.
+WARNING - map: input pad net 'dsp_bclkout3' has no legal load.
+WARNING - map: input pad net 'dsp_lrckout3' has no legal load.
+WARNING - map: IO buffer missing for top level port nrst...logic will be
+     discarded.
+WARNING - map: IO buffer missing for top level port scl...logic will be
+     discarded.
+WARNING - map: IO buffer missing for top level port sda...logic will be
+     discarded.
+WARNING - map: IO buffer missing for top level port pll_clk...logic will be
+     discarded.
+WARNING - map: IO buffer missing for top level port pll_locked...logic will be
+     discarded.
+WARNING - map: IO buffer missing for top level port dsp_bclkin1...logic will be
+     discarded.
+WARNING - map: IO buffer missing for top level port dsp_lrckin1...logic will be
+     discarded.
+WARNING - map: IO buffer missing for top level port dsp_bclkin2...logic will be
+     discarded.
+WARNING - map: IO buffer missing for top level port dsp_lrckin2...logic will be
+     discarded.
+WARNING - map: IO buffer missing for top level port dsp_bclkin3...logic will be
+     discarded.
+WARNING - map: IO buffer missing for top level port dsp_lrckin3...logic will be
+     discarded.
+WARNING - map: IO buffer missing for top level port dsp_bclkout1...logic will be
+     discarded.
+WARNING - map: IO buffer missing for top level port dsp_lrckout1...logic will be
+     discarded.
+WARNING - map: IO buffer missing for top level port dsp_bclkout2...logic will be
+
+                                    Page 3
+
+
+
+
+Design:  infinitas                                     Date:  01/29/18  15:19:50
+
+Design Errors/Warnings (cont)
+-----------------------------
+     discarded.
+WARNING - map: IO buffer missing for top level port dsp_lrckout2...logic will be
+     discarded.
+WARNING - map: IO buffer missing for top level port dsp_bclkout3...logic will be
+     discarded.
+WARNING - map: IO buffer missing for top level port dsp_lrckout3...logic will be
+     discarded.
+
+IO (PIO) Attributes
+-------------------
+
++---------------------+-----------+-----------+------------+
+| IO Name             | Direction | Levelmode | IO         |
+|                     |           |  IO_TYPE  | Register   |
++---------------------+-----------+-----------+------------+
+| pll_clkref          | OUTPUT    | LVCMOS33  |            |
++---------------------+-----------+-----------+------------+
+| pll_wclkref         | OUTPUT    | LVCMOS33  |            |
++---------------------+-----------+-----------+------------+
+| dsp_mclk            | OUTPUT    | LVCMOS33  |            |
++---------------------+-----------+-----------+------------+
+| dsp_bclkin0         | OUTPUT    | LVCMOS33  |            |
++---------------------+-----------+-----------+------------+
+| dsp_lrckin0         | OUTPUT    | LVCMOS33  |            |
++---------------------+-----------+-----------+------------+
+| dsp_tdmin0          | OUTPUT    | LVCMOS33  |            |
++---------------------+-----------+-----------+------------+
+| dsp_tdmin1          | OUTPUT    | LVCMOS33  |            |
++---------------------+-----------+-----------+------------+
+| dsp_tdmin2          | OUTPUT    | LVCMOS33  |            |
++---------------------+-----------+-----------+------------+
+| dsp_tdmin3          | OUTPUT    | LVCMOS33  |            |
++---------------------+-----------+-----------+------------+
+| dsp_bclkout0        | OUTPUT    | LVCMOS33  |            |
++---------------------+-----------+-----------+------------+
+| dsp_lrckout0        | OUTPUT    | LVCMOS33  |            |
++---------------------+-----------+-----------+------------+
+| exp_mdo1            | OUTPUT    | LVCMOS33  |            |
++---------------------+-----------+-----------+------------+
+| exp_bclk1           | OUTPUT    | LVCMOS33  |            |
++---------------------+-----------+-----------+------------+
+| exp_lrck1           | OUTPUT    | LVCMOS33  |            |
++---------------------+-----------+-----------+------------+
+| exp_mclk1           | OUTPUT    | LVCMOS33  |            |
++---------------------+-----------+-----------+------------+
+| exp_mdo2            | OUTPUT    | LVCMOS33  |            |
++---------------------+-----------+-----------+------------+
+| exp_bclk2           | OUTPUT    | LVCMOS33  |            |
++---------------------+-----------+-----------+------------+
+| exp_lrck2           | OUTPUT    | LVCMOS33  |            |
++---------------------+-----------+-----------+------------+
+| exp_mclk2           | OUTPUT    | LVCMOS33  |            |
++---------------------+-----------+-----------+------------+
+| exp_mdo3            | OUTPUT    | LVCMOS33  |            |
++---------------------+-----------+-----------+------------+
+| exp_bclk3           | OUTPUT    | LVCMOS33  |            |
+
+                                    Page 4
+
+
+
+
+Design:  infinitas                                     Date:  01/29/18  15:19:50
+
+IO (PIO) Attributes (cont)
+--------------------------
++---------------------+-----------+-----------+------------+
+| exp_lrck3           | OUTPUT    | LVCMOS33  |            |
++---------------------+-----------+-----------+------------+
+| exp_mclk3           | OUTPUT    | LVCMOS33  |            |
++---------------------+-----------+-----------+------------+
+| exp_mdo4            | OUTPUT    | LVCMOS33  |            |
++---------------------+-----------+-----------+------------+
+| exp_bclk4           | OUTPUT    | LVCMOS33  |            |
++---------------------+-----------+-----------+------------+
+| exp_lrck4           | OUTPUT    | LVCMOS33  |            |
++---------------------+-----------+-----------+------------+
+| exp_mclk4           | OUTPUT    | LVCMOS33  |            |
++---------------------+-----------+-----------+------------+
+| x_tdmin1            | OUTPUT    | LVCMOS33  |            |
++---------------------+-----------+-----------+------------+
+| x_tdmin2            | OUTPUT    | LVCMOS33  |            |
++---------------------+-----------+-----------+------------+
+| x_tdmin3            | OUTPUT    | LVCMOS33  |            |
++---------------------+-----------+-----------+------------+
+| x_tdmin4            | OUTPUT    | LVCMOS33  |            |
++---------------------+-----------+-----------+------------+
+| x_mclk              | OUTPUT    | LVCMOS33  |            |
++---------------------+-----------+-----------+------------+
+| wclkout             | OUTPUT    | LVCMOS33  |            |
++---------------------+-----------+-----------+------------+
+| clkin               | INPUT     | LVCMOS33  |            |
++---------------------+-----------+-----------+------------+
+| dsp_tdmout0         | INPUT     | LVCMOS33  |            |
++---------------------+-----------+-----------+------------+
+| dsp_tdmout1         | INPUT     | LVCMOS33  |            |
++---------------------+-----------+-----------+------------+
+| dsp_tdmout2         | INPUT     | LVCMOS33  |            |
++---------------------+-----------+-----------+------------+
+| dsp_tdmout3         | INPUT     | LVCMOS33  |            |
++---------------------+-----------+-----------+------------+
+| exp_mdi1            | INPUT     | LVCMOS33  |            |
++---------------------+-----------+-----------+------------+
+| exp_mdi2            | INPUT     | LVCMOS33  |            |
++---------------------+-----------+-----------+------------+
+| exp_mdi3            | INPUT     | LVCMOS33  |            |
++---------------------+-----------+-----------+------------+
+| exp_mdi4            | INPUT     | LVCMOS33  |            |
++---------------------+-----------+-----------+------------+
+| x_lrck              | INPUT     | LVCMOS33  |            |
++---------------------+-----------+-----------+------------+
+| x_bclk              | INPUT     | LVCMOS33  |            |
++---------------------+-----------+-----------+------------+
+| x_tdmout1           | INPUT     | LVCMOS33  |            |
++---------------------+-----------+-----------+------------+
+| x_tdmout2           | INPUT     | LVCMOS33  |            |
++---------------------+-----------+-----------+------------+
+| x_tdmout3           | INPUT     | LVCMOS33  |            |
++---------------------+-----------+-----------+------------+
+| x_tdmout4           | INPUT     | LVCMOS33  |            |
++---------------------+-----------+-----------+------------+
+| wclkin              | INPUT     | LVCMOS33  |            |
+
+                                    Page 5
+
+
+
+
+Design:  infinitas                                     Date:  01/29/18  15:19:50
+
+IO (PIO) Attributes (cont)
+--------------------------
++---------------------+-----------+-----------+------------+
+
+Removed logic
+-------------
+
+Block i23 undriven or does not drive anything - clipped.
+Block GSR_INST undriven or does not drive anything - clipped.
+Signal VCC_net undriven or does not drive anything - clipped.
+
+Memory Usage
+------------
+
+
+     
+
+Run Time and Memory Usage
+-------------------------
+
+   Total CPU Time: 0 secs  
+   Total REAL Time: 2 secs  
+   Peak Memory Usage: 40 MB
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                    Page 6
+
+
+Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
+     Copyright (c) 1995 AT&T Corp.   All rights reserved.
+     Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
+     Copyright (c) 2001 Agere Systems   All rights reserved.
+     Copyright (c) 2002-2017 Lattice Semiconductor Corporation,  All rights
+     reserved.

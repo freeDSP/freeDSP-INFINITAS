@@ -1,0 +1,8 @@
+<preCompilationAnalysis file="/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/usb_buffer/get_adc_counts.c">
+  <fCall global="true" name="GetADCCounts"/>
+  <fCall global="true" name="GetADCCounts.nstackwords"/>
+  <fCall global="true" name="GetADCCounts.maxcores"/>
+  <fCall global="true" name="GetADCCounts.maxtimers"/>
+  <fCall global="true" name="GetADCCounts.maxchanends"/>
+  <fCall global="true" name="g_curUsbSpeed"/>
+</preCompilationAnalysis>

@@ -1,0 +1,34 @@
+<taskgraph>
+<task>
+  <name>delay_seconds</name>
+  <inFunction>delay_seconds</inFunction>
+  <calledFunction>delay_ticks_longlong</calledFunction>
+</task>
+<task>
+  <name>delay_milliseconds</name>
+  <inFunction>delay_milliseconds</inFunction>
+  <calledFunction>delay_ticks_longlong</calledFunction>
+</task>
+<task>
+  <name>delay_microseconds</name>
+  <inFunction>delay_microseconds</inFunction>
+  <calledFunction>delay_ticks_longlong</calledFunction>
+</task>
+<task>
+  <name>default_download_IC_1</name>
+  <inFunction>default_download_IC_1</inFunction>
+</task>
+<task>
+  <name>wait_us</name>
+  <inFunction>wait_us</inFunction>
+</task>
+<task>
+  <name>AudioHwInit</name>
+  <inFunction>AudioHwInit</inFunction>
+  <endOfSeqCalledFunction>i2c_shared_master_read_reg16</endOfSeqCalledFunction>
+</task>
+<task>
+  <name>AudioHwConfig</name>
+  <inFunction>AudioHwConfig</inFunction>
+</task>
+</taskgraph>
