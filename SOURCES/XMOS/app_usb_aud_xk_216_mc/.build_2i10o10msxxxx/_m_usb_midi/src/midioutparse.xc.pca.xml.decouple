@@ -1,0 +1,11 @@
+<preCompilationAnalysis file="/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_midi/src/midioutparse.xc">
+<fDef name="breakEvent" global="false" unit="/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_midi/src/midioutparse.xc" noreturn="false" doNotSpecialize="false" numParams="1"/>
+<fDef name="midi_out_parse" global="true" noreturn="false" doNotSpecialize="false" numParams="1"/>
+<fCall name="breakEvent" global="false" unit="/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_midi/src/midioutparse.xc" numArgs="1">
+  <arg num="0">
+    <passThroughArg param="0" caller="midi_out_parse" global="true"/>
+    <values>
+    </values>
+  </arg>
+</fCall>
+</preCompilationAnalysis>

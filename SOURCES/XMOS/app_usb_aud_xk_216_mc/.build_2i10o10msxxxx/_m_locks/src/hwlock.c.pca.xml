@@ -1,0 +1,22 @@
+<preCompilationAnalysis file="/Users/rkn/Documents/xTIMEcomposer/workspace/module_locks/src/hwlock.c">
+  <fCall global="true" name="hwlock_alloc"/>
+  <fCall global="true" name="hwlock_alloc.nstackwords"/>
+  <fCall global="true" name="hwlock_alloc.maxcores"/>
+  <fCall global="true" name="hwlock_alloc.maxtimers"/>
+  <fCall global="true" name="hwlock_alloc.maxchanends"/>
+  <fCall global="true" name="hwlock_free"/>
+  <fCall global="true" name="hwlock_free.nstackwords"/>
+  <fCall global="true" name="hwlock_free.maxcores"/>
+  <fCall global="true" name="hwlock_free.maxtimers"/>
+  <fCall global="true" name="hwlock_free.maxchanends"/>
+  <fCall global="true" name="hwlock_acquire"/>
+  <fCall global="true" name="hwlock_acquire.nstackwords"/>
+  <fCall global="true" name="hwlock_acquire.maxcores"/>
+  <fCall global="true" name="hwlock_acquire.maxtimers"/>
+  <fCall global="true" name="hwlock_acquire.maxchanends"/>
+  <fCall global="true" name="hwlock_release"/>
+  <fCall global="true" name="hwlock_release.nstackwords"/>
+  <fCall global="true" name="hwlock_release.maxcores"/>
+  <fCall global="true" name="hwlock_release.maxtimers"/>
+  <fCall global="true" name="hwlock_release.maxchanends"/>
+</preCompilationAnalysis>

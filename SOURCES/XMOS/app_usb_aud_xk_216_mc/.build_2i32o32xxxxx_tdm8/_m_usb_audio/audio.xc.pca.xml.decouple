@@ -1,0 +1,541 @@
+<preCompilationAnalysis file="/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/audio.xc">
+<fDef name="DoSampleTransfer" global="false" unit="/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/audio.xc" noreturn="false" doNotSpecialize="true" numParams="3"/>
+<fDef name="InitPorts" global="false" unit="/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/audio.xc" noreturn="false" doNotSpecialize="true" numParams="1"/>
+<fDef name="deliver" global="false" unit="/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/audio.xc" noreturn="false" doNotSpecialize="false" numParams="5"/>
+<fDef name="doI2SClocks" global="false" unit="/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/audio.xc" noreturn="false" doNotSpecialize="true" numParams="1"/>
+<fDef name="dummy_deliver" global="false" unit="/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/audio.xc" noreturn="false" doNotSpecialize="false" numParams="2"/>
+<fDef name="array_to_xc_ptr" global="true" noreturn="false" doNotSpecialize="true" numParams="1"/>
+<fDef name="audio" global="true" noreturn="true" doNotSpecialize="false" numParams="4"/>
+<fDef name="delay_microseconds" global="true" noreturn="false" doNotSpecialize="true" numParams="1"/>
+<fDef name="delay_milliseconds" global="true" noreturn="false" doNotSpecialize="true" numParams="1"/>
+<fDef name="delay_seconds" global="true" noreturn="false" doNotSpecialize="true" numParams="1"/>
+<fDef name="testct_byref" global="true" noreturn="false" doNotSpecialize="false" numParams="2"/>
+<fCall name="delay_ticks_longlong" global="true" numArgs="1">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="delay_ticks_longlong" global="true" numArgs="1">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="delay_ticks_longlong" global="true" numArgs="1">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="__builtin_out_uint" global="true" numArgs="2">
+  <arg num="0">
+    <passThroughArg param="0" caller="DoSampleTransfer" global="false" unit="/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/audio.xc"/>
+    <values>
+    </values>
+  </arg>
+  <arg num="1">
+    <passThroughArg param="2" caller="DoSampleTransfer" global="false" unit="/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/audio.xc"/>
+    <values>
+    </values>
+  </arg>
+</fCall>
+<fCall name="__builtin_testct" global="true" numArgs="1">
+  <arg num="0">
+    <passThroughArg param="0" caller="DoSampleTransfer" global="false" unit="/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/audio.xc"/>
+    <values>
+    </values>
+  </arg>
+</fCall>
+<fCall name="__builtin_inct" global="true" numArgs="1">
+  <arg num="0">
+    <passThroughArg param="0" caller="DoSampleTransfer" global="false" unit="/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/audio.xc"/>
+    <values>
+    </values>
+  </arg>
+</fCall>
+<fCall name="__builtin_in_uint" global="true" numArgs="1">
+  <arg num="0">
+    <passThroughArg param="0" caller="DoSampleTransfer" global="false" unit="/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/audio.xc"/>
+    <values>
+    </values>
+  </arg>
+</fCall>
+<fCall name="__builtin_out_uint" global="true" numArgs="2">
+  <arg num="0">
+    <passThroughArg param="0" caller="DoSampleTransfer" global="false" unit="/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/audio.xc"/>
+    <values>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="__builtin_out_uint" global="true" numArgs="2">
+  <arg num="0">
+    <passThroughArg param="0" caller="DoSampleTransfer" global="false" unit="/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/audio.xc"/>
+    <values>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="__builtin_out_uint" global="true" numArgs="2">
+  <arg num="0">
+    <passThroughArg param="0" caller="DoSampleTransfer" global="false" unit="/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/audio.xc"/>
+    <values>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="__builtin_clear_buff" global="true" numArgs="1">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="__builtin_clear_buff" global="true" numArgs="1">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="__builtin_clear_buff" global="true" numArgs="1">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="doI2SClocks" global="false" unit="/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/audio.xc" numArgs="1">
+  <arg num="0">
+    <passThroughArg param="0" caller="InitPorts" global="false" unit="/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/audio.xc"/>
+    <values>
+    </values>
+  </arg>
+</fCall>
+<fCall name="doI2SClocks" global="false" unit="/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/audio.xc" numArgs="1">
+  <arg num="0">
+    <passThroughArg param="0" caller="InitPorts" global="false" unit="/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/audio.xc"/>
+    <values>
+    </values>
+  </arg>
+</fCall>
+<fCall name="DoSampleTransfer" global="false" unit="/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/audio.xc" numArgs="3">
+  <arg num="0">
+    <passThroughArg param="0" caller="deliver" global="false" unit="/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/audio.xc"/>
+    <values>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="InitPorts" global="false" unit="/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/audio.xc" numArgs="1">
+  <arg num="0">
+    <passThroughArg param="2" caller="deliver" global="false" unit="/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/audio.xc"/>
+    <values>
+    </values>
+  </arg>
+</fCall>
+<fCall name="__builtin_bitrev" global="true" numArgs="1">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="__builtin_bitrev" global="true" numArgs="1">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="__builtin_bitrev" global="true" numArgs="1">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="doI2SClocks" global="false" unit="/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/audio.xc" numArgs="1">
+  <arg num="0">
+    <passThroughArg param="2" caller="deliver" global="false" unit="/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/audio.xc"/>
+    <values>
+    </values>
+  </arg>
+</fCall>
+<fCall name="__builtin_bitrev" global="true" numArgs="1">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="__builtin_bitrev" global="true" numArgs="1">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="__builtin_bitrev" global="true" numArgs="1">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="doI2SClocks" global="false" unit="/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/audio.xc" numArgs="1">
+  <arg num="0">
+    <passThroughArg param="2" caller="deliver" global="false" unit="/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/audio.xc"/>
+    <values>
+    </values>
+  </arg>
+</fCall>
+<fCall name="DoSampleTransfer" global="false" unit="/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/audio.xc" numArgs="3">
+  <arg num="0">
+    <passThroughArg param="0" caller="deliver" global="false" unit="/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/audio.xc"/>
+    <values>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="intval"><intval isSigned="true" val="1"/></value>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="DoSampleTransfer" global="false" unit="/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/audio.xc" numArgs="3">
+  <arg num="0">
+    <passThroughArg param="0" caller="deliver" global="false" unit="/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/audio.xc"/>
+    <values>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="intval"><intval isSigned="true" val="0"/></value>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="__builtin_testct" global="true" numArgs="1">
+  <arg num="0">
+    <passThroughArg param="0" caller="testct_byref" global="true"/>
+    <values>
+    </values>
+  </arg>
+</fCall>
+<fCall name="testct_byref" global="true" numArgs="2">
+  <arg num="0">
+    <passThroughArg param="0" caller="dummy_deliver" global="false" unit="/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/audio.xc"/>
+    <values>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="__builtin_inct" global="true" numArgs="1">
+  <arg num="0">
+    <passThroughArg param="0" caller="dummy_deliver" global="false" unit="/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/audio.xc"/>
+    <values>
+    </values>
+  </arg>
+</fCall>
+<fCall name="__builtin_in_uint" global="true" numArgs="1">
+  <arg num="0">
+    <passThroughArg param="0" caller="dummy_deliver" global="false" unit="/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/audio.xc"/>
+    <values>
+    </values>
+  </arg>
+</fCall>
+<fCall name="__builtin_out_uint" global="true" numArgs="2">
+  <arg num="0">
+    <passThroughArg param="0" caller="dummy_deliver" global="false" unit="/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/audio.xc"/>
+    <values>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="intval"><intval isSigned="true" val="0"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="__builtin_out_uint" global="true" numArgs="2">
+  <arg num="0">
+    <passThroughArg param="0" caller="dummy_deliver" global="false" unit="/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/audio.xc"/>
+    <values>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="intval"><intval isSigned="true" val="0"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="configure_clock_src" global="true" numArgs="2">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="__builtin_start_clock" global="true" numArgs="1">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="AudioHwInit" global="true" numArgs="1">
+  <arg num="0">
+    <passThroughArg param="1" caller="audio" global="true"/>
+    <values>
+    </values>
+  </arg>
+</fCall>
+<fCall name="ConfigAudioPortsWrapper" global="true" numArgs="9">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="intval"><intval isSigned="true" val="4"/></value>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="3">
+    <values>
+      <value type="intval"><intval isSigned="true" val="4"/></value>
+    </values>
+  </arg>
+  <arg num="4">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="5">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="6">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="7">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="8">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="AudioHwConfig" global="true" numArgs="6">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="2">
+    <passThroughArg param="1" caller="audio" global="true"/>
+    <values>
+    </values>
+  </arg>
+  <arg num="3">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="4">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="5">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="__builtin_outct" global="true" numArgs="2">
+  <arg num="0">
+    <passThroughArg param="0" caller="audio" global="true"/>
+    <values>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="intval"><intval isSigned="true" val="1"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="deliver" global="false" unit="/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/audio.xc" numArgs="5">
+  <arg num="0">
+    <passThroughArg param="0" caller="audio" global="true"/>
+    <values>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="null"/>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="3">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="4">
+    <passThroughArg param="2" caller="audio" global="true"/>
+    <values>
+    </values>
+  </arg>
+</fCall>
+<fCall name="__builtin_in_uint" global="true" numArgs="1">
+  <arg num="0">
+    <passThroughArg param="0" caller="audio" global="true"/>
+    <values>
+    </values>
+  </arg>
+</fCall>
+<fCall name="__builtin_in_uint" global="true" numArgs="1">
+  <arg num="0">
+    <passThroughArg param="0" caller="audio" global="true"/>
+    <values>
+    </values>
+  </arg>
+</fCall>
+<fCall name="__builtin_in_uint" global="true" numArgs="1">
+  <arg num="0">
+    <passThroughArg param="0" caller="audio" global="true"/>
+    <values>
+    </values>
+  </arg>
+</fCall>
+<fCall name="__builtin_outct" global="true" numArgs="2">
+  <arg num="0">
+    <passThroughArg param="0" caller="audio" global="true"/>
+    <values>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="intval"><intval isSigned="true" val="1"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="__builtin_out_uint" global="true" numArgs="2">
+  <arg num="0">
+    <passThroughArg param="0" caller="audio" global="true"/>
+    <values>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="intval"><intval isSigned="true" val="0"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="DFUHandler" global="true" numArgs="2" impId="0">
+  <arg num="0">
+    <passThroughArg param="3" caller="audio" global="true"/>
+    <values>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="null"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="dummy_deliver" global="false" unit="/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/audio.xc" numArgs="2" impId="1">
+  <arg num="0">
+    <passThroughArg param="0" caller="audio" global="true"/>
+    <values>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="__builtin_in_uint" global="true" numArgs="1">
+  <arg num="0">
+    <passThroughArg param="0" caller="audio" global="true"/>
+    <values>
+    </values>
+  </arg>
+</fCall>
+<fCall name="__builtin_outct" global="true" numArgs="2">
+  <arg num="0">
+    <passThroughArg param="0" caller="audio" global="true"/>
+    <values>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="intval"><intval isSigned="true" val="1"/></value>
+    </values>
+  </arg>
+</fCall>
+</preCompilationAnalysis>

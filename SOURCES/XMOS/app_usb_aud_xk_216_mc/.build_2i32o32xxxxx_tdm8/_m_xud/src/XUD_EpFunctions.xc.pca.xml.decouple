@@ -1,0 +1,424 @@
+<preCompilationAnalysis file="/Users/rkn/Documents/xTIMEcomposer/workspace/module_xud/src/XUD_EpFunctions.xc">
+<fDef name="min" global="false" unit="/Users/rkn/Documents/xTIMEcomposer/workspace/module_xud/src/XUD_EpFunctions.xc" noreturn="false" doNotSpecialize="true" numParams="2"/>
+<fDef name="XUD_ClearStall" global="true" noreturn="false" doNotSpecialize="false" numParams="1"/>
+<fDef name="XUD_DoGetRequest" global="true" noreturn="false" doNotSpecialize="false" numParams="5"/>
+<fDef name="XUD_DoSetRequestStatus" global="true" noreturn="false" doNotSpecialize="false" numParams="1"/>
+<fDef name="XUD_GetBuffer" global="true" noreturn="false" doNotSpecialize="false" numParams="3"/>
+<fDef name="XUD_GetSetupBuffer" global="true" noreturn="false" doNotSpecialize="false" numParams="3"/>
+<fDef name="XUD_InitEp" global="true" noreturn="false" doNotSpecialize="false" numParams="1"/>
+<fDef name="XUD_ResetEndpoint" global="true" noreturn="false" doNotSpecialize="false" numParams="2"/>
+<fDef name="XUD_SetBuffer" global="true" noreturn="false" doNotSpecialize="false" numParams="3"/>
+<fDef name="XUD_SetBuffer_EpMax" global="true" noreturn="false" doNotSpecialize="false" numParams="4"/>
+<fDef name="XUD_SetControlBuffer" global="true" noreturn="false" doNotSpecialize="false" numParams="7"/>
+<fDef name="XUD_SetReady_In" global="true" noreturn="false" doNotSpecialize="true" numParams="3"/>
+<fDef name="XUD_SetReady_InPtr" global="true" noreturn="false" doNotSpecialize="true" numParams="3"/>
+<fDef name="XUD_SetReady_Out" global="true" noreturn="false" doNotSpecialize="true" numParams="2"/>
+<fDef name="XUD_SetReady_OutPtr" global="true" noreturn="false" doNotSpecialize="true" numParams="2"/>
+<fDef name="XUD_SetStall" global="true" noreturn="false" doNotSpecialize="false" numParams="1"/>
+<fDef name="delay_microseconds" global="true" noreturn="false" doNotSpecialize="true" numParams="1"/>
+<fDef name="delay_milliseconds" global="true" noreturn="false" doNotSpecialize="true" numParams="1"/>
+<fDef name="delay_seconds" global="true" noreturn="false" doNotSpecialize="true" numParams="1"/>
+<fCall name="delay_ticks_longlong" global="true" numArgs="1">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="delay_ticks_longlong" global="true" numArgs="1">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="delay_ticks_longlong" global="true" numArgs="1">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="__builtin_zext" global="true" numArgs="2">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="intval"><intval isSigned="true" val="7"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="XUD_SetReady_InPtr" global="true" numArgs="3">
+  <arg num="0">
+    <passThroughArg param="0" caller="XUD_SetReady_In" global="true"/>
+    <values>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="2">
+    <passThroughArg param="2" caller="XUD_SetReady_In" global="true"/>
+    <values>
+    </values>
+  </arg>
+</fCall>
+<fCall name="XUD_GetData" global="true" numArgs="3">
+  <arg num="0">
+    <passThroughArg param="0" caller="XUD_GetBuffer" global="true"/>
+    <values>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="XUD_GetSetupData" global="true" numArgs="3">
+  <arg num="0">
+    <passThroughArg param="0" caller="XUD_GetSetupBuffer" global="true"/>
+    <values>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="XUD_SetData" global="true" numArgs="5">
+  <arg num="0">
+    <passThroughArg param="0" caller="XUD_SetBuffer" global="true"/>
+    <values>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="2">
+    <passThroughArg param="2" caller="XUD_SetBuffer" global="true"/>
+    <values>
+    </values>
+  </arg>
+  <arg num="3">
+    <values>
+      <value type="intval"><intval isSigned="true" val="0"/></value>
+    </values>
+  </arg>
+  <arg num="4">
+    <values>
+      <value type="intval"><intval isSigned="true" val="0"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="XUD_SetData" global="true" numArgs="5">
+  <arg num="0">
+    <passThroughArg param="0" caller="XUD_SetBuffer_EpMax" global="true"/>
+    <values>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="3">
+    <values>
+      <value type="intval"><intval isSigned="true" val="0"/></value>
+    </values>
+  </arg>
+  <arg num="4">
+    <values>
+      <value type="intval"><intval isSigned="true" val="0"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="XUD_SetData" global="true" numArgs="5">
+  <arg num="0">
+    <passThroughArg param="0" caller="XUD_SetBuffer_EpMax" global="true"/>
+    <values>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="2">
+    <passThroughArg param="3" caller="XUD_SetBuffer_EpMax" global="true"/>
+    <values>
+    </values>
+  </arg>
+  <arg num="3">
+    <values>
+      <value type="intval"><intval isSigned="true" val="0"/></value>
+    </values>
+  </arg>
+  <arg num="4">
+    <values>
+      <value type="intval"><intval isSigned="true" val="0"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="XUD_SetData" global="true" numArgs="5">
+  <arg num="0">
+    <passThroughArg param="0" caller="XUD_SetBuffer_EpMax" global="true"/>
+    <values>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="2">
+    <passThroughArg param="3" caller="XUD_SetBuffer_EpMax" global="true"/>
+    <values>
+    </values>
+  </arg>
+  <arg num="3">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="4">
+    <values>
+      <value type="intval"><intval isSigned="true" val="0"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="XUD_SetData" global="true" numArgs="5">
+  <arg num="0">
+    <passThroughArg param="0" caller="XUD_SetBuffer_EpMax" global="true"/>
+    <values>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="3">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="4">
+    <values>
+      <value type="intval"><intval isSigned="true" val="0"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="min" global="false" unit="/Users/rkn/Documents/xTIMEcomposer/workspace/module_xud/src/XUD_EpFunctions.xc" numArgs="2">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="XUD_SetBuffer_EpMax" global="true" numArgs="4">
+  <arg num="0">
+    <passThroughArg param="1" caller="XUD_DoGetRequest" global="true"/>
+    <values>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="3">
+    <values>
+      <value type="intval"><intval isSigned="true" val="64"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="XUD_SetBuffer" global="true" numArgs="3">
+  <arg num="0">
+    <passThroughArg param="1" caller="XUD_DoGetRequest" global="true"/>
+    <values>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="intval"><intval isSigned="true" val="0"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="XUD_GetData" global="true" numArgs="3">
+  <arg num="0">
+    <passThroughArg param="0" caller="XUD_DoGetRequest" global="true"/>
+    <values>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="XUD_SetData" global="true" numArgs="5">
+  <arg num="0">
+    <passThroughArg param="0" caller="XUD_DoSetRequestStatus" global="true"/>
+    <values>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="intval"><intval isSigned="true" val="0"/></value>
+    </values>
+  </arg>
+  <arg num="3">
+    <values>
+      <value type="intval"><intval isSigned="true" val="0"/></value>
+    </values>
+  </arg>
+  <arg num="4">
+    <values>
+      <value type="intval"><intval isSigned="true" val="0"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="XUD_SetStallByAddr" global="true" numArgs="1">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="XUD_ClearStallByAddr" global="true" numArgs="1">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="__builtin_in_uint" global="true" numArgs="1">
+  <arg num="0">
+    <passThroughArg param="0" caller="XUD_InitEp" global="true"/>
+    <values>
+    </values>
+  </arg>
+</fCall>
+<fCall name="XUD_SetReady_Out" global="true" numArgs="2">
+  <arg num="0">
+    <passThroughArg param="2" caller="XUD_SetControlBuffer" global="true"/>
+    <values>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="XUD_SetReady_In" global="true" numArgs="3">
+  <arg num="0">
+    <passThroughArg param="3" caller="XUD_SetControlBuffer" global="true"/>
+    <values>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="XUD_GetData_Select" global="true" numArgs="4">
+  <arg num="0">
+    <passThroughArg param="0" caller="XUD_SetControlBuffer" global="true"/>
+    <values>
+    </values>
+  </arg>
+  <arg num="1">
+    <passThroughArg param="2" caller="XUD_SetControlBuffer" global="true"/>
+    <values>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="3">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="XUD_SetData_Select" global="true" numArgs="3">
+  <arg num="0">
+    <passThroughArg param="1" caller="XUD_SetControlBuffer" global="true"/>
+    <values>
+    </values>
+  </arg>
+  <arg num="1">
+    <passThroughArg param="3" caller="XUD_SetControlBuffer" global="true"/>
+    <values>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+</preCompilationAnalysis>

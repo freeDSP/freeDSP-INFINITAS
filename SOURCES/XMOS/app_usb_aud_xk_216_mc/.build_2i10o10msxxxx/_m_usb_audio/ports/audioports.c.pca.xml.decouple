@@ -1,0 +1,17 @@
+<preCompilationAnalysis file="/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/ports/audioports.c">
+  <fCall global="true" name="EnableBufferedPort"/>
+  <fCall global="true" name="EnableBufferedPort.nstackwords"/>
+  <fCall global="true" name="EnableBufferedPort.maxcores"/>
+  <fCall global="true" name="EnableBufferedPort.maxtimers"/>
+  <fCall global="true" name="EnableBufferedPort.maxchanends"/>
+  <fCall global="true" name="ConfigAudioPortsWrapper"/>
+  <fCall global="true" name="ConfigAudioPortsWrapper.nstackwords"/>
+  <fCall global="true" name="ConfigAudioPorts.nstackwords"/>
+  <fCall global="true" name="ConfigAudioPortsWrapper.maxcores"/>
+  <fCall global="true" name="ConfigAudioPorts.maxcores"/>
+  <fCall global="true" name="ConfigAudioPortsWrapper.maxtimers"/>
+  <fCall global="true" name="ConfigAudioPorts.maxtimers"/>
+  <fCall global="true" name="ConfigAudioPortsWrapper.maxchanends"/>
+  <fCall global="true" name="ConfigAudioPorts.maxchanends"/>
+  <fCall global="true" name="ConfigAudioPorts"/>
+</preCompilationAnalysis>

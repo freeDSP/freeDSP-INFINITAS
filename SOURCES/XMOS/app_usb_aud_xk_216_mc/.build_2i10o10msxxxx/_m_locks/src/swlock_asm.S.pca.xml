@@ -1,0 +1,7 @@
+<preCompilationAnalysis file="/Users/rkn/Documents/xTIMEcomposer/workspace/module_locks/src/swlock_asm.S">
+  <fCall global="true" name="swlock_try_acquire"/>
+  <fCall global="true" name="swlock_try_acquire.nstackwords"/>
+  <fCall global="true" name="swlock_try_acquire.maxcores"/>
+  <fCall global="true" name="swlock_try_acquire.maxtimers"/>
+  <fCall global="true" name="swlock_try_acquire.maxchanends"/>
+</preCompilationAnalysis>

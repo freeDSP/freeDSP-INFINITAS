@@ -1,0 +1,7 @@
+<preCompilationAnalysis file="/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/write_sswitch_reg_blind.S">
+  <fCall global="true" name="write_sswitch_reg_blind"/>
+  <fCall global="true" name="write_sswitch_reg_blind.nstackwords"/>
+  <fCall global="true" name="write_sswitch_reg_blind.maxchanends"/>
+  <fCall global="true" name="write_sswitch_reg_blind.maxtimers"/>
+  <fCall global="true" name="write_sswitch_reg_blind.maxcores"/>
+</preCompilationAnalysis>

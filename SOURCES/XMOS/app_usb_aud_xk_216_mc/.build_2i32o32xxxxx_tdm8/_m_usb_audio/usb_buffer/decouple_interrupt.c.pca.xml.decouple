@@ -1,0 +1,5 @@
+<preCompilationAnalysis file="/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/usb_buffer/decouple_interrupt.c">
+  <fCall global="true" name="__handle_audio_request_kernel_stack_end"/>
+  <fCall global="true" name="__handle_audio_request_handler"/>
+  <fCall global="true" name="handle_audio_request"/>
+</preCompilationAnalysis>

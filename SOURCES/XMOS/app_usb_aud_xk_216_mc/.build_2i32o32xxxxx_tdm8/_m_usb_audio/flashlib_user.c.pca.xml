@@ -1,0 +1,20 @@
+<preCompilationAnalysis file="/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/flashlib_user.c">
+  <fCall global="true" name="flash_cmd_enable_ports"/>
+  <fCall global="true" name="flash_cmd_enable_ports.nstackwords"/>
+  <fCall global="true" name="fl_connect.nstackwords"/>
+  <fCall global="true" name="flash_cmd_enable_ports.maxcores"/>
+  <fCall global="true" name="fl_connect.maxcores"/>
+  <fCall global="true" name="flash_cmd_enable_ports.maxtimers"/>
+  <fCall global="true" name="fl_connect.maxtimers"/>
+  <fCall global="true" name="flash_cmd_enable_ports.maxchanends"/>
+  <fCall global="true" name="fl_connect.maxchanends"/>
+  <fCall global="true" name="flash_cmd_disable_ports"/>
+  <fCall global="true" name="flash_cmd_disable_ports.nstackwords"/>
+  <fCall global="true" name="fl_disconnect.nstackwords"/>
+  <fCall global="true" name="flash_cmd_disable_ports.maxcores"/>
+  <fCall global="true" name="flash_cmd_disable_ports.maxtimers"/>
+  <fCall global="true" name="flash_cmd_disable_ports.maxchanends"/>
+  <fCall global="true" name="p_qflash"/>
+  <fCall global="true" name="fl_connect"/>
+  <fCall global="true" name="fl_disconnect"/>
+</preCompilationAnalysis>
