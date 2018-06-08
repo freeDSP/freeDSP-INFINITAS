@@ -13,33 +13,33 @@
 
 <A name="mrp_di"></A><B><U><big>Design Information</big></U></B>
 
-Command line:   map -a MachXO2 -p LCMXO2-2000HC -t TQFP100 -s 4 -oc Commercial
+Command line:   map -a MachXO2 -p LCMXO2-1200HC -t TQFP144 -s 6 -oc Commercial
      infinitas_impl1.ngd -o infinitas_impl1_map.ncd -pr infinitas_impl1.prf -mp
      infinitas_impl1.mrp -lpf C:/lattice/infinitas/impl1/infinitas_impl1.lpf
      -lpf C:/lattice/infinitas/infinitas.lpf -c 0 -gui -msgset
      C:/lattice/infinitas/promote.xml 
 Target Vendor:  LATTICE
-Target Device:  LCMXO2-2000HCTQFP100
-Target Performance:   4
+Target Device:  LCMXO2-1200HCTQFP144
+Target Performance:   6
 Mapper:  xo2c00,  version:  Diamond (64-bit) 3.9.0.99.2
-Mapped on:  01/29/18  15:19:50
+Mapped on:  06/08/18  16:03:49
 
 
 <A name="mrp_ds"></A><B><U><big>Design Summary</big></U></B>
-   Number of registers:      4 out of  2352 (0%)
-      PFU registers:            4 out of  2112 (0%)
-      PIO registers:            0 out of   240 (0%)
-   Number of SLICEs:         2 out of  1056 (0%)
-      SLICEs as Logic/ROM:      2 out of  1056 (0%)
-      SLICEs as RAM:            0 out of   792 (0%)
-      SLICEs as Carry:          0 out of  1056 (0%)
-   Number of LUT4s:          1 out of  2112 (0%)
+   Number of registers:      0 out of  1604 (0%)
+      PFU registers:            0 out of  1280 (0%)
+      PIO registers:            0 out of   324 (0%)
+   Number of SLICEs:         1 out of   640 (0%)
+      SLICEs as Logic/ROM:      1 out of   640 (0%)
+      SLICEs as RAM:            0 out of   480 (0%)
+      SLICEs as Carry:          0 out of   640 (0%)
+   Number of LUT4s:          1 out of  1280 (0%)
       Number used as logic LUTs:          1
       Number used as distributed RAM:     0
       Number used as ripple logic:        0
       Number used as shift registers:     0
-   Number of PIO sites used: 49 + 4(JTAG) out of 80 (66%)
-   Number of block RAMs:  0 out of 8 (0%)
+   Number of PIO sites used: 75 + 4(JTAG) out of 108 (73%)
+   Number of block RAMs:  0 out of 7 (0%)
    Number of GSRs:  0 out of 1 (0%)
    EFB used :       No
    JTAG used :      No
@@ -49,7 +49,7 @@ Mapped on:  01/29/18  15:19:50
    POR :            On
    Bandgap :        On
    Number of Power Controller:  0 out of 1 (0%)
-   Number of Dynamic Bank Controller (BCINRD):  0 out of 6 (0%)
+   Number of Dynamic Bank Controller (BCINRD):  0 out of 4 (0%)
    Number of Dynamic Bank Controller (BCLVDSO):  0 out of 1 (0%)
    Number of DCCA:  0 out of 8 (0%)
    Number of DCMA:  0 out of 2 (0%)
@@ -63,28 +63,27 @@ Mapped on:  01/29/18  15:19:50
      distributed RAMs) + 2*(Number of ripple logic)
       2. Number of logic LUT4s does not include count of distributed RAM and
      ripple logic.
-   Number of clocks:  1
-     Net exp_bclk4_c_c: 2 loads, 2 rising, 0 falling (Driver: PIO x_bclk )
+   Number of clocks:  0
    Number of Clock Enables:  0
    Number of LSRs:  0
-
    Number of nets driven by tri-state buffers:  0
+
    Top 10 highest fanout non-clock nets:
-     Net x_mclk_c_c: 7 loads
-     Net exp_lrck4_c_c: 6 loads
-     Net dsp_tdmin0_c_c: 1 loads
-     Net exp_mdi1_c: 1 loads
-     Net exp_mdi3_c: 1 loads
-     Net exp_mdi4_c: 1 loads
-     Net pll_wclkref_c_c: 1 loads
-     Net x_tdmin1_c: 1 loads
-     Net x_tdmin3_c: 1 loads
-     Net x_tdmin4_c: 1 loads
+     Net xMCLK_c_c: 11 loads
+     Net expBCLK8_c_c: 8 loads
+     Net expLRCK8_c_c: 8 loads
+     Net expMDO1_c_c: 1 loads
+     Net expMDO2_c_c: 1 loads
+     Net expMDO3_c_c: 1 loads
+     Net expMDO4_c_c: 1 loads
+     Net pllWCLKREF_c_c: 1 loads
+     Net xTDMIN1_c_c: 1 loads
+     Net xTDMIN2_c_c: 1 loads
 
 
 
 
-   Number of warnings:  49
+   Number of warnings:  30
    Number of errors:    0
      
 
@@ -93,103 +92,51 @@ Mapped on:  01/29/18  15:19:50
 
 <A name="mrp_dwe"></A><B><U><big>Design Errors/Warnings</big></U></B>
 
-WARNING - map: C:/lattice/infinitas/infinitas.lpf(16): Semantic error in "IOBUF
-     PORT "dsp_bclkin1" IO_TYPE=LVCMOS33 ;": Port "dsp_bclkin1" does not exist
-     in the design. This preference has been disabled.
-WARNING - map: C:/lattice/infinitas/infinitas.lpf(17): Semantic error in "IOBUF
-     PORT "dsp_bclkin2" IO_TYPE=LVCMOS33 ;": Port "dsp_bclkin2" does not exist
-     in the design. This preference has been disabled.
-WARNING - map: C:/lattice/infinitas/infinitas.lpf(18): Semantic error in "IOBUF
-     PORT "dsp_bclkin3" IO_TYPE=LVCMOS33 ;": Port "dsp_bclkin3" does not exist
-     in the design. This preference has been disabled.
-WARNING - map: C:/lattice/infinitas/infinitas.lpf(19): Semantic error in "IOBUF
-     PORT "dsp_bclkin4" IO_TYPE=LVCMOS33 ;": Port "dsp_bclkin4" does not exist
-     in the design. This preference has been disabled.
-WARNING - map: C:/lattice/infinitas/infinitas.lpf(21): Semantic error in "IOBUF
-     PORT "dsp_bclkout1" IO_TYPE=LVCMOS33 ;": Port "dsp_bclkout1" does not exist
-     in the design. This preference has been disabled.
-WARNING - map: C:/lattice/infinitas/infinitas.lpf(22): Semantic error in "IOBUF
-     PORT "dsp_bclkout2" IO_TYPE=LVCMOS33 ;": Port "dsp_bclkout2" does not exist
-     in the design. This preference has been disabled.
-WARNING - map: C:/lattice/infinitas/infinitas.lpf(23): Semantic error in "IOBUF
-     PORT "dsp_bclkout3" IO_TYPE=LVCMOS33 ;": Port "dsp_bclkout3" does not exist
-     in the design. This preference has been disabled.
-WARNING - map: C:/lattice/infinitas/infinitas.lpf(25): Semantic error in "IOBUF
-     PORT "dsp_lrckin1" IO_TYPE=LVCMOS33 ;": Port "dsp_lrckin1" does not exist
-     in the design. This preference has been disabled.
-WARNING - map: C:/lattice/infinitas/infinitas.lpf(26): Semantic error in "IOBUF
-     PORT "dsp_lrckin2" IO_TYPE=LVCMOS33 ;": Port "dsp_lrckin2" does not exist
-     in the design. This preference has been disabled.
-WARNING - map: C:/lattice/infinitas/infinitas.lpf(27): Semantic error in "IOBUF
-     PORT "dsp_lrckin3" IO_TYPE=LVCMOS33 ;": Port "dsp_lrckin3" does not exist
-     in the design. This preference has been disabled.
-WARNING - map: C:/lattice/infinitas/infinitas.lpf(28): Semantic error in "IOBUF
-     PORT "dsp_lrckin4" IO_TYPE=LVCMOS33 ;": Port "dsp_lrckin4" does not exist
-     in the design. This preference has been disabled.
-
-WARNING - map: C:/lattice/infinitas/infinitas.lpf(30): Semantic error in "IOBUF
-     PORT "dsp_lrckout1" IO_TYPE=LVCMOS33 ;": Port "dsp_lrckout1" does not exist
-     in the design. This preference has been disabled.
-WARNING - map: C:/lattice/infinitas/infinitas.lpf(31): Semantic error in "IOBUF
-     PORT "dsp_lrckout2" IO_TYPE=LVCMOS33 ;": Port "dsp_lrckout2" does not exist
-     in the design. This preference has been disabled.
-WARNING - map: C:/lattice/infinitas/infinitas.lpf(32): Semantic error in "IOBUF
-     PORT "dsp_lrckout3" IO_TYPE=LVCMOS33 ;": Port "dsp_lrckout3" does not exist
-     in the design. This preference has been disabled.
-WARNING - map: C:/lattice/infinitas/infinitas.lpf(38): Semantic error in "IOBUF
-     PORT "dsp_tdmin4" IO_TYPE=LVCMOS33 ;": Port "dsp_tdmin4" does not exist in
-     the design. This preference has been disabled.
-WARNING - map: input pad net 'nrst' has no legal load.
-WARNING - map: input pad net 'scl' has no legal load.
-WARNING - map: input pad net 'sda' has no legal load.
-WARNING - map: input pad net 'pll_clk' has no legal load.
-WARNING - map: input pad net 'pll_locked' has no legal load.
-WARNING - map: input pad net 'dsp_bclkin1' has no legal load.
-WARNING - map: input pad net 'dsp_lrckin1' has no legal load.
-WARNING - map: input pad net 'dsp_bclkin2' has no legal load.
-WARNING - map: input pad net 'dsp_lrckin2' has no legal load.
-WARNING - map: input pad net 'dsp_bclkin3' has no legal load.
-WARNING - map: input pad net 'dsp_lrckin3' has no legal load.
-WARNING - map: input pad net 'dsp_bclkout1' has no legal load.
-WARNING - map: input pad net 'dsp_lrckout1' has no legal load.
-WARNING - map: input pad net 'dsp_bclkout2' has no legal load.
-WARNING - map: input pad net 'dsp_lrckout2' has no legal load.
-WARNING - map: input pad net 'dsp_bclkout3' has no legal load.
-WARNING - map: input pad net 'dsp_lrckout3' has no legal load.
-WARNING - map: IO buffer missing for top level port nrst...logic will be
+WARNING - map: input pad net 'nRST' has no legal load.
+WARNING - map: input pad net 'SCL' has no legal load.
+WARNING - map: input pad net 'SDA' has no legal load.
+WARNING - map: input pad net 'SPDIFIN' has no legal load.
+WARNING - map: input pad net 'pllCLK' has no legal load.
+WARNING - map: input pad net 'pllLOCKED' has no legal load.
+WARNING - map: input pad net 'dspTDMOUT0' has no legal load.
+WARNING - map: input pad net 'dspTDMOUT1' has no legal load.
+WARNING - map: input pad net 'dspTDMOUT2' has no legal load.
+WARNING - map: input pad net 'dspTDMOUT3' has no legal load.
+WARNING - map: input pad net 'dspSPDIFOUT' has no legal load.
+WARNING - map: input pad net 'expMDI5' has no legal load.
+WARNING - map: input pad net 'expMDI6' has no legal load.
+WARNING - map: input pad net 'expMDI7' has no legal load.
+WARNING - map: input pad net 'expMDI8' has no legal load.
+WARNING - map: IO buffer missing for top level port nRST...logic will be
      discarded.
-WARNING - map: IO buffer missing for top level port scl...logic will be
+WARNING - map: IO buffer missing for top level port SCL...logic will be
      discarded.
-WARNING - map: IO buffer missing for top level port sda...logic will be
+WARNING - map: IO buffer missing for top level port SDA...logic will be
      discarded.
-WARNING - map: IO buffer missing for top level port pll_clk...logic will be
+WARNING - map: IO buffer missing for top level port SPDIFIN...logic will be
      discarded.
-WARNING - map: IO buffer missing for top level port pll_locked...logic will be
+WARNING - map: IO buffer missing for top level port pllCLK...logic will be
      discarded.
-WARNING - map: IO buffer missing for top level port dsp_bclkin1...logic will be
+WARNING - map: IO buffer missing for top level port pllLOCKED...logic will be
      discarded.
-WARNING - map: IO buffer missing for top level port dsp_lrckin1...logic will be
+WARNING - map: IO buffer missing for top level port dspTDMOUT0...logic will be
      discarded.
-WARNING - map: IO buffer missing for top level port dsp_bclkin2...logic will be
+WARNING - map: IO buffer missing for top level port dspTDMOUT1...logic will be
      discarded.
-WARNING - map: IO buffer missing for top level port dsp_lrckin2...logic will be
+WARNING - map: IO buffer missing for top level port dspTDMOUT2...logic will be
      discarded.
-WARNING - map: IO buffer missing for top level port dsp_bclkin3...logic will be
-     discarded.
-WARNING - map: IO buffer missing for top level port dsp_lrckin3...logic will be
-     discarded.
-WARNING - map: IO buffer missing for top level port dsp_bclkout1...logic will be
-     discarded.
-WARNING - map: IO buffer missing for top level port dsp_lrckout1...logic will be
-     discarded.
-WARNING - map: IO buffer missing for top level port dsp_bclkout2...logic will be
+WARNING - map: IO buffer missing for top level port dspTDMOUT3...logic will be
 
      discarded.
-WARNING - map: IO buffer missing for top level port dsp_lrckout2...logic will be
+WARNING - map: IO buffer missing for top level port dspSPDIFOUT...logic will be
      discarded.
-WARNING - map: IO buffer missing for top level port dsp_bclkout3...logic will be
+WARNING - map: IO buffer missing for top level port expMDI5...logic will be
      discarded.
-WARNING - map: IO buffer missing for top level port dsp_lrckout3...logic will be
+WARNING - map: IO buffer missing for top level port expMDI6...logic will be
+     discarded.
+WARNING - map: IO buffer missing for top level port expMDI7...logic will be
+     discarded.
+WARNING - map: IO buffer missing for top level port expMDI8...logic will be
      discarded.
 
 
@@ -200,104 +147,157 @@ WARNING - map: IO buffer missing for top level port dsp_lrckout3...logic will be
 | IO Name             | Direction | Levelmode | IO         |
 |                     |           |  IO_TYPE  | Register   |
 +---------------------+-----------+-----------+------------+
-| pll_clkref          | OUTPUT    | LVCMOS33  |            |
+| SPDIFOUT            | OUTPUT    | LVCMOS33  |            |
 +---------------------+-----------+-----------+------------+
-| pll_wclkref         | OUTPUT    | LVCMOS33  |            |
+| pllCLKREF           | OUTPUT    | LVCMOS33  |            |
 +---------------------+-----------+-----------+------------+
-| dsp_mclk            | OUTPUT    | LVCMOS33  |            |
+| pllWCLKREF          | OUTPUT    | LVCMOS33  |            |
 +---------------------+-----------+-----------+------------+
-| dsp_bclkin0         | OUTPUT    | LVCMOS33  |            |
+| dspMCLK             | OUTPUT    | LVCMOS33  |            |
 +---------------------+-----------+-----------+------------+
-| dsp_lrckin0         | OUTPUT    | LVCMOS33  |            |
+| dspBCLKIN0          | OUTPUT    | LVCMOS33  |            |
 +---------------------+-----------+-----------+------------+
-| dsp_tdmin0          | OUTPUT    | LVCMOS33  |            |
+| dspLRCKIN0          | OUTPUT    | LVCMOS33  |            |
 +---------------------+-----------+-----------+------------+
-| dsp_tdmin1          | OUTPUT    | LVCMOS33  |            |
+| dspTDMIN0           | OUTPUT    | LVCMOS33  |            |
 +---------------------+-----------+-----------+------------+
-| dsp_tdmin2          | OUTPUT    | LVCMOS33  |            |
+| dspBCLKIN1          | OUTPUT    | LVCMOS33  |            |
 +---------------------+-----------+-----------+------------+
-| dsp_tdmin3          | OUTPUT    | LVCMOS33  |            |
+| dspLRCKIN1          | OUTPUT    | LVCMOS33  |            |
 +---------------------+-----------+-----------+------------+
-| dsp_bclkout0        | OUTPUT    | LVCMOS33  |            |
+| dspTDMIN1           | OUTPUT    | LVCMOS33  |            |
 +---------------------+-----------+-----------+------------+
-| dsp_lrckout0        | OUTPUT    | LVCMOS33  |            |
+| dspBCLKIN2          | OUTPUT    | LVCMOS33  |            |
 +---------------------+-----------+-----------+------------+
-| exp_mdo1            | OUTPUT    | LVCMOS33  |            |
+| dspLRCKIN2          | OUTPUT    | LVCMOS33  |            |
 +---------------------+-----------+-----------+------------+
-| exp_bclk1           | OUTPUT    | LVCMOS33  |            |
+| dspTDMIN2           | OUTPUT    | LVCMOS33  |            |
 +---------------------+-----------+-----------+------------+
-| exp_lrck1           | OUTPUT    | LVCMOS33  |            |
+| dspBCLKIN3          | OUTPUT    | LVCMOS33  |            |
 +---------------------+-----------+-----------+------------+
-| exp_mclk1           | OUTPUT    | LVCMOS33  |            |
+| dspLRCKIN3          | OUTPUT    | LVCMOS33  |            |
 +---------------------+-----------+-----------+------------+
-| exp_mdo2            | OUTPUT    | LVCMOS33  |            |
+| dspTDMIN3           | OUTPUT    | LVCMOS33  |            |
 +---------------------+-----------+-----------+------------+
-| exp_bclk2           | OUTPUT    | LVCMOS33  |            |
+| dspBCLKOUT0         | OUTPUT    | LVCMOS33  |            |
 +---------------------+-----------+-----------+------------+
-| exp_lrck2           | OUTPUT    | LVCMOS33  |            |
+| dspLRCKOUT0         | OUTPUT    | LVCMOS33  |            |
 +---------------------+-----------+-----------+------------+
-| exp_mclk2           | OUTPUT    | LVCMOS33  |            |
-+---------------------+-----------+-----------+------------+
-| exp_mdo3            | OUTPUT    | LVCMOS33  |            |
-+---------------------+-----------+-----------+------------+
-| exp_bclk3           | OUTPUT    | LVCMOS33  |            |
+| dspBCLKOUT1         | OUTPUT    | LVCMOS33  |            |
 
 +---------------------+-----------+-----------+------------+
-| exp_lrck3           | OUTPUT    | LVCMOS33  |            |
+| dspLRCKOUT1         | OUTPUT    | LVCMOS33  |            |
 +---------------------+-----------+-----------+------------+
-| exp_mclk3           | OUTPUT    | LVCMOS33  |            |
+| dspBCLKOUT2         | OUTPUT    | LVCMOS33  |            |
 +---------------------+-----------+-----------+------------+
-| exp_mdo4            | OUTPUT    | LVCMOS33  |            |
+| dspLRCKOUT2         | OUTPUT    | LVCMOS33  |            |
 +---------------------+-----------+-----------+------------+
-| exp_bclk4           | OUTPUT    | LVCMOS33  |            |
+| dspBCLKOUT3         | OUTPUT    | LVCMOS33  |            |
 +---------------------+-----------+-----------+------------+
-| exp_lrck4           | OUTPUT    | LVCMOS33  |            |
+| dspLRCKOUT3         | OUTPUT    | LVCMOS33  |            |
 +---------------------+-----------+-----------+------------+
-| exp_mclk4           | OUTPUT    | LVCMOS33  |            |
+| dspSPDIFIN          | OUTPUT    | LVCMOS33  |            |
 +---------------------+-----------+-----------+------------+
-| x_tdmin1            | OUTPUT    | LVCMOS33  |            |
+| expMDO1             | OUTPUT    | LVCMOS33  |            |
 +---------------------+-----------+-----------+------------+
-| x_tdmin2            | OUTPUT    | LVCMOS33  |            |
+| expBCLK1            | OUTPUT    | LVCMOS33  |            |
 +---------------------+-----------+-----------+------------+
-| x_tdmin3            | OUTPUT    | LVCMOS33  |            |
+| expLRCK1            | OUTPUT    | LVCMOS33  |            |
 +---------------------+-----------+-----------+------------+
-| x_tdmin4            | OUTPUT    | LVCMOS33  |            |
+| expMCLK1            | OUTPUT    | LVCMOS33  |            |
 +---------------------+-----------+-----------+------------+
-| x_mclk              | OUTPUT    | LVCMOS33  |            |
+| expMDO2             | OUTPUT    | LVCMOS33  |            |
 +---------------------+-----------+-----------+------------+
-| wclkout             | OUTPUT    | LVCMOS33  |            |
+| expBCLK2            | OUTPUT    | LVCMOS33  |            |
 +---------------------+-----------+-----------+------------+
-| clkin               | INPUT     | LVCMOS33  |            |
+| expLRCK2            | OUTPUT    | LVCMOS33  |            |
 +---------------------+-----------+-----------+------------+
-| dsp_tdmout0         | INPUT     | LVCMOS33  |            |
+| expMCLK2            | OUTPUT    | LVCMOS33  |            |
 +---------------------+-----------+-----------+------------+
-| dsp_tdmout1         | INPUT     | LVCMOS33  |            |
+| expMDO3             | OUTPUT    | LVCMOS33  |            |
 +---------------------+-----------+-----------+------------+
-| dsp_tdmout2         | INPUT     | LVCMOS33  |            |
+| expBCLK3            | OUTPUT    | LVCMOS33  |            |
 +---------------------+-----------+-----------+------------+
-| dsp_tdmout3         | INPUT     | LVCMOS33  |            |
+| expLRCK3            | OUTPUT    | LVCMOS33  |            |
 +---------------------+-----------+-----------+------------+
-| exp_mdi1            | INPUT     | LVCMOS33  |            |
+| expMCLK3            | OUTPUT    | LVCMOS33  |            |
 +---------------------+-----------+-----------+------------+
-| exp_mdi2            | INPUT     | LVCMOS33  |            |
+| expMDO4             | OUTPUT    | LVCMOS33  |            |
 +---------------------+-----------+-----------+------------+
-| exp_mdi3            | INPUT     | LVCMOS33  |            |
+| expBCLK4            | OUTPUT    | LVCMOS33  |            |
 +---------------------+-----------+-----------+------------+
-| exp_mdi4            | INPUT     | LVCMOS33  |            |
+| expLRCK4            | OUTPUT    | LVCMOS33  |            |
 +---------------------+-----------+-----------+------------+
-| x_lrck              | INPUT     | LVCMOS33  |            |
+| expMCLK4            | OUTPUT    | LVCMOS33  |            |
 +---------------------+-----------+-----------+------------+
-| x_bclk              | INPUT     | LVCMOS33  |            |
+| expMDO5             | OUTPUT    | LVCMOS33  |            |
 +---------------------+-----------+-----------+------------+
-| x_tdmout1           | INPUT     | LVCMOS33  |            |
+| expBCLK5            | OUTPUT    | LVCMOS33  |            |
 +---------------------+-----------+-----------+------------+
-| x_tdmout2           | INPUT     | LVCMOS33  |            |
+| expLRCK5            | OUTPUT    | LVCMOS33  |            |
 +---------------------+-----------+-----------+------------+
-| x_tdmout3           | INPUT     | LVCMOS33  |            |
+| expMCLK5            | OUTPUT    | LVCMOS33  |            |
 +---------------------+-----------+-----------+------------+
-| x_tdmout4           | INPUT     | LVCMOS33  |            |
+| expMDO6             | OUTPUT    | LVCMOS33  |            |
 +---------------------+-----------+-----------+------------+
-| wclkin              | INPUT     | LVCMOS33  |            |
+| expBCLK6            | OUTPUT    | LVCMOS33  |            |
+
++---------------------+-----------+-----------+------------+
+| expLRCK6            | OUTPUT    | LVCMOS33  |            |
++---------------------+-----------+-----------+------------+
+| expMCLK6            | OUTPUT    | LVCMOS33  |            |
++---------------------+-----------+-----------+------------+
+| expMDO7             | OUTPUT    | LVCMOS33  |            |
++---------------------+-----------+-----------+------------+
+| expBCLK7            | OUTPUT    | LVCMOS33  |            |
++---------------------+-----------+-----------+------------+
+| expLRCK7            | OUTPUT    | LVCMOS33  |            |
++---------------------+-----------+-----------+------------+
+| expMCLK7            | OUTPUT    | LVCMOS33  |            |
++---------------------+-----------+-----------+------------+
+| expMDO8             | OUTPUT    | LVCMOS33  |            |
++---------------------+-----------+-----------+------------+
+| expBCLK8            | OUTPUT    | LVCMOS33  |            |
++---------------------+-----------+-----------+------------+
+| expLRCK8            | OUTPUT    | LVCMOS33  |            |
++---------------------+-----------+-----------+------------+
+| expMCLK8            | OUTPUT    | LVCMOS33  |            |
++---------------------+-----------+-----------+------------+
+| xTDMIN1             | OUTPUT    | LVCMOS33  |            |
++---------------------+-----------+-----------+------------+
+| xTDMIN2             | OUTPUT    | LVCMOS33  |            |
++---------------------+-----------+-----------+------------+
+| xTDMIN3             | OUTPUT    | LVCMOS33  |            |
++---------------------+-----------+-----------+------------+
+| xTDMIN4             | OUTPUT    | LVCMOS33  |            |
++---------------------+-----------+-----------+------------+
+| xMCLK               | OUTPUT    | LVCMOS33  |            |
++---------------------+-----------+-----------+------------+
+| wclkOUT             | OUTPUT    | LVCMOS33  |            |
++---------------------+-----------+-----------+------------+
+| CLKIN               | INPUT     | LVCMOS33  |            |
++---------------------+-----------+-----------+------------+
+| expMDI1             | INPUT     | LVCMOS33  |            |
++---------------------+-----------+-----------+------------+
+| expMDI2             | INPUT     | LVCMOS33  |            |
++---------------------+-----------+-----------+------------+
+| expMDI3             | INPUT     | LVCMOS33  |            |
++---------------------+-----------+-----------+------------+
+| expMDI4             | INPUT     | LVCMOS33  |            |
++---------------------+-----------+-----------+------------+
+| xLRCK               | INPUT     | LVCMOS33  |            |
++---------------------+-----------+-----------+------------+
+| xBCLK               | INPUT     | LVCMOS33  |            |
++---------------------+-----------+-----------+------------+
+| xTDMOUT1            | INPUT     | LVCMOS33  |            |
++---------------------+-----------+-----------+------------+
+| xTDMOUT2            | INPUT     | LVCMOS33  |            |
++---------------------+-----------+-----------+------------+
+| xTDMOUT3            | INPUT     | LVCMOS33  |            |
++---------------------+-----------+-----------+------------+
+| xTDMOUT4            | INPUT     | LVCMOS33  |            |
++---------------------+-----------+-----------+------------+
+| wclkIN              | INPUT     | LVCMOS33  |            |
 
 +---------------------+-----------+-----------+------------+
 
@@ -305,7 +305,7 @@ WARNING - map: IO buffer missing for top level port dsp_lrckout3...logic will be
 
 <A name="mrp_rm"></A><B><U><big>Removed logic</big></U></B>
 
-Block i23 undriven or does not drive anything - clipped.
+Block i12 undriven or does not drive anything - clipped.
 Block GSR_INST undriven or does not drive anything - clipped.
 Signal VCC_net undriven or does not drive anything - clipped.
 
@@ -322,8 +322,8 @@ Signal VCC_net undriven or does not drive anything - clipped.
 -------------------------
 
    Total CPU Time: 0 secs  
-   Total REAL Time: 2 secs  
-   Peak Memory Usage: 40 MB
+   Total REAL Time: 0 secs  
+   Peak Memory Usage: 37 MB
         
 
 

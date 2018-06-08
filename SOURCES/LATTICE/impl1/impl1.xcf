@@ -9,10 +9,10 @@
 			<Pos>1</Pos>
 			<Vendor>Lattice</Vendor>
 			<Family>MachXO2</Family>
-			<Name>LCMXO2-2000HC</Name>
-			<IDCode>0x012bb043</IDCode>
+			<Name>LCMXO2-1200HC</Name>
+			<IDCode>0x012ba043</IDCode>
 			<Package>All</Package>
-			<PON>LCMXO2-2000HC</PON>
+			<PON>LCMXO2-1200HC</PON>
 			<Bypass>
 				<InstrLen>8</InstrLen>
 				<InstrVal>11111111</InstrVal>
@@ -20,16 +20,15 @@
 				<BScanVal>0</BScanVal>
 			</Bypass>
 			<File>C:/lattice/infinitas/impl1/infinitas_impl1.jed</File>
-			<FileTime>01/29/18 15:20:03</FileTime>
-			<JedecChecksum>0xC24B</JedecChecksum>
+			<FileTime>06/08/18 16:04:00</FileTime>
+			<JedecChecksum>0xD4CA</JedecChecksum>
 			<Operation>FLASH Erase,Program,Verify</Operation>
 			<Option>
 				<SVFVendor>JTAG STANDARD</SVFVendor>
 				<IOState>HighZ</IOState>
-				<PreloadLength>424</PreloadLength>
-				<IOVectorData>0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF</IOVectorData>
+				<PreloadLength>208</PreloadLength>
+				<IOVectorData>0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF</IOVectorData>
 				<TCKFrequency>1.000000 MHz</TCKFrequency>
-				<SVFProcessor>SVF Processor</SVFProcessor>
 				<Usercode>0x00000000</Usercode>
 				<AccessMode>FLASH</AccessMode>
 			</Option>
@@ -48,9 +47,5 @@
 		<CableName>USB2</CableName>
 		<PortAdd>FTUSB-0</PortAdd>
 		<USBID>FT4232H MiniModule A Location 0000 Serial FTRXGG93A</USBID>
-		<JTAGPinSetting>
-			TRST	ABSENT;
-			ISPEN	ABSENT;
-		</JTAGPinSetting>
 	</CableOptions>
 </ispXCF>

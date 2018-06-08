@@ -3,7 +3,6 @@ Report for cell infinitas
    Instance path: infinitas
                      Cell usage:
                                   cell	      count    Res Usage(%)
-                                  SLIC	       2.00        100.0
+                                  SLIC	       1.00        100.0
                                   LUT4	       1.00        100.0
-                                 IOBUF	         49        100.0
-                                PFUREG	          4        100.0
+                                 IOBUF	         75        100.0

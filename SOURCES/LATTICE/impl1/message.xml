@@ -2,311 +2,169 @@
 <BaliMessageLog>
     <Task name="Map">
         <Message>
-            <ID>1100644</ID>
+            <ID>1166064</ID>
             <Severity>Warning</Severity>
-            <Dynamic>C:/lattice/infinitas/infinitas.lpf(16): Semantic error in &quot;IOBUF PORT &quot;dsp_bclkin1&quot; IO_TYPE=LVCMOS33 ;&quot;: </Dynamic>
-            <Dynamic>dsp_bclkin1</Dynamic>
-            <Navigation>C:/lattice/infinitas/infinitas.lpf</Navigation>
-            <Navigation>16</Navigation>
-        </Message>
-        <Message>
-            <ID>1100644</ID>
-            <Severity>Warning</Severity>
-            <Dynamic>C:/lattice/infinitas/infinitas.lpf(17): Semantic error in &quot;IOBUF PORT &quot;dsp_bclkin2&quot; IO_TYPE=LVCMOS33 ;&quot;: </Dynamic>
-            <Dynamic>dsp_bclkin2</Dynamic>
-            <Navigation>C:/lattice/infinitas/infinitas.lpf</Navigation>
-            <Navigation>17</Navigation>
-        </Message>
-        <Message>
-            <ID>1100644</ID>
-            <Severity>Warning</Severity>
-            <Dynamic>C:/lattice/infinitas/infinitas.lpf(18): Semantic error in &quot;IOBUF PORT &quot;dsp_bclkin3&quot; IO_TYPE=LVCMOS33 ;&quot;: </Dynamic>
-            <Dynamic>dsp_bclkin3</Dynamic>
-            <Navigation>C:/lattice/infinitas/infinitas.lpf</Navigation>
-            <Navigation>18</Navigation>
-        </Message>
-        <Message>
-            <ID>1100644</ID>
-            <Severity>Warning</Severity>
-            <Dynamic>C:/lattice/infinitas/infinitas.lpf(19): Semantic error in &quot;IOBUF PORT &quot;dsp_bclkin4&quot; IO_TYPE=LVCMOS33 ;&quot;: </Dynamic>
-            <Dynamic>dsp_bclkin4</Dynamic>
-            <Navigation>C:/lattice/infinitas/infinitas.lpf</Navigation>
-            <Navigation>19</Navigation>
-        </Message>
-        <Message>
-            <ID>1100644</ID>
-            <Severity>Warning</Severity>
-            <Dynamic>C:/lattice/infinitas/infinitas.lpf(21): Semantic error in &quot;IOBUF PORT &quot;dsp_bclkout1&quot; IO_TYPE=LVCMOS33 ;&quot;: </Dynamic>
-            <Dynamic>dsp_bclkout1</Dynamic>
-            <Navigation>C:/lattice/infinitas/infinitas.lpf</Navigation>
-            <Navigation>21</Navigation>
-        </Message>
-        <Message>
-            <ID>1100644</ID>
-            <Severity>Warning</Severity>
-            <Dynamic>C:/lattice/infinitas/infinitas.lpf(22): Semantic error in &quot;IOBUF PORT &quot;dsp_bclkout2&quot; IO_TYPE=LVCMOS33 ;&quot;: </Dynamic>
-            <Dynamic>dsp_bclkout2</Dynamic>
-            <Navigation>C:/lattice/infinitas/infinitas.lpf</Navigation>
-            <Navigation>22</Navigation>
-        </Message>
-        <Message>
-            <ID>1100644</ID>
-            <Severity>Warning</Severity>
-            <Dynamic>C:/lattice/infinitas/infinitas.lpf(23): Semantic error in &quot;IOBUF PORT &quot;dsp_bclkout3&quot; IO_TYPE=LVCMOS33 ;&quot;: </Dynamic>
-            <Dynamic>dsp_bclkout3</Dynamic>
-            <Navigation>C:/lattice/infinitas/infinitas.lpf</Navigation>
-            <Navigation>23</Navigation>
-        </Message>
-        <Message>
-            <ID>1100644</ID>
-            <Severity>Warning</Severity>
-            <Dynamic>C:/lattice/infinitas/infinitas.lpf(25): Semantic error in &quot;IOBUF PORT &quot;dsp_lrckin1&quot; IO_TYPE=LVCMOS33 ;&quot;: </Dynamic>
-            <Dynamic>dsp_lrckin1</Dynamic>
-            <Navigation>C:/lattice/infinitas/infinitas.lpf</Navigation>
-            <Navigation>25</Navigation>
-        </Message>
-        <Message>
-            <ID>1100644</ID>
-            <Severity>Warning</Severity>
-            <Dynamic>C:/lattice/infinitas/infinitas.lpf(26): Semantic error in &quot;IOBUF PORT &quot;dsp_lrckin2&quot; IO_TYPE=LVCMOS33 ;&quot;: </Dynamic>
-            <Dynamic>dsp_lrckin2</Dynamic>
-            <Navigation>C:/lattice/infinitas/infinitas.lpf</Navigation>
-            <Navigation>26</Navigation>
-        </Message>
-        <Message>
-            <ID>1100644</ID>
-            <Severity>Warning</Severity>
-            <Dynamic>C:/lattice/infinitas/infinitas.lpf(27): Semantic error in &quot;IOBUF PORT &quot;dsp_lrckin3&quot; IO_TYPE=LVCMOS33 ;&quot;: </Dynamic>
-            <Dynamic>dsp_lrckin3</Dynamic>
-            <Navigation>C:/lattice/infinitas/infinitas.lpf</Navigation>
-            <Navigation>27</Navigation>
-        </Message>
-        <Message>
-            <ID>1100644</ID>
-            <Severity>Warning</Severity>
-            <Dynamic>C:/lattice/infinitas/infinitas.lpf(28): Semantic error in &quot;IOBUF PORT &quot;dsp_lrckin4&quot; IO_TYPE=LVCMOS33 ;&quot;: </Dynamic>
-            <Dynamic>dsp_lrckin4</Dynamic>
-            <Navigation>C:/lattice/infinitas/infinitas.lpf</Navigation>
-            <Navigation>28</Navigation>
-        </Message>
-        <Message>
-            <ID>1100644</ID>
-            <Severity>Warning</Severity>
-            <Dynamic>C:/lattice/infinitas/infinitas.lpf(30): Semantic error in &quot;IOBUF PORT &quot;dsp_lrckout1&quot; IO_TYPE=LVCMOS33 ;&quot;: </Dynamic>
-            <Dynamic>dsp_lrckout1</Dynamic>
-            <Navigation>C:/lattice/infinitas/infinitas.lpf</Navigation>
-            <Navigation>30</Navigation>
-        </Message>
-        <Message>
-            <ID>1100644</ID>
-            <Severity>Warning</Severity>
-            <Dynamic>C:/lattice/infinitas/infinitas.lpf(31): Semantic error in &quot;IOBUF PORT &quot;dsp_lrckout2&quot; IO_TYPE=LVCMOS33 ;&quot;: </Dynamic>
-            <Dynamic>dsp_lrckout2</Dynamic>
-            <Navigation>C:/lattice/infinitas/infinitas.lpf</Navigation>
-            <Navigation>31</Navigation>
-        </Message>
-        <Message>
-            <ID>1100644</ID>
-            <Severity>Warning</Severity>
-            <Dynamic>C:/lattice/infinitas/infinitas.lpf(32): Semantic error in &quot;IOBUF PORT &quot;dsp_lrckout3&quot; IO_TYPE=LVCMOS33 ;&quot;: </Dynamic>
-            <Dynamic>dsp_lrckout3</Dynamic>
-            <Navigation>C:/lattice/infinitas/infinitas.lpf</Navigation>
-            <Navigation>32</Navigation>
-        </Message>
-        <Message>
-            <ID>1100644</ID>
-            <Severity>Warning</Severity>
-            <Dynamic>C:/lattice/infinitas/infinitas.lpf(38): Semantic error in &quot;IOBUF PORT &quot;dsp_tdmin4&quot; IO_TYPE=LVCMOS33 ;&quot;: </Dynamic>
-            <Dynamic>dsp_tdmin4</Dynamic>
-            <Navigation>C:/lattice/infinitas/infinitas.lpf</Navigation>
-            <Navigation>38</Navigation>
+            <Dynamic>input</Dynamic>
+            <Dynamic>nRST</Dynamic>
         </Message>
         <Message>
             <ID>1166064</ID>
             <Severity>Warning</Severity>
             <Dynamic>input</Dynamic>
-            <Dynamic>nrst</Dynamic>
+            <Dynamic>SCL</Dynamic>
         </Message>
         <Message>
             <ID>1166064</ID>
             <Severity>Warning</Severity>
             <Dynamic>input</Dynamic>
-            <Dynamic>scl</Dynamic>
+            <Dynamic>SDA</Dynamic>
         </Message>
         <Message>
             <ID>1166064</ID>
             <Severity>Warning</Severity>
             <Dynamic>input</Dynamic>
-            <Dynamic>sda</Dynamic>
+            <Dynamic>SPDIFIN</Dynamic>
         </Message>
         <Message>
             <ID>1166064</ID>
             <Severity>Warning</Severity>
             <Dynamic>input</Dynamic>
-            <Dynamic>pll_clk</Dynamic>
+            <Dynamic>pllCLK</Dynamic>
         </Message>
         <Message>
             <ID>1166064</ID>
             <Severity>Warning</Severity>
             <Dynamic>input</Dynamic>
-            <Dynamic>pll_locked</Dynamic>
+            <Dynamic>pllLOCKED</Dynamic>
         </Message>
         <Message>
             <ID>1166064</ID>
             <Severity>Warning</Severity>
             <Dynamic>input</Dynamic>
-            <Dynamic>dsp_bclkin1</Dynamic>
+            <Dynamic>dspTDMOUT0</Dynamic>
         </Message>
         <Message>
             <ID>1166064</ID>
             <Severity>Warning</Severity>
             <Dynamic>input</Dynamic>
-            <Dynamic>dsp_lrckin1</Dynamic>
+            <Dynamic>dspTDMOUT1</Dynamic>
         </Message>
         <Message>
             <ID>1166064</ID>
             <Severity>Warning</Severity>
             <Dynamic>input</Dynamic>
-            <Dynamic>dsp_bclkin2</Dynamic>
+            <Dynamic>dspTDMOUT2</Dynamic>
         </Message>
         <Message>
             <ID>1166064</ID>
             <Severity>Warning</Severity>
             <Dynamic>input</Dynamic>
-            <Dynamic>dsp_lrckin2</Dynamic>
+            <Dynamic>dspTDMOUT3</Dynamic>
         </Message>
         <Message>
             <ID>1166064</ID>
             <Severity>Warning</Severity>
             <Dynamic>input</Dynamic>
-            <Dynamic>dsp_bclkin3</Dynamic>
+            <Dynamic>dspSPDIFOUT</Dynamic>
         </Message>
         <Message>
             <ID>1166064</ID>
             <Severity>Warning</Severity>
             <Dynamic>input</Dynamic>
-            <Dynamic>dsp_lrckin3</Dynamic>
+            <Dynamic>expMDI5</Dynamic>
         </Message>
         <Message>
             <ID>1166064</ID>
             <Severity>Warning</Severity>
             <Dynamic>input</Dynamic>
-            <Dynamic>dsp_bclkout1</Dynamic>
+            <Dynamic>expMDI6</Dynamic>
         </Message>
         <Message>
             <ID>1166064</ID>
             <Severity>Warning</Severity>
             <Dynamic>input</Dynamic>
-            <Dynamic>dsp_lrckout1</Dynamic>
+            <Dynamic>expMDI7</Dynamic>
         </Message>
         <Message>
             <ID>1166064</ID>
             <Severity>Warning</Severity>
             <Dynamic>input</Dynamic>
-            <Dynamic>dsp_bclkout2</Dynamic>
-        </Message>
-        <Message>
-            <ID>1166064</ID>
-            <Severity>Warning</Severity>
-            <Dynamic>input</Dynamic>
-            <Dynamic>dsp_lrckout2</Dynamic>
-        </Message>
-        <Message>
-            <ID>1166064</ID>
-            <Severity>Warning</Severity>
-            <Dynamic>input</Dynamic>
-            <Dynamic>dsp_bclkout3</Dynamic>
-        </Message>
-        <Message>
-            <ID>1166064</ID>
-            <Severity>Warning</Severity>
-            <Dynamic>input</Dynamic>
-            <Dynamic>dsp_lrckout3</Dynamic>
+            <Dynamic>expMDI8</Dynamic>
         </Message>
         <Message>
             <ID>51001046</ID>
             <Severity>Warning</Severity>
-            <Dynamic>nrst</Dynamic>
+            <Dynamic>nRST</Dynamic>
         </Message>
         <Message>
             <ID>51001046</ID>
             <Severity>Warning</Severity>
-            <Dynamic>scl</Dynamic>
+            <Dynamic>SCL</Dynamic>
         </Message>
         <Message>
             <ID>51001046</ID>
             <Severity>Warning</Severity>
-            <Dynamic>sda</Dynamic>
+            <Dynamic>SDA</Dynamic>
         </Message>
         <Message>
             <ID>51001046</ID>
             <Severity>Warning</Severity>
-            <Dynamic>pll_clk</Dynamic>
+            <Dynamic>SPDIFIN</Dynamic>
         </Message>
         <Message>
             <ID>51001046</ID>
             <Severity>Warning</Severity>
-            <Dynamic>pll_locked</Dynamic>
+            <Dynamic>pllCLK</Dynamic>
         </Message>
         <Message>
             <ID>51001046</ID>
             <Severity>Warning</Severity>
-            <Dynamic>dsp_bclkin1</Dynamic>
+            <Dynamic>pllLOCKED</Dynamic>
         </Message>
         <Message>
             <ID>51001046</ID>
             <Severity>Warning</Severity>
-            <Dynamic>dsp_lrckin1</Dynamic>
+            <Dynamic>dspTDMOUT0</Dynamic>
         </Message>
         <Message>
             <ID>51001046</ID>
             <Severity>Warning</Severity>
-            <Dynamic>dsp_bclkin2</Dynamic>
+            <Dynamic>dspTDMOUT1</Dynamic>
         </Message>
         <Message>
             <ID>51001046</ID>
             <Severity>Warning</Severity>
-            <Dynamic>dsp_lrckin2</Dynamic>
+            <Dynamic>dspTDMOUT2</Dynamic>
         </Message>
         <Message>
             <ID>51001046</ID>
             <Severity>Warning</Severity>
-            <Dynamic>dsp_bclkin3</Dynamic>
+            <Dynamic>dspTDMOUT3</Dynamic>
         </Message>
         <Message>
             <ID>51001046</ID>
             <Severity>Warning</Severity>
-            <Dynamic>dsp_lrckin3</Dynamic>
+            <Dynamic>dspSPDIFOUT</Dynamic>
         </Message>
         <Message>
             <ID>51001046</ID>
             <Severity>Warning</Severity>
-            <Dynamic>dsp_bclkout1</Dynamic>
+            <Dynamic>expMDI5</Dynamic>
         </Message>
         <Message>
             <ID>51001046</ID>
             <Severity>Warning</Severity>
-            <Dynamic>dsp_lrckout1</Dynamic>
+            <Dynamic>expMDI6</Dynamic>
         </Message>
         <Message>
             <ID>51001046</ID>
             <Severity>Warning</Severity>
-            <Dynamic>dsp_bclkout2</Dynamic>
+            <Dynamic>expMDI7</Dynamic>
         </Message>
         <Message>
             <ID>51001046</ID>
             <Severity>Warning</Severity>
-            <Dynamic>dsp_lrckout2</Dynamic>
-        </Message>
-        <Message>
-            <ID>51001046</ID>
-            <Severity>Warning</Severity>
-            <Dynamic>dsp_bclkout3</Dynamic>
-        </Message>
-        <Message>
-            <ID>51001046</ID>
-            <Severity>Warning</Severity>
-            <Dynamic>dsp_lrckout3</Dynamic>
+            <Dynamic>expMDI8</Dynamic>
         </Message>
     </Task>
     <Task name="Lattice_Synthesis">
@@ -335,19 +193,19 @@
         <Message>
             <ID>35921010</ID>
             <Severity>Info</Severity>
-            <Dynamic>c:/lattice/infinitas/vhdl/infinitas.vhdl(101): </Dynamic>
+            <Dynamic>c:/lattice/infinitas/vhdl/infinitas.vhdl(130): </Dynamic>
             <Dynamic>behavioral</Dynamic>
             <Navigation>c:/lattice/infinitas/vhdl/infinitas.vhdl</Navigation>
-            <Navigation>101</Navigation>
+            <Navigation>130</Navigation>
         </Message>
         <Message>
             <ID>35921205</ID>
             <Severity>Warning</Severity>
-            <Dynamic>c:/lattice/infinitas/vhdl/infinitas.vhdl(99): </Dynamic>
+            <Dynamic>c:/lattice/infinitas/vhdl/infinitas.vhdl(128): </Dynamic>
             <Dynamic>infinitas</Dynamic>
             <Dynamic>Behavioral</Dynamic>
             <Navigation>c:/lattice/infinitas/vhdl/infinitas.vhdl</Navigation>
-            <Navigation>99</Navigation>
+            <Navigation>128</Navigation>
         </Message>
         <Message>
             <ID>35001611</ID>
@@ -357,241 +215,201 @@
             <ID>1166052</ID>
             <Severity>Warning</Severity>
             <Dynamic>logical</Dynamic>
-            <Dynamic>nrst</Dynamic>
-            <Navigation>nrst</Navigation>
+            <Dynamic>nRST</Dynamic>
+            <Navigation>nRST</Navigation>
         </Message>
         <Message>
             <ID>1166064</ID>
             <Severity>Warning</Severity>
             <Dynamic>input</Dynamic>
-            <Dynamic>nrst</Dynamic>
+            <Dynamic>nRST</Dynamic>
         </Message>
         <Message>
             <ID>1166052</ID>
             <Severity>Warning</Severity>
             <Dynamic>logical</Dynamic>
-            <Dynamic>scl</Dynamic>
-            <Navigation>scl</Navigation>
+            <Dynamic>SCL</Dynamic>
+            <Navigation>SCL</Navigation>
         </Message>
         <Message>
             <ID>1166064</ID>
             <Severity>Warning</Severity>
             <Dynamic>input</Dynamic>
-            <Dynamic>scl</Dynamic>
+            <Dynamic>SCL</Dynamic>
         </Message>
         <Message>
             <ID>1166052</ID>
             <Severity>Warning</Severity>
             <Dynamic>logical</Dynamic>
-            <Dynamic>sda</Dynamic>
-            <Navigation>sda</Navigation>
+            <Dynamic>SDA</Dynamic>
+            <Navigation>SDA</Navigation>
         </Message>
         <Message>
             <ID>1166064</ID>
             <Severity>Warning</Severity>
             <Dynamic>input</Dynamic>
-            <Dynamic>sda</Dynamic>
+            <Dynamic>SDA</Dynamic>
         </Message>
         <Message>
             <ID>1166052</ID>
             <Severity>Warning</Severity>
             <Dynamic>logical</Dynamic>
-            <Dynamic>pll_clk</Dynamic>
-            <Navigation>pll_clk</Navigation>
+            <Dynamic>SPDIFIN</Dynamic>
+            <Navigation>SPDIFIN</Navigation>
         </Message>
         <Message>
             <ID>1166064</ID>
             <Severity>Warning</Severity>
             <Dynamic>input</Dynamic>
-            <Dynamic>pll_clk</Dynamic>
+            <Dynamic>SPDIFIN</Dynamic>
         </Message>
         <Message>
             <ID>1166052</ID>
             <Severity>Warning</Severity>
             <Dynamic>logical</Dynamic>
-            <Dynamic>pll_locked</Dynamic>
-            <Navigation>pll_locked</Navigation>
+            <Dynamic>pllCLK</Dynamic>
+            <Navigation>pllCLK</Navigation>
         </Message>
         <Message>
             <ID>1166064</ID>
             <Severity>Warning</Severity>
             <Dynamic>input</Dynamic>
-            <Dynamic>pll_locked</Dynamic>
+            <Dynamic>pllCLK</Dynamic>
         </Message>
         <Message>
             <ID>1166052</ID>
             <Severity>Warning</Severity>
             <Dynamic>logical</Dynamic>
-            <Dynamic>dsp_bclkin1</Dynamic>
-            <Navigation>dsp_bclkin1</Navigation>
+            <Dynamic>pllLOCKED</Dynamic>
+            <Navigation>pllLOCKED</Navigation>
         </Message>
         <Message>
             <ID>1166064</ID>
             <Severity>Warning</Severity>
             <Dynamic>input</Dynamic>
-            <Dynamic>dsp_bclkin1</Dynamic>
+            <Dynamic>pllLOCKED</Dynamic>
         </Message>
         <Message>
             <ID>1166052</ID>
             <Severity>Warning</Severity>
             <Dynamic>logical</Dynamic>
-            <Dynamic>dsp_lrckin1</Dynamic>
-            <Navigation>dsp_lrckin1</Navigation>
+            <Dynamic>dspTDMOUT0</Dynamic>
+            <Navigation>dspTDMOUT0</Navigation>
         </Message>
         <Message>
             <ID>1166064</ID>
             <Severity>Warning</Severity>
             <Dynamic>input</Dynamic>
-            <Dynamic>dsp_lrckin1</Dynamic>
+            <Dynamic>dspTDMOUT0</Dynamic>
         </Message>
         <Message>
             <ID>1166052</ID>
             <Severity>Warning</Severity>
             <Dynamic>logical</Dynamic>
-            <Dynamic>dsp_bclkin2</Dynamic>
-            <Navigation>dsp_bclkin2</Navigation>
+            <Dynamic>dspTDMOUT1</Dynamic>
+            <Navigation>dspTDMOUT1</Navigation>
         </Message>
         <Message>
             <ID>1166064</ID>
             <Severity>Warning</Severity>
             <Dynamic>input</Dynamic>
-            <Dynamic>dsp_bclkin2</Dynamic>
+            <Dynamic>dspTDMOUT1</Dynamic>
         </Message>
         <Message>
             <ID>1166052</ID>
             <Severity>Warning</Severity>
             <Dynamic>logical</Dynamic>
-            <Dynamic>dsp_lrckin2</Dynamic>
-            <Navigation>dsp_lrckin2</Navigation>
+            <Dynamic>dspTDMOUT2</Dynamic>
+            <Navigation>dspTDMOUT2</Navigation>
         </Message>
         <Message>
             <ID>1166064</ID>
             <Severity>Warning</Severity>
             <Dynamic>input</Dynamic>
-            <Dynamic>dsp_lrckin2</Dynamic>
+            <Dynamic>dspTDMOUT2</Dynamic>
         </Message>
         <Message>
             <ID>1166052</ID>
             <Severity>Warning</Severity>
             <Dynamic>logical</Dynamic>
-            <Dynamic>dsp_bclkin3</Dynamic>
-            <Navigation>dsp_bclkin3</Navigation>
+            <Dynamic>dspTDMOUT3</Dynamic>
+            <Navigation>dspTDMOUT3</Navigation>
         </Message>
         <Message>
             <ID>1166064</ID>
             <Severity>Warning</Severity>
             <Dynamic>input</Dynamic>
-            <Dynamic>dsp_bclkin3</Dynamic>
+            <Dynamic>dspTDMOUT3</Dynamic>
         </Message>
         <Message>
             <ID>1166052</ID>
             <Severity>Warning</Severity>
             <Dynamic>logical</Dynamic>
-            <Dynamic>dsp_lrckin3</Dynamic>
-            <Navigation>dsp_lrckin3</Navigation>
+            <Dynamic>dspSPDIFOUT</Dynamic>
+            <Navigation>dspSPDIFOUT</Navigation>
         </Message>
         <Message>
             <ID>1166064</ID>
             <Severity>Warning</Severity>
             <Dynamic>input</Dynamic>
-            <Dynamic>dsp_lrckin3</Dynamic>
+            <Dynamic>dspSPDIFOUT</Dynamic>
         </Message>
         <Message>
             <ID>1166052</ID>
             <Severity>Warning</Severity>
             <Dynamic>logical</Dynamic>
-            <Dynamic>dsp_bclkout1</Dynamic>
-            <Navigation>dsp_bclkout1</Navigation>
+            <Dynamic>expMDI5</Dynamic>
+            <Navigation>expMDI5</Navigation>
         </Message>
         <Message>
             <ID>1166064</ID>
             <Severity>Warning</Severity>
             <Dynamic>input</Dynamic>
-            <Dynamic>dsp_bclkout1</Dynamic>
+            <Dynamic>expMDI5</Dynamic>
         </Message>
         <Message>
             <ID>1166052</ID>
             <Severity>Warning</Severity>
             <Dynamic>logical</Dynamic>
-            <Dynamic>dsp_lrckout1</Dynamic>
-            <Navigation>dsp_lrckout1</Navigation>
+            <Dynamic>expMDI6</Dynamic>
+            <Navigation>expMDI6</Navigation>
         </Message>
         <Message>
             <ID>1166064</ID>
             <Severity>Warning</Severity>
             <Dynamic>input</Dynamic>
-            <Dynamic>dsp_lrckout1</Dynamic>
+            <Dynamic>expMDI6</Dynamic>
         </Message>
         <Message>
             <ID>1166052</ID>
             <Severity>Warning</Severity>
             <Dynamic>logical</Dynamic>
-            <Dynamic>dsp_bclkout2</Dynamic>
-            <Navigation>dsp_bclkout2</Navigation>
+            <Dynamic>expMDI7</Dynamic>
+            <Navigation>expMDI7</Navigation>
         </Message>
         <Message>
             <ID>1166064</ID>
             <Severity>Warning</Severity>
             <Dynamic>input</Dynamic>
-            <Dynamic>dsp_bclkout2</Dynamic>
+            <Dynamic>expMDI7</Dynamic>
         </Message>
         <Message>
             <ID>1166052</ID>
             <Severity>Warning</Severity>
             <Dynamic>logical</Dynamic>
-            <Dynamic>dsp_lrckout2</Dynamic>
-            <Navigation>dsp_lrckout2</Navigation>
+            <Dynamic>expMDI8</Dynamic>
+            <Navigation>expMDI8</Navigation>
         </Message>
         <Message>
             <ID>1166064</ID>
             <Severity>Warning</Severity>
             <Dynamic>input</Dynamic>
-            <Dynamic>dsp_lrckout2</Dynamic>
-        </Message>
-        <Message>
-            <ID>1166052</ID>
-            <Severity>Warning</Severity>
-            <Dynamic>logical</Dynamic>
-            <Dynamic>dsp_bclkout3</Dynamic>
-            <Navigation>dsp_bclkout3</Navigation>
-        </Message>
-        <Message>
-            <ID>1166064</ID>
-            <Severity>Warning</Severity>
-            <Dynamic>input</Dynamic>
-            <Dynamic>dsp_bclkout3</Dynamic>
-        </Message>
-        <Message>
-            <ID>1166052</ID>
-            <Severity>Warning</Severity>
-            <Dynamic>logical</Dynamic>
-            <Dynamic>dsp_lrckout3</Dynamic>
-            <Navigation>dsp_lrckout3</Navigation>
-        </Message>
-        <Message>
-            <ID>1166064</ID>
-            <Severity>Warning</Severity>
-            <Dynamic>input</Dynamic>
-            <Dynamic>dsp_lrckout3</Dynamic>
+            <Dynamic>expMDI8</Dynamic>
         </Message>
         <Message>
             <ID>1163101</ID>
             <Severity>Warning</Severity>
-            <Dynamic>34</Dynamic>
-        </Message>
-    </Task>
-    <Task name="PAR">
-        <Message>
-            <ID>66011008</ID>
-            <Severity>Warning</Severity>
-            <Dynamic>
-   Signal=exp_bclk4_c_c loads=8 clock_loads=2</Dynamic>
-        </Message>
-        <Message>
-            <ID>66011008</ID>
-            <Severity>Warning</Severity>
-            <Dynamic>
-   Signal=exp_bclk4_c_c loads=8 clock_loads=2</Dynamic>
+            <Dynamic>30</Dynamic>
         </Message>
     </Task>
 </BaliMessageLog>

@@ -12,17 +12,17 @@ Loading design for application trce from file infinitas_impl1.ncd.
 Design name: infinitas
 NCD version: 3.3
 Vendor:      LATTICE
-Device:      LCMXO2-2000HC
-Package:     TQFP100
-Performance: 4
-Loading device for application trce from file 'xo2c2000.nph' in environment: C:/lscc/diamond/3.9_x64/ispfpga.
-Package Status:                     Final          Version 1.44.
+Device:      LCMXO2-1200HC
+Package:     TQFP144
+Performance: 6
+Loading device for application trce from file 'xo2c1200.nph' in environment: C:/lscc/diamond/3.9_x64/ispfpga.
+Package Status:                     Final          Version 1.42.
 Performance Hardware Data Status:   Final          Version 34.4.
 Setup and Hold Report
 
 --------------------------------------------------------------------------------
 <A name="Par_Twr_setup"></A><B><U><big>Lattice TRACE Report - Setup, Version Diamond (64-bit) 3.9.0.99.2</big></U></B>
-Mon Jan 29 15:19:57 2018
+Fri Jun 08 16:03:54 2018
 
 Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
 Copyright (c) 1995 AT&T Corp.   All rights reserved.
@@ -32,19 +32,18 @@ Copyright (c) 2002-2017 Lattice Semiconductor Corporation,  All rights reserved.
 
 <A name="ptwr_set_ri"></A><B><U><big>Report Information</big></U></B>
 ------------------
-Command line:    trce -v 10 -gt -sethld -sp 4 -sphld m -o infinitas_impl1.twr -gui -msgset C:/lattice/infinitas/promote.xml infinitas_impl1.ncd infinitas_impl1.prf 
+Command line:    trce -v 10 -gt -sethld -sp 6 -sphld m -o infinitas_impl1.twr -gui -msgset C:/lattice/infinitas/promote.xml infinitas_impl1.ncd infinitas_impl1.prf 
 Design file:     infinitas_impl1.ncd
 Preference file: infinitas_impl1.prf
-Device,speed:    LCMXO2-2000HC,4
+Device,speed:    LCMXO2-1200HC,6
 Report level:    verbose report, limited to 10 items per preference
 --------------------------------------------------------------------------------
 
 <A name="ptwr_set_ps"></A><B><U><big>Preference Summary</big></U></B>
 
-<LI><A href='#par_twr_pref_0_0' Target='right'>Default path enumeration(0 errors)</A></LI>            38 items scored, 0 timing errors detected.
-Report:  213.356MHz is the maximum frequency for this preference.
+<LI><A href='#par_twr_pref_0_0' Target='right'>Default path enumeration(0 errors)</A></LI>            36 items scored, 0 timing errors detected.
 
-<LI><A href='#par_twr_pref_0_1' Target='right'>Default net enumeration(0 errors)</A></LI>            21 items scored, 0 timing errors detected.
+<LI><A href='#par_twr_pref_0_1' Target='right'>Default net enumeration(0 errors)</A></LI>            13 items scored, 0 timing errors detected.
 
 BLOCK ASYNCPATHS
 BLOCK RESETPATHS
@@ -54,178 +53,208 @@ BLOCK RESETPATHS
 
 ================================================================================
 <A name="par_twr_pref_0_0"></A>Preference: Default path enumeration
-            38 items scored, 0 timing errors detected.
+            36 items scored, 0 timing errors detected.
 --------------------------------------------------------------------------------
 
-Report:    9.423ns delay x_bclk to dsp_bclkout0
+Report:    8.185ns delay xLRCK to expLRCK7
 
    Name    Fanout   Delay (ns)          Site               Resource
-PADI_DEL    ---     1.132         42.PAD to       42.PADDI x_bclk
-ROUTE         8     5.494       42.PADDI to       28.PADDO exp_bclk4_c_c
-DOPAD_DEL   ---     2.797       28.PADDO to         28.PAD dsp_bclkout0
+PADI_DEL    ---     1.132         58.PAD to       58.PADDI xLRCK
+ROUTE         8     4.256       58.PADDI to      113.PADDO expLRCK8_c_c
+DOPAD_DEL   ---     2.797      113.PADDO to        113.PAD expLRCK7
                   --------
-                    9.423   (41.7% logic, 58.3% route), 2 logic levels.
+                    8.185   (48.0% logic, 52.0% route), 2 logic levels.
 
-Report:    9.362ns delay clkin to exp_mclk3
+Report:    8.131ns delay CLKIN to expMCLK7
 
    Name    Fanout   Delay (ns)          Site               Resource
-PADI_DEL    ---     1.132          4.PAD to        4.PADDI clkin
-ROUTE         7     5.433        4.PADDI to       58.PADDO x_mclk_c_c
-DOPAD_DEL   ---     2.797       58.PADDO to         58.PAD exp_mclk3
+PADI_DEL    ---     1.132         19.PAD to       19.PADDI CLKIN
+ROUTE        11     4.202       19.PADDI to      114.PADDO xMCLK_c_c
+DOPAD_DEL   ---     2.797      114.PADDO to        114.PAD expMCLK7
                   --------
-                    9.362   (42.0% logic, 58.0% route), 2 logic levels.
+                    8.131   (48.3% logic, 51.7% route), 2 logic levels.
 
-Report:    9.362ns delay clkin to exp_mclk4
+Report:    7.704ns delay CLKIN to expMCLK6
 
    Name    Fanout   Delay (ns)          Site               Resource
-PADI_DEL    ---     1.132          4.PAD to        4.PADDI clkin
-ROUTE         7     5.433        4.PADDI to       51.PADDO x_mclk_c_c
-DOPAD_DEL   ---     2.797       51.PADDO to         51.PAD exp_mclk4
+PADI_DEL    ---     1.132         19.PAD to       19.PADDI CLKIN
+ROUTE        11     3.775       19.PADDI to       81.PADDO xMCLK_c_c
+DOPAD_DEL   ---     2.797       81.PADDO to         81.PAD expMCLK6
                   --------
-                    9.362   (42.0% logic, 58.0% route), 2 logic levels.
+                    7.704   (51.0% logic, 49.0% route), 2 logic levels.
 
-Report:    8.998ns delay wclkin to pll_wclkref
+Report:    7.704ns delay CLKIN to expMCLK8
 
    Name    Fanout   Delay (ns)          Site               Resource
-PADI_DEL    ---     1.132         31.PAD to       31.PADDI wclkin
-ROUTE         1     5.069       31.PADDI to       76.PADDO pll_wclkref_c_c
-DOPAD_DEL   ---     2.797       76.PADDO to         76.PAD pll_wclkref
+PADI_DEL    ---     1.132         19.PAD to       19.PADDI CLKIN
+ROUTE        11     3.775       19.PADDI to       86.PADDO xMCLK_c_c
+DOPAD_DEL   ---     2.797       86.PADDO to         86.PAD expMCLK8
                   --------
-                    8.998   (43.7% logic, 56.3% route), 2 logic levels.
+                    7.704   (51.0% logic, 49.0% route), 2 logic levels.
 
-Report:    8.967ns delay x_bclk to dsp_bclkin0
+Report:    7.447ns delay CLKIN to expMCLK5
 
    Name    Fanout   Delay (ns)          Site               Resource
-PADI_DEL    ---     1.132         42.PAD to       42.PADDI x_bclk
-ROUTE         8     5.038       42.PADDI to       14.PADDO exp_bclk4_c_c
-DOPAD_DEL   ---     2.797       14.PADDO to         14.PAD dsp_bclkin0
+PADI_DEL    ---     1.132         19.PAD to       19.PADDI CLKIN
+ROUTE        11     3.518       19.PADDI to      109.PADDO xMCLK_c_c
+DOPAD_DEL   ---     2.797      109.PADDO to        109.PAD expMCLK5
                   --------
-                    8.967   (43.8% logic, 56.2% route), 2 logic levels.
+                    7.447   (52.8% logic, 47.2% route), 2 logic levels.
 
-Report:    8.781ns delay dsp_tdmout1 to exp_mdo2
+Report:    7.356ns delay CLKIN to expMCLK4
 
    Name    Fanout   Delay (ns)          Site               Resource
-PADI_DEL    ---     1.132         21.PAD to       21.PADDI dsp_tdmout1
-ROUTE         1     4.852       21.PADDI to       66.PADDO exp_mdo2_c_c
-DOPAD_DEL   ---     2.797       66.PADDO to         66.PAD exp_mdo2
+PADI_DEL    ---     1.132         19.PAD to       19.PADDI CLKIN
+ROUTE        11     3.427       19.PADDI to       74.PADDO xMCLK_c_c
+DOPAD_DEL   ---     2.797       74.PADDO to         74.PAD expMCLK4
                   --------
-                    8.781   (44.7% logic, 55.3% route), 2 logic levels.
+                    7.356   (53.4% logic, 46.6% route), 2 logic levels.
 
-Report:    8.624ns delay x_bclk to exp_bclk4
+Report:    7.352ns delay CLKIN to expMCLK3
 
    Name    Fanout   Delay (ns)          Site               Resource
-PADI_DEL    ---     1.132         42.PAD to       42.PADDI x_bclk
-ROUTE         8     4.695       42.PADDI to       53.PADDO exp_bclk4_c_c
-DOPAD_DEL   ---     2.797       53.PADDO to         53.PAD exp_bclk4
+PADI_DEL    ---     1.132         19.PAD to       19.PADDI CLKIN
+ROUTE        11     3.423       19.PADDI to      100.PADDO xMCLK_c_c
+DOPAD_DEL   ---     2.797      100.PADDO to        100.PAD expMCLK3
                   --------
-                    8.624   (45.6% logic, 54.4% route), 2 logic levels.
+                    7.352   (53.4% logic, 46.6% route), 2 logic levels.
 
-Report:    8.404ns delay dsp_tdmout0 to exp_mdo1
+Report:    7.330ns delay CLKIN to expMCLK2
 
    Name    Fanout   Delay (ns)          Site               Resource
-PADI_DEL    ---     1.132         27.PAD to       27.PADDI dsp_tdmout0
-ROUTE         1     4.475       27.PADDI to       71.PADDO exp_mdo1_c_c
-DOPAD_DEL   ---     2.797       71.PADDO to         71.PAD exp_mdo1
+PADI_DEL    ---     1.132         19.PAD to       19.PADDI CLKIN
+ROUTE        11     3.401       19.PADDI to       68.PADDO xMCLK_c_c
+DOPAD_DEL   ---     2.797       68.PADDO to         68.PAD expMCLK2
                   --------
-                    8.404   (46.8% logic, 53.2% route), 2 logic levels.
+                    7.330   (53.6% logic, 46.4% route), 2 logic levels.
 
-Report:    8.385ns delay clkin to exp_mclk1
+Report:    7.262ns delay CLKIN to xMCLK
 
    Name    Fanout   Delay (ns)          Site               Resource
-PADI_DEL    ---     1.132          4.PAD to        4.PADDI clkin
-ROUTE         7     4.456        4.PADDI to       68.PADDO x_mclk_c_c
-DOPAD_DEL   ---     2.797       68.PADDO to         68.PAD exp_mclk1
+PADI_DEL    ---     1.132         19.PAD to       19.PADDI CLKIN
+ROUTE        11     3.333       19.PADDI to       50.PADDO xMCLK_c_c
+DOPAD_DEL   ---     2.797       50.PADDO to         50.PAD xMCLK
                   --------
-                    8.385   (46.9% logic, 53.1% route), 2 logic levels.
+                    7.262   (54.1% logic, 45.9% route), 2 logic levels.
 
-Report:    8.348ns delay clkin to exp_mclk2
+Report:    7.078ns delay xBCLK to expBCLK7
 
    Name    Fanout   Delay (ns)          Site               Resource
-PADI_DEL    ---     1.132          4.PAD to        4.PADDI clkin
-ROUTE         7     4.419        4.PADDI to       63.PADDO x_mclk_c_c
-DOPAD_DEL   ---     2.797       63.PADDO to         63.PAD exp_mclk2
+PADI_DEL    ---     1.132         57.PAD to       57.PADDI xBCLK
+ROUTE         8     3.149       57.PADDI to      112.PADDO expBCLK8_c_c
+DOPAD_DEL   ---     2.797      112.PADDO to        112.PAD expBCLK7
                   --------
-                    8.348   (47.1% logic, 52.9% route), 2 logic levels.
+                    7.078   (55.5% logic, 44.5% route), 2 logic levels.
 
-Report:  213.356MHz is the maximum frequency for this preference.
-
-Report:    9.423ns is the maximum delay for this preference.
+Report:    8.185ns is the maximum delay for this preference.
 
 
 ================================================================================
 <A name="par_twr_pref_0_1"></A>Preference: Default net enumeration
-            21 items scored, 0 timing errors detected.
+            13 items scored, 0 timing errors detected.
 --------------------------------------------------------------------------------
 
-Report:    5.494ns maximum delay on exp_bclk4_c_c
+Report:    4.256ns maximum delay on expLRCK8_c_c
 
            Delays             Connection(s)
-           4.695ns         42.PADDI to 53.PADDO        
-           4.260ns         42.PADDI to 60.PADDO        
-           3.287ns         42.PADDI to 65.PADDO        
-           3.354ns         42.PADDI to 70.PADDO        
-           5.494ns         42.PADDI to 28.PADDO        
-           5.038ns         42.PADDI to 14.PADDO        
-           2.382ns         42.PADDI to R13C18D.CLK     
-           1.992ns         42.PADDI to R9C21B.CLK      
+           2.916ns         58.PADDI to 85.PADDO        
+           4.256ns         58.PADDI to 113.PADDO       
+           2.916ns         58.PADDI to 78.PADDO        
+           3.050ns         58.PADDI to 107.PADDO       
+           2.568ns         58.PADDI to 73.PADDO        
+           2.695ns         58.PADDI to 99.PADDO        
+           1.858ns         58.PADDI to 67.PADDO        
+           2.347ns         58.PADDI to 94.PADDO        
 
-Report:    5.433ns maximum delay on x_mclk_c_c
-
-           Delays             Connection(s)
-           3.950ns          4.PADDI to 32.PADDO        
-           5.433ns          4.PADDI to 51.PADDO        
-           5.433ns          4.PADDI to 58.PADDO        
-           4.419ns          4.PADDI to 63.PADDO        
-           4.456ns          4.PADDI to 68.PADDO        
-           3.565ns          4.PADDI to 97.PADDO        
-           3.572ns          4.PADDI to 87.PADDO        
-
-Report:    5.069ns maximum delay on pll_wclkref_c_c
+Report:    4.202ns maximum delay on xMCLK_c_c
 
            Delays             Connection(s)
-           5.069ns         31.PADDI to 76.PADDO        
+           3.333ns         19.PADDI to 50.PADDO        
+           3.775ns         19.PADDI to 86.PADDO        
+           4.202ns         19.PADDI to 114.PADDO       
+           3.775ns         19.PADDI to 81.PADDO        
+           3.518ns         19.PADDI to 109.PADDO       
+           3.427ns         19.PADDI to 74.PADDO        
+           3.423ns         19.PADDI to 100.PADDO       
+           3.401ns         19.PADDI to 68.PADDO        
+           3.081ns         19.PADDI to 95.PADDO        
+           1.850ns         19.PADDI to 13.PADDO        
+           1.278ns         19.PADDI to 20.PADDO        
 
-Report:    4.852ns maximum delay on exp_mdo2_c_c
-
-           Delays             Connection(s)
-           4.852ns         21.PADDI to 66.PADDO        
-
-Report:    4.475ns maximum delay on exp_mdo1_c_c
-
-           Delays             Connection(s)
-           4.475ns         27.PADDI to 71.PADDO        
-
-Report:    4.355ns maximum delay on exp_mdo4_c_c
-
-           Delays             Connection(s)
-           4.355ns         15.PADDI to 54.PADDO        
-
-Report:    4.326ns maximum delay on exp_lrck4_c_c
+Report:    4.015ns maximum delay on GND_net
 
            Delays             Connection(s)
-           2.189ns         43.PADDI to 52.PADDO        
-           3.006ns         43.PADDI to 59.PADDO        
-           2.880ns         43.PADDI to 64.PADDO        
-           2.984ns         43.PADDI to 69.PADDO        
-           3.344ns         43.PADDI to 29.PADDO        
-           4.326ns         43.PADDI to 13.PADDO        
+           3.725ns         R2C6D.F0 to 60.PADDO        
+           4.015ns         R2C6D.F0 to 83.PADDO        
+           2.407ns         R2C6D.F0 to 111.PADDO       
+           3.367ns         R2C6D.F0 to 76.PADDO        
+           2.301ns         R2C6D.F0 to 105.PADDO       
+           2.407ns         R2C6D.F0 to 117.PADDO       
+           1.549ns         R2C6D.F0 to 2.PADDO         
+           1.549ns         R2C6D.F0 to 1.PADDO         
+           1.549ns         R2C6D.F0 to 4.PADDO         
+           1.549ns         R2C6D.F0 to 3.PADDO         
+           1.539ns         R2C6D.F0 to 6.PADDO         
+           1.539ns         R2C6D.F0 to 5.PADDO         
+           1.539ns         R2C6D.F0 to 10.PADDO        
+           1.539ns         R2C6D.F0 to 9.PADDO         
+           2.054ns         R2C6D.F0 to 119.PADDO       
+           2.054ns         R2C6D.F0 to 120.PADDO       
+           2.059ns         R2C6D.F0 to 121.PADDO       
+           2.059ns         R2C6D.F0 to 122.PADDO       
+           1.653ns         R2C6D.F0 to 127.PADDO       
+           1.653ns         R2C6D.F0 to 128.PADDO       
+           2.001ns         R2C6D.F0 to 132.PADDO       
+           2.001ns         R2C6D.F0 to 133.PADDO       
+           2.001ns         R2C6D.F0 to 138.PADDO       
+           2.001ns         R2C6D.F0 to 139.PADDO       
+           1.653ns         R2C6D.F0 to 140.PADDO       
+           1.653ns         R2C6D.F0 to 141.PADDO       
+           1.844ns         R2C6D.F0 to 49.PADDO        
 
-Report:    4.263ns maximum delay on exp_mdo3_c_c
+Report:    3.149ns maximum delay on expBCLK8_c_c
 
            Delays             Connection(s)
-           4.263ns         18.PADDI to 61.PADDO        
+           3.100ns         57.PADDI to 84.PADDO        
+           3.149ns         57.PADDI to 112.PADDO       
+           2.452ns         57.PADDI to 77.PADDO        
+           2.724ns         57.PADDI to 106.PADDO       
+           1.742ns         57.PADDI to 71.PADDO        
+           2.688ns         57.PADDI to 98.PADDO        
+           1.394ns         57.PADDI to 65.PADDO        
+           2.340ns         57.PADDI to 93.PADDO        
 
-Report:    3.956ns maximum delay on dsp_tdmin2_c_c
+Report:    3.094ns maximum delay on expMDO3_c_c
 
            Delays             Connection(s)
-           3.956ns         36.PADDI to 2.PADDO         
+           3.094ns         45.PADDI to 97.PADDO        
 
-Report:    3.893ns maximum delay on dsp_tdmin1_c_c
+Report:    2.752ns maximum delay on expMDO1_c_c
 
            Delays             Connection(s)
-           3.893ns         35.PADDI to 8.PADDO         
+           2.752ns         43.PADDI to 92.PADDO        
 
-Report:    5.494ns is the maximum delay for this preference.
+Report:    2.716ns maximum delay on xTDMIN3_c_c
+
+           Delays             Connection(s)
+           2.716ns         96.PADDI to 54.PADDO        
+
+Report:    2.716ns maximum delay on xTDMIN1_c_c
+
+           Delays             Connection(s)
+           2.716ns         91.PADDI to 56.PADDO        
+
+Report:    2.594ns maximum delay on pllWCLKREF_c_c
+
+           Delays             Connection(s)
+           2.594ns         59.PADDI to 32.PADDO        
+
+Report:    2.227ns maximum delay on expMDO4_c_c
+
+           Delays             Connection(s)
+           2.227ns         47.PADDI to 70.PADDO        
+
+Report:    4.256ns is the maximum delay for this preference.
 
 <A name="ptwr_set_rs"></A><B><U><big>Report Summary</big></U></B>
 --------------
@@ -233,9 +262,9 @@ Report:    5.494ns is the maximum delay for this preference.
 Preference                              |   Constraint|       Actual|Levels
 ----------------------------------------------------------------------------
                                         |             |             |
-Default path enumeration                |     0.000 ns|     9.423 ns|   0  
+Default path enumeration                |     0.000 ns|     8.185 ns|   0  
                                         |             |             |
-Default net enumeration                 |     0.000 ns|     5.494 ns|   0  
+Default net enumeration                 |     0.000 ns|     4.256 ns|   0  
                                         |             |             |
 ----------------------------------------------------------------------------
 
@@ -246,10 +275,7 @@ All preferences were met.
 <A name="ptwr_set_clkda"></A><B><U><big>Clock Domains Analysis</big></U></B>
 ------------------------
 
-Found 1 clocks:
-
-Clock Domain: exp_bclk4_c_c   Source: x_bclk.PAD   Loads: 8
-   No transfer within this clock domain is found
+Found 0 clocks:
 
 
 <A name="ptwr_set_ts"></A><B><U><big>Timing summary (Setup):</big></U></B>
@@ -258,7 +284,7 @@ Clock Domain: exp_bclk4_c_c   Source: x_bclk.PAD   Loads: 8
 Timing errors: 0  Score: 0
 Cumulative negative slack: 0
 
-Constraints cover 42 paths, 21 nets, and 39 connections (100.00% coverage)
+Constraints cover 36 paths, 13 nets, and 63 connections (100.00% coverage)
 
 --------------------------------------------------------------------------------
 

@@ -1,12 +1,11 @@
 <top name = "infinitas"  library = "work"  arch = "RTL"  entry = "VHDL">
 
 <clocks>
-    <clockitem name = "dsp_bclkin0"  type = "port" />
 </clocks>
 
 <!--
     //=============================================================
-    //  Number of Clocks processed: 1
+    //  Number of Clocks processed: 0
     //
     //  If a clock cannot be found in the top level pins section,
     //  that means it is an internal clock.
@@ -19,160 +18,105 @@
 <unit name = "infinitas">
 
     <!--
-        Top Level Pins: 66
+        Top Level Pins: 90
     -->
 
     <pins>
-        <pitem  name = "nrst"  direction = "in"  />
-        <pitem  name = "clkin"  direction = "in"  />
-        <pitem  name = "scl"  direction = "in"  />
-        <pitem  name = "sda"  direction = "in"  />
-        <pitem  name = "pll_clk"  direction = "in"  />
-        <pitem  name = "pll_locked"  direction = "in"  />
-        <pitem  name = "pll_clkref"  direction = "out"  />
-        <pitem  name = "pll_wclkref"  direction = "out"  />
-        <pitem  name = "dsp_mclk"  direction = "out"  />
-        <pitem  name = "dsp_bclkin0"  direction = "out"  />
-        <pitem  name = "dsp_lrckin0"  direction = "out"  />
-        <pitem  name = "dsp_tdmin0"  direction = "out"  />
-        <pitem  name = "dsp_bclkin1"  direction = "in"  />
-        <pitem  name = "dsp_lrckin1"  direction = "in"  />
-        <pitem  name = "dsp_tdmin1"  direction = "out"  />
-        <pitem  name = "dsp_bclkin2"  direction = "in"  />
-        <pitem  name = "dsp_lrckin2"  direction = "in"  />
-        <pitem  name = "dsp_tdmin2"  direction = "out"  />
-        <pitem  name = "dsp_bclkin3"  direction = "in"  />
-        <pitem  name = "dsp_lrckin3"  direction = "in"  />
-        <pitem  name = "dsp_tdmin3"  direction = "out"  />
-        <pitem  name = "dsp_bclkout0"  direction = "out"  />
-        <pitem  name = "dsp_lrckout0"  direction = "out"  />
-        <pitem  name = "dsp_tdmout0"  direction = "in"  />
-        <pitem  name = "dsp_bclkout1"  direction = "in"  />
-        <pitem  name = "dsp_lrckout1"  direction = "in"  />
-        <pitem  name = "dsp_tdmout1"  direction = "in"  />
-        <pitem  name = "dsp_bclkout2"  direction = "in"  />
-        <pitem  name = "dsp_lrckout2"  direction = "in"  />
-        <pitem  name = "dsp_tdmout2"  direction = "in"  />
-        <pitem  name = "dsp_bclkout3"  direction = "in"  />
-        <pitem  name = "dsp_lrckout3"  direction = "in"  />
-        <pitem  name = "dsp_tdmout3"  direction = "in"  />
-        <pitem  name = "exp_mdi1"  direction = "in"  />
-        <pitem  name = "exp_mdo1"  direction = "out"  />
-        <pitem  name = "exp_bclk1"  direction = "out"  />
-        <pitem  name = "exp_lrck1"  direction = "out"  />
-        <pitem  name = "exp_mclk1"  direction = "out"  />
-        <pitem  name = "exp_mdi2"  direction = "in"  />
-        <pitem  name = "exp_mdo2"  direction = "out"  />
-        <pitem  name = "exp_bclk2"  direction = "out"  />
-        <pitem  name = "exp_lrck2"  direction = "out"  />
-        <pitem  name = "exp_mclk2"  direction = "out"  />
-        <pitem  name = "exp_mdi3"  direction = "in"  />
-        <pitem  name = "exp_mdo3"  direction = "out"  />
-        <pitem  name = "exp_bclk3"  direction = "out"  />
-        <pitem  name = "exp_lrck3"  direction = "out"  />
-        <pitem  name = "exp_mclk3"  direction = "out"  />
-        <pitem  name = "exp_mdi4"  direction = "in"  />
-        <pitem  name = "exp_mdo4"  direction = "out"  />
-        <pitem  name = "exp_bclk4"  direction = "out"  />
-        <pitem  name = "exp_lrck4"  direction = "out"  />
-        <pitem  name = "exp_mclk4"  direction = "out"  />
-        <pitem  name = "x_lrck"  direction = "in"  />
-        <pitem  name = "x_bclk"  direction = "in"  />
-        <pitem  name = "x_tdmin1"  direction = "out"  />
-        <pitem  name = "x_tdmin2"  direction = "out"  />
-        <pitem  name = "x_tdmin3"  direction = "out"  />
-        <pitem  name = "x_tdmin4"  direction = "out"  />
-        <pitem  name = "x_tdmout1"  direction = "in"  />
-        <pitem  name = "x_tdmout2"  direction = "in"  />
-        <pitem  name = "x_tdmout3"  direction = "in"  />
-        <pitem  name = "x_tdmout4"  direction = "in"  />
-        <pitem  name = "x_mclk"  direction = "out"  />
-        <pitem  name = "wclkin"  direction = "in"  />
-        <pitem  name = "wclkout"  direction = "out"  />
+        <pitem  name = "nRST"  direction = "in"  />
+        <pitem  name = "CLKIN"  direction = "in"  />
+        <pitem  name = "SCL"  direction = "in"  />
+        <pitem  name = "SDA"  direction = "in"  />
+        <pitem  name = "SPDIFIN"  direction = "in"  />
+        <pitem  name = "SPDIFOUT"  direction = "out"  />
+        <pitem  name = "pllCLK"  direction = "in"  />
+        <pitem  name = "pllLOCKED"  direction = "in"  />
+        <pitem  name = "pllCLKREF"  direction = "out"  />
+        <pitem  name = "pllWCLKREF"  direction = "out"  />
+        <pitem  name = "dspMCLK"  direction = "out"  />
+        <pitem  name = "dspBCLKIN0"  direction = "out"  />
+        <pitem  name = "dspLRCKIN0"  direction = "out"  />
+        <pitem  name = "dspTDMIN0"  direction = "out"  />
+        <pitem  name = "dspBCLKIN1"  direction = "out"  />
+        <pitem  name = "dspLRCKIN1"  direction = "out"  />
+        <pitem  name = "dspTDMIN1"  direction = "out"  />
+        <pitem  name = "dspBCLKIN2"  direction = "out"  />
+        <pitem  name = "dspLRCKIN2"  direction = "out"  />
+        <pitem  name = "dspTDMIN2"  direction = "out"  />
+        <pitem  name = "dspBCLKIN3"  direction = "out"  />
+        <pitem  name = "dspLRCKIN3"  direction = "out"  />
+        <pitem  name = "dspTDMIN3"  direction = "out"  />
+        <pitem  name = "dspBCLKOUT0"  direction = "out"  />
+        <pitem  name = "dspLRCKOUT0"  direction = "out"  />
+        <pitem  name = "dspTDMOUT0"  direction = "in"  />
+        <pitem  name = "dspBCLKOUT1"  direction = "out"  />
+        <pitem  name = "dspLRCKOUT1"  direction = "out"  />
+        <pitem  name = "dspTDMOUT1"  direction = "in"  />
+        <pitem  name = "dspBCLKOUT2"  direction = "out"  />
+        <pitem  name = "dspLRCKOUT2"  direction = "out"  />
+        <pitem  name = "dspTDMOUT2"  direction = "in"  />
+        <pitem  name = "dspBCLKOUT3"  direction = "out"  />
+        <pitem  name = "dspLRCKOUT3"  direction = "out"  />
+        <pitem  name = "dspTDMOUT3"  direction = "in"  />
+        <pitem  name = "dspSPDIFIN"  direction = "out"  />
+        <pitem  name = "dspSPDIFOUT"  direction = "in"  />
+        <pitem  name = "expMDI1"  direction = "in"  />
+        <pitem  name = "expMDO1"  direction = "out"  />
+        <pitem  name = "expBCLK1"  direction = "out"  />
+        <pitem  name = "expLRCK1"  direction = "out"  />
+        <pitem  name = "expMCLK1"  direction = "out"  />
+        <pitem  name = "expMDI2"  direction = "in"  />
+        <pitem  name = "expMDO2"  direction = "out"  />
+        <pitem  name = "expBCLK2"  direction = "out"  />
+        <pitem  name = "expLRCK2"  direction = "out"  />
+        <pitem  name = "expMCLK2"  direction = "out"  />
+        <pitem  name = "expMDI3"  direction = "in"  />
+        <pitem  name = "expMDO3"  direction = "out"  />
+        <pitem  name = "expBCLK3"  direction = "out"  />
+        <pitem  name = "expLRCK3"  direction = "out"  />
+        <pitem  name = "expMCLK3"  direction = "out"  />
+        <pitem  name = "expMDI4"  direction = "in"  />
+        <pitem  name = "expMDO4"  direction = "out"  />
+        <pitem  name = "expBCLK4"  direction = "out"  />
+        <pitem  name = "expLRCK4"  direction = "out"  />
+        <pitem  name = "expMCLK4"  direction = "out"  />
+        <pitem  name = "expMDI5"  direction = "in"  />
+        <pitem  name = "expMDO5"  direction = "out"  />
+        <pitem  name = "expBCLK5"  direction = "out"  />
+        <pitem  name = "expLRCK5"  direction = "out"  />
+        <pitem  name = "expMCLK5"  direction = "out"  />
+        <pitem  name = "expMDI6"  direction = "in"  />
+        <pitem  name = "expMDO6"  direction = "out"  />
+        <pitem  name = "expBCLK6"  direction = "out"  />
+        <pitem  name = "expLRCK6"  direction = "out"  />
+        <pitem  name = "expMCLK6"  direction = "out"  />
+        <pitem  name = "expMDI7"  direction = "in"  />
+        <pitem  name = "expMDO7"  direction = "out"  />
+        <pitem  name = "expBCLK7"  direction = "out"  />
+        <pitem  name = "expLRCK7"  direction = "out"  />
+        <pitem  name = "expMCLK7"  direction = "out"  />
+        <pitem  name = "expMDI8"  direction = "in"  />
+        <pitem  name = "expMDO8"  direction = "out"  />
+        <pitem  name = "expBCLK8"  direction = "out"  />
+        <pitem  name = "expLRCK8"  direction = "out"  />
+        <pitem  name = "expMCLK8"  direction = "out"  />
+        <pitem  name = "xLRCK"  direction = "in"  />
+        <pitem  name = "xBCLK"  direction = "in"  />
+        <pitem  name = "xTDMIN1"  direction = "out"  />
+        <pitem  name = "xTDMIN2"  direction = "out"  />
+        <pitem  name = "xTDMIN3"  direction = "out"  />
+        <pitem  name = "xTDMIN4"  direction = "out"  />
+        <pitem  name = "xTDMOUT1"  direction = "in"  />
+        <pitem  name = "xTDMOUT2"  direction = "in"  />
+        <pitem  name = "xTDMOUT3"  direction = "in"  />
+        <pitem  name = "xTDMOUT4"  direction = "in"  />
+        <pitem  name = "xMCLK"  direction = "out"  />
+        <pitem  name = "wclkIN"  direction = "in"  />
+        <pitem  name = "wclkOUT"  direction = "out"  />
     </pins>
 
     <!--
-        Instances in netlist: 4
+        Instances in netlist: 0
     -->
-
-    <instance  name = "x_tdmin2_12"  library = "work"  arch = "RTL"  type = "reg">
-        <pins>
-        <pitem  name = "d"  direction = "in"  />
-        <pitem  name = "clk"  direction = "in"  />
-        <pitem  name = "s"  direction = "in"  />
-        <pitem  name = "r"  direction = "in"  />
-        <pitem  name = "q"  direction = "out"  />
-        </pins>
-
-        <nets>
-        <nitem  name = "exp_mdi2"  />
-        <nitem  name = "dsp_bclkin0"  />
-        <nitem  name = "gnd"  />
-        <nitem  name = "x_tdmin2"  />
-        </nets>
-    </instance>
-
-    <instance  name = "x_tdmin3_13"  library = "work"  arch = "RTL"  type = "reg">
-        <pins>
-        <pitem  name = "d"  direction = "in"  />
-        <pitem  name = "clk"  direction = "in"  />
-        <pitem  name = "s"  direction = "in"  />
-        <pitem  name = "r"  direction = "in"  />
-        <pitem  name = "q"  direction = "out"  />
-        </pins>
-
-        <nets>
-        <nitem  name = "exp_mdi3"  />
-        <nitem  name = "dsp_bclkin0"  />
-        <nitem  name = "gnd"  />
-        <nitem  name = "x_tdmin3"  />
-        </nets>
-    </instance>
-
-    <instance  name = "x_tdmin4_14"  library = "work"  arch = "RTL"  type = "reg">
-        <pins>
-        <pitem  name = "d"  direction = "in"  />
-        <pitem  name = "clk"  direction = "in"  />
-        <pitem  name = "s"  direction = "in"  />
-        <pitem  name = "r"  direction = "in"  />
-        <pitem  name = "q"  direction = "out"  />
-        </pins>
-
-        <nets>
-        <nitem  name = "exp_mdi4"  />
-        <nitem  name = "dsp_bclkin0"  />
-        <nitem  name = "gnd"  />
-        <nitem  name = "x_tdmin4"  />
-        </nets>
-    </instance>
-
-    <instance  name = "x_tdmin1_11"  library = "work"  arch = "RTL"  type = "reg">
-        <pins>
-        <pitem  name = "d"  direction = "in"  />
-        <pitem  name = "clk"  direction = "in"  />
-        <pitem  name = "s"  direction = "in"  />
-        <pitem  name = "r"  direction = "in"  />
-        <pitem  name = "q"  direction = "out"  />
-        </pins>
-
-        <nets>
-        <nitem  name = "exp_mdi1"  />
-        <nitem  name = "dsp_bclkin0"  />
-        <nitem  name = "gnd"  />
-        <nitem  name = "x_tdmin1"  />
-        </nets>
-    </instance>
-
-    <!--
-        REG instances in netlist: 4
-    -->
-
-    <regs>
-        <reg  name = "x_tdmin2_12"  />
-        <reg  name = "x_tdmin3_13"  />
-        <reg  name = "x_tdmin4_14"  />
-        <reg  name = "x_tdmin1_11"  />
-    </regs>
 
     <!--
         Views in design "infinitas": 0
