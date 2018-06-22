@@ -1,9 +1,0 @@
-<preCompilationAnalysis file="/Users/rkn/Documents/xTIMEcomposer/workspace/module_spdif_rx/src/SpdifReceive.S">
-  <fCall global="true" name="SpdifReceive"/>
-  <fCall global="true" name="SpdifReceive.nstackwords"/>
-  <fCall global="true" name="SpdifReceive.maxcores"/>
-  <fCall global="true" name="SpdifReceive.maxtimers"/>
-  <fCall global="true" name="SpdifReceive.maxchanends"/>
-  <fCall global="true" name="parseSpDifc"/>
-  <fCall global="true" name="parseSpDifc.nstackwords"/>
-</preCompilationAnalysis>

@@ -200,7 +200,9 @@ int i2c_master_write_reg16(int device, int reg_addr,
                          const unsigned char data[],
                          int nbytes,
                          struct r_i2c *i2cPorts);
-# 145 "/Users/rkn/Documents/xTIMEcomposer/workspace/module_i2c_single_port/src/i2c.h"
+
+int i2c_master_write(int device, unsigned char const s_data[], int nbytes, struct r_i2c *i2cPorts);
+# 147 "/Users/rkn/Documents/xTIMEcomposer/workspace/module_i2c_single_port/src/i2c.h"
 int i2c_master_read_reg(int device, int addr,
                         unsigned char data[],
                         int nbytes,
@@ -214,6 +216,18 @@ int i2c_master_read_reg16(int device, int addr,
 
 int i2c_master_rx(int device, unsigned char data[], int nbytes,
         struct r_i2c *i2cPorts);
+
+int AK4458_i2c_master_read_reg(int device, int addr,
+                        unsigned char data[],
+                        int nbytes,
+                        struct r_i2c *i2cPorts);
+
+
+
+int AK4458_i2c_master_write_reg(int device, int reg_addr,
+                         const unsigned char data[],
+                         int nbytes,
+                         struct r_i2c *i2cPorts);
 # 12 "/Users/rkn/Documents/xTIMEcomposer/workspace/module_i2c_shared/src/i2c_shared.h" 2
 
 
@@ -229,11 +243,21 @@ int i2c_shared_master_read_reg(struct r_i2c *i2cPorts, int device, int reg_addr,
 
 int i2c_shared_master_read_reg16(struct r_i2c *i2cPorts, int device, int reg_addr,
     unsigned char data[], int nbytes);
-# 62 "/Users/rkn/Documents/xTIMEcomposer/workspace/module_i2c_shared/src/i2c_shared.h"
+
+
+int AK4458_i2c_shared_master_read_reg(struct r_i2c *i2cPorts, int device, int reg_addr,
+    unsigned char data[], int nbytes);
+# 66 "/Users/rkn/Documents/xTIMEcomposer/workspace/module_i2c_shared/src/i2c_shared.h"
 int i2c_shared_master_write_reg(struct r_i2c *i2cPorts, int device, int reg_addr,
     const unsigned char data[], int nbytes);
 
 int i2c_shared_master_write_reg16(struct r_i2c *i2cPorts, int device, int reg_addr,
+    const unsigned char data[], int nbytes);
+
+
+int i2c_shared_master_write(struct r_i2c *i2cPorts, int device, const unsigned char data[], int nbytes);
+
+int AK4458_i2c_shared_master_write_reg(struct r_i2c *i2cPorts, int device, int reg_addr,
     const unsigned char data[], int nbytes);
 # 2 "/Users/rkn/Documents/xTIMEcomposer/workspace/module_i2c_shared/src/i2c_shared.c" 2
 # 1 "/Users/rkn/Documents/xTIMEcomposer/workspace/module_locks/src/swlock.h" 1
@@ -290,6 +314,8 @@ int i2c_shared_master_read_reg(struct r_i2c *i2cPorts, int device, int reg_addr,
     return retval;
 }
 
+
+
 int i2c_shared_master_read_reg16(struct r_i2c *i2cPorts, int device, int reg_addr,
     unsigned char data[], int nbytes)
 {
@@ -301,6 +327,26 @@ int i2c_shared_master_read_reg16(struct r_i2c *i2cPorts, int device, int reg_add
 }
 
 
+int AK4458_i2c_shared_master_read_reg(struct r_i2c *i2cPorts, int device, int reg_addr,
+    unsigned char data[], int nbytes)
+{
+    int retval;
+    swlock_acquire(&i2c_swlock);
+    retval = AK4458_i2c_master_read_reg(device, reg_addr, data, nbytes, i2cPorts);
+    swlock_release(&i2c_swlock);
+    return retval;
+}
+
+
+
+int i2c_shared_master_write(struct r_i2c *i2cPorts, int device, const unsigned char data[], int nbytes)
+{
+    int retval;
+    swlock_acquire(&i2c_swlock);
+    retval = i2c_master_write(device, data, nbytes, i2cPorts);
+    swlock_release(&i2c_swlock);
+    return retval;
+}
 
 int i2c_shared_master_write_reg(struct r_i2c *i2cPorts, int device, int reg_addr,
     const unsigned char data[], int nbytes)
@@ -308,6 +354,16 @@ int i2c_shared_master_write_reg(struct r_i2c *i2cPorts, int device, int reg_addr
     int retval;
     swlock_acquire(&i2c_swlock);
     retval = i2c_master_write_reg(device, reg_addr, data, nbytes, i2cPorts);
+    swlock_release(&i2c_swlock);
+    return retval;
+}
+
+int AK4458_i2c_shared_master_write_reg(struct r_i2c *i2cPorts, int device, int reg_addr,
+    const unsigned char data[], int nbytes)
+{
+    int retval;
+    swlock_acquire(&i2c_swlock);
+    retval = AK4458_i2c_master_write_reg(device, reg_addr, data, nbytes, i2cPorts);
     swlock_release(&i2c_swlock);
     return retval;
 }

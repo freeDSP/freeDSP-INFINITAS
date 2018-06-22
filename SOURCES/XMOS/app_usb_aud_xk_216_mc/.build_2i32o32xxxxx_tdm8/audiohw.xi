@@ -523,7 +523,9 @@ int i2c_master_write_reg16(int device, int reg_addr,
                          const unsigned char data[],
                          int nbytes,
                          struct r_i2c &i2cPorts);
-# 145 "/Users/rkn/Documents/xTIMEcomposer/workspace/module_i2c_single_port/src/i2c.h"
+
+int i2c_master_write(int device, unsigned char const s_data[], int nbytes, struct r_i2c &i2cPorts);
+# 147 "/Users/rkn/Documents/xTIMEcomposer/workspace/module_i2c_single_port/src/i2c.h"
 int i2c_master_read_reg(int device, int addr,
                         unsigned char data[],
                         int nbytes,
@@ -537,6 +539,18 @@ int i2c_master_read_reg16(int device, int addr,
 
 int i2c_master_rx(int device, unsigned char data[], int nbytes,
         struct r_i2c &i2cPorts);
+
+int AK4458_i2c_master_read_reg(int device, int addr,
+                        unsigned char data[],
+                        int nbytes,
+                        struct r_i2c &i2cPorts);
+
+
+
+int AK4458_i2c_master_write_reg(int device, int reg_addr,
+                         const unsigned char data[],
+                         int nbytes,
+                         struct r_i2c &i2cPorts);
 # 12 "/Users/rkn/Documents/xTIMEcomposer/workspace/module_i2c_shared/src/i2c_shared.h" 2
 
 
@@ -552,11 +566,21 @@ int i2c_shared_master_read_reg(struct r_i2c &i2cPorts, int device, int reg_addr,
 
 int i2c_shared_master_read_reg16(struct r_i2c &i2cPorts, int device, int reg_addr,
     unsigned char data[], int nbytes);
-# 62 "/Users/rkn/Documents/xTIMEcomposer/workspace/module_i2c_shared/src/i2c_shared.h"
+
+
+int AK4458_i2c_shared_master_read_reg(struct r_i2c &i2cPorts, int device, int reg_addr,
+    unsigned char data[], int nbytes);
+# 66 "/Users/rkn/Documents/xTIMEcomposer/workspace/module_i2c_shared/src/i2c_shared.h"
 int i2c_shared_master_write_reg(struct r_i2c &i2cPorts, int device, int reg_addr,
     const unsigned char data[], int nbytes);
 
 int i2c_shared_master_write_reg16(struct r_i2c &i2cPorts, int device, int reg_addr,
+    const unsigned char data[], int nbytes);
+
+
+int i2c_shared_master_write(struct r_i2c &i2cPorts, int device, const unsigned char data[], int nbytes);
+
+int AK4458_i2c_shared_master_write_reg(struct r_i2c &i2cPorts, int device, int reg_addr,
     const unsigned char data[], int nbytes);
 # 8 "../src/extensions/audiohw.xc" 2
 # 1 "../src/extensions/cs4384.h" 1
@@ -674,7 +698,10 @@ int printstrln(const char (& alias s)[]);
 # 12 "../src/extensions/audiohw.xc" 2
 # 1 "/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/dsd_support.h" 1
 # 13 "../src/extensions/audiohw.xc" 2
-# 24 "../src/extensions/audiohw.xc"
+
+# 1 "../src/extensions/ak4458.h" 1
+# 15 "../src/extensions/audiohw.xc" 2
+# 26 "../src/extensions/audiohw.xc"
 on tile[0] : out port p_gpio = 0x80200;
 
 unsigned char data_i2c[2] = {0, 0};
@@ -1170,8 +1197,8 @@ void default_download_IC_1() {
  { i2c_shared_master_write_reg16( r_i2c, 0x70, 0xF400, R41_HIBERNATE_IC_1_Default, 2 ); };
 
 }
-# 36 "../src/extensions/audiohw.xc" 2
-# 109 "../src/extensions/audiohw.xc"
+# 38 "../src/extensions/audiohw.xc" 2
+# 114 "../src/extensions/audiohw.xc"
 void wait_us(int microseconds)
 {
     timer t;
@@ -1183,24 +1210,16 @@ void wait_us(int microseconds)
 
 void AudioHwInit(chanend ?c_codec)
 {
-# 128 "../src/extensions/audiohw.xc"
+# 133 "../src/extensions/audiohw.xc"
     i2c_shared_master_init(r_i2c);
 
 
     set_gpio((1 << 1), 0);
     set_gpio((1 << 6), 0);
-# 141 "../src/extensions/audiohw.xc"
+# 146 "../src/extensions/audiohw.xc"
     set_gpio((1 << 2), 1);
     set_gpio((1 << 3), 1);
-# 160 "../src/extensions/audiohw.xc"
-    default_download_IC_1();
-
-
-
-
-
-
-
+# 173 "../src/extensions/audiohw.xc"
 }
 
 
@@ -1210,16 +1229,61 @@ void AudioHwConfig(unsigned samFreq, unsigned mClk, chanend ?c_codec, unsigned d
     unsigned sampRes_DAC, unsigned sampRes_ADC)
 {
  unsigned char data[1] = {0};
-
-
- set_gpio((1 << 6), 0);
- set_gpio((1 << 1), 0);
-# 212 "../src/extensions/audiohw.xc"
+# 217 "../src/extensions/audiohw.xc"
         set_gpio((1 << 7), 1);
 
 
 
     wait_us(20000);
-# 383 "../src/extensions/audiohw.xc"
+# 231 "../src/extensions/audiohw.xc"
+    data[0] = 0x04;
+    i2c_shared_master_write( r_i2c, 0xE0>>1, data, 1 );
+# 246 "../src/extensions/audiohw.xc"
+    { unsigned char data_w[1]; data_w[0] = 0b00001000; AK4458_i2c_shared_master_write_reg(r_i2c, (0x20), (0x00), data_w, 1);};
+
+
+
+
+
+
+
+    { unsigned char data_w[1]; data_w[0] = 0b00100010; AK4458_i2c_shared_master_write_reg(r_i2c, (0x20), (0x01), data_w, 1);};
+# 265 "../src/extensions/audiohw.xc"
+    { unsigned char data_w[1]; data_w[0] = 0b00000000; AK4458_i2c_shared_master_write_reg(r_i2c, (0x20), (0x02), data_w, 1);};
+# 276 "../src/extensions/audiohw.xc"
+    { unsigned char data_w[1]; data_w[0] = 0b00000000; AK4458_i2c_shared_master_write_reg(r_i2c, (0x20), (0x05), data_w, 1);};
+
+
+
+
+
+    { unsigned char data_w[1]; data_w[0] = 0b00000011; AK4458_i2c_shared_master_write_reg(r_i2c, (0x20), (0x07), data_w, 1);};
+
+
+
+
+
+    { unsigned char data_w[1]; data_w[0] = 0b00000000; AK4458_i2c_shared_master_write_reg(r_i2c, (0x20), (0x07), data_w, 1);};
+# 297 "../src/extensions/audiohw.xc"
+    { unsigned char data_w[1]; data_w[0] = 0b10001101; AK4458_i2c_shared_master_write_reg(r_i2c, (0x20), (0x0A), data_w, 1);};
+# 306 "../src/extensions/audiohw.xc"
+    { unsigned char data_w[1]; data_w[0] = 0b00001100; AK4458_i2c_shared_master_write_reg(r_i2c, (0x20), (0x0B), data_w, 1);};
+# 315 "../src/extensions/audiohw.xc"
+    { unsigned char data_w[1]; data_w[0] = 0b00000000; AK4458_i2c_shared_master_write_reg(r_i2c, (0x20), (0x0C), data_w, 1);};
+# 324 "../src/extensions/audiohw.xc"
+    { unsigned char data_w[1]; data_w[0] = 0b00000000; AK4458_i2c_shared_master_write_reg(r_i2c, (0x20), (0x0D), data_w, 1);};
+
+
+
+
+
+    { unsigned char data_w[1]; data_w[0] = 0b01010000; AK4458_i2c_shared_master_write_reg(r_i2c, (0x20), (0x0E), data_w, 1);};
+# 339 "../src/extensions/audiohw.xc"
+    { unsigned char data_w[1]; data_w[0] = 0b00001001; AK4458_i2c_shared_master_write_reg(r_i2c, (0x20), (0x00), data_w, 1);};
+
+
+    data[0] = 0b00000000;
+    i2c_shared_master_write( r_i2c, 0xE0>>1, data, 1 );
+# 538 "../src/extensions/audiohw.xc"
     return;
 }

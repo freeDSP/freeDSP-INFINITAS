@@ -1068,7 +1068,9 @@ int i2c_master_write_reg16(int device, int reg_addr,
                          const unsigned char data[],
                          int nbytes,
                          struct r_i2c &i2cPorts);
-# 145 "/Users/rkn/Documents/xTIMEcomposer/workspace/module_i2c_single_port/src/i2c.h"
+
+int i2c_master_write(int device, unsigned char const s_data[], int nbytes, struct r_i2c &i2cPorts);
+# 147 "/Users/rkn/Documents/xTIMEcomposer/workspace/module_i2c_single_port/src/i2c.h"
 int i2c_master_read_reg(int device, int addr,
                         unsigned char data[],
                         int nbytes,
@@ -1082,6 +1084,18 @@ int i2c_master_read_reg16(int device, int addr,
 
 int i2c_master_rx(int device, unsigned char data[], int nbytes,
         struct r_i2c &i2cPorts);
+
+int AK4458_i2c_master_read_reg(int device, int addr,
+                        unsigned char data[],
+                        int nbytes,
+                        struct r_i2c &i2cPorts);
+
+
+
+int AK4458_i2c_master_write_reg(int device, int reg_addr,
+                         const unsigned char data[],
+                         int nbytes,
+                         struct r_i2c &i2cPorts);
 # 12 "/Users/rkn/Documents/xTIMEcomposer/workspace/module_i2c_single_port/src/i2c-sp.xc" 2
 
 
@@ -1118,8 +1132,7 @@ static void waitAfterNACK(port p_i2c) {
 
     p_i2c :> void;
 }
-
-
+# 62 "/Users/rkn/Documents/xTIMEcomposer/workspace/module_i2c_single_port/src/i2c-sp.xc"
 static void highPulseDrive(port i2c, int sdaValue) {
     if (sdaValue) {
         i2c <: 2 | 0 | 0xC;
@@ -1222,6 +1235,46 @@ int i2c_master_write_reg(int device, int addr, unsigned char const s_data[], int
 
 
    ack |= tx8(i2cPorts.p_i2c, addr);
+
+   for(int i = 0; i< nbytes; i++) {
+      data = s_data[i];
+      ack |= tx8(i2cPorts.p_i2c, data);
+   }
+   stopBit(i2cPorts.p_i2c);
+   return ack == 0;
+}
+
+
+int i2c_master_write(int device, unsigned char const s_data[], int nbytes, struct r_i2c &i2cPorts) {
+   int data;
+   int ack;
+
+   if(1) {
+       int nacks = 2000;
+
+       while(nacks) {
+          startBit(i2cPorts.p_i2c);
+          if(!(ack = tx8(i2cPorts.p_i2c, device<<1))) {
+
+             break;
+          }
+          waitAfterNACK(i2cPorts.p_i2c);
+          nacks--;
+       }
+       if(!nacks) {
+
+          stopBit(i2cPorts.p_i2c);
+          return 0;
+        }
+    }
+    else {
+       startBit(i2cPorts.p_i2c);
+       ack = tx8(i2cPorts.p_i2c, device<<1);
+    }
+
+
+
+
 
    for(int i = 0; i< nbytes; i++) {
       data = s_data[i];
@@ -1374,4 +1427,55 @@ int i2c_master_read_reg16(int device, int addr, unsigned char data[], int nbytes
 
    stopBit(i2cPorts.p_i2c);
    return i2c_master_rx(device, data, nbytes, i2cPorts);
+}
+
+
+int AK4458_i2c_master_read_reg(int device, int addr, unsigned char data[], int nbytes, struct r_i2c &i2cPorts)
+{
+
+  startBit( i2cPorts.p_i2c );
+  tx8( i2cPorts.p_i2c, device );
+  tx8( i2cPorts.p_i2c, addr );
+  waitBeforeNextStart(i2cPorts.p_i2c);
+
+
+  startBit( i2cPorts.p_i2c );
+  tx8( i2cPorts.p_i2c, device | 0b00000001 );
+
+
+  int i;
+  int rdData = 0;
+  int temp = 0;
+  for( i = 8; i != 0; i-- )
+  {
+    temp = highPulseSample(i2cPorts.p_i2c, temp);
+    rdData = rdData << 1;
+    if (temp) {
+      rdData |= 1;
+    }
+  }
+  data[0] = rdData;
+  (void) highPulseDrive(i2cPorts.p_i2c, 0);
+  stopBit( i2cPorts.p_i2c );
+  waitBeforeNextStart(i2cPorts.p_i2c);
+
+  return 1;
+}
+
+int AK4458_i2c_master_write_reg(int device, int addr, unsigned char const s_data[], int nbytes, struct r_i2c &i2cPorts)
+{
+  int data;
+  int ack;
+
+
+  startBit( i2cPorts.p_i2c );
+  ack = tx8( i2cPorts.p_i2c, device );
+  ack |= tx8( i2cPorts.p_i2c, addr );
+
+
+  data = s_data[0];
+  ack |= tx8( i2cPorts.p_i2c, data );
+
+  stopBit(i2cPorts.p_i2c);
+  return ack == 0;
 }

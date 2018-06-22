@@ -1,0 +1,3 @@
+OPTIONAL_HEADERS += i2c_conf.h
+
+MODULE_XCC_XC_FLAGS = $(XCC_FLAGS) -g -Os -save-temps

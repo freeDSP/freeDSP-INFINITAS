@@ -1,0 +1,4 @@
+
+DEPENDENT_MODULES = module_locks
+
+MODULE_XCC_XC_FLAGS = $(XCC_FLAGS) -g -Os -save-temps
