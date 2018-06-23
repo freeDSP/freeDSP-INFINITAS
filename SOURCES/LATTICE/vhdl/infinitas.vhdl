@@ -137,15 +137,22 @@ architecture Behavioral of infinitas is
   signal adc_tdmin2 : std_logic := '0';
   signal adc_tdmin3 : std_logic := '0';
   
-  signal dac_tdmout0 : std_logic := '0';
-  signal dac_tdmout1 : std_logic := '0';
-  signal dac_tdmout2 : std_logic := '0';
-  signal dac_tdmout3 : std_logic := '0';
+  --signal dac_tdmout0 : std_logic := '0';
+  --signal dac_tdmout1 : std_logic := '0';
+  --signal dac_tdmout2 : std_logic := '0';
+  --signal dac_tdmout3 : std_logic := '0';
 
+	signal rst : std_logic := '0';
 	
+	signal srDAC1 : std_logic_vector( 255 downto 0 ) := ( others => '0' );
+	signal srDAC2 : std_logic_vector( 255 downto 0 ) := ( others => '0' );
+	signal srDAC3 : std_logic_vector( 255 downto 0 ) := ( others => '0' );
+	signal srDAC4 : std_logic_vector( 255 downto 0 ) := ( others => '0' );
 
 begin
 
+  --rst <= not nRST;
+	
   ------------------------------------------------------------------------------
   -- Taktsignale verteilen
   ------------------------------------------------------------------------------
@@ -187,16 +194,47 @@ begin
   -- Datensignale verteilen
   ------------------------------------------------------------------------------
   
-  -- Diese Konfiguration gilt für reinen  Audiointerfacebetrieb
+  -- Diese Konfiguration gilt fuer reinen  Audiointerfacebetrieb
   -- Daten vom XMOS an DACs weiterleiten
-  expMDO1 <= xTDMOUT1;
-  expMDO2 <= xTDMOUT2;
-  expMDO3 <= xTDMOUT3;
-  expMDO4 <= xTDMOUT4;
+  --expMDO1 <= xTDMOUT1;
+  --expMDO2 <= xTDMOUT2;
+  --expMDO3 <= xTDMOUT3;
+  --expMDO4 <= xTDMOUT4;
   xTDMIN1 <= expMDI1;
   xTDMIN2 <= expMDI2;
   xTDMIN3 <= expMDI3;
   xTDMIN4 <= expMDI4;
+  ------------------------------------------------------------------------------
+  -- This is a dirty hack. XMOS puts out the data at rising edge of LRCK but one
+	-- BCLK delayed. AK4458 cannot be set for this mode. MSB-justified modes expect
+	-- data without delay. By inverting LRCK we could go for I2S compatible
+	-- mode but AK5558 cannot be programmed via I2C due to a bug on prototype board.
+  ------------------------------------------------------------------------------
+	process(bclk, rst)
+	begin
+	  if rst = '1' then
+		  srDAC2 <= ( others => '0' );
+		
+		elsif rising_edge(bclk) then
+		  srDAC1( 255 downto 1 ) <= srDAC1( 254 downto 0 );
+			srDAC1( 0 ) <= xTDMOUT1;
+			expMDO1 <= srDAC1( 254 );
+			
+		  srDAC2( 255 downto 1 ) <= srDAC2( 254 downto 0 );
+			srDAC2( 0 ) <= xTDMOUT2;
+			expMDO2 <= srDAC2( 254 );
+			
+			srDAC3( 255 downto 1 ) <= srDAC3( 254 downto 0 );
+			srDAC3( 0 ) <= xTDMOUT3;
+			expMDO3 <= srDAC3( 254 );
+			
+			srDAC4( 255 downto 1 ) <= srDAC4( 254 downto 0 );
+			srDAC4( 0 ) <= xTDMOUT4;
+			expMDO4 <= srDAC4( 254 );
+			
+		end if;
+	
+	end process;
   
   
   

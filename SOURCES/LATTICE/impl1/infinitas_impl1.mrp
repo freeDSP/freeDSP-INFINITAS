@@ -14,22 +14,22 @@ Target Vendor:  LATTICE
 Target Device:  LCMXO2-1200HCTQFP144
 Target Performance:   6
 Mapper:  xo2c00,  version:  Diamond (64-bit) 3.9.0.99.2
-Mapped on:  06/08/18  16:03:49
+Mapped on:  06/23/18  20:11:12
 
 Design Summary
 --------------
 
-   Number of registers:      0 out of  1604 (0%)
-      PFU registers:            0 out of  1280 (0%)
+   Number of registers:     20 out of  1604 (1%)
+      PFU registers:           20 out of  1280 (2%)
       PIO registers:            0 out of   324 (0%)
-   Number of SLICEs:         1 out of   640 (0%)
-      SLICEs as Logic/ROM:      1 out of   640 (0%)
-      SLICEs as RAM:            0 out of   480 (0%)
-      SLICEs as Carry:          0 out of   640 (0%)
-   Number of LUT4s:          1 out of  1280 (0%)
-      Number used as logic LUTs:          1
-      Number used as distributed RAM:     0
-      Number used as ripple logic:        0
+   Number of SLICEs:       178 out of   640 (28%)
+      SLICEs as Logic/ROM:     82 out of   640 (13%)
+      SLICEs as RAM:           96 out of   480 (20%)
+      SLICEs as Carry:         38 out of   640 (6%)
+   Number of LUT4s:        355 out of  1280 (28%)
+      Number used as logic LUTs:         87
+      Number used as distributed RAM:   192
+      Number used as ripple logic:       76
       Number used as shift registers:     0
    Number of PIO sites used: 75 + 4(JTAG) out of 108 (73%)
    Number of block RAMs:  0 out of 7 (0%)
@@ -56,42 +56,48 @@ Design Summary
      distributed RAMs) + 2*(Number of ripple logic)
       2. Number of logic LUT4s does not include count of distributed RAM and
      ripple logic.
-   Number of clocks:  0
+   Number of clocks:  1
+     Net expBCLK8_c_c: 46 loads, 46 rising, 0 falling (Driver: PIO xBCLK )
    Number of Clock Enables:  0
-   Number of LSRs:  0
-   Number of nets driven by tri-state buffers:  0
+   Number of LSRs:  2
 
                                     Page 1
 
 
 
 
-Design:  infinitas                                     Date:  06/08/18  16:03:49
+Design:  infinitas                                     Date:  06/23/18  20:11:12
 
 Design Summary (cont)
 ---------------------
+     Net n2771: 5 loads, 5 LSLICEs
+     Net n2770: 5 loads, 5 LSLICEs
+   Number of nets driven by tri-state buffers:  0
    Top 10 highest fanout non-clock nets:
-     Net xMCLK_c_c: 11 loads
-     Net expBCLK8_c_c: 8 loads
-     Net expLRCK8_c_c: 8 loads
-     Net expMDO1_c_c: 1 loads
-     Net expMDO2_c_c: 1 loads
-     Net expMDO3_c_c: 1 loads
-     Net expMDO4_c_c: 1 loads
-     Net pllWCLKREF_c_c: 1 loads
-     Net xTDMIN1_c_c: 1 loads
-     Net xTDMIN2_c_c: 1 loads
+     Net n2136: 32 loads
+     Net n2137: 32 loads
+     Net n2138: 32 loads
+     Net n2139: 32 loads
+     Net n2204: 32 loads
+     Net n2205: 32 loads
+     Net n2206: 32 loads
+     Net n2207: 32 loads
+     Net n2080: 28 loads
+     Net n2148: 27 loads
 
 
 
 
-   Number of warnings:  30
+   Number of warnings:  31
    Number of errors:    0
      
 
 Design Errors/Warnings
 ----------------------
 
+WARNING - map: C:/lattice/infinitas/infinitas.lpf(153): Semantic error in "IOBUF
+     PORT "nRST" IO_TYPE=LVCMOS33 PULLMODE=NONE ;": Port "nRST" does not exist
+     in the design. This preference has been disabled.
 WARNING - map: input pad net 'nRST' has no legal load.
 WARNING - map: input pad net 'SCL' has no legal load.
 WARNING - map: input pad net 'SDA' has no legal load.
@@ -120,22 +126,22 @@ WARNING - map: IO buffer missing for top level port pllCLK...logic will be
 WARNING - map: IO buffer missing for top level port pllLOCKED...logic will be
      discarded.
 WARNING - map: IO buffer missing for top level port dspTDMOUT0...logic will be
-     discarded.
-WARNING - map: IO buffer missing for top level port dspTDMOUT1...logic will be
-     discarded.
-WARNING - map: IO buffer missing for top level port dspTDMOUT2...logic will be
-     discarded.
-WARNING - map: IO buffer missing for top level port dspTDMOUT3...logic will be
 
                                     Page 2
 
 
 
 
-Design:  infinitas                                     Date:  06/08/18  16:03:49
+Design:  infinitas                                     Date:  06/23/18  20:11:12
 
 Design Errors/Warnings (cont)
 -----------------------------
+     discarded.
+WARNING - map: IO buffer missing for top level port dspTDMOUT1...logic will be
+     discarded.
+WARNING - map: IO buffer missing for top level port dspTDMOUT2...logic will be
+     discarded.
+WARNING - map: IO buffer missing for top level port dspTDMOUT3...logic will be
      discarded.
 WARNING - map: IO buffer missing for top level port dspSPDIFOUT...logic will be
      discarded.
@@ -155,19 +161,19 @@ IO (PIO) Attributes
 | IO Name             | Direction | Levelmode | IO         |
 |                     |           |  IO_TYPE  | Register   |
 +---------------------+-----------+-----------+------------+
-| SPDIFOUT            | OUTPUT    | LVCMOS33  |            |
-+---------------------+-----------+-----------+------------+
-| pllCLKREF           | OUTPUT    | LVCMOS33  |            |
-+---------------------+-----------+-----------+------------+
-| pllWCLKREF          | OUTPUT    | LVCMOS33  |            |
+| dspTDMIN0           | OUTPUT    | LVCMOS33  |            |
 +---------------------+-----------+-----------+------------+
 | dspMCLK             | OUTPUT    | LVCMOS33  |            |
 +---------------------+-----------+-----------+------------+
-| dspBCLKIN0          | OUTPUT    | LVCMOS33  |            |
-+---------------------+-----------+-----------+------------+
 | dspLRCKIN0          | OUTPUT    | LVCMOS33  |            |
 +---------------------+-----------+-----------+------------+
-| dspTDMIN0           | OUTPUT    | LVCMOS33  |            |
+| pllWCLKREF          | OUTPUT    | LVCMOS33  |            |
++---------------------+-----------+-----------+------------+
+| pllCLKREF           | OUTPUT    | LVCMOS33  |            |
++---------------------+-----------+-----------+------------+
+| SPDIFOUT            | OUTPUT    | LVCMOS33  |            |
++---------------------+-----------+-----------+------------+
+| dspBCLKIN0          | OUTPUT    | LVCMOS33  |            |
 +---------------------+-----------+-----------+------------+
 | dspBCLKIN1          | OUTPUT    | LVCMOS33  |            |
 +---------------------+-----------+-----------+------------+
@@ -186,22 +192,22 @@ IO (PIO) Attributes
 | dspLRCKIN3          | OUTPUT    | LVCMOS33  |            |
 +---------------------+-----------+-----------+------------+
 | dspTDMIN3           | OUTPUT    | LVCMOS33  |            |
-+---------------------+-----------+-----------+------------+
-| dspBCLKOUT0         | OUTPUT    | LVCMOS33  |            |
-+---------------------+-----------+-----------+------------+
-| dspLRCKOUT0         | OUTPUT    | LVCMOS33  |            |
-+---------------------+-----------+-----------+------------+
-| dspBCLKOUT1         | OUTPUT    | LVCMOS33  |            |
 
                                     Page 3
 
 
 
 
-Design:  infinitas                                     Date:  06/08/18  16:03:49
+Design:  infinitas                                     Date:  06/23/18  20:11:12
 
 IO (PIO) Attributes (cont)
 --------------------------
++---------------------+-----------+-----------+------------+
+| dspBCLKOUT0         | OUTPUT    | LVCMOS33  |            |
++---------------------+-----------+-----------+------------+
+| dspLRCKOUT0         | OUTPUT    | LVCMOS33  |            |
++---------------------+-----------+-----------+------------+
+| dspBCLKOUT1         | OUTPUT    | LVCMOS33  |            |
 +---------------------+-----------+-----------+------------+
 | dspLRCKOUT1         | OUTPUT    | LVCMOS33  |            |
 +---------------------+-----------+-----------+------------+
@@ -252,22 +258,22 @@ IO (PIO) Attributes (cont)
 | expBCLK5            | OUTPUT    | LVCMOS33  |            |
 +---------------------+-----------+-----------+------------+
 | expLRCK5            | OUTPUT    | LVCMOS33  |            |
-+---------------------+-----------+-----------+------------+
-| expMCLK5            | OUTPUT    | LVCMOS33  |            |
-+---------------------+-----------+-----------+------------+
-| expMDO6             | OUTPUT    | LVCMOS33  |            |
-+---------------------+-----------+-----------+------------+
-| expBCLK6            | OUTPUT    | LVCMOS33  |            |
 
                                     Page 4
 
 
 
 
-Design:  infinitas                                     Date:  06/08/18  16:03:49
+Design:  infinitas                                     Date:  06/23/18  20:11:12
 
 IO (PIO) Attributes (cont)
 --------------------------
++---------------------+-----------+-----------+------------+
+| expMCLK5            | OUTPUT    | LVCMOS33  |            |
++---------------------+-----------+-----------+------------+
+| expMDO6             | OUTPUT    | LVCMOS33  |            |
++---------------------+-----------+-----------+------------+
+| expBCLK6            | OUTPUT    | LVCMOS33  |            |
 +---------------------+-----------+-----------+------------+
 | expLRCK6            | OUTPUT    | LVCMOS33  |            |
 +---------------------+-----------+-----------+------------+
@@ -318,34 +324,563 @@ IO (PIO) Attributes (cont)
 | xTDMOUT1            | INPUT     | LVCMOS33  |            |
 +---------------------+-----------+-----------+------------+
 | xTDMOUT2            | INPUT     | LVCMOS33  |            |
-+---------------------+-----------+-----------+------------+
-| xTDMOUT3            | INPUT     | LVCMOS33  |            |
-+---------------------+-----------+-----------+------------+
-| xTDMOUT4            | INPUT     | LVCMOS33  |            |
-+---------------------+-----------+-----------+------------+
-| wclkIN              | INPUT     | LVCMOS33  |            |
 
                                     Page 5
 
 
 
 
-Design:  infinitas                                     Date:  06/08/18  16:03:49
+Design:  infinitas                                     Date:  06/23/18  20:11:12
 
 IO (PIO) Attributes (cont)
 --------------------------
++---------------------+-----------+-----------+------------+
+| xTDMOUT3            | INPUT     | LVCMOS33  |            |
++---------------------+-----------+-----------+------------+
+| xTDMOUT4            | INPUT     | LVCMOS33  |            |
++---------------------+-----------+-----------+------------+
+| wclkIN              | INPUT     | LVCMOS33  |            |
 +---------------------+-----------+-----------+------------+
 
 Removed logic
 -------------
 
-Block i12 undriven or does not drive anything - clipped.
+Block i24 undriven or does not drive anything - clipped.
 Block GSR_INST undriven or does not drive anything - clipped.
+Block srDAC4_158_186_222_246/RAM1 undriven or does not drive anything - clipped.
+     
+Block srDAC4_165_204_240/RAM1 undriven or does not drive anything - clipped.
+Block srDAC4_158_192_234/RAM1 undriven or does not drive anything - clipped.
+Block srDAC4_158_186_228/RAM1 undriven or does not drive anything - clipped.
+Block srDAC4_158_186_222/RAM1 undriven or does not drive anything - clipped.
+Block srDAC4_172_216/RAM1 undriven or does not drive anything - clipped.
+Block srDAC4_165_210/RAM1 undriven or does not drive anything - clipped.
+Block srDAC4_165_204/RAM1 undriven or does not drive anything - clipped.
+Block srDAC4_158_198/RAM1 undriven or does not drive anything - clipped.
+Block srDAC4_158_192/RAM1 undriven or does not drive anything - clipped.
+Block srDAC4_158_186/RAM1 undriven or does not drive anything - clipped.
+Block srDAC4_179/RAM1 undriven or does not drive anything - clipped.
+Block srDAC4_172/RAM1 undriven or does not drive anything - clipped.
+Block srDAC4_165/RAM1 undriven or does not drive anything - clipped.
+Block srDAC4_158/RAM1 undriven or does not drive anything - clipped.
+Block srDAC4/RAM1 undriven or does not drive anything - clipped.
+Block srDAC2_48_76_112_136/RAM1 undriven or does not drive anything - clipped.
+Block srDAC2_55_94_130/RAM1 undriven or does not drive anything - clipped.
+Block srDAC2_48_82_124/RAM1 undriven or does not drive anything - clipped.
+Block srDAC2_48_76_118/RAM1 undriven or does not drive anything - clipped.
+Block srDAC2_48_76_112/RAM1 undriven or does not drive anything - clipped.
+Block srDAC2_62_106/RAM1 undriven or does not drive anything - clipped.
+Block srDAC2_55_100/RAM1 undriven or does not drive anything - clipped.
+Block srDAC2_55_94/RAM1 undriven or does not drive anything - clipped.
+Block srDAC2_48_88/RAM1 undriven or does not drive anything - clipped.
+Block srDAC2_48_82/RAM1 undriven or does not drive anything - clipped.
+Block srDAC2_48_76/RAM1 undriven or does not drive anything - clipped.
+Block srDAC2_69/RAM1 undriven or does not drive anything - clipped.
+Block srDAC2_62/RAM1 undriven or does not drive anything - clipped.
+Block srDAC2_55/RAM1 undriven or does not drive anything - clipped.
+Block srDAC2_48/RAM1 undriven or does not drive anything - clipped.
+Block srDAC2/RAM1 undriven or does not drive anything - clipped.
 Signal VCC_net undriven or does not drive anything - clipped.
+Signal add_32_1/S0 undriven or does not drive anything - clipped.
+Signal add_32_1/CI undriven or does not drive anything - clipped.
+Signal sub_269_add_2_7/CO undriven or does not drive anything - clipped.
+Signal sub_270_add_2_1/S0 undriven or does not drive anything - clipped.
+Signal sub_270_add_2_1/CI undriven or does not drive anything - clipped.
+Signal add_32_9/S1 undriven or does not drive anything - clipped.
+Signal add_32_9/CO undriven or does not drive anything - clipped.
+Signal add_41_1/S0 undriven or does not drive anything - clipped.
+Signal add_41_1/CI undriven or does not drive anything - clipped.
+
+                                    Page 6
+
+
+
+
+Design:  infinitas                                     Date:  06/23/18  20:11:12
+
+Removed logic (cont)
+--------------------
+Signal sub_270_add_2_7/CO undriven or does not drive anything - clipped.
+Signal add_41_9/S1 undriven or does not drive anything - clipped.
+Signal add_41_9/CO undriven or does not drive anything - clipped.
+Signal srDAC4_158_186_222_246/DO2 undriven or does not drive anything - clipped.
+     
+Signal srDAC4_158_186_222_246/DO3 undriven or does not drive anything - clipped.
+     
+Signal srDAC4_165_204_240/DO2 undriven or does not drive anything - clipped.
+Signal srDAC4_165_204_240/DO3 undriven or does not drive anything - clipped.
+Signal srDAC4_158_192_234/DO2 undriven or does not drive anything - clipped.
+Signal srDAC4_158_192_234/DO3 undriven or does not drive anything - clipped.
+Signal srDAC4_158_186_228/DO2 undriven or does not drive anything - clipped.
+Signal srDAC4_158_186_228/DO3 undriven or does not drive anything - clipped.
+Signal srDAC4_158_186_222/DO2 undriven or does not drive anything - clipped.
+Signal srDAC4_158_186_222/DO3 undriven or does not drive anything - clipped.
+Signal srDAC4_172_216/DO2 undriven or does not drive anything - clipped.
+Signal srDAC4_172_216/DO3 undriven or does not drive anything - clipped.
+Signal srDAC4_165_210/DO2 undriven or does not drive anything - clipped.
+Signal srDAC4_165_210/DO3 undriven or does not drive anything - clipped.
+Signal srDAC4_165_204/DO2 undriven or does not drive anything - clipped.
+Signal srDAC4_165_204/DO3 undriven or does not drive anything - clipped.
+Signal srDAC4_158_198/DO2 undriven or does not drive anything - clipped.
+Signal srDAC4_158_198/DO3 undriven or does not drive anything - clipped.
+Signal srDAC4_158_192/DO2 undriven or does not drive anything - clipped.
+Signal srDAC4_158_192/DO3 undriven or does not drive anything - clipped.
+Signal srDAC4_158_186/DO2 undriven or does not drive anything - clipped.
+Signal srDAC4_158_186/DO3 undriven or does not drive anything - clipped.
+Signal srDAC4_179/DO2 undriven or does not drive anything - clipped.
+Signal srDAC4_179/DO3 undriven or does not drive anything - clipped.
+Signal srDAC4_172/DO2 undriven or does not drive anything - clipped.
+Signal srDAC4_172/DO3 undriven or does not drive anything - clipped.
+Signal srDAC4_165/DO2 undriven or does not drive anything - clipped.
+Signal srDAC4_165/DO3 undriven or does not drive anything - clipped.
+Signal srDAC4_158/DO2 undriven or does not drive anything - clipped.
+Signal srDAC4_158/DO3 undriven or does not drive anything - clipped.
+Signal srDAC4/DO2 undriven or does not drive anything - clipped.
+Signal srDAC4/DO3 undriven or does not drive anything - clipped.
+Signal sub_31_add_2_1/S0 undriven or does not drive anything - clipped.
+Signal sub_31_add_2_1/CI undriven or does not drive anything - clipped.
+Signal sub_31_add_2_9/S1 undriven or does not drive anything - clipped.
+Signal sub_31_add_2_9/CO undriven or does not drive anything - clipped.
+Signal srDAC2_reg_267_add_4_1/S0 undriven or does not drive anything - clipped.
+Signal srDAC2_reg_267_add_4_1/CI undriven or does not drive anything - clipped.
+Signal srDAC2_48_76_112_136/DO2 undriven or does not drive anything - clipped.
+Signal srDAC2_48_76_112_136/DO3 undriven or does not drive anything - clipped.
+Signal srDAC2_55_94_130/DO2 undriven or does not drive anything - clipped.
+Signal srDAC2_55_94_130/DO3 undriven or does not drive anything - clipped.
+Signal srDAC2_48_82_124/DO2 undriven or does not drive anything - clipped.
+Signal srDAC2_48_82_124/DO3 undriven or does not drive anything - clipped.
+Signal srDAC2_48_76_118/DO2 undriven or does not drive anything - clipped.
+Signal srDAC2_48_76_118/DO3 undriven or does not drive anything - clipped.
+Signal srDAC2_48_76_112/DO2 undriven or does not drive anything - clipped.
+Signal srDAC2_48_76_112/DO3 undriven or does not drive anything - clipped.
+Signal srDAC2_62_106/DO2 undriven or does not drive anything - clipped.
+Signal srDAC2_62_106/DO3 undriven or does not drive anything - clipped.
+Signal srDAC2_55_100/DO2 undriven or does not drive anything - clipped.
+
+                                    Page 7
+
+
+
+
+Design:  infinitas                                     Date:  06/23/18  20:11:12
+
+Removed logic (cont)
+--------------------
+Signal srDAC2_55_100/DO3 undriven or does not drive anything - clipped.
+Signal srDAC2_55_94/DO2 undriven or does not drive anything - clipped.
+Signal srDAC2_55_94/DO3 undriven or does not drive anything - clipped.
+Signal srDAC2_48_88/DO2 undriven or does not drive anything - clipped.
+Signal srDAC2_48_88/DO3 undriven or does not drive anything - clipped.
+Signal srDAC2_48_82/DO2 undriven or does not drive anything - clipped.
+Signal srDAC2_48_82/DO3 undriven or does not drive anything - clipped.
+Signal srDAC2_48_76/DO2 undriven or does not drive anything - clipped.
+Signal srDAC2_48_76/DO3 undriven or does not drive anything - clipped.
+Signal srDAC2_69/DO2 undriven or does not drive anything - clipped.
+Signal srDAC2_69/DO3 undriven or does not drive anything - clipped.
+Signal srDAC2_62/DO2 undriven or does not drive anything - clipped.
+Signal srDAC2_62/DO3 undriven or does not drive anything - clipped.
+Signal srDAC2_55/DO2 undriven or does not drive anything - clipped.
+Signal srDAC2_55/DO3 undriven or does not drive anything - clipped.
+Signal srDAC2_48/DO2 undriven or does not drive anything - clipped.
+Signal srDAC2_48/DO3 undriven or does not drive anything - clipped.
+Signal srDAC2/DO2 undriven or does not drive anything - clipped.
+Signal srDAC2/DO3 undriven or does not drive anything - clipped.
+Signal srDAC2_reg_267_add_4_9/S1 undriven or does not drive anything - clipped.
+Signal srDAC2_reg_267_add_4_9/CO undriven or does not drive anything - clipped.
+Signal srDAC4_reg_268_add_4_1/S0 undriven or does not drive anything - clipped.
+Signal srDAC4_reg_268_add_4_1/CI undriven or does not drive anything - clipped.
+Signal srDAC4_reg_268_add_4_9/S1 undriven or does not drive anything - clipped.
+Signal srDAC4_reg_268_add_4_9/CO undriven or does not drive anything - clipped.
+Signal sub_40_add_2_1/S0 undriven or does not drive anything - clipped.
+Signal sub_40_add_2_1/CI undriven or does not drive anything - clipped.
+Signal sub_40_add_2_9/S1 undriven or does not drive anything - clipped.
+Signal sub_40_add_2_9/CO undriven or does not drive anything - clipped.
+Signal sub_269_add_2_1/S0 undriven or does not drive anything - clipped.
+Signal sub_269_add_2_1/CI undriven or does not drive anything - clipped.
 
 Memory Usage
 ------------
 
+/srDAC2:
+    EBRs: 0
+    RAM SLICEs: 2
+    Logic SLICEs: 0
+    PFU Registers: 0
+/srDAC2/RAMW:
+    EBRs: 0
+    RAM SLICEs: 1
+    Logic SLICEs: 0
+    PFU Registers: 0
+/srDAC2_48:
+    EBRs: 0
+    RAM SLICEs: 2
+    Logic SLICEs: 0
+    PFU Registers: 0
+/srDAC2_48/RAMW:
+    EBRs: 0
+    RAM SLICEs: 1
+    Logic SLICEs: 0
+    PFU Registers: 0
+/srDAC2_48_76:
+
+                                    Page 8
+
+
+
+
+Design:  infinitas                                     Date:  06/23/18  20:11:12
+
+Memory Usage (cont)
+-------------------
+    EBRs: 0
+    RAM SLICEs: 2
+    Logic SLICEs: 0
+    PFU Registers: 0
+/srDAC2_48_76/RAMW:
+    EBRs: 0
+    RAM SLICEs: 1
+    Logic SLICEs: 0
+    PFU Registers: 0
+/srDAC2_48_76_112:
+    EBRs: 0
+    RAM SLICEs: 2
+    Logic SLICEs: 0
+    PFU Registers: 0
+/srDAC2_48_76_112/RAMW:
+    EBRs: 0
+    RAM SLICEs: 1
+    Logic SLICEs: 0
+    PFU Registers: 0
+/srDAC2_48_76_112_136:
+    EBRs: 0
+    RAM SLICEs: 2
+    Logic SLICEs: 0
+    PFU Registers: 0
+/srDAC2_48_76_112_136/RAMW:
+    EBRs: 0
+    RAM SLICEs: 1
+    Logic SLICEs: 0
+    PFU Registers: 0
+/srDAC2_48_76_118:
+    EBRs: 0
+    RAM SLICEs: 2
+    Logic SLICEs: 0
+    PFU Registers: 0
+/srDAC2_48_76_118/RAMW:
+    EBRs: 0
+    RAM SLICEs: 1
+    Logic SLICEs: 0
+    PFU Registers: 0
+/srDAC2_48_82:
+    EBRs: 0
+    RAM SLICEs: 2
+    Logic SLICEs: 0
+    PFU Registers: 0
+/srDAC2_48_82/RAMW:
+    EBRs: 0
+    RAM SLICEs: 1
+    Logic SLICEs: 0
+    PFU Registers: 0
+/srDAC2_48_82_124:
+    EBRs: 0
+    RAM SLICEs: 2
+    Logic SLICEs: 0
+    PFU Registers: 0
+/srDAC2_48_82_124/RAMW:
+    EBRs: 0
+
+                                    Page 9
+
+
+
+
+Design:  infinitas                                     Date:  06/23/18  20:11:12
+
+Memory Usage (cont)
+-------------------
+    RAM SLICEs: 1
+    Logic SLICEs: 0
+    PFU Registers: 0
+/srDAC2_48_88:
+    EBRs: 0
+    RAM SLICEs: 2
+    Logic SLICEs: 0
+    PFU Registers: 0
+/srDAC2_48_88/RAMW:
+    EBRs: 0
+    RAM SLICEs: 1
+    Logic SLICEs: 0
+    PFU Registers: 0
+/srDAC2_55:
+    EBRs: 0
+    RAM SLICEs: 2
+    Logic SLICEs: 0
+    PFU Registers: 0
+/srDAC2_55/RAMW:
+    EBRs: 0
+    RAM SLICEs: 1
+    Logic SLICEs: 0
+    PFU Registers: 0
+/srDAC2_55_100:
+    EBRs: 0
+    RAM SLICEs: 2
+    Logic SLICEs: 0
+    PFU Registers: 0
+/srDAC2_55_100/RAMW:
+    EBRs: 0
+    RAM SLICEs: 1
+    Logic SLICEs: 0
+    PFU Registers: 0
+/srDAC2_55_94:
+    EBRs: 0
+    RAM SLICEs: 2
+    Logic SLICEs: 0
+    PFU Registers: 0
+/srDAC2_55_94/RAMW:
+    EBRs: 0
+    RAM SLICEs: 1
+    Logic SLICEs: 0
+    PFU Registers: 0
+/srDAC2_55_94_130:
+    EBRs: 0
+    RAM SLICEs: 2
+    Logic SLICEs: 0
+    PFU Registers: 0
+/srDAC2_55_94_130/RAMW:
+    EBRs: 0
+    RAM SLICEs: 1
+    Logic SLICEs: 0
+    PFU Registers: 0
+/srDAC2_62:
+    EBRs: 0
+    RAM SLICEs: 2
+
+                                   Page 10
+
+
+
+
+Design:  infinitas                                     Date:  06/23/18  20:11:12
+
+Memory Usage (cont)
+-------------------
+    Logic SLICEs: 0
+    PFU Registers: 0
+/srDAC2_62/RAMW:
+    EBRs: 0
+    RAM SLICEs: 1
+    Logic SLICEs: 0
+    PFU Registers: 0
+/srDAC2_62_106:
+    EBRs: 0
+    RAM SLICEs: 2
+    Logic SLICEs: 0
+    PFU Registers: 0
+/srDAC2_62_106/RAMW:
+    EBRs: 0
+    RAM SLICEs: 1
+    Logic SLICEs: 0
+    PFU Registers: 0
+/srDAC2_69:
+    EBRs: 0
+    RAM SLICEs: 2
+    Logic SLICEs: 0
+    PFU Registers: 0
+/srDAC2_69/RAMW:
+    EBRs: 0
+    RAM SLICEs: 1
+    Logic SLICEs: 0
+    PFU Registers: 0
+/srDAC4:
+    EBRs: 0
+    RAM SLICEs: 2
+    Logic SLICEs: 0
+    PFU Registers: 0
+/srDAC4/RAMW:
+    EBRs: 0
+    RAM SLICEs: 1
+    Logic SLICEs: 0
+    PFU Registers: 0
+/srDAC4_158:
+    EBRs: 0
+    RAM SLICEs: 2
+    Logic SLICEs: 0
+    PFU Registers: 0
+/srDAC4_158/RAMW:
+    EBRs: 0
+    RAM SLICEs: 1
+    Logic SLICEs: 0
+    PFU Registers: 0
+/srDAC4_158_186:
+    EBRs: 0
+    RAM SLICEs: 2
+    Logic SLICEs: 0
+    PFU Registers: 0
+/srDAC4_158_186/RAMW:
+    EBRs: 0
+    RAM SLICEs: 1
+    Logic SLICEs: 0
+
+                                   Page 11
+
+
+
+
+Design:  infinitas                                     Date:  06/23/18  20:11:12
+
+Memory Usage (cont)
+-------------------
+    PFU Registers: 0
+/srDAC4_158_186_222:
+    EBRs: 0
+    RAM SLICEs: 2
+    Logic SLICEs: 0
+    PFU Registers: 0
+/srDAC4_158_186_222/RAMW:
+    EBRs: 0
+    RAM SLICEs: 1
+    Logic SLICEs: 0
+    PFU Registers: 0
+/srDAC4_158_186_222_246:
+    EBRs: 0
+    RAM SLICEs: 2
+    Logic SLICEs: 0
+    PFU Registers: 0
+/srDAC4_158_186_222_246/RAMW:
+    EBRs: 0
+    RAM SLICEs: 1
+    Logic SLICEs: 0
+    PFU Registers: 0
+/srDAC4_158_186_228:
+    EBRs: 0
+    RAM SLICEs: 2
+    Logic SLICEs: 0
+    PFU Registers: 0
+/srDAC4_158_186_228/RAMW:
+    EBRs: 0
+    RAM SLICEs: 1
+    Logic SLICEs: 0
+    PFU Registers: 0
+/srDAC4_158_192:
+    EBRs: 0
+    RAM SLICEs: 2
+    Logic SLICEs: 0
+    PFU Registers: 0
+/srDAC4_158_192/RAMW:
+    EBRs: 0
+    RAM SLICEs: 1
+    Logic SLICEs: 0
+    PFU Registers: 0
+/srDAC4_158_192_234:
+    EBRs: 0
+    RAM SLICEs: 2
+    Logic SLICEs: 0
+    PFU Registers: 0
+/srDAC4_158_192_234/RAMW:
+    EBRs: 0
+    RAM SLICEs: 1
+    Logic SLICEs: 0
+    PFU Registers: 0
+/srDAC4_158_198:
+    EBRs: 0
+    RAM SLICEs: 2
+    Logic SLICEs: 0
+    PFU Registers: 0
+
+                                   Page 12
+
+
+
+
+Design:  infinitas                                     Date:  06/23/18  20:11:12
+
+Memory Usage (cont)
+-------------------
+/srDAC4_158_198/RAMW:
+    EBRs: 0
+    RAM SLICEs: 1
+    Logic SLICEs: 0
+    PFU Registers: 0
+/srDAC4_165:
+    EBRs: 0
+    RAM SLICEs: 2
+    Logic SLICEs: 0
+    PFU Registers: 0
+/srDAC4_165/RAMW:
+    EBRs: 0
+    RAM SLICEs: 1
+    Logic SLICEs: 0
+    PFU Registers: 0
+/srDAC4_165_204:
+    EBRs: 0
+    RAM SLICEs: 2
+    Logic SLICEs: 0
+    PFU Registers: 0
+/srDAC4_165_204/RAMW:
+    EBRs: 0
+    RAM SLICEs: 1
+    Logic SLICEs: 0
+    PFU Registers: 0
+/srDAC4_165_204_240:
+    EBRs: 0
+    RAM SLICEs: 2
+    Logic SLICEs: 0
+    PFU Registers: 0
+/srDAC4_165_204_240/RAMW:
+    EBRs: 0
+    RAM SLICEs: 1
+    Logic SLICEs: 0
+    PFU Registers: 0
+/srDAC4_165_210:
+    EBRs: 0
+    RAM SLICEs: 2
+    Logic SLICEs: 0
+    PFU Registers: 0
+/srDAC4_165_210/RAMW:
+    EBRs: 0
+    RAM SLICEs: 1
+    Logic SLICEs: 0
+    PFU Registers: 0
+/srDAC4_172:
+    EBRs: 0
+    RAM SLICEs: 2
+    Logic SLICEs: 0
+    PFU Registers: 0
+/srDAC4_172/RAMW:
+    EBRs: 0
+    RAM SLICEs: 1
+    Logic SLICEs: 0
+    PFU Registers: 0
+/srDAC4_172_216:
+
+                                   Page 13
+
+
+
+
+Design:  infinitas                                     Date:  06/23/18  20:11:12
+
+Memory Usage (cont)
+-------------------
+    EBRs: 0
+    RAM SLICEs: 2
+    Logic SLICEs: 0
+    PFU Registers: 0
+/srDAC4_172_216/RAMW:
+    EBRs: 0
+    RAM SLICEs: 1
+    Logic SLICEs: 0
+    PFU Registers: 0
+/srDAC4_179:
+    EBRs: 0
+    RAM SLICEs: 2
+    Logic SLICEs: 0
+    PFU Registers: 0
+/srDAC4_179/RAMW:
+    EBRs: 0
+    RAM SLICEs: 1
+    Logic SLICEs: 0
+    PFU Registers: 0
 
      
 
@@ -354,7 +889,7 @@ Run Time and Memory Usage
 
    Total CPU Time: 0 secs  
    Total REAL Time: 0 secs  
-   Peak Memory Usage: 37 MB
+   Peak Memory Usage: 39 MB
         
 
 
@@ -384,14 +919,7 @@ Run Time and Memory Usage
 
 
 
-
-
-
-
-
-
-
-                                    Page 6
+                                   Page 14
 
 
 Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.

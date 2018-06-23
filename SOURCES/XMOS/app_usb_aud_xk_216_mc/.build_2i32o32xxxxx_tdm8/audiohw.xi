@@ -1239,7 +1239,7 @@ void AudioHwConfig(unsigned samFreq, unsigned mClk, chanend ?c_codec, unsigned d
     data[0] = 0x04;
     i2c_shared_master_write( r_i2c, 0xE0>>1, data, 1 );
 # 246 "../src/extensions/audiohw.xc"
-    { unsigned char data_w[1]; data_w[0] = 0b00001000; AK4458_i2c_shared_master_write_reg(r_i2c, (0x20), (0x00), data_w, 1);};
+    { unsigned char data_w[1]; data_w[0] = 0b00000100; AK4458_i2c_shared_master_write_reg(r_i2c, (0x20), (0x00), data_w, 1);};
 
 
 
@@ -1279,7 +1279,7 @@ void AudioHwConfig(unsigned samFreq, unsigned mClk, chanend ?c_codec, unsigned d
 
     { unsigned char data_w[1]; data_w[0] = 0b01010000; AK4458_i2c_shared_master_write_reg(r_i2c, (0x20), (0x0E), data_w, 1);};
 # 339 "../src/extensions/audiohw.xc"
-    { unsigned char data_w[1]; data_w[0] = 0b00001001; AK4458_i2c_shared_master_write_reg(r_i2c, (0x20), (0x00), data_w, 1);};
+    { unsigned char data_w[1]; data_w[0] = 0b00000101; AK4458_i2c_shared_master_write_reg(r_i2c, (0x20), (0x00), data_w, 1);};
 
 
     data[0] = 0b00000000;

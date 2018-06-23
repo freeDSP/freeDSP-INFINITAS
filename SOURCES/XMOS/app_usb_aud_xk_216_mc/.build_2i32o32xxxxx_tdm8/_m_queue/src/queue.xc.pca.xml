@@ -1,0 +1,54 @@
+<preCompilationAnalysis file="/Users/rkn/Documents/xTIMEcomposer/workspace/module_queue/src/queue.xc">
+<fDef name="is_power_of_2" global="true" noreturn="false" doNotSpecialize="false" numParams="1"/>
+<fDef name="queue_init" global="true" noreturn="false" doNotSpecialize="false" numParams="2"/>
+<fDef name="queue_is_empty" global="true" noreturn="false" doNotSpecialize="false" numParams="1"/>
+<fDef name="queue_is_full" global="true" noreturn="false" doNotSpecialize="false" numParams="1"/>
+<fDef name="queue_items" global="true" noreturn="false" doNotSpecialize="false" numParams="1"/>
+<fDef name="queue_pop_byte" global="true" noreturn="false" doNotSpecialize="false" numParams="2"/>
+<fDef name="queue_pop_word" global="true" noreturn="false" doNotSpecialize="false" numParams="2"/>
+<fDef name="queue_push_byte" global="true" noreturn="false" doNotSpecialize="false" numParams="3"/>
+<fDef name="queue_push_word" global="true" noreturn="false" doNotSpecialize="false" numParams="3"/>
+<fDef name="queue_space" global="true" noreturn="false" doNotSpecialize="false" numParams="1"/>
+<fCall name="is_power_of_2" global="true" numArgs="1">
+  <arg num="0">
+    <passThroughArg param="1" caller="queue_init" global="true"/>
+    <values>
+    </values>
+  </arg>
+</fCall>
+<fCall name="queue_is_full" global="true" numArgs="1">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="queue_is_empty" global="true" numArgs="1">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="queue_is_full" global="true" numArgs="1">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="queue_is_empty" global="true" numArgs="1">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="queue_items" global="true" numArgs="1">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+</preCompilationAnalysis>

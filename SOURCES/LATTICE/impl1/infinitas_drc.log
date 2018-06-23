@@ -40,7 +40,7 @@ WARNING - synthesis: input pad net 'expMDI8' has no legal load.
 WARNING - synthesis: DRC complete with 30 warnings.
 
 Design Results:
-     79 blocks expanded
+    275 blocks expanded
 completed the first expansion
 All blocks are expanded and NGD expansion is successful.
 Writing NGD file infinitas_impl1.ngd.

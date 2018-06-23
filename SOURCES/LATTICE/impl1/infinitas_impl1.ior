@@ -11,7 +11,7 @@ Performance Hardware Data Status:   Final          Version 34.4.
 // Package: TQFP144
 // ncd File: infinitas_impl1.ncd
 // Version: Diamond (64-bit) 3.9.0.99.2
-// Written on Fri Jun 08 16:03:55 2018
+// Written on Sat Jun 23 20:11:20 2018
 // M: Minimum Performance Grade
 // iotiming infinitas_impl1.ncd infinitas_impl1.prf -gui -msgset C:/lattice/infinitas/promote.xml
 
@@ -21,13 +21,21 @@ Worst Case Results across Performance Grades (M, 6):
 
 // Input Setup and Hold Times
 
-Port  Clock Edge  Setup Performance_Grade  Hold Performance_Grade
+Port     Clock Edge  Setup Performance_Grade  Hold Performance_Grade
 ----------------------------------------------------------------------
-(no input setup/hold data)
+xTDMOUT1 xBCLK R     0.043      M       3.342     6
+xTDMOUT2 xBCLK R    -0.049      M       2.654     6
+xTDMOUT3 xBCLK R     2.159      6       2.228     6
+xTDMOUT4 xBCLK R     0.042      M       3.314     6
 
 
 // Clock to Output Delay
 
-Port  Clock Edge  Max_Delay Performance_Grade  Min_Delay Performance_Grade
+Port    Clock Edge  Max_Delay Performance_Grade  Min_Delay Performance_Grade
 ------------------------------------------------------------------------
-(no clock to output min/max data)
+expMDO1 xBCLK R    10.459         6        3.609          M
+expMDO2 xBCLK R     9.209         6        3.187          M
+expMDO3 xBCLK R     9.924         6        3.410          M
+expMDO4 xBCLK R     9.893         6        3.397          M
+WARNING: you must also run trce with hold speed: 6
+WARNING: you must also run trce with setup speed: M

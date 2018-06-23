@@ -1,16 +1,16 @@
 NOTE Copyright (C), 1992-2010, Lattice Semiconductor Corporation *
 NOTE All Rights Reserved *
-NOTE DATE CREATED: Fri Jun 08 16:04:00 2018 *
+NOTE DATE CREATED: Sat Jun 23 20:11:25 2018 *
 NOTE DESIGN NAME: infinitas *
 NOTE DEVICE NAME: LCMXO2-1200HC-6TQFP144 *
 NOTE PIN ASSIGNMENTS *
-NOTE PINS SPDIFOUT : 49 : out *
-NOTE PINS pllCLKREF : 20 : out *
-NOTE PINS pllWCLKREF : 32 : out *
-NOTE PINS dspMCLK : 13 : out *
-NOTE PINS dspBCLKIN0 : 141 : out *
-NOTE PINS dspLRCKIN0 : 140 : out *
 NOTE PINS dspTDMIN0 : 139 : out *
+NOTE PINS dspMCLK : 13 : out *
+NOTE PINS dspLRCKIN0 : 140 : out *
+NOTE PINS pllWCLKREF : 32 : out *
+NOTE PINS pllCLKREF : 20 : out *
+NOTE PINS SPDIFOUT : 49 : out *
+NOTE PINS dspBCLKIN0 : 141 : out *
 NOTE PINS dspBCLKIN1 : 138 : out *
 NOTE PINS dspLRCKIN1 : 133 : out *
 NOTE PINS dspTDMIN1 : 132 : out *

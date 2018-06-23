@@ -243,7 +243,7 @@ void AudioHwConfig(unsigned samFreq, unsigned mClk, chanend ?c_codec, unsigned d
      * bit[3:1] : DIF2-0: Audio Data Interface Modes                    : 100 Mode 16
      * bit[7]   : ACKS: Master Clock Frequency Auto Setting Mode Enable :   0 Manual Setting Mode
      */
-    AK4458_REGWRITE( AK4458_CONTROL1, 0b00001000 );
+    AK4458_REGWRITE( AK4458_CONTROL1, 0b00000100 );
 
     /* Control 2 (Address: 0x01)
      * bit[0]   : SMUTE Soft Mute Enable                                :   0 Normal Operation
@@ -333,10 +333,10 @@ void AudioHwConfig(unsigned samFreq, unsigned mClk, chanend ?c_codec, unsigned d
     // Release Reset by rewriting Control1
     /* Control 1 (Address: 0x00)
      * bit[0]   : RSTN: Internal Timing Reset                           :   1 Normal Operation
-     * bit[3:1] : DIF2-0: Audio Data Interface Modes                    : 100 Mode 16
+     * bit[3:1] : DIF2-0: Audio Data Interface Modes                    : 010 Mode 14
      * bit[7]   : ACKS: Master Clock Frequency Auto Setting Mode Enable :   0 Manual Setting Mode
      */
-    AK4458_REGWRITE( AK4458_CONTROL1, 0b00001001 );
+    AK4458_REGWRITE( AK4458_CONTROL1, 0b00000101 );
 
     //--- Disconnect i2c bus of expansion board
     data[0] = 0b00000000;

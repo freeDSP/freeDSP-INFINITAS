@@ -1132,7 +1132,20 @@ static void waitAfterNACK(port p_i2c) {
 
     p_i2c :> void;
 }
-# 62 "/Users/rkn/Documents/xTIMEcomposer/workspace/module_i2c_single_port/src/i2c-sp.xc"
+
+
+static void waitBeforeNextStart(port p_i2c) {
+    timer gt;
+    int time;
+
+    gt :> time;
+    time += (50 * 100U);
+    gt when __builtin_timer_after(time) :> int _;
+
+    p_i2c :> void;
+}
+
+
 static void highPulseDrive(port i2c, int sdaValue) {
     if (sdaValue) {
         i2c <: 2 | 0 | 0xC;

@@ -1,4 +1,10 @@
 [ActiveSupport PAR]
+; Global primary clocks
+GLOBAL_PRIMARY_USED = 1;
+; Global primary clock #0
+GLOBAL_PRIMARY_0_SIGNALNAME = expBCLK8_c_c;
+GLOBAL_PRIMARY_0_DRIVERTYPE = PIO;
+GLOBAL_PRIMARY_0_LOADNUM = 46;
 ; # of global secondary clocks
 GLOBAL_SECONDARY_USED = 0;
 ; I/O Bank 0 Usage
