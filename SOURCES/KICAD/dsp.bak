@@ -35,11 +35,11 @@ EELAYER 25 0
 EELAYER END
 $Descr A3 16535 11693
 encoding utf-8
-Sheet 7 3
+Sheet 3 3
 Title "DSP"
 Date ""
-Rev ""
-Comp "rk"
+Rev "1.0.0"
+Comp "auverdion"
 Comment1 ""
 Comment2 ""
 Comment3 ""
