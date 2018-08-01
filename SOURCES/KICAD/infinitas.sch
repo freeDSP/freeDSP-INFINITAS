@@ -4283,4 +4283,8 @@ Wire Wire Line
 Wire Wire Line
 	14550 1150 14550 1950
 Connection ~ 14550 1950
+Text Label 6300 8300 1    39   ~ 0
+~RST
+Wire Wire Line
+	6300 7350 6300 8300
 $EndSCHEMATC
