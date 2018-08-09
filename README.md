@@ -1,5 +1,16 @@
-# freeDSP-Infinitas
+# freeDSP Infinitas
 
-WORK IN PROGRESS. Do not build unless you are bug tolerant.
+freeDSP based on ADAU1452 and 32in/32out full duplex UAC2 interface
 
-For VHDL: You may need to copy the /SOURCES/LATTICE to c:\infinitas to make it working with Lattice Diamond when running Windows 7.
+BOARD STATUS: TESTING - DO NOT BUILT!
+
+MAIN COORDINATOR: [dspverden](https://github.com/dspverden)
+
+IMPORTANT:
+
+Please take care on which branch you're currently working!
+
+Branches:
+
+master - this branch always holds the latest released revision
+develop - this is the develop branch with new features
