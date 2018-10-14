@@ -14,7 +14,7 @@
 .Lsection_debug_loc:
 	.section	.debug_ranges,"",@progbits
 .Ldebug_range:
-	.file	1 "/Applications/XMOS_xTIMEcomposer_Community_14.3.2/target/include/quadflash.h"
+	.file	1 "/Applications/XMOS_xTIMEcomposer_Community_14.3.3/target/include/quadflash.h"
 	.file	2 "/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/flashlib_user.c"
 	.text
 	.globl	flash_cmd_enable_ports
@@ -120,7 +120,7 @@ p_qflash:
 .Ldebug_end1:
 	.section	.debug_str,"MS",@progbits,1
 .Linfo_string0:
-.asciiz"XMOS-25550-Sep-30-2017 clang version 3.6.0  (based on LLVM 3.6.0svn)"
+.asciiz"XMOS-22296-Apr-19-2018 clang version 3.6.0  (based on LLVM 3.6.0svn)"
 .Linfo_string1:
 .asciiz"/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/flashlib_user.c"
 .Linfo_string2:
@@ -447,7 +447,7 @@ p_qflash:
 .LpubTypes_end0:
 	.cfi_sections .debug_frame
 
-	.ident	"XMOS-25550-Sep-30-2017 clang version 3.6.0  (based on LLVM 3.6.0svn)"
+	.ident	"XMOS-22296-Apr-19-2018 clang version 3.6.0  (based on LLVM 3.6.0svn)"
 	.typestring flash_cmd_enable_ports, "f{si}()"
 	.typestring fl_connect, "f{si}(p(s(){m(qspiCS){ui},m(qspiSCLK){ui},m(qspiSIO){ui},m(qspiClkblk){ui}}))"
 	.typestring flash_cmd_disable_ports, "f{si}()"

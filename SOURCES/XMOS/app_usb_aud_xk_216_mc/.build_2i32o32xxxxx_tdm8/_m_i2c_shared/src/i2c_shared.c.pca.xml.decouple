@@ -43,15 +43,6 @@
   <fCall global="true" name="i2c_master_read_reg16.maxtimers"/>
   <fCall global="true" name="i2c_shared_master_read_reg16.maxchanends"/>
   <fCall global="true" name="i2c_master_read_reg16.maxchanends"/>
-  <fCall global="true" name="AK4458_i2c_shared_master_read_reg"/>
-  <fCall global="true" name="AK4458_i2c_shared_master_read_reg.nstackwords"/>
-  <fCall global="true" name="AK4458_i2c_master_read_reg.nstackwords"/>
-  <fCall global="true" name="AK4458_i2c_shared_master_read_reg.maxcores"/>
-  <fCall global="true" name="AK4458_i2c_master_read_reg.maxcores"/>
-  <fCall global="true" name="AK4458_i2c_shared_master_read_reg.maxtimers"/>
-  <fCall global="true" name="AK4458_i2c_master_read_reg.maxtimers"/>
-  <fCall global="true" name="AK4458_i2c_shared_master_read_reg.maxchanends"/>
-  <fCall global="true" name="AK4458_i2c_master_read_reg.maxchanends"/>
   <fCall global="true" name="i2c_shared_master_write"/>
   <fCall global="true" name="i2c_shared_master_write.nstackwords"/>
   <fCall global="true" name="i2c_master_write.nstackwords"/>
@@ -70,15 +61,6 @@
   <fCall global="true" name="i2c_master_write_reg.maxtimers"/>
   <fCall global="true" name="i2c_shared_master_write_reg.maxchanends"/>
   <fCall global="true" name="i2c_master_write_reg.maxchanends"/>
-  <fCall global="true" name="AK4458_i2c_shared_master_write_reg"/>
-  <fCall global="true" name="AK4458_i2c_shared_master_write_reg.nstackwords"/>
-  <fCall global="true" name="AK4458_i2c_master_write_reg.nstackwords"/>
-  <fCall global="true" name="AK4458_i2c_shared_master_write_reg.maxcores"/>
-  <fCall global="true" name="AK4458_i2c_master_write_reg.maxcores"/>
-  <fCall global="true" name="AK4458_i2c_shared_master_write_reg.maxtimers"/>
-  <fCall global="true" name="AK4458_i2c_master_write_reg.maxtimers"/>
-  <fCall global="true" name="AK4458_i2c_shared_master_write_reg.maxchanends"/>
-  <fCall global="true" name="AK4458_i2c_master_write_reg.maxchanends"/>
   <fCall global="true" name="i2c_shared_master_write_reg16"/>
   <fCall global="true" name="i2c_shared_master_write_reg16.nstackwords"/>
   <fCall global="true" name="i2c_master_write_reg16.nstackwords"/>
@@ -95,9 +77,7 @@
   <fCall global="true" name="i2c_master_rx"/>
   <fCall global="true" name="i2c_master_read_reg"/>
   <fCall global="true" name="i2c_master_read_reg16"/>
-  <fCall global="true" name="AK4458_i2c_master_read_reg"/>
   <fCall global="true" name="i2c_master_write"/>
   <fCall global="true" name="i2c_master_write_reg"/>
-  <fCall global="true" name="AK4458_i2c_master_write_reg"/>
   <fCall global="true" name="i2c_master_write_reg16"/>
 </preCompilationAnalysis>

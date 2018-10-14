@@ -2651,11 +2651,11 @@ mixer1Crossbar:
 .Ldebug_end3:
 	.text
 .Ldebug_end4:
-	.file	10 "/Applications/XMOS_xTIMEcomposer_Community_14.3.2/target/include/xccompat.h"
+	.file	10 "/Applications/XMOS_xTIMEcomposer_Community_14.3.3/target/include/xccompat.h"
 	.file	11 "/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_shared/src/usb_std_requests.h"
 	.section	.debug_str,"MS",@progbits,1
 .Linfo_string0:
-.asciiz"XMOS-25550-Sep-30-2017 clang version 3.6.0  (based on LLVM 3.6.0svn)"
+.asciiz"XMOS-22296-Apr-19-2018 clang version 3.6.0  (based on LLVM 3.6.0svn)"
 .Linfo_string1:
 .asciiz"/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/endpoint0/endpoint0.c"
 .Linfo_string2:
@@ -6758,7 +6758,7 @@ mixer1Crossbar:
 .LpubTypes_end0:
 	.cfi_sections .debug_frame
 
-	.ident	"XMOS-25550-Sep-30-2017 clang version 3.6.0  (based on LLVM 3.6.0svn)"
+	.ident	"XMOS-22296-Apr-19-2018 clang version 3.6.0  (based on LLVM 3.6.0svn)"
 	.typestring Endpoint0, "f{0}(ui,ui,ui,ui,ui,ui,ui)"
 	.typestring XUD_InitEp, "f{ui}(ui)"
 	.typestring DFUReportResetState, "f{si}(ui)"

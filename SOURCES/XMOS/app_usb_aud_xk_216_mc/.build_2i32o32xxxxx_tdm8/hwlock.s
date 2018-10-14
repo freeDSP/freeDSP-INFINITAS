@@ -176,7 +176,7 @@ hwlock_release:
 .Ldebug_end0:
 	.section	.debug_str,"MS",@progbits,1
 .Linfo_string0:
-.asciiz"XMOS-25550-Sep-30-2017 clang version 3.6.0  (based on LLVM 3.6.0svn)"
+.asciiz"XMOS-22296-Apr-19-2018 clang version 3.6.0  (based on LLVM 3.6.0svn)"
 .Linfo_string1:
 .asciiz"/Users/rkn/Documents/xTIMEcomposer/workspace/module_locks/src/hwlock.c"
 .Linfo_string2:
@@ -465,7 +465,7 @@ hwlock_release:
 .LpubTypes_end0:
 	.cfi_sections .debug_frame
 
-	.ident	"XMOS-25550-Sep-30-2017 clang version 3.6.0  (based on LLVM 3.6.0svn)"
+	.ident	"XMOS-22296-Apr-19-2018 clang version 3.6.0  (based on LLVM 3.6.0svn)"
 	.typestring hwlock_alloc, "f{ui}(0)"
 	.typestring hwlock_free, "f{0}(ui)"
 	.typestring hwlock_acquire, "f{0}(ui)"

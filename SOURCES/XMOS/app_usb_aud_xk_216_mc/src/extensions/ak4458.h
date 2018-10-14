@@ -8,9 +8,6 @@
 #ifndef AK4458_H_
 #define AK4458_H_
 
-// Address on I2C bus
-#define AK4458_I2C_ADDR    (0x20)
-
 // Register Addresses
 #define AK4458_CONTROL1     (0x00)
 #define AK4458_CONTROL2     (0x01)

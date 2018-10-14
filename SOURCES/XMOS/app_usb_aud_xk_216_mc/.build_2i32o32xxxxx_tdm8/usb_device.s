@@ -53,8 +53,8 @@
 	.set USB_StandardRequests.locnoside, 0
 	.set SetEndpointHalt.locnoglobalaccess, 0
 	.set USB_StandardRequests.locnoglobalaccess, 0
-	.assert 1,memset.actnoglobalaccess,"In file included from /Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_device/src/usb_device.xc:10:\nIn file included from /Applications/XMOS_xTIMEcomposer_Community_14.3.2/target/include/xc/string.h:5:\n/Applications/XMOS_xTIMEcomposer_Community_14.3.2/target/include/xc/safe/string.h:21:3: error: passing non-local alias to function `memset\' which accesses a global variable\n  memset(s, c, n);\n  ^~~~~~~~~~~~~~~"
-	.assert 1,memmove.actnoglobalaccess,"In file included from /Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_device/src/usb_device.xc:10:\nIn file included from /Applications/XMOS_xTIMEcomposer_Community_14.3.2/target/include/xc/string.h:5:\n/Applications/XMOS_xTIMEcomposer_Community_14.3.2/target/include/xc/safe/string.h:15:3: error: passing non-local alias to function `memmove\' which accesses a global variable\n  memmove(s1, s2, n);\n  ^~~~~~~~~~~~~~~~~~"
+	.assert 1,memset.actnoglobalaccess,"In file included from /Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_device/src/usb_device.xc:10:\nIn file included from /Applications/XMOS_xTIMEcomposer_Community_14.3.3/target/include/xc/string.h:5:\n/Applications/XMOS_xTIMEcomposer_Community_14.3.3/target/include/xc/safe/string.h:21:3: error: passing non-local alias to function `memset\' which accesses a global variable\n  memset(s, c, n);\n  ^~~~~~~~~~~~~~~"
+	.assert 1,memmove.actnoglobalaccess,"In file included from /Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_device/src/usb_device.xc:10:\nIn file included from /Applications/XMOS_xTIMEcomposer_Community_14.3.3/target/include/xc/string.h:5:\n/Applications/XMOS_xTIMEcomposer_Community_14.3.3/target/include/xc/safe/string.h:15:3: error: passing non-local alias to function `memmove\' which accesses a global variable\n  memmove(s1, s2, n);\n  ^~~~~~~~~~~~~~~~~~"
 
                                         # End of file scope inline assembly
 	.section	.debug_info,"",@progbits
@@ -3477,11 +3477,11 @@ g_epStatusIn:
 .Ldebug_end1:
 	.text
 .Ldebug_end2:
-	.file	3 "/Applications/XMOS_xTIMEcomposer_Community_14.3.2/target/include/timer.h"
-	.file	4 "/Applications/XMOS_xTIMEcomposer_Community_14.3.2/target/include/xc/safe/string.h"
+	.file	3 "/Applications/XMOS_xTIMEcomposer_Community_14.3.3/target/include/timer.h"
+	.file	4 "/Applications/XMOS_xTIMEcomposer_Community_14.3.3/target/include/xc/safe/string.h"
 	.section	.debug_str,"MS",@progbits,1
 .Linfo_string0:
-.asciiz"XMOS 32-bit XC Compiler Community_14.3.2 (build 25550, Sep-30-2017)"
+.asciiz"XMOS 32-bit XC Compiler Community_14.3.3 (build 22296, Apr-19-2018)"
 .Linfo_string1:
 .asciiz"/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_device/src/usb_device.xc"
 .Linfo_string2:
