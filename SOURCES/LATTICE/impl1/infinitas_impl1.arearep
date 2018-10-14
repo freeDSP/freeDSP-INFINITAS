@@ -1,16 +1,16 @@
 ----------------------------------------------------------------------
 Report for cell infinitas.TECH
-Register bits:  20 of 1604 (1.247%)
+Register bits:  24 of 1604 (1.496%)
 I/O cells:      75
                                   Cell usage:
                                cell     count   Res Usage(%)
                               CCU2D        38          100.0
                            DPR16X4C        32          100.0
-                            FD1S3AX         4          100.0
+                            FD1S3AX         8          100.0
                             FD1S3IX        16          100.0
                                 GSR         1          100.0
                                  IB        12          100.0
                                LUT4        86          100.0
                                  OB        63          100.0
                               PFUMX        20          100.0
-                              TOTAL       272
+                              TOTAL       276

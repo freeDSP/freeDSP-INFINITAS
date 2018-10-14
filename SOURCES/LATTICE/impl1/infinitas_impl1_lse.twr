@@ -1,15 +1,6 @@
-<HTML>
-<HEAD><TITLE>Lattice Synthesis Timing Report</TITLE>
-<STYLE TYPE="text/css">
-<!--
- body,pre{    font-family:'Courier New', monospace;    color: #000000;    font-size:88%;    background-color: #ffffff;}h1 {    font-weight: bold;    margin-top: 24px;    margin-bottom: 10px;    border-bottom: 3px solid #000;    font-size: 1em;}h2 {    font-weight: bold;    margin-top: 18px;    margin-bottom: 5px;    font-size: 0.90em;}h3 {    font-weight: bold;    margin-top: 12px;    margin-bottom: 5px;    font-size: 0.80em;}p {    font-size:78%;}P.Table {    margin-top: 4px;    margin-bottom: 4px;    margin-right: 4px;    margin-left: 4px;}table{    border-width: 1px 1px 1px 1px;    border-style: solid solid solid solid;    border-color: black black black black;    border-collapse: collapse;}th {    font-weight:bold;    padding: 4px;    border-width: 1px 1px 1px 1px;    border-style: solid solid solid solid;    border-color: black black black black;    vertical-align:top;    text-align:left;    font-size:78%;}td {    padding: 4px;    border-width: 1px 1px 1px 1px;    border-style: solid solid solid solid;    border-color: black black black black;    vertical-align:top;    font-size:78%;}a {    color:#013C9A;    text-decoration:none;}a:visited {    color:#013C9A;}a:hover, a:active {    text-decoration:underline;    color:#5BAFD4;}.pass{background-color: #00ff00;}.fail{background-color: #ff0000;}.comment{    font-size: 90%;    font-style: italic;}
--->
-</STYLE>
-</HEAD>
-<PRE><A name="Map_Twr"></A><B><U><big>Lattice Synthesis Timing Report</big></U></B>
 --------------------------------------------------------------------------------
 Lattice Synthesis Timing Report, Version  
-Tue Sep 25 18:44:13 2018
+Tue Sep 25 18:18:58 2018
 
 Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
 Copyright (c) 1995 AT&T Corp.   All rights reserved.
@@ -17,7 +8,7 @@ Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
 Copyright (c) 2001 Agere Systems   All rights reserved.
 Copyright (c) 2002-2017 Lattice Semiconductor Corporation,  All rights reserved.
 
-<A name="mtw1_ri"></A><B><U><big>Report Information</big></U></B>
+Report Information
 ------------------
 Design:     infinitas
 Constraint file:  
@@ -104,13 +95,13 @@ FCI_TO_FCO  ---     0.130            CIN to COUT           sub_280_add_2_3
 Route         1   e 0.020                                  n2902
 FCI_TO_F    ---     0.495            CIN to S[2]           sub_280_add_2_5
 Route        16   e 1.506                                  n2146
-LUT4        ---     0.408              C to Z              i579_3_lut
-Route         1   e 0.020                                  n2957
-MUXL5       ---     0.193           BLUT to Z              i584
-Route         1   e 0.660                                  n2962
-LUT4        ---     0.408              B to Z              i586_3_lut
-Route         1   e 0.020                                  n2964
-MUXL5       ---     0.193           ALUT to Z              i587
+LUT4        ---     0.408              C to Z              i576_3_lut
+Route         1   e 0.020                                  n2954
+MUXL5       ---     0.193           ALUT to Z              i582
+Route         1   e 0.660                                  n2960
+LUT4        ---     0.408              B to Z              i585_3_lut
+Route         1   e 0.020                                  n2963
+MUXL5       ---     0.193           BLUT to Z              i587
 Route         1   e 0.660                                  srDAC3[254]
                   --------
                     9.764  (37.8% logic, 62.2% route), 10 logic levels.
@@ -146,9 +137,9 @@ FCI_TO_FCO  ---     0.130            CIN to COUT           sub_280_add_2_3
 Route         1   e 0.020                                  n2902
 FCI_TO_F    ---     0.495            CIN to S[2]           sub_280_add_2_5
 Route        16   e 1.506                                  n2146
-LUT4        ---     0.408              C to Z              i574_3_lut
-Route         1   e 0.020                                  n2952
-MUXL5       ---     0.193           ALUT to Z              i581
+LUT4        ---     0.408              C to Z              i573_3_lut
+Route         1   e 0.020                                  n2951
+MUXL5       ---     0.193           BLUT to Z              i581
 Route         1   e 0.660                                  n2959
 LUT4        ---     0.408              A to Z              i585_3_lut
 Route         1   e 0.020                                  n2963
@@ -160,7 +151,7 @@ Route         1   e 0.660                                  srDAC3[254]
 Warning: 9.897 ns is the maximum delay for this constraint.
 
 
-<A name="mtw1_rs"></A><B><U><big>Timing Report Summary</big></U></B>
+Timing Report Summary
 --------------
 --------------------------------------------------------------------------------
 Constraint                              |   Constraint|       Actual|Levels
@@ -224,7 +215,7 @@ n3040                                   |       1|     474|     11.57%
 --------------------------------------------------------------------------------
 
 
-<A name="mtw1_ts"></A><B><U><big>Timing summary:</big></U></B>
+Timing summary:
 ---------------
 
 Timing errors: 4096  Score: 12962704
@@ -232,61 +223,5 @@ Timing errors: 4096  Score: 12962704
 Constraints cover  6046 paths, 170 nets, and 504 connections (51.9% coverage)
 
 
-Peak memory: 331218944 bytes, TRCE: 0 bytes, DLYMAN: 0 bytes
+Peak memory: 332111872 bytes, TRCE: 0 bytes, DLYMAN: 0 bytes
 CPU_TIME_REPORT: 0 secs 
-
-
-
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
-</PRE></FONT>
-</BODY>
-</HTML>

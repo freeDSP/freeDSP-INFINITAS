@@ -1,0 +1,5 @@
+#Start recording tcl command: 7/30/2018 17:25:45
+#Project Location: C:/lattice/infinitas; Project name: infinitas
+prj_project open "C:/lattice/infinitas/infinitas.ldf"
+prj_run Synthesis -impl impl1
+#Stop recording: 7/30/2018 17:33:52

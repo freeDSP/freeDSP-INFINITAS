@@ -13,7 +13,7 @@ Setup and Hold Report
 
 --------------------------------------------------------------------------------
 Lattice TRACE Report - Setup, Version Diamond (64-bit) 3.9.0.99.2
-Sat Jun 23 20:11:13 2018
+Tue Sep 25 18:44:14 2018
 
 Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
 Copyright (c) 1995 AT&T Corp.   All rights reserved.
@@ -47,8 +47,8 @@ Error: The following path exceeds requirements by 2.635ns
 
  Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
 
-   Source:         FF         Q              srDAC4_reg_268__i2  (from expBCLK8_c_c +)
-   Destination:    FF         Data in        expMDO1_16  (to expBCLK8_c_c +)
+   Source:         FF         Q              srDAC4_reg_279__i2  (from expBCLK8_c_c +)
+   Destination:    FF         Data in        expMDO1_23  (to expBCLK8_c_c +)
 
    Delay:               9.350ns  (42.5% logic, 57.5% route), 8 logic levels.
 
@@ -64,19 +64,19 @@ Error: The following path exceeds requirements by 2.635ns
 
    Name    Fanout   Delay (ns)          Site               Resource
 REG_DEL     ---     0.367   SLICE_10.CLK to    SLICE_10.Q1 SLICE_10 (from expBCLK8_c_c)
-ROUTE        21   e 0.896    SLICE_10.Q1 to   SLICE_176.B1 n2146
-CTOF_DEL    ---     0.408   SLICE_176.B1 to   SLICE_176.F1 SLICE_176
-ROUTE         1   e 0.896   SLICE_176.F1 to   SLICE_154.C1 n3029
-CTOF_DEL    ---     0.408   SLICE_154.C1 to   SLICE_154.F1 SLICE_154
-ROUTE         7   e 0.896   SLICE_154.F1 to    SLICE_34.A1 n2768
+ROUTE        21   e 0.896    SLICE_10.Q1 to   SLICE_141.B1 n2157
+CTOF_DEL    ---     0.408   SLICE_141.B1 to   SLICE_141.F1 SLICE_141
+ROUTE         1   e 0.896   SLICE_141.F1 to   SLICE_158.C1 n3040
+CTOF_DEL    ---     0.408   SLICE_158.C1 to   SLICE_158.F1 SLICE_158
+ROUTE         7   e 0.896   SLICE_158.F1 to    SLICE_34.A1 n2779
 C1TOFCO_DE  ---     0.684    SLICE_34.A1 to   SLICE_34.FCO SLICE_34
-ROUTE         1   e 0.001   SLICE_34.FCO to   SLICE_30.FCI n2894
+ROUTE         1   e 0.001   SLICE_34.FCO to   SLICE_30.FCI n2905
 FCITOF1_DE  ---     0.495   SLICE_30.FCI to    SLICE_30.F1 SLICE_30
-ROUTE        32   e 0.896    SLICE_30.F1 to */SLICE_101.D0 n2204
-CTOF_DEL    ---     0.408 */SLICE_101.D0 to */SLICE_101.F0 srDAC4_158_186_222_246/SLICE_101
-ROUTE         1   e 0.896 */SLICE_101.F0 to */SLICE_149.C1 n2542
-CTOOFX_DEL  ---     0.601 */SLICE_149.C1 to *LICE_149.OFX0 i588/SLICE_149
-ROUTE         1   e 0.896 *LICE_149.OFX0 to   SLICE_134.C1 n2966
+ROUTE        32   e 0.896    SLICE_30.F1 to */SLICE_101.D0 n2215
+CTOF_DEL    ---     0.408 */SLICE_101.D0 to */SLICE_101.F0 srDAC4_169_197_233_257/SLICE_101
+ROUTE         1   e 0.896 */SLICE_101.F0 to */SLICE_153.C1 n2553
+CTOOFX_DEL  ---     0.601 */SLICE_153.C1 to *LICE_153.OFX0 i599/SLICE_153
+ROUTE         1   e 0.896 *LICE_153.OFX0 to   SLICE_134.C1 n2977
 CTOOFX_DEL  ---     0.601   SLICE_134.C1 to SLICE_134.OFX0 SLICE_134
 ROUTE         1   e 0.001 SLICE_134.OFX0 to  SLICE_134.DI0 srDAC1_254 (to expBCLK8_c_c)
                   --------
@@ -101,9 +101,9 @@ MHz ;                                   |  146.028 MHz|  105.452 MHz|   8 *
 ----------------------------------------------------------------------------
 Critical Nets                           |   Loads|  Errors| % of total
 ----------------------------------------------------------------------------
-n2768                                   |       7|    1336|     32.62%
+n2779                                   |       7|    1336|     32.62%
                                         |        |        |
-n2762                                   |       7|    1336|     32.62%
+n2773                                   |       7|    1336|     32.62%
                                         |        |        |
 srDAC1_254                              |       1|    1028|     25.10%
                                         |        |        |
@@ -113,29 +113,29 @@ srDAC3_254                              |       1|    1022|     24.95%
                                         |        |        |
 srDAC2_254                              |       1|    1020|     24.90%
                                         |        |        |
-n2204                                   |      32|     992|     24.22%
+n2215                                   |      32|     992|     24.22%
                                         |        |        |
-n2136                                   |      32|     992|     24.22%
+n2147                                   |      32|     992|     24.22%
                                         |        |        |
-n2894                                   |       1|     808|     19.73%
+n2905                                   |       1|     808|     19.73%
                                         |        |        |
-n2890                                   |       1|     808|     19.73%
+n2901                                   |       1|     808|     19.73%
                                         |        |        |
-n3029                                   |       1|     792|     19.34%
+n3040                                   |       1|     792|     19.34%
                                         |        |        |
-n3028                                   |       2|     792|     19.34%
+n3039                                   |       2|     792|     19.34%
                                         |        |        |
-n2205                                   |      32|     576|     14.06%
+n2216                                   |      32|     576|     14.06%
                                         |        |        |
-n2137                                   |      32|     576|     14.06%
+n2148                                   |      32|     576|     14.06%
                                         |        |        |
-n2079                                   |      21|     520|     12.70%
+n2090                                   |      21|     520|     12.70%
                                         |        |        |
-n2147                                   |      21|     520|     12.70%
+n2158                                   |      21|     520|     12.70%
                                         |        |        |
-n3030                                   |       2|     416|     10.16%
+n3041                                   |       2|     416|     10.16%
                                         |        |        |
-n3026                                   |       1|     416|     10.16%
+n3037                                   |       1|     416|     10.16%
                                         |        |        |
 ----------------------------------------------------------------------------
 
@@ -145,7 +145,7 @@ Clock Domains Analysis
 
 Found 1 clocks:
 
-Clock Domain: expBCLK8_c_c   Source: xBCLK.PAD   Loads: 54
+Clock Domain: expBCLK8_c_c   Source: xBCLK.PAD   Loads: 56
    Covered under: FREQUENCY NET "expBCLK8_c_c" 146.028000 MHz ;
 
 
@@ -155,11 +155,11 @@ Timing summary (Setup):
 Timing errors: 4096  Score: 6746208
 Cumulative negative slack: 6746208
 
-Constraints cover 10752 paths, 1 nets, and 1095 connections (84.82% coverage)
+Constraints cover 10752 paths, 1 nets, and 1095 connections (84.43% coverage)
 
 --------------------------------------------------------------------------------
 Lattice TRACE Report - Hold, Version Diamond (64-bit) 3.9.0.99.2
-Sat Jun 23 20:11:14 2018
+Tue Sep 25 18:44:15 2018
 
 Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
 Copyright (c) 1995 AT&T Corp.   All rights reserved.
@@ -192,8 +192,8 @@ Passed: The following path meets requirements by 0.447ns
 
  Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
 
-   Source:         FF         Q              srDAC4_reg_268__i2  (from expBCLK8_c_c +)
-   Destination:    FF         Data in        srDAC4_reg_268__i2  (to expBCLK8_c_c +)
+   Source:         FF         Q              srDAC4_reg_279__i2  (from expBCLK8_c_c +)
+   Destination:    FF         Data in        srDAC4_reg_279__i2  (to expBCLK8_c_c +)
 
    Delay:               0.434ns  (53.9% logic, 46.1% route), 2 logic levels.
 
@@ -209,7 +209,7 @@ Passed: The following path meets requirements by 0.447ns
 
    Name    Fanout   Delay (ns)          Site               Resource
 REG_DEL     ---     0.133   SLICE_10.CLK to    SLICE_10.Q1 SLICE_10 (from expBCLK8_c_c)
-ROUTE        21   e 0.199    SLICE_10.Q1 to    SLICE_10.A1 n2146
+ROUTE        21   e 0.199    SLICE_10.Q1 to    SLICE_10.A1 n2157
 CTOF_DEL    ---     0.101    SLICE_10.A1 to    SLICE_10.F1 SLICE_10
 ROUTE         1   e 0.001    SLICE_10.F1 to   SLICE_10.DI1 n35_adj_3 (to expBCLK8_c_c)
                   --------
@@ -235,7 +235,7 @@ Clock Domains Analysis
 
 Found 1 clocks:
 
-Clock Domain: expBCLK8_c_c   Source: xBCLK.PAD   Loads: 54
+Clock Domain: expBCLK8_c_c   Source: xBCLK.PAD   Loads: 56
    Covered under: FREQUENCY NET "expBCLK8_c_c" 146.028000 MHz ;
 
 
@@ -245,7 +245,7 @@ Timing summary (Hold):
 Timing errors: 0  Score: 0
 Cumulative negative slack: 0
 
-Constraints cover 10752 paths, 1 nets, and 1127 connections (87.30% coverage)
+Constraints cover 10752 paths, 1 nets, and 1127 connections (86.89% coverage)
 
 
 

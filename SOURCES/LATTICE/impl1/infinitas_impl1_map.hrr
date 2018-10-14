@@ -7,5 +7,5 @@ Report for cell infinitas
                                   LUT4	      87.00        100.0
                                DISTRAM	      96.00        100.0
                                  IOBUF	         75        100.0
-                                PFUREG	         20        100.0
+                                PFUREG	         24        100.0
                                 RIPPLE	         38        100.0

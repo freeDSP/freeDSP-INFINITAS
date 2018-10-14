@@ -5,7 +5,7 @@ Copyright (c) 1995 AT&T Corp.   All rights reserved.
 Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
 Copyright (c) 2001 Agere Systems   All rights reserved.
 Copyright (c) 2002-2017 Lattice Semiconductor Corporation,  All rights reserved.
-Sat Jun 23 20:11:10 2018
+Tue Sep 25 18:44:11 2018
 
 
 Command Line:  synthesis -f infinitas_impl1_lattice.synproj -gui -msgset C:/lattice/infinitas/promote.xml 
@@ -125,68 +125,79 @@ Top-level module name = infinitas.
 
 
 ################### Mapped 1020 registers to 32 RAM. ##################
-WARNING - synthesis: Removing unused instance _61. VDB-5034
-WARNING - synthesis: Removing unused instance _171. VDB-5034
-WARNING - synthesis: Removing unused instance _68. VDB-5034
-WARNING - synthesis: Removing unused instance _87. VDB-5034
-WARNING - synthesis: Removing unused instance _75. VDB-5034
-WARNING - synthesis: Removing unused instance _105. VDB-5034
-WARNING - synthesis: Removing unused instance _81. VDB-5034
-WARNING - synthesis: Removing unused instance _117. VDB-5034
-WARNING - synthesis: Removing unused instance srDAC2_142. VDB-5034
-WARNING - synthesis: Removing unused instance srDAC2_69_146. VDB-5034
-WARNING - synthesis: Removing unused instance _93. VDB-5034
-WARNING - synthesis: Removing unused instance _123. VDB-5034
-WARNING - synthesis: Removing unused instance _99. VDB-5034
-WARNING - synthesis: Removing unused instance _135. VDB-5034
-WARNING - synthesis: Removing unused instance srDAC2_48_143. VDB-5034
-WARNING - synthesis: Removing unused instance srDAC2_48_88_149. VDB-5034
-WARNING - synthesis: Removing unused instance _111. VDB-5034
-WARNING - synthesis: Removing unused instance _141. VDB-5034
-WARNING - synthesis: Removing unused instance srDAC2_55_144. VDB-5034
-WARNING - synthesis: Removing unused instance srDAC2_55_100_151. VDB-5034
-WARNING - synthesis: Removing unused instance srDAC2_62_145. VDB-5034
-WARNING - synthesis: Removing unused instance srDAC2_62_106_152. VDB-5034
-WARNING - synthesis: Removing unused instance _129. VDB-5034
-WARNING - synthesis: Removing unused instance _164. VDB-5034
-WARNING - synthesis: Removing unused instance srDAC2_48_76_147. VDB-5034
-WARNING - synthesis: Removing unused instance srDAC2_48_76_118_154. VDB-5034
-WARNING - synthesis: Removing unused instance srDAC2_48_82_148. VDB-5034
-WARNING - synthesis: Removing unused instance srDAC2_48_82_124_155. VDB-5034
-WARNING - synthesis: Removing unused instance srDAC2_55_94_150. VDB-5034
-WARNING - synthesis: Removing unused instance srDAC2_55_94_130_156. VDB-5034
-WARNING - synthesis: Removing unused instance srDAC2_48_76_112_153. VDB-5034
-WARNING - synthesis: Removing unused instance srDAC2_48_76_112_136_157. VDB-5034
-WARNING - synthesis: Removing unused instance _178. VDB-5034
-WARNING - synthesis: Removing unused instance _197. VDB-5034
-WARNING - synthesis: Removing unused instance _185. VDB-5034
-WARNING - synthesis: Removing unused instance _215. VDB-5034
-WARNING - synthesis: Removing unused instance _191. VDB-5034
-WARNING - synthesis: Removing unused instance _227. VDB-5034
-WARNING - synthesis: Removing unused instance srDAC4_252. VDB-5034
-WARNING - synthesis: Removing unused instance srDAC4_179_256. VDB-5034
-WARNING - synthesis: Removing unused instance _203. VDB-5034
-WARNING - synthesis: Removing unused instance _233. VDB-5034
-WARNING - synthesis: Removing unused instance _209. VDB-5034
-WARNING - synthesis: Removing unused instance _245. VDB-5034
-WARNING - synthesis: Removing unused instance srDAC4_158_253. VDB-5034
-WARNING - synthesis: Removing unused instance srDAC4_158_198_259. VDB-5034
-WARNING - synthesis: Removing unused instance _221. VDB-5034
-WARNING - synthesis: Removing unused instance _251. VDB-5034
-WARNING - synthesis: Removing unused instance srDAC4_165_254. VDB-5034
-WARNING - synthesis: Removing unused instance srDAC4_165_210_261. VDB-5034
-WARNING - synthesis: Removing unused instance srDAC4_172_255. VDB-5034
-WARNING - synthesis: Removing unused instance srDAC4_172_216_262. VDB-5034
-WARNING - synthesis: Removing unused instance _239. VDB-5034
+WARNING - synthesis: Removing unused instance _72. VDB-5034
+WARNING - synthesis: Removing unused instance _182. VDB-5034
+WARNING - synthesis: Removing unused instance _79. VDB-5034
+WARNING - synthesis: Removing unused instance _98. VDB-5034
+WARNING - synthesis: Removing unused instance _86. VDB-5034
+WARNING - synthesis: Removing unused instance _116. VDB-5034
+WARNING - synthesis: Removing unused instance _92. VDB-5034
+WARNING - synthesis: Removing unused instance _128. VDB-5034
+WARNING - synthesis: Removing unused instance srDAC2_153. VDB-5034
+WARNING - synthesis: Removing unused instance srDAC2_80_157. VDB-5034
+WARNING - synthesis: Removing unused instance _104. VDB-5034
+WARNING - synthesis: Removing unused instance _134. VDB-5034
+WARNING - synthesis: Removing unused instance _110. VDB-5034
+WARNING - synthesis: Removing unused instance _146. VDB-5034
+WARNING - synthesis: Removing unused instance srDAC2_59_154. VDB-5034
+WARNING - synthesis: Removing unused instance srDAC2_59_99_160. VDB-5034
+WARNING - synthesis: Removing unused instance _122. VDB-5034
+WARNING - synthesis: Removing unused instance _152. VDB-5034
+WARNING - synthesis: Removing unused instance srDAC2_66_155. VDB-5034
+WARNING - synthesis: Removing unused instance srDAC2_66_111_162. VDB-5034
+WARNING - synthesis: Removing unused instance srDAC2_73_156. VDB-5034
+WARNING - synthesis: Removing unused instance srDAC2_73_117_163. VDB-5034
+WARNING - synthesis: Removing unused instance _140. VDB-5034
+WARNING - synthesis: Removing unused instance _175. VDB-5034
+WARNING - synthesis: Removing unused instance srDAC2_59_87_158. VDB-5034
+WARNING - synthesis: Removing unused instance srDAC2_59_87_129_165. VDB-5034
+WARNING - synthesis: Removing unused instance srDAC2_59_93_159. VDB-5034
+WARNING - synthesis: Removing unused instance srDAC2_59_93_135_166. VDB-5034
+WARNING - synthesis: Removing unused instance srDAC2_66_105_161. VDB-5034
+WARNING - synthesis: Removing unused instance srDAC2_66_105_141_167. VDB-5034
+WARNING - synthesis: Removing unused instance srDAC2_59_87_123_164. VDB-5034
+WARNING - synthesis: Removing unused instance srDAC2_59_87_123_147_168. VDB-5034
+WARNING - synthesis: Removing unused instance _189. VDB-5034
+WARNING - synthesis: Removing unused instance _208. VDB-5034
+WARNING - synthesis: Removing unused instance _196. VDB-5034
+WARNING - synthesis: Removing unused instance _226. VDB-5034
+WARNING - synthesis: Removing unused instance _202. VDB-5034
+WARNING - synthesis: Removing unused instance _238. VDB-5034
+WARNING - synthesis: Removing unused instance srDAC4_263. VDB-5034
+WARNING - synthesis: Removing unused instance srDAC4_190_267. VDB-5034
+WARNING - synthesis: Removing unused instance _214. VDB-5034
+WARNING - synthesis: Removing unused instance _244. VDB-5034
+WARNING - synthesis: Removing unused instance _220. VDB-5034
+WARNING - synthesis: Removing unused instance _256. VDB-5034
+WARNING - synthesis: Removing unused instance srDAC4_169_264. VDB-5034
+WARNING - synthesis: Removing unused instance srDAC4_169_209_270. VDB-5034
+WARNING - synthesis: Removing unused instance _232. VDB-5034
+WARNING - synthesis: Removing unused instance _262. VDB-5034
+WARNING - synthesis: Removing unused instance srDAC4_176_265. VDB-5034
+WARNING - synthesis: Removing unused instance srDAC4_176_221_272. VDB-5034
+WARNING - synthesis: Removing unused instance srDAC4_183_266. VDB-5034
+WARNING - synthesis: Removing unused instance srDAC4_183_227_273. VDB-5034
+WARNING - synthesis: Removing unused instance _250. VDB-5034
 WARNING - synthesis: Removing unused instance . VDB-5034
-WARNING - synthesis: Removing unused instance srDAC4_158_186_257. VDB-5034
-WARNING - synthesis: Removing unused instance srDAC4_158_186_228_264. VDB-5034
-WARNING - synthesis: Removing unused instance srDAC4_158_192_258. VDB-5034
-WARNING - synthesis: Removing unused instance srDAC4_158_192_234_265. VDB-5034
-WARNING - synthesis: Removing unused instance srDAC4_165_204_260. VDB-5034
-WARNING - synthesis: Removing unused instance srDAC4_165_204_240_266. VDB-5034
-WARNING - synthesis: Removing unused instance srDAC4_158_186_222_263. VDB-5034
-WARNING - synthesis: Removing unused instance srDAC4_158_186_222_246_267. VDB-5034
+WARNING - synthesis: Removing unused instance srDAC4_169_197_268. VDB-5034
+WARNING - synthesis: Removing unused instance srDAC4_169_197_239_275. VDB-5034
+WARNING - synthesis: Removing unused instance srDAC4_169_203_269. VDB-5034
+WARNING - synthesis: Removing unused instance srDAC4_169_203_245_276. VDB-5034
+WARNING - synthesis: Removing unused instance srDAC4_176_215_271. VDB-5034
+WARNING - synthesis: Removing unused instance srDAC4_176_215_251_277. VDB-5034
+WARNING - synthesis: Removing unused instance srDAC4_169_197_233_274. VDB-5034
+WARNING - synthesis: Removing unused instance srDAC4_169_197_233_257_278. VDB-5034
+######## Missing driver on net n2636. Patching with GND.
+######## Missing driver on net n2635. Patching with GND.
+######## Missing driver on net n2634. Patching with GND.
+######## Missing driver on net n2633. Patching with GND.
+######## Missing driver on net n2632. Patching with GND.
+######## Missing driver on net n2631. Patching with GND.
+######## Missing driver on net n2630. Patching with GND.
+######## Missing driver on net n2629. Patching with GND.
+######## Missing driver on net n2628. Patching with GND.
+######## Missing driver on net n2627. Patching with GND.
+######## Missing driver on net n2626. Patching with GND.
 ######## Missing driver on net n2625. Patching with GND.
 ######## Missing driver on net n2624. Patching with GND.
 ######## Missing driver on net n2623. Patching with GND.
@@ -236,21 +247,10 @@ WARNING - synthesis: Removing unused instance srDAC4_158_186_222_246_267. VDB-50
 ######## Missing driver on net n2579. Patching with GND.
 ######## Missing driver on net n2578. Patching with GND.
 ######## Missing driver on net n2577. Patching with GND.
-######## Missing driver on net n2576. Patching with GND.
 ######## Missing driver on net n2575. Patching with GND.
 ######## Missing driver on net n2574. Patching with GND.
 ######## Missing driver on net n2573. Patching with GND.
-######## Missing driver on net n2572. Patching with GND.
-######## Missing driver on net n2571. Patching with GND.
-######## Missing driver on net n2570. Patching with GND.
-######## Missing driver on net n2569. Patching with GND.
-######## Missing driver on net n2568. Patching with GND.
-######## Missing driver on net n2567. Patching with GND.
-######## Missing driver on net n2566. Patching with GND.
-######## Missing driver on net n2564. Patching with GND.
-######## Missing driver on net n2563. Patching with GND.
-######## Missing driver on net n2562. Patching with GND.
-######## Missing driver on net n2565. Patching with GND.
+######## Missing driver on net n2576. Patching with GND.
 GSR will not be inferred because no asynchronous signal was found in the netlist.
 Applying 200.000000 MHz constraint to all clocks
 
@@ -295,10 +295,10 @@ All blocks are expanded and NGD expansion is successful.
 Writing NGD file infinitas_impl1.ngd.
 
 ################### Begin Area Report (infinitas)######################
-Number of register bits => 20 of 1604 (1 % )
+Number of register bits => 24 of 1604 (1 % )
 CCU2D => 38
 DPR16X4C => 32
-FD1S3AX => 4
+FD1S3AX => 8
 FD1S3IX => 16
 GSR => 1
 IB => 12
@@ -314,22 +314,22 @@ TSALL => 1
 ################### Begin Clock Report ######################
 Clock Nets
 Number of Clocks: 1
-  Net : expBCLK8_c_c, loads : 60
+  Net : expBCLK8_c_c, loads : 64
 Clock Enable Nets
 Number of Clock Enables: 0
 Top 0 highest fanout Clock Enables:
 Highest fanout non-clock nets
 Top 10 highest fanout non-clock nets:
-  Net : n2080, loads : 28
-  Net : n2148, loads : 27
-  Net : n2147, loads : 21
-  Net : n2146, loads : 21
-  Net : n2145, loads : 21
-  Net : n2144, loads : 21
-  Net : n2143, loads : 21
-  Net : n2142, loads : 21
-  Net : n2141, loads : 21
-  Net : n2079, loads : 21
+  Net : n2091, loads : 28
+  Net : n2159, loads : 27
+  Net : n2158, loads : 21
+  Net : n2157, loads : 21
+  Net : n2156, loads : 21
+  Net : n2155, loads : 21
+  Net : n2154, loads : 21
+  Net : n2153, loads : 21
+  Net : n2152, loads : 21
+  Net : n2090, loads : 21
 ################### End Clock Report ##################
 
 Timing Report Summary
@@ -347,8 +347,8 @@ clk0 [get_nets expBCLK8_c_c]            |  200.000 MHz|  101.041 MHz|    10 *
 1 constraints not met.
 
 
-Peak Memory Usage: 315.547  MB
+Peak Memory Usage: 315.875  MB
 
 --------------------------------------------------------------
-Elapsed CPU time for LSE flow : 1.531  secs
+Elapsed CPU time for LSE flow : 1.656  secs
 --------------------------------------------------------------

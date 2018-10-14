@@ -20,8 +20,8 @@
 				<BScanVal>0</BScanVal>
 			</Bypass>
 			<File>C:/lattice/infinitas/impl1/infinitas_impl1.jed</File>
-			<FileTime>06/23/18 20:11:25</FileTime>
-			<JedecChecksum>0xE113</JedecChecksum>
+			<FileTime>09/25/18 18:44:28</FileTime>
+			<JedecChecksum>0xBFB6</JedecChecksum>
 			<Operation>FLASH Erase,Program,Verify</Operation>
 			<Option>
 				<SVFVendor>JTAG STANDARD</SVFVendor>

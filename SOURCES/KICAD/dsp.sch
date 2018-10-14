@@ -5,7 +5,7 @@ EELAYER END
 $Descr A3 16535 11693
 encoding utf-8
 Sheet 3 3
-Title "DSP"
+Title "DSP (optional)"
 Date "13.06.2018"
 Rev "1.0.0"
 Comp "auverdion"

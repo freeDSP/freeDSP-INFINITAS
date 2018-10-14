@@ -116,10 +116,10 @@
     </pins>
 
     <!--
-        Instances in netlist: 8
+        Instances in netlist: 12
     -->
 
-    <instance  name = "expMDO1_16"  library = "work"  arch = "RTL"  type = "reg">
+    <instance  name = "expMDO1_23"  library = "work"  arch = "RTL"  type = "reg">
         <pins>
         <pitem  name = "d"  direction = "in"  />
         <pitem  name = "clk"  direction = "in"  />
@@ -1423,7 +1423,7 @@
         </nets>
     </instance>
 
-    <instance  name = "expMDO2_18"  library = "work"  arch = "RTL"  type = "reg">
+    <instance  name = "expMDO2_25"  library = "work"  arch = "RTL"  type = "reg">
         <pins>
         <pitem  name = "d"  direction = "in"  />
         <pitem  name = "clk"  direction = "in"  />
@@ -2727,7 +2727,7 @@
         </nets>
     </instance>
 
-    <instance  name = "expMDO3_20"  library = "work"  arch = "RTL"  type = "reg">
+    <instance  name = "expMDO3_27"  library = "work"  arch = "RTL"  type = "reg">
         <pins>
         <pitem  name = "d"  direction = "in"  />
         <pitem  name = "clk"  direction = "in"  />
@@ -4031,7 +4031,7 @@
         </nets>
     </instance>
 
-    <instance  name = "expMDO4_22"  library = "work"  arch = "RTL"  type = "reg">
+    <instance  name = "expMDO4_29"  library = "work"  arch = "RTL"  type = "reg">
         <pins>
         <pitem  name = "d"  direction = "in"  />
         <pitem  name = "clk"  direction = "in"  />
@@ -4045,6 +4045,74 @@
         <nitem  name = "expBCLK1"  />
         <nitem  name = "gnd"  />
         <nitem  name = "expMDO4"  />
+        </nets>
+    </instance>
+
+    <instance  name = "xTDMIN1_30"  library = "work"  arch = "RTL"  type = "reg">
+        <pins>
+        <pitem  name = "d"  direction = "in"  />
+        <pitem  name = "clk"  direction = "in"  />
+        <pitem  name = "s"  direction = "in"  />
+        <pitem  name = "r"  direction = "in"  />
+        <pitem  name = "q"  direction = "out"  />
+        </pins>
+
+        <nets>
+        <nitem  name = "expMDI1"  />
+        <nitem  name = "expBCLK1"  />
+        <nitem  name = "gnd"  />
+        <nitem  name = "xTDMIN1"  />
+        </nets>
+    </instance>
+
+    <instance  name = "xTDMIN2_31"  library = "work"  arch = "RTL"  type = "reg">
+        <pins>
+        <pitem  name = "d"  direction = "in"  />
+        <pitem  name = "clk"  direction = "in"  />
+        <pitem  name = "s"  direction = "in"  />
+        <pitem  name = "r"  direction = "in"  />
+        <pitem  name = "q"  direction = "out"  />
+        </pins>
+
+        <nets>
+        <nitem  name = "expMDI2"  />
+        <nitem  name = "expBCLK1"  />
+        <nitem  name = "gnd"  />
+        <nitem  name = "xTDMIN2"  />
+        </nets>
+    </instance>
+
+    <instance  name = "xTDMIN3_32"  library = "work"  arch = "RTL"  type = "reg">
+        <pins>
+        <pitem  name = "d"  direction = "in"  />
+        <pitem  name = "clk"  direction = "in"  />
+        <pitem  name = "s"  direction = "in"  />
+        <pitem  name = "r"  direction = "in"  />
+        <pitem  name = "q"  direction = "out"  />
+        </pins>
+
+        <nets>
+        <nitem  name = "expMDI3"  />
+        <nitem  name = "expBCLK1"  />
+        <nitem  name = "gnd"  />
+        <nitem  name = "xTDMIN3"  />
+        </nets>
+    </instance>
+
+    <instance  name = "xTDMIN4_33"  library = "work"  arch = "RTL"  type = "reg">
+        <pins>
+        <pitem  name = "d"  direction = "in"  />
+        <pitem  name = "clk"  direction = "in"  />
+        <pitem  name = "s"  direction = "in"  />
+        <pitem  name = "r"  direction = "in"  />
+        <pitem  name = "q"  direction = "out"  />
+        </pins>
+
+        <nets>
+        <nitem  name = "expMDI4"  />
+        <nitem  name = "expBCLK1"  />
+        <nitem  name = "gnd"  />
+        <nitem  name = "xTDMIN4"  />
         </nets>
     </instance>
 
@@ -5336,17 +5404,21 @@
     </instance>
 
     <!--
-        REG instances in netlist: 8
+        REG instances in netlist: 12
     -->
 
     <regs>
-        <reg  name = "expMDO1_16"  />
+        <reg  name = "expMDO1_23"  />
         <reg  name = "srDAC2"  />
-        <reg  name = "expMDO2_18"  />
+        <reg  name = "expMDO2_25"  />
         <reg  name = "srDAC3"  />
-        <reg  name = "expMDO3_20"  />
+        <reg  name = "expMDO3_27"  />
         <reg  name = "srDAC4"  />
-        <reg  name = "expMDO4_22"  />
+        <reg  name = "expMDO4_29"  />
+        <reg  name = "xTDMIN1_30"  />
+        <reg  name = "xTDMIN2_31"  />
+        <reg  name = "xTDMIN3_32"  />
+        <reg  name = "xTDMIN4_33"  />
         <reg  name = "srDAC1"  />
     </regs>
 
