@@ -7,44 +7,40 @@ Loading NGL library 'C:/lscc/diamond/3.9_x64/ispfpga/or5g00/data/orc5glib.ngl'..
 
 Running DRC...
 
-WARNING - synthesis: logical net 'nrst' has no load.
-WARNING - synthesis: input pad net 'nrst' has no legal load.
-WARNING - synthesis: logical net 'scl' has no load.
-WARNING - synthesis: input pad net 'scl' has no legal load.
-WARNING - synthesis: logical net 'sda' has no load.
-WARNING - synthesis: input pad net 'sda' has no legal load.
-WARNING - synthesis: logical net 'pll_clk' has no load.
-WARNING - synthesis: input pad net 'pll_clk' has no legal load.
-WARNING - synthesis: logical net 'pll_locked' has no load.
-WARNING - synthesis: input pad net 'pll_locked' has no legal load.
-WARNING - synthesis: logical net 'dsp_bclkin1' has no load.
-WARNING - synthesis: input pad net 'dsp_bclkin1' has no legal load.
-WARNING - synthesis: logical net 'dsp_lrckin1' has no load.
-WARNING - synthesis: input pad net 'dsp_lrckin1' has no legal load.
-WARNING - synthesis: logical net 'dsp_bclkin2' has no load.
-WARNING - synthesis: input pad net 'dsp_bclkin2' has no legal load.
-WARNING - synthesis: logical net 'dsp_lrckin2' has no load.
-WARNING - synthesis: input pad net 'dsp_lrckin2' has no legal load.
-WARNING - synthesis: logical net 'dsp_bclkin3' has no load.
-WARNING - synthesis: input pad net 'dsp_bclkin3' has no legal load.
-WARNING - synthesis: logical net 'dsp_lrckin3' has no load.
-WARNING - synthesis: input pad net 'dsp_lrckin3' has no legal load.
-WARNING - synthesis: logical net 'dsp_bclkout1' has no load.
-WARNING - synthesis: input pad net 'dsp_bclkout1' has no legal load.
-WARNING - synthesis: logical net 'dsp_lrckout1' has no load.
-WARNING - synthesis: input pad net 'dsp_lrckout1' has no legal load.
-WARNING - synthesis: logical net 'dsp_bclkout2' has no load.
-WARNING - synthesis: input pad net 'dsp_bclkout2' has no legal load.
-WARNING - synthesis: logical net 'dsp_lrckout2' has no load.
-WARNING - synthesis: input pad net 'dsp_lrckout2' has no legal load.
-WARNING - synthesis: logical net 'dsp_bclkout3' has no load.
-WARNING - synthesis: input pad net 'dsp_bclkout3' has no legal load.
-WARNING - synthesis: logical net 'dsp_lrckout3' has no load.
-WARNING - synthesis: input pad net 'dsp_lrckout3' has no legal load.
-WARNING - synthesis: DRC complete with 34 warnings.
+WARNING - synthesis: logical net 'nRST' has no load.
+WARNING - synthesis: input pad net 'nRST' has no legal load.
+WARNING - synthesis: logical net 'SCL' has no load.
+WARNING - synthesis: input pad net 'SCL' has no legal load.
+WARNING - synthesis: logical net 'SDA' has no load.
+WARNING - synthesis: input pad net 'SDA' has no legal load.
+WARNING - synthesis: logical net 'SPDIFIN' has no load.
+WARNING - synthesis: input pad net 'SPDIFIN' has no legal load.
+WARNING - synthesis: logical net 'pllCLK' has no load.
+WARNING - synthesis: input pad net 'pllCLK' has no legal load.
+WARNING - synthesis: logical net 'pllLOCKED' has no load.
+WARNING - synthesis: input pad net 'pllLOCKED' has no legal load.
+WARNING - synthesis: logical net 'dspTDMOUT0' has no load.
+WARNING - synthesis: input pad net 'dspTDMOUT0' has no legal load.
+WARNING - synthesis: logical net 'dspTDMOUT1' has no load.
+WARNING - synthesis: input pad net 'dspTDMOUT1' has no legal load.
+WARNING - synthesis: logical net 'dspTDMOUT2' has no load.
+WARNING - synthesis: input pad net 'dspTDMOUT2' has no legal load.
+WARNING - synthesis: logical net 'dspTDMOUT3' has no load.
+WARNING - synthesis: input pad net 'dspTDMOUT3' has no legal load.
+WARNING - synthesis: logical net 'dspSPDIFOUT' has no load.
+WARNING - synthesis: input pad net 'dspSPDIFOUT' has no legal load.
+WARNING - synthesis: logical net 'expMDI5' has no load.
+WARNING - synthesis: input pad net 'expMDI5' has no legal load.
+WARNING - synthesis: logical net 'expMDI6' has no load.
+WARNING - synthesis: input pad net 'expMDI6' has no legal load.
+WARNING - synthesis: logical net 'expMDI7' has no load.
+WARNING - synthesis: input pad net 'expMDI7' has no legal load.
+WARNING - synthesis: logical net 'expMDI8' has no load.
+WARNING - synthesis: input pad net 'expMDI8' has no legal load.
+WARNING - synthesis: DRC complete with 30 warnings.
 
 Design Results:
-     57 blocks expanded
+    279 blocks expanded
 completed the first expansion
 All blocks are expanded and NGD expansion is successful.
 Writing NGD file infinitas_impl1.ngd.

@@ -315,7 +315,7 @@ gpo_swlock:
 .Ldebug_end1:
 	.section	.debug_str,"MS",@progbits,1
 .Linfo_string0:
-.asciiz"XMOS-25550-Sep-30-2017 clang version 3.6.0  (based on LLVM 3.6.0svn)"
+.asciiz"XMOS-22296-Apr-19-2018 clang version 3.6.0  (based on LLVM 3.6.0svn)"
 .Linfo_string1:
 .asciiz".././src/extensions/gpio_access.c"
 .Linfo_string2:
@@ -959,7 +959,7 @@ gpo_swlock:
 .LpubTypes_end0:
 	.cfi_sections .debug_frame
 
-	.ident	"XMOS-25550-Sep-30-2017 clang version 3.6.0  (based on LLVM 3.6.0svn)"
+	.ident	"XMOS-22296-Apr-19-2018 clang version 3.6.0  (based on LLVM 3.6.0svn)"
 	.typestring p_gpio_lock, "f{0}()"
 	.typestring swlock_acquire, "f{0}(p(ui))"
 	.typestring p_gpio_unlock, "f{0}()"

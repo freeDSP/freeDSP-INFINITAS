@@ -2,57 +2,48 @@ Loading design for application iotiming from file infinitas_impl1.ncd.
 Design name: infinitas
 NCD version: 3.3
 Vendor:      LATTICE
-Device:      LCMXO2-2000HC
-Package:     TQFP100
-Performance: 5
-Package Status:                     Final          Version 1.44.
-Performance Hardware Data Status:   Final          Version 34.4.
-Loading design for application iotiming from file infinitas_impl1.ncd.
-Design name: infinitas
-NCD version: 3.3
-Vendor:      LATTICE
-Device:      LCMXO2-2000HC
-Package:     TQFP100
-Performance: 6
-Package Status:                     Final          Version 1.44.
-Performance Hardware Data Status:   Final          Version 34.4.
-Loading design for application iotiming from file infinitas_impl1.ncd.
-Design name: infinitas
-NCD version: 3.3
-Vendor:      LATTICE
-Device:      LCMXO2-2000HC
-Package:     TQFP100
+Device:      LCMXO2-1200HC
+Package:     TQFP144
 Performance: M
-Package Status:                     Final          Version 1.44.
+Package Status:                     Final          Version 1.42.
 Performance Hardware Data Status:   Final          Version 34.4.
 // Design: infinitas
-// Package: TQFP100
+// Package: TQFP144
 // ncd File: infinitas_impl1.ncd
 // Version: Diamond (64-bit) 3.9.0.99.2
-// Written on Mon Jan 29 15:19:59 2018
+// Written on Tue Sep 25 18:44:23 2018
 // M: Minimum Performance Grade
 // iotiming infinitas_impl1.ncd infinitas_impl1.prf -gui -msgset C:/lattice/infinitas/promote.xml
 
 I/O Timing Report (All units are in ns)
 
-Worst Case Results across Performance Grades (M, 6, 5, 4):
+Worst Case Results across Performance Grades (M, 6):
 
 // Input Setup and Hold Times
 
-Port     Clock  Edge  Setup Performance_Grade  Hold Performance_Grade
+Port     Clock Edge  Setup Performance_Grade  Hold Performance_Grade
 ----------------------------------------------------------------------
-exp_mdi1 x_bclk R     1.640      4      -0.077     M
-exp_mdi2 x_bclk R     1.065      4       0.062     4
-exp_mdi3 x_bclk R     0.600      4       0.441     4
-exp_mdi4 x_bclk R     0.961      4       0.312     4
+expMDI1  xBCLK R    -0.512      M       2.302     6
+expMDI2  xBCLK R    -0.532      M       2.447     6
+expMDI3  xBCLK R    -0.512      M       2.302     6
+expMDI4  xBCLK R    -0.495      M       2.356     6
+xTDMOUT1 xBCLK R     0.109      M       3.029     6
+xTDMOUT2 xBCLK R     0.065      M       2.290     6
+xTDMOUT3 xBCLK R     2.008      6       1.688     6
+xTDMOUT4 xBCLK R     0.044      M       2.696     6
 
 
 // Clock to Output Delay
 
-Port     Clock  Edge  Max_Delay Performance_Grade  Min_Delay Performance_Grade
+Port    Clock Edge  Max_Delay Performance_Grade  Min_Delay Performance_Grade
 ------------------------------------------------------------------------
-x_tdmin1 x_bclk R     7.568         4        2.343          M
-x_tdmin2 x_bclk R     8.015         4        2.454          M
-x_tdmin3 x_bclk R     8.608         4        2.624          M
-x_tdmin4 x_bclk R     8.300         4        2.538          M
-WARNING: you must also run trce with hold speed: 4
+expMDO1 xBCLK R     9.739         6        3.332          M
+expMDO2 xBCLK R     9.563         6        3.296          M
+expMDO3 xBCLK R     9.146         6        3.131          M
+expMDO4 xBCLK R     9.593         6        3.327          M
+xTDMIN1 xBCLK R     9.454         6        3.272          M
+xTDMIN2 xBCLK R    10.230         6        3.498          M
+xTDMIN3 xBCLK R     9.527         6        3.302          M
+xTDMIN4 xBCLK R     9.977         6        3.467          M
+WARNING: you must also run trce with hold speed: 6
+WARNING: you must also run trce with setup speed: M

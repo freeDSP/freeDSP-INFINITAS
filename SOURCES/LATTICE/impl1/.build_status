@@ -5,42 +5,41 @@
             <Task name="IBIS" build_result="0" update_result="3" update_time="0"/>
             <Task name="TimingSimFileVlg" build_result="0" update_result="3" update_time="0"/>
             <Task name="TimingSimFileVHD" build_result="0" update_result="3" update_time="0"/>
-            <Task name="Bitgen" build_result="0" update_result="2" update_time="1517234778"/>
-            <Task name="Jedecgen" build_result="2" update_result="0" update_time="1517235603"/>
+            <Task name="Bitgen" build_result="2" update_result="0" update_time="1537893865"/>
+            <Task name="Jedecgen" build_result="2" update_result="0" update_time="1537893868"/>
         </Milestone>
-        <Milestone name="Map" build_result="2" build_time="1517235592">
-            <Task name="Map" build_result="2" update_result="0" update_time="1517235592"/>
-            <Task name="MapTrace" build_result="2" update_result="0" update_time="1517235593"/>
+        <Milestone name="Map" build_result="2" build_time="1537893854">
+            <Task name="Map" build_result="2" update_result="0" update_time="1537893854"/>
+            <Task name="MapTrace" build_result="2" update_result="0" update_time="1537893855"/>
             <Task name="MapVerilogSimFile" build_result="0" update_result="3" update_time="0"/>
             <Task name="MapVHDLSimFile" build_result="0" update_result="3" update_time="0"/>
         </Milestone>
-        <Milestone name="PAR" build_result="2" build_time="1517235597">
-            <Task name="PAR" build_result="2" update_result="0" update_time="1517235597"/>
-            <Task name="PARTrace" build_result="2" update_result="0" update_time="1517235597"/>
-            <Task name="IOTiming" build_result="2" update_result="0" update_time="1517235599"/>
+        <Milestone name="PAR" build_result="2" build_time="1537893861">
+            <Task name="PAR" build_result="2" update_result="0" update_time="1537893861"/>
+            <Task name="PARTrace" build_result="2" update_result="0" update_time="1537893862"/>
+            <Task name="IOTiming" build_result="2" update_result="0" update_time="1537893863"/>
         </Milestone>
-        <Milestone name="Synthesis" build_result="2" build_time="1517235590">
-            <Task name="Lattice_Synthesis" build_result="2" update_result="0" update_time="1517235590"/>
-            <Task name="LSE_Compile" build_result="2" update_result="0" update_time="1517235603"/>
+        <Milestone name="Synthesis" build_result="2" build_time="1537893853">
+            <Task name="Lattice_Synthesis" build_result="2" update_result="0" update_time="1537893853"/>
+            <Task name="LSE_Compile" build_result="2" update_result="0" update_time="1537893868"/>
         </Milestone>
         <Milestone name="TOOL_Report" build_result="0" build_time="0">
-            <Task name="HDLE" build_result="2" update_result="0" update_time="1517235579"/>
+            <Task name="HDLE" build_result="2" update_result="0" update_time="1537893849"/>
             <Task name="SSO" build_result="0" update_result="2" update_time="0"/>
             <Task name="PIODRC" build_result="0" update_result="2" update_time="0"/>
             <Task name="BKM" build_result="0" update_result="2" update_time="0"/>
             <Task name="DEC" build_result="0" update_result="2" update_time="0"/>
         </Milestone>
-        <Report name=".vdbs/infinitas_impl1_map.vdb" last_build_time="1517235592" last_build_size="35120"/>
-        <Report name="DSPmaster.v" last_build_time="1516022876" last_build_size="133"/>
-        <Report name="infinitas_impl1.bgn" last_build_time="1517235603" last_build_size="4210"/>
-        <Report name="infinitas_impl1.bit" last_build_time="1517234778" last_build_size="9206"/>
-        <Report name="infinitas_impl1.ior" last_build_time="1517235599" last_build_size="2281"/>
-        <Report name="infinitas_impl1.jed" last_build_time="1517235603" last_build_size="501140"/>
-        <Report name="infinitas_impl1.lsedata" last_build_time="1517235588" last_build_size="7249"/>
-        <Report name="infinitas_impl1.ncd" last_build_time="1517235597" last_build_size="37480"/>
-        <Report name="infinitas_impl1.ngd" last_build_time="1517235590" last_build_size="27876"/>
-        <Report name="infinitas_impl1.tw1" last_build_time="1517235593" last_build_size="4410"/>
-        <Report name="infinitas_impl1.twr" last_build_time="1517235597" last_build_size="10394"/>
-        <Report name="infinitas_impl1_map.ncd" last_build_time="1517235592" last_build_size="31104"/>
+        <Report name=".vdbs/infinitas_impl1_map.vdb" last_build_time="1537893854" last_build_size="74304"/>
+        <Report name="infinitas_impl1.bgn" last_build_time="1537893868" last_build_size="4210"/>
+        <Report name="infinitas_impl1.bit" last_build_time="1537893865" last_build_size="9378"/>
+        <Report name="infinitas_impl1.ior" last_build_time="1537893863" last_build_size="2101"/>
+        <Report name="infinitas_impl1.jed" last_build_time="1537893868" last_build_size="352338"/>
+        <Report name="infinitas_impl1.lsedata" last_build_time="1537893851" last_build_size="284662"/>
+        <Report name="infinitas_impl1.ncd" last_build_time="1537893861" last_build_size="337953"/>
+        <Report name="infinitas_impl1.ngd" last_build_time="1537893853" last_build_size="204449"/>
+        <Report name="infinitas_impl1.tw1" last_build_time="1537893855" last_build_size="11686"/>
+        <Report name="infinitas_impl1.twr" last_build_time="1537893862" last_build_size="53308"/>
+        <Report name="infinitas_impl1_map.ncd" last_build_time="1537893854" last_build_size="251646"/>
     </Strategy>
 </BuildStatus>

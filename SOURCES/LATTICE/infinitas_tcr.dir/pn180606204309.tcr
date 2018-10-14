@@ -1,0 +1,7 @@
+#Start recording tcl command: 6/6/2018 15:54:15
+#Project Location: /home/rkn/lattice/infinitas; Project name: infinitas
+prj_project new -name "infinitas" -impl "impl1" -dev LCMXO2-1200HC-6TG144C -synthesis "lse"
+prj_project save
+prj_src add "/home/rkn/lattice/infinitas/vhdl/infinitas.vhdl"
+prj_run Synthesis -impl impl1
+#Stop recording: 6/6/2018 20:43:09

@@ -1,0 +1,5 @@
+#Start recording tcl command: 6/7/2018 11:54:41
+#Project Location: /home/rkn/lattice/infinitas; Project name: infinitas
+prj_project open "/home/rkn/lattice/infinitas/infinitas.ldf"
+prj_run Export -impl impl1
+#Stop recording: 6/7/2018 12:40:37

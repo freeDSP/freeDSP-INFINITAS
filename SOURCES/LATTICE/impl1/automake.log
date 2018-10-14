@@ -7,7 +7,7 @@ Copyright (c) 1995 AT&T Corp.   All rights reserved.
 Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
 Copyright (c) 2001 Agere Systems   All rights reserved.
 Copyright (c) 2002-2017 Lattice Semiconductor Corporation,  All rights reserved.
-Mon Jan 29 15:19:45 2018
+Tue Sep 25 18:44:11 2018
 
 
 Command Line:  synthesis -f infinitas_impl1_lattice.synproj -gui -msgset C:/lattice/infinitas/promote.xml 
@@ -15,22 +15,22 @@ Command Line:  synthesis -f infinitas_impl1_lattice.synproj -gui -msgset C:/latt
     <postMsg mid="35002000" type="Info"    dynamic="0" navigation="0"  />
 Synthesis options:
 The -a option is MachXO2.
-The -s option is 4.
-The -t option is TQFP100.
-The -d option is LCMXO2-2000HC.
-Using package TQFP100.
-Using performance grade 4.
+The -s option is 6.
+The -t option is TQFP144.
+The -d option is LCMXO2-1200HC.
+Using package TQFP144.
+Using performance grade 6.
                                                           
 
 ##########################################################
 
 ### Lattice Family : MachXO2
 
-### Device  : LCMXO2-2000HC
+### Device  : LCMXO2-1200HC
 
-### Package : TQFP100
+### Package : TQFP144
 
-### Speed   : 4
+### Speed   : 6
 
 ##########################################################
 
@@ -39,7 +39,7 @@ Using performance grade 4.
     <postMsg mid="35001781" type="Info"    dynamic="0" navigation="0"  />
 Optimization goal = Balanced
 Top-level module name = infinitas.
-Target frequency = 1.000000 MHz.
+Target frequency = 200.000000 MHz.
 Maximum fanout = 1000.
 Timing path count = 3
 BRAM utilization = 100.000000 %
@@ -82,27 +82,181 @@ Compile Design Begin
     <postMsg mid="35921504" type="Info"    dynamic="2" navigation="0" arg0="" arg1="C:/lattice/infinitas/impl1"  />
 Analyzing VHDL file c:/lattice/infinitas/vhdl/infinitas.vhdl. VHDL-1481
     <postMsg mid="35921012" type="Info"    dynamic="2" navigation="2" arg0="c:/lattice/infinitas/vhdl/infinitas.vhdl(7): " arg1="infinitas" arg2="c:/lattice/infinitas/vhdl/infinitas.vhdl" arg3="7"  />
-    <postMsg mid="35921010" type="Info"    dynamic="2" navigation="2" arg0="c:/lattice/infinitas/vhdl/infinitas.vhdl(101): " arg1="behavioral" arg2="c:/lattice/infinitas/vhdl/infinitas.vhdl" arg3="101"  />
+    <postMsg mid="35921010" type="Info"    dynamic="2" navigation="2" arg0="c:/lattice/infinitas/vhdl/infinitas.vhdl(130): " arg1="behavioral" arg2="c:/lattice/infinitas/vhdl/infinitas.vhdl" arg3="130"  />
 unit infinitas is not yet analyzed. VHDL-1485
 unit infinitas is not yet analyzed. VHDL-1485
 c:/lattice/infinitas/vhdl/infinitas.vhdl(7): executing infinitas(Behavioral)
 
-    <postMsg mid="35921205" type="Warning" dynamic="3" navigation="2" arg0="c:/lattice/infinitas/vhdl/infinitas.vhdl(99): " arg1="infinitas" arg2="Behavioral" arg3="c:/lattice/infinitas/vhdl/infinitas.vhdl" arg4="99"  />
+    <postMsg mid="35921303" type="Warning" dynamic="3" navigation="2" arg0="c:/lattice/infinitas/vhdl/infinitas.vhdl(145): " arg1="&apos;0&apos;" arg2="rst" arg3="c:/lattice/infinitas/vhdl/infinitas.vhdl" arg4="145"  />
+    <postMsg mid="35921205" type="Warning" dynamic="3" navigation="2" arg0="c:/lattice/infinitas/vhdl/infinitas.vhdl(128): " arg1="infinitas" arg2="Behavioral" arg3="c:/lattice/infinitas/vhdl/infinitas.vhdl" arg4="128"  />
 Top module name (VHDL): infinitas
 Last elaborated design is infinitas(Behavioral)
 Loading NGL library 'C:/lscc/diamond/3.9_x64/ispfpga/xo2c00a/data/xo2alib.ngl'...
 Loading NGL library 'C:/lscc/diamond/3.9_x64/ispfpga/xo2c00/data/xo2clib.ngl'...
 Loading NGL library 'C:/lscc/diamond/3.9_x64/ispfpga/mg5g00/data/mg5glib.ngl'...
 Loading NGL library 'C:/lscc/diamond/3.9_x64/ispfpga/or5g00/data/orc5glib.ngl'...
-Loading device for application map from file 'xo2c2000.nph' in environment: C:/lscc/diamond/3.9_x64/ispfpga.
-Package Status:                     Final          Version 1.44.
+Loading device for application map from file 'xo2c1200.nph' in environment: C:/lscc/diamond/3.9_x64/ispfpga.
+Package Status:                     Final          Version 1.42.
 Top-level module name = infinitas.
-######## Missing driver on net wclkout. Patching with GND.
+######## Missing driver on net SPDIFOUT. Patching with GND.
+######## Missing driver on net dspBCLKIN0. Patching with GND.
+######## Missing driver on net dspLRCKIN0. Patching with GND.
+######## Missing driver on net dspTDMIN0. Patching with GND.
+######## Missing driver on net dspBCLKIN1. Patching with GND.
+######## Missing driver on net dspLRCKIN1. Patching with GND.
+######## Missing driver on net dspTDMIN1. Patching with GND.
+######## Missing driver on net dspBCLKIN2. Patching with GND.
+######## Missing driver on net dspLRCKIN2. Patching with GND.
+######## Missing driver on net dspTDMIN2. Patching with GND.
+######## Missing driver on net dspBCLKIN3. Patching with GND.
+######## Missing driver on net dspLRCKIN3. Patching with GND.
+######## Missing driver on net dspTDMIN3. Patching with GND.
+######## Missing driver on net dspBCLKOUT0. Patching with GND.
+######## Missing driver on net dspLRCKOUT0. Patching with GND.
+######## Missing driver on net dspBCLKOUT1. Patching with GND.
+######## Missing driver on net dspLRCKOUT1. Patching with GND.
+######## Missing driver on net dspBCLKOUT2. Patching with GND.
+######## Missing driver on net dspLRCKOUT2. Patching with GND.
+######## Missing driver on net dspBCLKOUT3. Patching with GND.
+######## Missing driver on net dspLRCKOUT3. Patching with GND.
+######## Missing driver on net dspSPDIFIN. Patching with GND.
+######## Missing driver on net expMDO5. Patching with GND.
+######## Missing driver on net expMDO6. Patching with GND.
+######## Missing driver on net expMDO7. Patching with GND.
+######## Missing driver on net expMDO8. Patching with GND.
+######## Missing driver on net wclkOUT. Patching with GND.
 
 
 
+################### Mapped 1020 registers to 32 RAM. ##################
+    <postMsg mid="35935034" type="Warning" dynamic="2" navigation="0" arg0="" arg1="_72"  />
+    <postMsg mid="35935034" type="Warning" dynamic="2" navigation="0" arg0="" arg1="_182"  />
+    <postMsg mid="35935034" type="Warning" dynamic="2" navigation="0" arg0="" arg1="_79"  />
+    <postMsg mid="35935034" type="Warning" dynamic="2" navigation="0" arg0="" arg1="_98"  />
+    <postMsg mid="35935034" type="Warning" dynamic="2" navigation="0" arg0="" arg1="_86"  />
+    <postMsg mid="35935034" type="Warning" dynamic="2" navigation="0" arg0="" arg1="_116"  />
+    <postMsg mid="35935034" type="Warning" dynamic="2" navigation="0" arg0="" arg1="_92"  />
+    <postMsg mid="35935034" type="Warning" dynamic="2" navigation="0" arg0="" arg1="_128"  />
+    <postMsg mid="35935034" type="Warning" dynamic="2" navigation="0" arg0="" arg1="srDAC2_153"  />
+    <postMsg mid="35935034" type="Warning" dynamic="2" navigation="0" arg0="" arg1="srDAC2_80_157"  />
+    <postMsg mid="35935034" type="Warning" dynamic="2" navigation="0" arg0="" arg1="_104"  />
+    <postMsg mid="35935034" type="Warning" dynamic="2" navigation="0" arg0="" arg1="_134"  />
+    <postMsg mid="35935034" type="Warning" dynamic="2" navigation="0" arg0="" arg1="_110"  />
+    <postMsg mid="35935034" type="Warning" dynamic="2" navigation="0" arg0="" arg1="_146"  />
+    <postMsg mid="35935034" type="Warning" dynamic="2" navigation="0" arg0="" arg1="srDAC2_59_154"  />
+    <postMsg mid="35935034" type="Warning" dynamic="2" navigation="0" arg0="" arg1="srDAC2_59_99_160"  />
+    <postMsg mid="35935034" type="Warning" dynamic="2" navigation="0" arg0="" arg1="_122"  />
+    <postMsg mid="35935034" type="Warning" dynamic="2" navigation="0" arg0="" arg1="_152"  />
+    <postMsg mid="35935034" type="Warning" dynamic="2" navigation="0" arg0="" arg1="srDAC2_66_155"  />
+    <postMsg mid="35935034" type="Warning" dynamic="2" navigation="0" arg0="" arg1="srDAC2_66_111_162"  />
+    <postMsg mid="35935034" type="Warning" dynamic="2" navigation="0" arg0="" arg1="srDAC2_73_156"  />
+    <postMsg mid="35935034" type="Warning" dynamic="2" navigation="0" arg0="" arg1="srDAC2_73_117_163"  />
+    <postMsg mid="35935034" type="Warning" dynamic="2" navigation="0" arg0="" arg1="_140"  />
+    <postMsg mid="35935034" type="Warning" dynamic="2" navigation="0" arg0="" arg1="_175"  />
+    <postMsg mid="35935034" type="Warning" dynamic="2" navigation="0" arg0="" arg1="srDAC2_59_87_158"  />
+    <postMsg mid="35935034" type="Warning" dynamic="2" navigation="0" arg0="" arg1="srDAC2_59_87_129_165"  />
+    <postMsg mid="35935034" type="Warning" dynamic="2" navigation="0" arg0="" arg1="srDAC2_59_93_159"  />
+    <postMsg mid="35935034" type="Warning" dynamic="2" navigation="0" arg0="" arg1="srDAC2_59_93_135_166"  />
+    <postMsg mid="35935034" type="Warning" dynamic="2" navigation="0" arg0="" arg1="srDAC2_66_105_161"  />
+    <postMsg mid="35935034" type="Warning" dynamic="2" navigation="0" arg0="" arg1="srDAC2_66_105_141_167"  />
+    <postMsg mid="35935034" type="Warning" dynamic="2" navigation="0" arg0="" arg1="srDAC2_59_87_123_164"  />
+    <postMsg mid="35935034" type="Warning" dynamic="2" navigation="0" arg0="" arg1="srDAC2_59_87_123_147_168"  />
+    <postMsg mid="35935034" type="Warning" dynamic="2" navigation="0" arg0="" arg1="_189"  />
+    <postMsg mid="35935034" type="Warning" dynamic="2" navigation="0" arg0="" arg1="_208"  />
+    <postMsg mid="35935034" type="Warning" dynamic="2" navigation="0" arg0="" arg1="_196"  />
+    <postMsg mid="35935034" type="Warning" dynamic="2" navigation="0" arg0="" arg1="_226"  />
+    <postMsg mid="35935034" type="Warning" dynamic="2" navigation="0" arg0="" arg1="_202"  />
+    <postMsg mid="35935034" type="Warning" dynamic="2" navigation="0" arg0="" arg1="_238"  />
+    <postMsg mid="35935034" type="Warning" dynamic="2" navigation="0" arg0="" arg1="srDAC4_263"  />
+    <postMsg mid="35935034" type="Warning" dynamic="2" navigation="0" arg0="" arg1="srDAC4_190_267"  />
+    <postMsg mid="35935034" type="Warning" dynamic="2" navigation="0" arg0="" arg1="_214"  />
+    <postMsg mid="35935034" type="Warning" dynamic="2" navigation="0" arg0="" arg1="_244"  />
+    <postMsg mid="35935034" type="Warning" dynamic="2" navigation="0" arg0="" arg1="_220"  />
+    <postMsg mid="35935034" type="Warning" dynamic="2" navigation="0" arg0="" arg1="_256"  />
+    <postMsg mid="35935034" type="Warning" dynamic="2" navigation="0" arg0="" arg1="srDAC4_169_264"  />
+    <postMsg mid="35935034" type="Warning" dynamic="2" navigation="0" arg0="" arg1="srDAC4_169_209_270"  />
+    <postMsg mid="35935034" type="Warning" dynamic="2" navigation="0" arg0="" arg1="_232"  />
+    <postMsg mid="35935034" type="Warning" dynamic="2" navigation="0" arg0="" arg1="_262"  />
+    <postMsg mid="35935034" type="Warning" dynamic="2" navigation="0" arg0="" arg1="srDAC4_176_265"  />
+    <postMsg mid="35935034" type="Warning" dynamic="2" navigation="0" arg0="" arg1="srDAC4_176_221_272"  />
+    <postMsg mid="35935034" type="Warning" dynamic="2" navigation="0" arg0="" arg1="srDAC4_183_266"  />
+    <postMsg mid="35935034" type="Warning" dynamic="2" navigation="0" arg0="" arg1="srDAC4_183_227_273"  />
+    <postMsg mid="35935034" type="Warning" dynamic="2" navigation="0" arg0="" arg1="_250"  />
+    <postMsg mid="35935034" type="Warning" dynamic="2" navigation="0" arg0="" arg1=""  />
+    <postMsg mid="35935034" type="Warning" dynamic="2" navigation="0" arg0="" arg1="srDAC4_169_197_268"  />
+    <postMsg mid="35935034" type="Warning" dynamic="2" navigation="0" arg0="" arg1="srDAC4_169_197_239_275"  />
+    <postMsg mid="35935034" type="Warning" dynamic="2" navigation="0" arg0="" arg1="srDAC4_169_203_269"  />
+    <postMsg mid="35935034" type="Warning" dynamic="2" navigation="0" arg0="" arg1="srDAC4_169_203_245_276"  />
+    <postMsg mid="35935034" type="Warning" dynamic="2" navigation="0" arg0="" arg1="srDAC4_176_215_271"  />
+    <postMsg mid="35935034" type="Warning" dynamic="2" navigation="0" arg0="" arg1="srDAC4_176_215_251_277"  />
+    <postMsg mid="35935034" type="Warning" dynamic="2" navigation="0" arg0="" arg1="srDAC4_169_197_233_274"  />
+    <postMsg mid="35935034" type="Warning" dynamic="2" navigation="0" arg0="" arg1="srDAC4_169_197_233_257_278"  />
+######## Missing driver on net n2636. Patching with GND.
+######## Missing driver on net n2635. Patching with GND.
+######## Missing driver on net n2634. Patching with GND.
+######## Missing driver on net n2633. Patching with GND.
+######## Missing driver on net n2632. Patching with GND.
+######## Missing driver on net n2631. Patching with GND.
+######## Missing driver on net n2630. Patching with GND.
+######## Missing driver on net n2629. Patching with GND.
+######## Missing driver on net n2628. Patching with GND.
+######## Missing driver on net n2627. Patching with GND.
+######## Missing driver on net n2626. Patching with GND.
+######## Missing driver on net n2625. Patching with GND.
+######## Missing driver on net n2624. Patching with GND.
+######## Missing driver on net n2623. Patching with GND.
+######## Missing driver on net n2622. Patching with GND.
+######## Missing driver on net n2621. Patching with GND.
+######## Missing driver on net n2620. Patching with GND.
+######## Missing driver on net n2619. Patching with GND.
+######## Missing driver on net n2618. Patching with GND.
+######## Missing driver on net n2617. Patching with GND.
+######## Missing driver on net n2616. Patching with GND.
+######## Missing driver on net n2615. Patching with GND.
+######## Missing driver on net n2614. Patching with GND.
+######## Missing driver on net n2613. Patching with GND.
+######## Missing driver on net n2612. Patching with GND.
+######## Missing driver on net n2611. Patching with GND.
+######## Missing driver on net n2610. Patching with GND.
+######## Missing driver on net n2609. Patching with GND.
+######## Missing driver on net n2608. Patching with GND.
+######## Missing driver on net n2607. Patching with GND.
+######## Missing driver on net n2606. Patching with GND.
+######## Missing driver on net n2605. Patching with GND.
+######## Missing driver on net n2604. Patching with GND.
+######## Missing driver on net n2603. Patching with GND.
+######## Missing driver on net n2602. Patching with GND.
+######## Missing driver on net n2601. Patching with GND.
+######## Missing driver on net n2600. Patching with GND.
+######## Missing driver on net n2599. Patching with GND.
+######## Missing driver on net n2598. Patching with GND.
+######## Missing driver on net n2597. Patching with GND.
+######## Missing driver on net n2596. Patching with GND.
+######## Missing driver on net n2595. Patching with GND.
+######## Missing driver on net n2594. Patching with GND.
+######## Missing driver on net n2593. Patching with GND.
+######## Missing driver on net n2592. Patching with GND.
+######## Missing driver on net n2591. Patching with GND.
+######## Missing driver on net n2590. Patching with GND.
+######## Missing driver on net n2589. Patching with GND.
+######## Missing driver on net n2588. Patching with GND.
+######## Missing driver on net n2587. Patching with GND.
+######## Missing driver on net n2586. Patching with GND.
+######## Missing driver on net n2585. Patching with GND.
+######## Missing driver on net n2584. Patching with GND.
+######## Missing driver on net n2583. Patching with GND.
+######## Missing driver on net n2582. Patching with GND.
+######## Missing driver on net n2581. Patching with GND.
+######## Missing driver on net n2580. Patching with GND.
+######## Missing driver on net n2579. Patching with GND.
+######## Missing driver on net n2578. Patching with GND.
+######## Missing driver on net n2577. Patching with GND.
+######## Missing driver on net n2575. Patching with GND.
+######## Missing driver on net n2574. Patching with GND.
+######## Missing driver on net n2573. Patching with GND.
+######## Missing driver on net n2576. Patching with GND.
 GSR will not be inferred because no asynchronous signal was found in the netlist.
-Applying 1.000000 MHz constraint to all clocks
+Applying 200.000000 MHz constraint to all clocks
 
     <postMsg mid="35001611" type="Warning" dynamic="0" navigation="0"  />
 Results of NGD DRC are available in infinitas_drc.log.
@@ -114,54 +268,55 @@ Loading NGL library 'C:/lscc/diamond/3.9_x64/ispfpga/or5g00/data/orc5glib.ngl'..
 
 Running DRC...
 
-    <postMsg mid="1166052" type="Warning" dynamic="2" navigation="1" arg0="logical" arg1="nrst" arg2="nrst"  />
-    <postMsg mid="1166064" type="Warning" dynamic="2" navigation="0" arg0="input" arg1="nrst"  />
-    <postMsg mid="1166052" type="Warning" dynamic="2" navigation="1" arg0="logical" arg1="scl" arg2="scl"  />
-    <postMsg mid="1166064" type="Warning" dynamic="2" navigation="0" arg0="input" arg1="scl"  />
-    <postMsg mid="1166052" type="Warning" dynamic="2" navigation="1" arg0="logical" arg1="sda" arg2="sda"  />
-    <postMsg mid="1166064" type="Warning" dynamic="2" navigation="0" arg0="input" arg1="sda"  />
-    <postMsg mid="1166052" type="Warning" dynamic="2" navigation="1" arg0="logical" arg1="pll_clk" arg2="pll_clk"  />
-    <postMsg mid="1166064" type="Warning" dynamic="2" navigation="0" arg0="input" arg1="pll_clk"  />
-    <postMsg mid="1166052" type="Warning" dynamic="2" navigation="1" arg0="logical" arg1="pll_locked" arg2="pll_locked"  />
-    <postMsg mid="1166064" type="Warning" dynamic="2" navigation="0" arg0="input" arg1="pll_locked"  />
-    <postMsg mid="1166052" type="Warning" dynamic="2" navigation="1" arg0="logical" arg1="dsp_bclkin1" arg2="dsp_bclkin1"  />
-    <postMsg mid="1166064" type="Warning" dynamic="2" navigation="0" arg0="input" arg1="dsp_bclkin1"  />
-    <postMsg mid="1166052" type="Warning" dynamic="2" navigation="1" arg0="logical" arg1="dsp_lrckin1" arg2="dsp_lrckin1"  />
-    <postMsg mid="1166064" type="Warning" dynamic="2" navigation="0" arg0="input" arg1="dsp_lrckin1"  />
-    <postMsg mid="1166052" type="Warning" dynamic="2" navigation="1" arg0="logical" arg1="dsp_bclkin2" arg2="dsp_bclkin2"  />
-    <postMsg mid="1166064" type="Warning" dynamic="2" navigation="0" arg0="input" arg1="dsp_bclkin2"  />
-    <postMsg mid="1166052" type="Warning" dynamic="2" navigation="1" arg0="logical" arg1="dsp_lrckin2" arg2="dsp_lrckin2"  />
-    <postMsg mid="1166064" type="Warning" dynamic="2" navigation="0" arg0="input" arg1="dsp_lrckin2"  />
-    <postMsg mid="1166052" type="Warning" dynamic="2" navigation="1" arg0="logical" arg1="dsp_bclkin3" arg2="dsp_bclkin3"  />
-    <postMsg mid="1166064" type="Warning" dynamic="2" navigation="0" arg0="input" arg1="dsp_bclkin3"  />
-    <postMsg mid="1166052" type="Warning" dynamic="2" navigation="1" arg0="logical" arg1="dsp_lrckin3" arg2="dsp_lrckin3"  />
-    <postMsg mid="1166064" type="Warning" dynamic="2" navigation="0" arg0="input" arg1="dsp_lrckin3"  />
-    <postMsg mid="1166052" type="Warning" dynamic="2" navigation="1" arg0="logical" arg1="dsp_bclkout1" arg2="dsp_bclkout1"  />
-    <postMsg mid="1166064" type="Warning" dynamic="2" navigation="0" arg0="input" arg1="dsp_bclkout1"  />
-    <postMsg mid="1166052" type="Warning" dynamic="2" navigation="1" arg0="logical" arg1="dsp_lrckout1" arg2="dsp_lrckout1"  />
-    <postMsg mid="1166064" type="Warning" dynamic="2" navigation="0" arg0="input" arg1="dsp_lrckout1"  />
-    <postMsg mid="1166052" type="Warning" dynamic="2" navigation="1" arg0="logical" arg1="dsp_bclkout2" arg2="dsp_bclkout2"  />
-    <postMsg mid="1166064" type="Warning" dynamic="2" navigation="0" arg0="input" arg1="dsp_bclkout2"  />
-    <postMsg mid="1166052" type="Warning" dynamic="2" navigation="1" arg0="logical" arg1="dsp_lrckout2" arg2="dsp_lrckout2"  />
-    <postMsg mid="1166064" type="Warning" dynamic="2" navigation="0" arg0="input" arg1="dsp_lrckout2"  />
-    <postMsg mid="1166052" type="Warning" dynamic="2" navigation="1" arg0="logical" arg1="dsp_bclkout3" arg2="dsp_bclkout3"  />
-    <postMsg mid="1166064" type="Warning" dynamic="2" navigation="0" arg0="input" arg1="dsp_bclkout3"  />
-    <postMsg mid="1166052" type="Warning" dynamic="2" navigation="1" arg0="logical" arg1="dsp_lrckout3" arg2="dsp_lrckout3"  />
-    <postMsg mid="1166064" type="Warning" dynamic="2" navigation="0" arg0="input" arg1="dsp_lrckout3"  />
-    <postMsg mid="1163101" type="Warning" dynamic="1" navigation="0" arg0="34"  />
+    <postMsg mid="1166052" type="Warning" dynamic="2" navigation="1" arg0="logical" arg1="nRST" arg2="nRST"  />
+    <postMsg mid="1166064" type="Warning" dynamic="2" navigation="0" arg0="input" arg1="nRST"  />
+    <postMsg mid="1166052" type="Warning" dynamic="2" navigation="1" arg0="logical" arg1="SCL" arg2="SCL"  />
+    <postMsg mid="1166064" type="Warning" dynamic="2" navigation="0" arg0="input" arg1="SCL"  />
+    <postMsg mid="1166052" type="Warning" dynamic="2" navigation="1" arg0="logical" arg1="SDA" arg2="SDA"  />
+    <postMsg mid="1166064" type="Warning" dynamic="2" navigation="0" arg0="input" arg1="SDA"  />
+    <postMsg mid="1166052" type="Warning" dynamic="2" navigation="1" arg0="logical" arg1="SPDIFIN" arg2="SPDIFIN"  />
+    <postMsg mid="1166064" type="Warning" dynamic="2" navigation="0" arg0="input" arg1="SPDIFIN"  />
+    <postMsg mid="1166052" type="Warning" dynamic="2" navigation="1" arg0="logical" arg1="pllCLK" arg2="pllCLK"  />
+    <postMsg mid="1166064" type="Warning" dynamic="2" navigation="0" arg0="input" arg1="pllCLK"  />
+    <postMsg mid="1166052" type="Warning" dynamic="2" navigation="1" arg0="logical" arg1="pllLOCKED" arg2="pllLOCKED"  />
+    <postMsg mid="1166064" type="Warning" dynamic="2" navigation="0" arg0="input" arg1="pllLOCKED"  />
+    <postMsg mid="1166052" type="Warning" dynamic="2" navigation="1" arg0="logical" arg1="dspTDMOUT0" arg2="dspTDMOUT0"  />
+    <postMsg mid="1166064" type="Warning" dynamic="2" navigation="0" arg0="input" arg1="dspTDMOUT0"  />
+    <postMsg mid="1166052" type="Warning" dynamic="2" navigation="1" arg0="logical" arg1="dspTDMOUT1" arg2="dspTDMOUT1"  />
+    <postMsg mid="1166064" type="Warning" dynamic="2" navigation="0" arg0="input" arg1="dspTDMOUT1"  />
+    <postMsg mid="1166052" type="Warning" dynamic="2" navigation="1" arg0="logical" arg1="dspTDMOUT2" arg2="dspTDMOUT2"  />
+    <postMsg mid="1166064" type="Warning" dynamic="2" navigation="0" arg0="input" arg1="dspTDMOUT2"  />
+    <postMsg mid="1166052" type="Warning" dynamic="2" navigation="1" arg0="logical" arg1="dspTDMOUT3" arg2="dspTDMOUT3"  />
+    <postMsg mid="1166064" type="Warning" dynamic="2" navigation="0" arg0="input" arg1="dspTDMOUT3"  />
+    <postMsg mid="1166052" type="Warning" dynamic="2" navigation="1" arg0="logical" arg1="dspSPDIFOUT" arg2="dspSPDIFOUT"  />
+    <postMsg mid="1166064" type="Warning" dynamic="2" navigation="0" arg0="input" arg1="dspSPDIFOUT"  />
+    <postMsg mid="1166052" type="Warning" dynamic="2" navigation="1" arg0="logical" arg1="expMDI5" arg2="expMDI5"  />
+    <postMsg mid="1166064" type="Warning" dynamic="2" navigation="0" arg0="input" arg1="expMDI5"  />
+    <postMsg mid="1166052" type="Warning" dynamic="2" navigation="1" arg0="logical" arg1="expMDI6" arg2="expMDI6"  />
+    <postMsg mid="1166064" type="Warning" dynamic="2" navigation="0" arg0="input" arg1="expMDI6"  />
+    <postMsg mid="1166052" type="Warning" dynamic="2" navigation="1" arg0="logical" arg1="expMDI7" arg2="expMDI7"  />
+    <postMsg mid="1166064" type="Warning" dynamic="2" navigation="0" arg0="input" arg1="expMDI7"  />
+    <postMsg mid="1166052" type="Warning" dynamic="2" navigation="1" arg0="logical" arg1="expMDI8" arg2="expMDI8"  />
+    <postMsg mid="1166064" type="Warning" dynamic="2" navigation="0" arg0="input" arg1="expMDI8"  />
+    <postMsg mid="1163101" type="Warning" dynamic="1" navigation="0" arg0="30"  />
 
 Design Results:
-     57 blocks expanded
+    279 blocks expanded
 completed the first expansion
 All blocks are expanded and NGD expansion is successful.
 Writing NGD file infinitas_impl1.ngd.
 
 ################### Begin Area Report (infinitas)######################
-Number of register bits => 4 of 2352 (0 % )
-FD1S3AX => 4
+Number of register bits => 24 of 1604 (1 % )
+CCU2D => 38
+DPR16X4C => 32
+FD1S3AX => 8
+FD1S3IX => 16
 GSR => 1
-IB => 16
-OB => 33
+IB => 12
+LUT4 => 86
+OB => 63
+PFUMX => 20
 ################### End Area Report ##################
 
 ################### Begin BlackBox Report ######################
@@ -171,22 +326,22 @@ TSALL => 1
 ################### Begin Clock Report ######################
 Clock Nets
 Number of Clocks: 1
-  Net : exp_bclk4_c_c, loads : 10
+  Net : expBCLK8_c_c, loads : 64
 Clock Enable Nets
 Number of Clock Enables: 0
 Top 0 highest fanout Clock Enables:
 Highest fanout non-clock nets
 Top 10 highest fanout non-clock nets:
-  Net : x_mclk_c_c, loads : 7
-  Net : exp_lrck4_c_c, loads : 6
-  Net : pll_wclkref_c_c, loads : 1
-  Net : dsp_tdmin0_c_c, loads : 1
-  Net : dsp_tdmin1_c_c, loads : 1
-  Net : dsp_tdmin2_c_c, loads : 1
-  Net : dsp_tdmin3_c_c, loads : 1
-  Net : exp_mdo1_c_c, loads : 1
-  Net : exp_mdo2_c_c, loads : 1
-  Net : exp_mdo3_c_c, loads : 1
+  Net : n2091, loads : 28
+  Net : n2159, loads : 27
+  Net : n2158, loads : 21
+  Net : n2157, loads : 21
+  Net : n2156, loads : 21
+  Net : n2155, loads : 21
+  Net : n2154, loads : 21
+  Net : n2153, loads : 21
+  Net : n2152, loads : 21
+  Net : n2090, loads : 21
 ################### End Clock Report ##################
 
 Timing Report Summary
@@ -195,22 +350,22 @@ Timing Report Summary
 Constraint                              |   Constraint|       Actual|Levels
 --------------------------------------------------------------------------------
                                         |             |             |
-create_clock -period 1000.000000 -name  |             |             |
-clk0 [get_nets exp_bclk4_c_c]           |            -|            -|     0  
+create_clock -period 5.000000 -name     |             |             |
+clk0 [get_nets expBCLK8_c_c]            |  200.000 MHz|  101.041 MHz|    10 *
                                         |             |             |
 --------------------------------------------------------------------------------
 
 
-All constraints were met.
+1 constraints not met.
 
 
-Peak Memory Usage: 65.824  MB
+Peak Memory Usage: 315.875  MB
 
 --------------------------------------------------------------
-Elapsed CPU time for LSE flow : 0.422  secs
+Elapsed CPU time for LSE flow : 1.656  secs
 --------------------------------------------------------------
 
-map -a "MachXO2" -p LCMXO2-2000HC -t TQFP100 -s 4 -oc Commercial   "infinitas_impl1.ngd" -o "infinitas_impl1_map.ncd" -pr "infinitas_impl1.prf" -mp "infinitas_impl1.mrp" -lpf "C:/lattice/infinitas/impl1/infinitas_impl1.lpf" -lpf "C:/lattice/infinitas/infinitas.lpf" -c 0            
+map -a "MachXO2" -p LCMXO2-1200HC -t TQFP144 -s 6 -oc Commercial   "infinitas_impl1.ngd" -o "infinitas_impl1_map.ncd" -pr "infinitas_impl1.prf" -mp "infinitas_impl1.mrp" -lpf "C:/lattice/infinitas/impl1/infinitas_impl1.lpf" -lpf "C:/lattice/infinitas/infinitas.lpf" -c 0            
 map:  version Diamond (64-bit) 3.9.0.99.2
 
 Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
@@ -219,94 +374,76 @@ Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
 Copyright (c) 2001 Agere Systems   All rights reserved.
 Copyright (c) 2002-2017 Lattice Semiconductor Corporation,  All rights reserved.
    Process the file: infinitas_impl1.ngd
-   Picdevice="LCMXO2-2000HC"
+   Picdevice="LCMXO2-1200HC"
 
-   Pictype="TQFP100"
+   Pictype="TQFP144"
 
-   Picspeed=4
+   Picspeed=6
 
    Remove unused logic
 
    Do not produce over sized NCDs.
 
-Part used: LCMXO2-2000HCTQFP100, Performance used: 4.
+Part used: LCMXO2-1200HCTQFP144, Performance used: 6.
 
-    <postMsg mid="1100644" type="Warning" dynamic="2" navigation="2" arg0="C:/lattice/infinitas/infinitas.lpf(16): Semantic error in &quot;IOBUF PORT &quot;dsp_bclkin1&quot; IO_TYPE=LVCMOS33 ;&quot;: " arg1="dsp_bclkin1" arg2="C:/lattice/infinitas/infinitas.lpf" arg3="16"  />
-    <postMsg mid="1100644" type="Warning" dynamic="2" navigation="2" arg0="C:/lattice/infinitas/infinitas.lpf(17): Semantic error in &quot;IOBUF PORT &quot;dsp_bclkin2&quot; IO_TYPE=LVCMOS33 ;&quot;: " arg1="dsp_bclkin2" arg2="C:/lattice/infinitas/infinitas.lpf" arg3="17"  />
-    <postMsg mid="1100644" type="Warning" dynamic="2" navigation="2" arg0="C:/lattice/infinitas/infinitas.lpf(18): Semantic error in &quot;IOBUF PORT &quot;dsp_bclkin3&quot; IO_TYPE=LVCMOS33 ;&quot;: " arg1="dsp_bclkin3" arg2="C:/lattice/infinitas/infinitas.lpf" arg3="18"  />
-    <postMsg mid="1100644" type="Warning" dynamic="2" navigation="2" arg0="C:/lattice/infinitas/infinitas.lpf(19): Semantic error in &quot;IOBUF PORT &quot;dsp_bclkin4&quot; IO_TYPE=LVCMOS33 ;&quot;: " arg1="dsp_bclkin4" arg2="C:/lattice/infinitas/infinitas.lpf" arg3="19"  />
-    <postMsg mid="1100644" type="Warning" dynamic="2" navigation="2" arg0="C:/lattice/infinitas/infinitas.lpf(21): Semantic error in &quot;IOBUF PORT &quot;dsp_bclkout1&quot; IO_TYPE=LVCMOS33 ;&quot;: " arg1="dsp_bclkout1" arg2="C:/lattice/infinitas/infinitas.lpf" arg3="21"  />
-    <postMsg mid="1100644" type="Warning" dynamic="2" navigation="2" arg0="C:/lattice/infinitas/infinitas.lpf(22): Semantic error in &quot;IOBUF PORT &quot;dsp_bclkout2&quot; IO_TYPE=LVCMOS33 ;&quot;: " arg1="dsp_bclkout2" arg2="C:/lattice/infinitas/infinitas.lpf" arg3="22"  />
-    <postMsg mid="1100644" type="Warning" dynamic="2" navigation="2" arg0="C:/lattice/infinitas/infinitas.lpf(23): Semantic error in &quot;IOBUF PORT &quot;dsp_bclkout3&quot; IO_TYPE=LVCMOS33 ;&quot;: " arg1="dsp_bclkout3" arg2="C:/lattice/infinitas/infinitas.lpf" arg3="23"  />
-    <postMsg mid="1100644" type="Warning" dynamic="2" navigation="2" arg0="C:/lattice/infinitas/infinitas.lpf(25): Semantic error in &quot;IOBUF PORT &quot;dsp_lrckin1&quot; IO_TYPE=LVCMOS33 ;&quot;: " arg1="dsp_lrckin1" arg2="C:/lattice/infinitas/infinitas.lpf" arg3="25"  />
-    <postMsg mid="1100644" type="Warning" dynamic="2" navigation="2" arg0="C:/lattice/infinitas/infinitas.lpf(26): Semantic error in &quot;IOBUF PORT &quot;dsp_lrckin2&quot; IO_TYPE=LVCMOS33 ;&quot;: " arg1="dsp_lrckin2" arg2="C:/lattice/infinitas/infinitas.lpf" arg3="26"  />
-    <postMsg mid="1100644" type="Warning" dynamic="2" navigation="2" arg0="C:/lattice/infinitas/infinitas.lpf(27): Semantic error in &quot;IOBUF PORT &quot;dsp_lrckin3&quot; IO_TYPE=LVCMOS33 ;&quot;: " arg1="dsp_lrckin3" arg2="C:/lattice/infinitas/infinitas.lpf" arg3="27"  />
-    <postMsg mid="1100644" type="Warning" dynamic="2" navigation="2" arg0="C:/lattice/infinitas/infinitas.lpf(28): Semantic error in &quot;IOBUF PORT &quot;dsp_lrckin4&quot; IO_TYPE=LVCMOS33 ;&quot;: " arg1="dsp_lrckin4" arg2="C:/lattice/infinitas/infinitas.lpf" arg3="28"  />
-    <postMsg mid="1100644" type="Warning" dynamic="2" navigation="2" arg0="C:/lattice/infinitas/infinitas.lpf(30): Semantic error in &quot;IOBUF PORT &quot;dsp_lrckout1&quot; IO_TYPE=LVCMOS33 ;&quot;: " arg1="dsp_lrckout1" arg2="C:/lattice/infinitas/infinitas.lpf" arg3="30"  />
-    <postMsg mid="1100644" type="Warning" dynamic="2" navigation="2" arg0="C:/lattice/infinitas/infinitas.lpf(31): Semantic error in &quot;IOBUF PORT &quot;dsp_lrckout2&quot; IO_TYPE=LVCMOS33 ;&quot;: " arg1="dsp_lrckout2" arg2="C:/lattice/infinitas/infinitas.lpf" arg3="31"  />
-    <postMsg mid="1100644" type="Warning" dynamic="2" navigation="2" arg0="C:/lattice/infinitas/infinitas.lpf(32): Semantic error in &quot;IOBUF PORT &quot;dsp_lrckout3&quot; IO_TYPE=LVCMOS33 ;&quot;: " arg1="dsp_lrckout3" arg2="C:/lattice/infinitas/infinitas.lpf" arg3="32"  />
-    <postMsg mid="1100644" type="Warning" dynamic="2" navigation="2" arg0="C:/lattice/infinitas/infinitas.lpf(38): Semantic error in &quot;IOBUF PORT &quot;dsp_tdmin4&quot; IO_TYPE=LVCMOS33 ;&quot;: " arg1="dsp_tdmin4" arg2="C:/lattice/infinitas/infinitas.lpf" arg3="38"  />
-Loading device for application map from file 'xo2c2000.nph' in environment: C:/lscc/diamond/3.9_x64/ispfpga.
-Package Status:                     Final          Version 1.44.
+    <postMsg mid="1100644" type="Warning" dynamic="2" navigation="2" arg0="C:/lattice/infinitas/infinitas.lpf(153): Semantic error in &quot;IOBUF PORT &quot;nRST&quot; IO_TYPE=LVCMOS33 PULLMODE=NONE ;&quot;: " arg1="nRST" arg2="C:/lattice/infinitas/infinitas.lpf" arg3="153"  />
+Loading device for application map from file 'xo2c1200.nph' in environment: C:/lscc/diamond/3.9_x64/ispfpga.
+Package Status:                     Final          Version 1.42.
 
 Running general design DRC...
 
-    <postMsg mid="1166064" type="Warning" dynamic="2" navigation="0" arg0="input" arg1="nrst"  />
-    <postMsg mid="1166064" type="Warning" dynamic="2" navigation="0" arg0="input" arg1="scl"  />
-    <postMsg mid="1166064" type="Warning" dynamic="2" navigation="0" arg0="input" arg1="sda"  />
-    <postMsg mid="1166064" type="Warning" dynamic="2" navigation="0" arg0="input" arg1="pll_clk"  />
-    <postMsg mid="1166064" type="Warning" dynamic="2" navigation="0" arg0="input" arg1="pll_locked"  />
-    <postMsg mid="1166064" type="Warning" dynamic="2" navigation="0" arg0="input" arg1="dsp_bclkin1"  />
-    <postMsg mid="1166064" type="Warning" dynamic="2" navigation="0" arg0="input" arg1="dsp_lrckin1"  />
-    <postMsg mid="1166064" type="Warning" dynamic="2" navigation="0" arg0="input" arg1="dsp_bclkin2"  />
-    <postMsg mid="1166064" type="Warning" dynamic="2" navigation="0" arg0="input" arg1="dsp_lrckin2"  />
-    <postMsg mid="1166064" type="Warning" dynamic="2" navigation="0" arg0="input" arg1="dsp_bclkin3"  />
-    <postMsg mid="1166064" type="Warning" dynamic="2" navigation="0" arg0="input" arg1="dsp_lrckin3"  />
-    <postMsg mid="1166064" type="Warning" dynamic="2" navigation="0" arg0="input" arg1="dsp_bclkout1"  />
-    <postMsg mid="1166064" type="Warning" dynamic="2" navigation="0" arg0="input" arg1="dsp_lrckout1"  />
-    <postMsg mid="1166064" type="Warning" dynamic="2" navigation="0" arg0="input" arg1="dsp_bclkout2"  />
-    <postMsg mid="1166064" type="Warning" dynamic="2" navigation="0" arg0="input" arg1="dsp_lrckout2"  />
-    <postMsg mid="1166064" type="Warning" dynamic="2" navigation="0" arg0="input" arg1="dsp_bclkout3"  />
-    <postMsg mid="1166064" type="Warning" dynamic="2" navigation="0" arg0="input" arg1="dsp_lrckout3"  />
+    <postMsg mid="1166064" type="Warning" dynamic="2" navigation="0" arg0="input" arg1="nRST"  />
+    <postMsg mid="1166064" type="Warning" dynamic="2" navigation="0" arg0="input" arg1="SCL"  />
+    <postMsg mid="1166064" type="Warning" dynamic="2" navigation="0" arg0="input" arg1="SDA"  />
+    <postMsg mid="1166064" type="Warning" dynamic="2" navigation="0" arg0="input" arg1="SPDIFIN"  />
+    <postMsg mid="1166064" type="Warning" dynamic="2" navigation="0" arg0="input" arg1="pllCLK"  />
+    <postMsg mid="1166064" type="Warning" dynamic="2" navigation="0" arg0="input" arg1="pllLOCKED"  />
+    <postMsg mid="1166064" type="Warning" dynamic="2" navigation="0" arg0="input" arg1="dspTDMOUT0"  />
+    <postMsg mid="1166064" type="Warning" dynamic="2" navigation="0" arg0="input" arg1="dspTDMOUT1"  />
+    <postMsg mid="1166064" type="Warning" dynamic="2" navigation="0" arg0="input" arg1="dspTDMOUT2"  />
+    <postMsg mid="1166064" type="Warning" dynamic="2" navigation="0" arg0="input" arg1="dspTDMOUT3"  />
+    <postMsg mid="1166064" type="Warning" dynamic="2" navigation="0" arg0="input" arg1="dspSPDIFOUT"  />
+    <postMsg mid="1166064" type="Warning" dynamic="2" navigation="0" arg0="input" arg1="expMDI5"  />
+    <postMsg mid="1166064" type="Warning" dynamic="2" navigation="0" arg0="input" arg1="expMDI6"  />
+    <postMsg mid="1166064" type="Warning" dynamic="2" navigation="0" arg0="input" arg1="expMDI7"  />
+    <postMsg mid="1166064" type="Warning" dynamic="2" navigation="0" arg0="input" arg1="expMDI8"  />
 Removing unused logic...
 
 Optimizing...
 
-    <postMsg mid="51001046" type="Warning" dynamic="1" navigation="0" arg0="nrst"  />
-    <postMsg mid="51001046" type="Warning" dynamic="1" navigation="0" arg0="scl"  />
-    <postMsg mid="51001046" type="Warning" dynamic="1" navigation="0" arg0="sda"  />
-    <postMsg mid="51001046" type="Warning" dynamic="1" navigation="0" arg0="pll_clk"  />
-    <postMsg mid="51001046" type="Warning" dynamic="1" navigation="0" arg0="pll_locked"  />
-    <postMsg mid="51001046" type="Warning" dynamic="1" navigation="0" arg0="dsp_bclkin1"  />
-    <postMsg mid="51001046" type="Warning" dynamic="1" navigation="0" arg0="dsp_lrckin1"  />
-    <postMsg mid="51001046" type="Warning" dynamic="1" navigation="0" arg0="dsp_bclkin2"  />
-    <postMsg mid="51001046" type="Warning" dynamic="1" navigation="0" arg0="dsp_lrckin2"  />
-    <postMsg mid="51001046" type="Warning" dynamic="1" navigation="0" arg0="dsp_bclkin3"  />
-    <postMsg mid="51001046" type="Warning" dynamic="1" navigation="0" arg0="dsp_lrckin3"  />
-    <postMsg mid="51001046" type="Warning" dynamic="1" navigation="0" arg0="dsp_bclkout1"  />
-    <postMsg mid="51001046" type="Warning" dynamic="1" navigation="0" arg0="dsp_lrckout1"  />
-    <postMsg mid="51001046" type="Warning" dynamic="1" navigation="0" arg0="dsp_bclkout2"  />
-    <postMsg mid="51001046" type="Warning" dynamic="1" navigation="0" arg0="dsp_lrckout2"  />
-    <postMsg mid="51001046" type="Warning" dynamic="1" navigation="0" arg0="dsp_bclkout3"  />
-    <postMsg mid="51001046" type="Warning" dynamic="1" navigation="0" arg0="dsp_lrckout3"  />
+    <postMsg mid="51001046" type="Warning" dynamic="1" navigation="0" arg0="nRST"  />
+    <postMsg mid="51001046" type="Warning" dynamic="1" navigation="0" arg0="SCL"  />
+    <postMsg mid="51001046" type="Warning" dynamic="1" navigation="0" arg0="SDA"  />
+    <postMsg mid="51001046" type="Warning" dynamic="1" navigation="0" arg0="SPDIFIN"  />
+    <postMsg mid="51001046" type="Warning" dynamic="1" navigation="0" arg0="pllCLK"  />
+    <postMsg mid="51001046" type="Warning" dynamic="1" navigation="0" arg0="pllLOCKED"  />
+    <postMsg mid="51001046" type="Warning" dynamic="1" navigation="0" arg0="dspTDMOUT0"  />
+    <postMsg mid="51001046" type="Warning" dynamic="1" navigation="0" arg0="dspTDMOUT1"  />
+    <postMsg mid="51001046" type="Warning" dynamic="1" navigation="0" arg0="dspTDMOUT2"  />
+    <postMsg mid="51001046" type="Warning" dynamic="1" navigation="0" arg0="dspTDMOUT3"  />
+    <postMsg mid="51001046" type="Warning" dynamic="1" navigation="0" arg0="dspSPDIFOUT"  />
+    <postMsg mid="51001046" type="Warning" dynamic="1" navigation="0" arg0="expMDI5"  />
+    <postMsg mid="51001046" type="Warning" dynamic="1" navigation="0" arg0="expMDI6"  />
+    <postMsg mid="51001046" type="Warning" dynamic="1" navigation="0" arg0="expMDI7"  />
+    <postMsg mid="51001046" type="Warning" dynamic="1" navigation="0" arg0="expMDI8"  />
 
 
 
 Design Summary:
-   Number of registers:      4 out of  2352 (0%)
-      PFU registers:            4 out of  2112 (0%)
-      PIO registers:            0 out of   240 (0%)
-   Number of SLICEs:         2 out of  1056 (0%)
-      SLICEs as Logic/ROM:      2 out of  1056 (0%)
-      SLICEs as RAM:            0 out of   792 (0%)
-      SLICEs as Carry:          0 out of  1056 (0%)
-   Number of LUT4s:          1 out of  2112 (0%)
-      Number used as logic LUTs:          1
-      Number used as distributed RAM:     0
-      Number used as ripple logic:        0
+   Number of registers:     24 out of  1604 (1%)
+      PFU registers:           24 out of  1280 (2%)
+      PIO registers:            0 out of   324 (0%)
+   Number of SLICEs:       178 out of   640 (28%)
+      SLICEs as Logic/ROM:     82 out of   640 (13%)
+      SLICEs as RAM:           96 out of   480 (20%)
+      SLICEs as Carry:         38 out of   640 (6%)
+   Number of LUT4s:        355 out of  1280 (28%)
+      Number used as logic LUTs:         87
+      Number used as distributed RAM:   192
+      Number used as ripple logic:       76
       Number used as shift registers:     0
-   Number of PIO sites used: 49 + 4(JTAG) out of 80 (66%)
-   Number of block RAMs:  0 out of 8 (0%)
+   Number of PIO sites used: 75 + 4(JTAG) out of 108 (73%)
+   Number of block RAMs:  0 out of 7 (0%)
    Number of GSRs:  0 out of 1 (0%)
    EFB used :       No
    JTAG used :      No
@@ -316,7 +453,7 @@ Design Summary:
    POR :            On
    Bandgap :        On
    Number of Power Controller:  0 out of 1 (0%)
-   Number of Dynamic Bank Controller (BCINRD):  0 out of 6 (0%)
+   Number of Dynamic Bank Controller (BCINRD):  0 out of 4 (0%)
    Number of Dynamic Bank Controller (BCLVDSO):  0 out of 1 (0%)
    Number of DCCA:  0 out of 8 (0%)
    Number of DCMA:  0 out of 2 (0%)
@@ -329,37 +466,39 @@ Design Summary:
       1. Total number of LUT4s = (Number of logic LUT4s) + 2*(Number of distributed RAMs) + 2*(Number of ripple logic)
       2. Number of logic LUT4s does not include count of distributed RAM and ripple logic.
    Number of clocks:  1
-     Net exp_bclk4_c_c: 2 loads, 2 rising, 0 falling (Driver: PIO x_bclk )
+     Net expBCLK8_c_c: 48 loads, 48 rising, 0 falling (Driver: PIO xBCLK )
    Number of Clock Enables:  0
-   Number of LSRs:  0
+   Number of LSRs:  2
+     Net n2782: 5 loads, 5 LSLICEs
+     Net n2781: 5 loads, 5 LSLICEs
    Number of nets driven by tri-state buffers:  0
    Top 10 highest fanout non-clock nets:
-     Net x_mclk_c_c: 7 loads
-     Net exp_lrck4_c_c: 6 loads
-     Net dsp_tdmin0_c_c: 1 loads
-     Net exp_mdi1_c: 1 loads
-     Net exp_mdi3_c: 1 loads
-     Net exp_mdi4_c: 1 loads
-     Net pll_wclkref_c_c: 1 loads
-     Net x_tdmin1_c: 1 loads
-     Net x_tdmin3_c: 1 loads
-     Net x_tdmin4_c: 1 loads
+     Net n2147: 32 loads
+     Net n2148: 32 loads
+     Net n2149: 32 loads
+     Net n2150: 32 loads
+     Net n2215: 32 loads
+     Net n2216: 32 loads
+     Net n2217: 32 loads
+     Net n2218: 32 loads
+     Net n2091: 28 loads
+     Net n2159: 27 loads
  
 
-   Number of warnings:  49
+   Number of warnings:  31
    Number of errors:    0
 
 
 
 Total CPU Time: 0 secs  
-Total REAL Time: 2 secs  
-Peak Memory Usage: 40 MB
+Total REAL Time: 0 secs  
+Peak Memory Usage: 39 MB
 
 Dumping design to file infinitas_impl1_map.ncd.
 
 ncd2vdb "infinitas_impl1_map.ncd" ".vdbs/infinitas_impl1_map.vdb"
 
-Loading device for application ncd2vdb from file 'xo2c2000.nph' in environment: C:/lscc/diamond/3.9_x64/ispfpga.
+Loading device for application ncd2vdb from file 'xo2c1200.nph' in environment: C:/lscc/diamond/3.9_x64/ispfpga.
 
 trce -f "infinitas_impl1.mt" -o "infinitas_impl1.tw1" "infinitas_impl1_map.ncd" "infinitas_impl1.prf"
 trce:  version Diamond (64-bit) 3.9.0.99.2
@@ -374,17 +513,17 @@ Loading design for application trce from file infinitas_impl1_map.ncd.
 Design name: infinitas
 NCD version: 3.3
 Vendor:      LATTICE
-Device:      LCMXO2-2000HC
-Package:     TQFP100
-Performance: 4
-Loading device for application trce from file 'xo2c2000.nph' in environment: C:/lscc/diamond/3.9_x64/ispfpga.
-Package Status:                     Final          Version 1.44.
+Device:      LCMXO2-1200HC
+Package:     TQFP144
+Performance: 6
+Loading device for application trce from file 'xo2c1200.nph' in environment: C:/lscc/diamond/3.9_x64/ispfpga.
+Package Status:                     Final          Version 1.42.
 Performance Hardware Data Status:   Final          Version 34.4.
 Setup and Hold Report
 
 --------------------------------------------------------------------------------
 Lattice TRACE Report - Setup, Version Diamond (64-bit) 3.9.0.99.2
-Mon Jan 29 15:19:52 2018
+Tue Sep 25 18:44:14 2018
 
 Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
 Copyright (c) 1995 AT&T Corp.   All rights reserved.
@@ -397,10 +536,11 @@ Report Information
 Command line:    trce -v 1 -gt -mapchkpnt 0 -sethld -o infinitas_impl1.tw1 -gui -msgset C:/lattice/infinitas/promote.xml infinitas_impl1_map.ncd infinitas_impl1.prf 
 Design file:     infinitas_impl1_map.ncd
 Preference file: infinitas_impl1.prf
-Device,speed:    LCMXO2-2000HC,4
+Device,speed:    LCMXO2-1200HC,6
 Report level:    verbose report, limited to 1 item per preference
 --------------------------------------------------------------------------------
 
+Report Type:     based on TRACE automatically generated preferences
 BLOCK ASYNCPATHS
 BLOCK RESETPATHS
 --------------------------------------------------------------------------------
@@ -410,10 +550,53 @@ BLOCK RESETPATHS
 Timing summary (Setup):
 ---------------
 
+Timing errors: 4096  Score: 6746208
+Cumulative negative slack: 6746208
+
+Constraints cover 10752 paths, 1 nets, and 1095 connections (84.43% coverage)
+
+--------------------------------------------------------------------------------
+Lattice TRACE Report - Hold, Version Diamond (64-bit) 3.9.0.99.2
+Tue Sep 25 18:44:15 2018
+
+Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
+Copyright (c) 1995 AT&T Corp.   All rights reserved.
+Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
+Copyright (c) 2001 Agere Systems   All rights reserved.
+Copyright (c) 2002-2017 Lattice Semiconductor Corporation,  All rights reserved.
+
+Report Information
+------------------
+Command line:    trce -v 1 -gt -mapchkpnt 0 -sethld -o infinitas_impl1.tw1 -gui -msgset C:/lattice/infinitas/promote.xml infinitas_impl1_map.ncd infinitas_impl1.prf 
+Design file:     infinitas_impl1_map.ncd
+Preference file: infinitas_impl1.prf
+Device,speed:    LCMXO2-1200HC,M
+Report level:    verbose report, limited to 1 item per preference
+--------------------------------------------------------------------------------
+
+BLOCK ASYNCPATHS
+BLOCK RESETPATHS
+--------------------------------------------------------------------------------
+
+
+
+Timing summary (Hold):
+---------------
+
 Timing errors: 0  Score: 0
 Cumulative negative slack: 0
 
-Constraints cover 42 paths, 21 nets, and 39 connections (100.00% coverage)
+Constraints cover 10752 paths, 1 nets, and 1127 connections (86.89% coverage)
+
+
+
+Timing summary (Setup and Hold):
+---------------
+
+Timing errors: 4096 (setup), 0 (hold)
+Score: 6746208 (setup), 0 (hold)
+Cumulative negative slack: 6746208 (6746208+0)
+--------------------------------------------------------------------------------
 
 --------------------------------------------------------------------------------
 
@@ -426,7 +609,7 @@ Removing old design directory at request of -rem command line option to this pro
 Running par. Please wait . . .
 
 Lattice Place and Route Report for Design "infinitas_impl1_map.ncd"
-Mon Jan 29 15:19:53 2018
+Tue Sep 25 18:44:15 2018
 
 PAR: Place And Route Diamond (64-bit) 3.9.0.99.2.
 Command Line: par -w -l 5 -i 6 -t 1 -c 0 -e 0 -gui -msgset C:/lattice/infinitas/promote.xml -exp parUseNBR=1:parCDP=0:parCDR=0:parPathBased=OFF infinitas_impl1_map.ncd infinitas_impl1.dir/5_1.ncd infinitas_impl1.prf
@@ -438,11 +621,11 @@ Loading design for application par from file infinitas_impl1_map.ncd.
 Design name: infinitas
 NCD version: 3.3
 Vendor:      LATTICE
-Device:      LCMXO2-2000HC
-Package:     TQFP100
-Performance: 4
-Loading device for application par from file 'xo2c2000.nph' in environment: C:/lscc/diamond/3.9_x64/ispfpga.
-Package Status:                     Final          Version 1.44.
+Device:      LCMXO2-1200HC
+Package:     TQFP144
+Performance: 6
+Loading device for application par from file 'xo2c1200.nph' in environment: C:/lscc/diamond/3.9_x64/ispfpga.
+Package Status:                     Final          Version 1.42.
 Performance Hardware Data Status:   Final          Version 34.4.
 License checked out.
 
@@ -450,51 +633,55 @@ License checked out.
 Ignore Preference Error(s):  True
 Device utilization summary:
 
-   PIO (prelim)   49+4(JTAG)/216     25% used
-                  49+4(JTAG)/80      66% bonded
+   PIO (prelim)   75+4(JTAG)/108     73% used
+                  75+4(JTAG)/108     73% bonded
 
-   SLICE              2/1056         <1% used
+   SLICE            178/640          27% used
 
 
 
-Number of Signals: 21
-Number of Connections: 39
+Number of Signals: 451
+Number of Connections: 1297
 
 Pin Constraint Summary:
-   49 out of 49 pins locked (100% locked).
+   75 out of 75 pins locked (100% locked).
 
-No signal is selected as primary clock.
+The following 1 signal is selected to use the primary clock routing resources:
+    expBCLK8_c_c (driver: xBCLK, clk load #: 48)
 
+    <postMsg mid="61061008" type="Warning" dynamic="5" navigation="0" arg0="expBCLK8_c_c" arg1="Primary" arg2="xBCLK" arg3="57" arg4="Primary"  />
 
 No signal is selected as secondary clock.
 
 No signal is selected as Global Set/Reset.
 Starting Placer Phase 0.
-
-Finished Placer Phase 0.  REAL time: 2 secs 
+.........
+Finished Placer Phase 0.  REAL time: 0 secs 
 
 Starting Placer Phase 1.
-....................
-Placer score = 21826.
+...............
+Placer score = 155232.
 Finished Placer Phase 1.  REAL time: 2 secs 
 
 Starting Placer Phase 2.
 .
-Placer score =  21826
-Finished Placer Phase 2.  REAL time: 2 secs 
+Placer score =  154792
+Finished Placer Phase 2.  REAL time: 3 secs 
 
 
 ------------------ Clock Report ------------------
 
 Global Clock Resources:
   CLK_PIN    : 0 out of 8 (0%)
+  General PIO: 1 out of 108 (0%)
   PLL        : 0 out of 1 (0%)
   DCM        : 0 out of 2 (0%)
   DCC        : 0 out of 8 (0%)
 
 Quadrants All (TL, TR, BL, BR) - Global Clocks:
+  PRIMARY "expBCLK8_c_c" from comp "xBCLK" on PIO site "57 (PB15A)", clk load = 48
 
-  PRIMARY  : 0 out of 8 (0%)
+  PRIMARY  : 1 out of 8 (12%)
   SECONDARY: 0 out of 8 (0%)
 
 Edge Clocks:
@@ -504,40 +691,32 @@ Edge Clocks:
 
 
 I/O Usage Summary (final):
-   49 + 4(JTAG) out of 216 (24.5%) PIO sites used.
-   49 + 4(JTAG) out of 80 (66.3%) bonded PIO sites used.
-   Number of PIO comps: 49; differential: 0.
+   75 + 4(JTAG) out of 108 (73.1%) PIO sites used.
+   75 + 4(JTAG) out of 108 (73.1%) bonded PIO sites used.
+   Number of PIO comps: 75; differential: 0.
    Number of Vref pins used: 0.
 
 I/O Bank Usage Summary:
 +----------+----------------+------------+-----------+
 | I/O Bank | Usage          | Bank Vccio | Bank Vref |
 +----------+----------------+------------+-----------+
-| 0        | 4 / 19 ( 21%)  | 3.3V       | -         |
-| 1        | 20 / 21 ( 95%) | 3.3V       | -         |
-| 2        | 16 / 20 ( 80%) | 3.3V       | -         |
-| 3        | 2 / 6 ( 33%)   | 3.3V       | -         |
-| 4        | 4 / 6 ( 66%)   | 3.3V       | -         |
-| 5        | 3 / 8 ( 37%)   | 3.3V       | -         |
+| 0        | 18 / 28 ( 64%) | 3.3V       | -         |
+| 1        | 23 / 26 ( 88%) | 3.3V       | -         |
+| 2        | 22 / 28 ( 78%) | 3.3V       | -         |
+| 3        | 12 / 26 ( 46%) | 3.3V       | -         |
 +----------+----------------+------------+-----------+
 
-Total placer CPU time: 1 secs 
+Total placer CPU time: 2 secs 
 
 Dumping design to file infinitas_impl1.dir/5_1.ncd.
 
-
------------------------------------------------------------------
-INFO - par: ASE feature is off due to non timing-driven settings.  
------------------------------------------------------------------
-
-0 connections routed; 39 unrouted.
+0 connections routed; 1297 unrouted.
 Starting router resource preassignment
-
-    <postMsg mid="66011008" type="Warning" dynamic="1" navigation="0" arg0="&#xA;   Signal=exp_bclk4_c_c loads=8 clock_loads=2"  />
+    <postMsg mid="62061008" type="Warning" dynamic="1" navigation="0" arg0="expBCLK8_c_c"  />
 
 Completed router resource preassignment. Real time: 3 secs 
 
-Start NBR router at 15:19:56 01/29/18
+Start NBR router at 18:44:18 09/25/18
 
 *****************************************************************
 Info: NBR allows conflicts(one node used by more than one signal)
@@ -552,62 +731,122 @@ Note: NBR uses a different method to calculate timing slacks. The
       your design.                                               
 *****************************************************************
 
-Start NBR special constraint process at 15:19:56 01/29/18
+Start NBR special constraint process at 18:44:18 09/25/18
 
-Start NBR section for initial routing at 15:19:56 01/29/18
+Start NBR section for initial routing at 18:44:18 09/25/18
+Level 1, iteration 1
+9(0.01%) conflicts; 906(69.85%) untouched conns; 886803 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: -2.691ns/-886.804ns; real time: 4 secs 
+Level 2, iteration 1
+61(0.07%) conflicts; 692(53.35%) untouched conns; 772084 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: -2.464ns/-772.084ns; real time: 4 secs 
+Level 3, iteration 1
+70(0.08%) conflicts; 257(19.81%) untouched conns; 842119 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: -2.595ns/-842.119ns; real time: 4 secs 
 Level 4, iteration 1
-0(0.00%) conflict; 0(0.00%) untouched conn; 0 (nbr) score; real time: 3 secs 
+34(0.04%) conflicts; 0(0.00%) untouched conn; 866384 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: -2.600ns/-866.384ns; real time: 4 secs 
 
 Info: Initial congestion level at 75% usage is 0
 Info: Initial congestion area  at 75% usage is 0 (0.00%)
 
-Start NBR section for normal routing at 15:19:56 01/29/18
+Start NBR section for normal routing at 18:44:19 09/25/18
+Level 1, iteration 1
+43(0.05%) conflicts; 32(2.47%) untouched conns; 855908 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: -2.501ns/-855.908ns; real time: 5 secs 
+Level 1, iteration 2
+35(0.04%) conflicts; 40(3.08%) untouched conns; 875607 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: -2.501ns/-875.607ns; real time: 5 secs 
 Level 4, iteration 1
-0(0.00%) conflict; 0(0.00%) untouched conn; 0 (nbr) score; real time: 3 secs 
+26(0.03%) conflicts; 0(0.00%) untouched conn; 886802 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: -2.610ns/-886.802ns; real time: 5 secs 
+Level 4, iteration 2
+21(0.02%) conflicts; 0(0.00%) untouched conn; 897080 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: -2.610ns/-897.080ns; real time: 5 secs 
+Level 4, iteration 3
+22(0.03%) conflicts; 0(0.00%) untouched conn; 876684 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: -2.610ns/-876.684ns; real time: 5 secs 
+Level 4, iteration 4
+20(0.02%) conflicts; 0(0.00%) untouched conn; 876684 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: -2.610ns/-876.684ns; real time: 5 secs 
+Level 4, iteration 5
+13(0.02%) conflicts; 0(0.00%) untouched conn; 903400 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: -2.704ns/-903.400ns; real time: 5 secs 
+Level 4, iteration 6
+6(0.01%) conflicts; 0(0.00%) untouched conn; 903400 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: -2.704ns/-903.400ns; real time: 5 secs 
+Level 4, iteration 7
+6(0.01%) conflicts; 0(0.00%) untouched conn; 915480 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: -2.704ns/-915.481ns; real time: 5 secs 
+Level 4, iteration 8
+5(0.01%) conflicts; 0(0.00%) untouched conn; 915480 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: -2.704ns/-915.481ns; real time: 5 secs 
+Level 4, iteration 9
+4(0.00%) conflicts; 0(0.00%) untouched conn; 917602 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: -2.708ns/-917.603ns; real time: 5 secs 
+Level 4, iteration 10
+1(0.00%) conflict; 0(0.00%) untouched conn; 917602 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: -2.708ns/-917.603ns; real time: 5 secs 
+Level 4, iteration 11
+1(0.00%) conflict; 0(0.00%) untouched conn; 920303 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: -2.708ns/-920.304ns; real time: 5 secs 
+Level 4, iteration 12
+1(0.00%) conflict; 0(0.00%) untouched conn; 920303 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: -2.708ns/-920.304ns; real time: 5 secs 
+Level 4, iteration 13
+0(0.00%) conflict; 0(0.00%) untouched conn; 920395 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: -2.708ns/-920.396ns; real time: 5 secs 
 
-Start NBR section for re-routing at 15:19:56 01/29/18
+Start NBR section for performance tuning (iteration 1) at 18:44:20 09/25/18
 Level 4, iteration 1
-0(0.00%) conflict; 0(0.00%) untouched conn; 0 (nbr) score; real time: 3 secs 
+6(0.01%) conflicts; 0(0.00%) untouched conn; 901481 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: -2.588ns/-901.481ns; real time: 5 secs 
+Level 4, iteration 2
+0(0.00%) conflict; 0(0.00%) untouched conn; 939449 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: -2.901ns/-939.450ns; real time: 5 secs 
 
-Start NBR section for post-routing at 15:19:56 01/29/18
+Start NBR section for re-routing at 18:44:21 09/25/18
+Level 4, iteration 1
+0(0.00%) conflict; 0(0.00%) untouched conn; 918771 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: -2.708ns/-918.772ns; real time: 6 secs 
+
+Start NBR section for post-routing at 18:44:21 09/25/18
 
 End NBR router with 0 unrouted connection
 
 NBR Summary
 -----------
   Number of unrouted connections : 0 (0.00%)
-  Number of connections with timing violations : 0 (0.00%)
-  Estimated worst slack<setup> : <n/a>
-  Timing score<setup> : 0
+  Number of connections with timing violations : 523 (40.32%)
+  Estimated worst slack<setup> : -2.708ns
+  Timing score<setup> : 6339374
 -----------
 Notes: The timing info is calculated for SETUP only and all PAR_ADJs are ignored.
 
 
 
-    <postMsg mid="66011008" type="Warning" dynamic="1" navigation="0" arg0="&#xA;   Signal=exp_bclk4_c_c loads=8 clock_loads=2"  />
-
-Total CPU time 1 secs 
-Total REAL time: 3 secs 
+Total CPU time 5 secs 
+Total REAL time: 6 secs 
 Completely routed.
-End of route.  39 routed (100.00%); 0 unrouted.
+End of route.  1297 routed (100.00%); 0 unrouted.
 
 Hold time timing score: 0, hold timing errors: 0
 
-Timing score: 0 
+Timing score: 6339374 
 
 Dumping design to file infinitas_impl1.dir/5_1.ncd.
 
 
 PAR_SUMMARY::Run status = completed
 PAR_SUMMARY::Number of unrouted conns = 0
-PAR_SUMMARY::Worst  slack<setup/<ns>> = <n/a>
-PAR_SUMMARY::Timing score<setup/<ns>> = <n/a>
-PAR_SUMMARY::Worst  slack<hold /<ns>> = <n/a>
-PAR_SUMMARY::Timing score<hold /<ns>> = <n/a>
+PAR_SUMMARY::Worst  slack<setup/<ns>> = -2.708
+PAR_SUMMARY::Timing score<setup/<ns>> = 6339.374
+PAR_SUMMARY::Worst  slack<hold /<ns>> = 0.344
+PAR_SUMMARY::Timing score<hold /<ns>> = 0.000
 PAR_SUMMARY::Number of errors = 0
 
-Total CPU  time to completion: 1 secs 
-Total REAL time to completion: 4 secs 
+Total CPU  time to completion: 6 secs 
+Total REAL time to completion: 6 secs 
 
 par done!
 
@@ -632,17 +871,17 @@ Loading design for application trce from file infinitas_impl1.ncd.
 Design name: infinitas
 NCD version: 3.3
 Vendor:      LATTICE
-Device:      LCMXO2-2000HC
-Package:     TQFP100
-Performance: 4
-Loading device for application trce from file 'xo2c2000.nph' in environment: C:/lscc/diamond/3.9_x64/ispfpga.
-Package Status:                     Final          Version 1.44.
+Device:      LCMXO2-1200HC
+Package:     TQFP144
+Performance: 6
+Loading device for application trce from file 'xo2c1200.nph' in environment: C:/lscc/diamond/3.9_x64/ispfpga.
+Package Status:                     Final          Version 1.42.
 Performance Hardware Data Status:   Final          Version 34.4.
 Setup and Hold Report
 
 --------------------------------------------------------------------------------
 Lattice TRACE Report - Setup, Version Diamond (64-bit) 3.9.0.99.2
-Mon Jan 29 15:19:57 2018
+Tue Sep 25 18:44:22 2018
 
 Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
 Copyright (c) 1995 AT&T Corp.   All rights reserved.
@@ -652,13 +891,14 @@ Copyright (c) 2002-2017 Lattice Semiconductor Corporation,  All rights reserved.
 
 Report Information
 ------------------
-Command line:    trce -v 10 -gt -sethld -sp 4 -sphld m -o infinitas_impl1.twr -gui -msgset C:/lattice/infinitas/promote.xml infinitas_impl1.ncd infinitas_impl1.prf 
+Command line:    trce -v 10 -gt -sethld -sp 6 -sphld m -o infinitas_impl1.twr -gui -msgset C:/lattice/infinitas/promote.xml infinitas_impl1.ncd infinitas_impl1.prf 
 Design file:     infinitas_impl1.ncd
 Preference file: infinitas_impl1.prf
-Device,speed:    LCMXO2-2000HC,4
+Device,speed:    LCMXO2-1200HC,6
 Report level:    verbose report, limited to 10 items per preference
 --------------------------------------------------------------------------------
 
+Report Type:     based on TRACE automatically generated preferences
 BLOCK ASYNCPATHS
 BLOCK RESETPATHS
 --------------------------------------------------------------------------------
@@ -668,10 +908,53 @@ BLOCK RESETPATHS
 Timing summary (Setup):
 ---------------
 
+Timing errors: 4096  Score: 6339374
+Cumulative negative slack: 6339374
+
+Constraints cover 10752 paths, 1 nets, and 1129 connections (87.05% coverage)
+
+--------------------------------------------------------------------------------
+Lattice TRACE Report - Hold, Version Diamond (64-bit) 3.9.0.99.2
+Tue Sep 25 18:44:22 2018
+
+Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
+Copyright (c) 1995 AT&T Corp.   All rights reserved.
+Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
+Copyright (c) 2001 Agere Systems   All rights reserved.
+Copyright (c) 2002-2017 Lattice Semiconductor Corporation,  All rights reserved.
+
+Report Information
+------------------
+Command line:    trce -v 10 -gt -sethld -sp 6 -sphld m -o infinitas_impl1.twr -gui -msgset C:/lattice/infinitas/promote.xml infinitas_impl1.ncd infinitas_impl1.prf 
+Design file:     infinitas_impl1.ncd
+Preference file: infinitas_impl1.prf
+Device,speed:    LCMXO2-1200HC,m
+Report level:    verbose report, limited to 10 items per preference
+--------------------------------------------------------------------------------
+
+BLOCK ASYNCPATHS
+BLOCK RESETPATHS
+--------------------------------------------------------------------------------
+
+
+
+Timing summary (Hold):
+---------------
+
 Timing errors: 0  Score: 0
 Cumulative negative slack: 0
 
-Constraints cover 42 paths, 21 nets, and 39 connections (100.00% coverage)
+Constraints cover 10752 paths, 1 nets, and 1129 connections (87.05% coverage)
+
+
+
+Timing summary (Setup and Hold):
+---------------
+
+Timing errors: 4096 (setup), 0 (hold)
+Score: 6339374 (setup), 0 (hold)
+Cumulative negative slack: 6339374 (6339374+0)
+--------------------------------------------------------------------------------
 
 --------------------------------------------------------------------------------
 
@@ -691,41 +974,11 @@ Loading design for application iotiming from file infinitas_impl1.ncd.
 Design name: infinitas
 NCD version: 3.3
 Vendor:      LATTICE
-Device:      LCMXO2-2000HC
-Package:     TQFP100
-Performance: 4
-Loading device for application iotiming from file 'xo2c2000.nph' in environment: C:/lscc/diamond/3.9_x64/ispfpga.
-Package Status:                     Final          Version 1.44.
-Performance Hardware Data Status:   Final          Version 34.4.
-Running Performance Grade: 4
-Computing Setup Time ...
-Computing Max Clock to Output Delay ...
-Computing Hold Time ...
-Computing Min Clock to Output Delay ...
-
-Loading design for application iotiming from file infinitas_impl1.ncd.
-Design name: infinitas
-NCD version: 3.3
-Vendor:      LATTICE
-Device:      LCMXO2-2000HC
-Package:     TQFP100
-Performance: 5
-Package Status:                     Final          Version 1.44.
-Performance Hardware Data Status:   Final          Version 34.4.
-Running Performance Grade: 5
-Computing Setup Time ...
-Computing Max Clock to Output Delay ...
-Computing Hold Time ...
-Computing Min Clock to Output Delay ...
-
-Loading design for application iotiming from file infinitas_impl1.ncd.
-Design name: infinitas
-NCD version: 3.3
-Vendor:      LATTICE
-Device:      LCMXO2-2000HC
-Package:     TQFP100
+Device:      LCMXO2-1200HC
+Package:     TQFP144
 Performance: 6
-Package Status:                     Final          Version 1.44.
+Loading device for application iotiming from file 'xo2c1200.nph' in environment: C:/lscc/diamond/3.9_x64/ispfpga.
+Package Status:                     Final          Version 1.42.
 Performance Hardware Data Status:   Final          Version 34.4.
 Running Performance Grade: 6
 Computing Setup Time ...
@@ -737,10 +990,10 @@ Loading design for application iotiming from file infinitas_impl1.ncd.
 Design name: infinitas
 NCD version: 3.3
 Vendor:      LATTICE
-Device:      LCMXO2-2000HC
-Package:     TQFP100
+Device:      LCMXO2-1200HC
+Package:     TQFP144
 Performance: M
-Package Status:                     Final          Version 1.44.
+Package Status:                     Final          Version 1.42.
 Performance Hardware Data Status:   Final          Version 34.4.
 Running Performance Grade: M
 Computing Setup Time ...
@@ -748,6 +1001,80 @@ Computing Max Clock to Output Delay ...
 Computing Hold Time ...
 Computing Min Clock to Output Delay ...
 Done.
+
+bitgen -f "infinitas_impl1.t2b" -w "infinitas_impl1.ncd" "infinitas_impl1.prf"
+
+
+BITGEN: Bitstream Generator Diamond (64-bit) 3.9.0.99.2
+Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
+Copyright (c) 1995 AT&T Corp.   All rights reserved.
+Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
+Copyright (c) 2001 Agere Systems   All rights reserved.
+Copyright (c) 2002-2017 Lattice Semiconductor Corporation,  All rights reserved.
+
+
+Loading design for application Bitgen from file infinitas_impl1.ncd.
+Design name: infinitas
+NCD version: 3.3
+Vendor:      LATTICE
+Device:      LCMXO2-1200HC
+Package:     TQFP144
+Performance: 6
+Loading device for application Bitgen from file 'xo2c1200.nph' in environment: C:/lscc/diamond/3.9_x64/ispfpga.
+Package Status:                     Final          Version 1.42.
+Performance Hardware Data Status:   Final          Version 34.4.
+
+Running DRC.
+DRC detected 0 errors and 0 warnings.
+Reading Preference File from infinitas_impl1.prf.
+
+Preference Summary:
++---------------------------------+---------------------------------+
+|  Preference                     |  Current Setting                |
++---------------------------------+---------------------------------+
+|                         RamCfg  |                        Reset**  |
++---------------------------------+---------------------------------+
+|                     MCCLK_FREQ  |                         2.08**  |
++---------------------------------+---------------------------------+
+|                  CONFIG_SECURE  |                          OFF**  |
++---------------------------------+---------------------------------+
+|                          INBUF  |                           ON**  |
++---------------------------------+---------------------------------+
+|                      JTAG_PORT  |                       ENABLE**  |
++---------------------------------+---------------------------------+
+|                       SDM_PORT  |                      DISABLE**  |
++---------------------------------+---------------------------------+
+|                 SLAVE_SPI_PORT  |                      DISABLE**  |
++---------------------------------+---------------------------------+
+|                MASTER_SPI_PORT  |                      DISABLE**  |
++---------------------------------+---------------------------------+
+|                       I2C_PORT  |                      DISABLE**  |
++---------------------------------+---------------------------------+
+|        MUX_CONFIGURATION_PORTS  |                      DISABLE**  |
++---------------------------------+---------------------------------+
+|                  CONFIGURATION  |                          CFG**  |
++---------------------------------+---------------------------------+
+|                COMPRESS_CONFIG  |                           ON**  |
++---------------------------------+---------------------------------+
+|                        MY_ASSP  |                          OFF**  |
++---------------------------------+---------------------------------+
+|               ONE_TIME_PROGRAM  |                          OFF**  |
++---------------------------------+---------------------------------+
+|                 ENABLE_TRANSFR  |                      DISABLE**  |
++---------------------------------+---------------------------------+
+|                  SHAREDEBRINIT  |                      DISABLE**  |
++---------------------------------+---------------------------------+
+|            BACKGROUND_RECONFIG  |                          OFF**  |
++---------------------------------+---------------------------------+
+ *  Default setting.
+ ** The specified setting matches the default setting.
+
+
+Creating bit map...
+ 
+Bitstream Status: Final           Version 1.94.
+ 
+Saving bit stream in "infinitas_impl1.bit".
 
 bitgen -f "infinitas_impl1.t2b" -w "infinitas_impl1.ncd" -jedec "infinitas_impl1.prf"
 
@@ -764,11 +1091,11 @@ Loading design for application Bitgen from file infinitas_impl1.ncd.
 Design name: infinitas
 NCD version: 3.3
 Vendor:      LATTICE
-Device:      LCMXO2-2000HC
-Package:     TQFP100
-Performance: 4
-Loading device for application Bitgen from file 'xo2c2000.nph' in environment: C:/lscc/diamond/3.9_x64/ispfpga.
-Package Status:                     Final          Version 1.44.
+Device:      LCMXO2-1200HC
+Package:     TQFP144
+Performance: 6
+Loading device for application Bitgen from file 'xo2c1200.nph' in environment: C:/lscc/diamond/3.9_x64/ispfpga.
+Package Status:                     Final          Version 1.42.
 Performance Hardware Data Status:   Final          Version 34.4.
 
 Running DRC.
@@ -826,9 +1153,9 @@ Saving bit stream in "infinitas_impl1.jed".
 ===========
 UFM Summary.
 ===========
-UFM Size:        639 Pages (128*639 Bits).
+UFM Size:        511 Pages (128*511 Bits).
 UFM Utilization: General Purpose Flash Memory.
  
-Available General Purpose Flash Memory:  639 Pages (Page 0 to Page 638).
+Available General Purpose Flash Memory:  511 Pages (Page 0 to Page 510).
 Initialized UFM Pages:                     0 Page.
  

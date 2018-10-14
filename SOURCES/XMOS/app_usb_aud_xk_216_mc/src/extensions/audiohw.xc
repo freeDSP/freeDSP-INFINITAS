@@ -11,6 +11,10 @@
 #include "print.h"
 #include "dsd_support.h"
 
+#include "infinitas.h"
+#include "ak4458.h"
+#include "analogio-x8.h"
+
 
 
 /* The number of timer ticks to wait for the audio PLL to lock */
@@ -37,6 +41,9 @@ extern struct r_i2c r_i2c;
 #define DAC_REGWRITE(reg, val) {data[0] = val; i2c_shared_master_write_reg(r_i2c, CS4384_I2C_ADDR, reg, data, 1);}
 #define DAC_REGREAD(reg, val)  {i2c_shared_master_read_reg(r_i2c, CS4384_I2C_ADDR, reg, val, 1);}
 #define ADC_REGWRITE(reg, val) {data[0] = val; i2c_shared_master_write_reg(r_i2c, CS5368_I2C_ADDR, reg, data, 1);}
+
+//#define AK4458_REGWRITE(reg, val) { unsigned char data_w[1]; data_w[0] = val; AK4458_i2c_shared_master_write_reg(r_i2c, AK4458_I2C_ADDR, reg, data_w, 1);}
+//#define AK4458_REGREAD(reg, val)  { AK4458_i2c_shared_master_read_reg(r_i2c, AK4458_I2C_ADDR, reg, val, 1);}
 
 #ifdef USE_FRACTIONAL_N
 
@@ -157,7 +164,7 @@ void AudioHwInit(chanend ?c_codec)
 
     // --- configure DSP and download program ---
     //adau1452_downloadFirmware();
-    default_download_IC_1();
+   // default_download_IC_1();
     /*i2c_shared_master_read_reg16(r_i2c, 0x70>>1, 0xF020, data_i2c, 2);
     data_i2c[0] = 0x00;
     data_i2c[1] = 0x02;
@@ -176,8 +183,8 @@ void AudioHwConfig(unsigned samFreq, unsigned mClk, chanend ?c_codec, unsigned d
 	unsigned char data[1] = {0};
 
     /* Put ADC and DAC into reset */
-	set_gpio(P_GPIO_ADC_RST_N, 0);
-	set_gpio(P_GPIO_DAC_RST_N, 0);
+	//set_gpio(P_GPIO_ADC_RST_N, 0);
+	//set_gpio(P_GPIO_DAC_RST_N, 0);
 
     /* Set master clock select appropriately */
 #if defined(USE_FRACTIONAL_N)
@@ -215,6 +222,72 @@ void AudioHwConfig(unsigned samFreq, unsigned mClk, chanend ?c_codec, unsigned d
     /* Allow MCLK to settle */
     wait_us(20000);
 //#endif
+
+    //--------------------------------------------------------------------------
+    //
+    //--- Disconnect all boards from i2c
+    //
+    //--------------------------------------------------------------------------
+    data[0] = 0x00;
+    i2c_shared_master_write( r_i2c, I2C_ADDR_EXPANSION2>>1, data, 1 );
+    i2c_shared_master_write( r_i2c, I2C_ADDR_EXPANSION1>>1, data, 1 );
+
+    //--------------------------------------------------------------------------
+    //
+    //--- Configure board on expansion port1
+    //
+    //--------------------------------------------------------------------------
+
+    //--- Configure board 1
+    //--- Connect i2c bus of expansion board
+    data[0] = I2C_ADDR_PORT1_BOARD1;
+    i2c_shared_master_write( r_i2c, I2C_ADDR_EXPANSION1>>1, data, 1 );
+
+    configAnalogIOx8();
+
+    //--- Disconnect i2c bus of expansion board
+    data[0] = 0x00;
+    i2c_shared_master_write( r_i2c, I2C_ADDR_EXPANSION1>>1, data, 1 );
+
+    //--- Configure board 2
+    //--- Connect i2c bus of expansion board
+    data[0] = I2C_ADDR_PORT1_BOARD2;
+    i2c_shared_master_write( r_i2c, I2C_ADDR_EXPANSION1>>1, data, 1 );
+
+    configAnalogIOx8();
+
+    //--- Disconnect i2c bus of expansion board
+    data[0] = 0x00;
+    i2c_shared_master_write( r_i2c, I2C_ADDR_EXPANSION1>>1, data, 1 );
+
+    //--------------------------------------------------------------------------
+    //
+    //--- Configure board on expansion port2
+    //
+    //--------------------------------------------------------------------------
+
+    //--- Configure board 1
+    //--- Connect i2c bus of expansion board
+    data[0] = I2C_ADDR_PORT2_BOARD1;
+    i2c_shared_master_write( r_i2c, I2C_ADDR_EXPANSION2>>1, data, 1 );
+
+    configAnalogIOx8();
+
+    //--- Disconnect i2c bus of expansion board
+    data[0] = 0x00;
+    i2c_shared_master_write( r_i2c, I2C_ADDR_EXPANSION2>>1, data, 1 );
+
+    //--- Configure board 2
+    //--- Connect i2c bus of expansion board
+    data[0] = I2C_ADDR_PORT2_BOARD2;
+    i2c_shared_master_write( r_i2c, I2C_ADDR_EXPANSION2>>1, data, 1 );
+
+    configAnalogIOx8();
+
+    //--- Disconnect i2c bus of expansion board
+    data[0] = 0x00;
+    i2c_shared_master_write( r_i2c, I2C_ADDR_EXPANSION2>>1, data, 1 );
+
 
 #if 0
     if((dsdMode == DSD_MODE_NATIVE) || (dsdMode == DSD_MODE_DOP))

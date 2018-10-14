@@ -12,17 +12,17 @@ Loading design for application trce from file infinitas_impl1_map.ncd.
 Design name: infinitas
 NCD version: 3.3
 Vendor:      LATTICE
-Device:      LCMXO2-2000HC
-Package:     TQFP100
-Performance: 4
-Loading device for application trce from file 'xo2c2000.nph' in environment: C:/lscc/diamond/3.9_x64/ispfpga.
-Package Status:                     Final          Version 1.44.
+Device:      LCMXO2-1200HC
+Package:     TQFP144
+Performance: 6
+Loading device for application trce from file 'xo2c1200.nph' in environment: C:/lscc/diamond/3.9_x64/ispfpga.
+Package Status:                     Final          Version 1.42.
 Performance Hardware Data Status:   Final          Version 34.4.
 Setup and Hold Report
 
 --------------------------------------------------------------------------------
 <A name="Map_Twr_setup"></A><B><U><big>Lattice TRACE Report - Setup, Version Diamond (64-bit) 3.9.0.99.2</big></U></B>
-Mon Jan 29 15:19:52 2018
+Tue Sep 25 18:44:14 2018
 
 Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
 Copyright (c) 1995 AT&T Corp.   All rights reserved.
@@ -35,16 +35,165 @@ Copyright (c) 2002-2017 Lattice Semiconductor Corporation,  All rights reserved.
 Command line:    trce -v 1 -gt -mapchkpnt 0 -sethld -o infinitas_impl1.tw1 -gui -msgset C:/lattice/infinitas/promote.xml infinitas_impl1_map.ncd infinitas_impl1.prf 
 Design file:     infinitas_impl1_map.ncd
 Preference file: infinitas_impl1.prf
-Device,speed:    LCMXO2-2000HC,4
+Device,speed:    LCMXO2-1200HC,6
 Report level:    verbose report, limited to 1 item per preference
 --------------------------------------------------------------------------------
 
 <A name="mtw1_set_ps"></A><B><U><big>Preference Summary</big></U></B>
 
-<LI><A href='#map_twr_pref_0_0' Target='right'>Default path enumeration(0 errors)</A></LI>            38 items scored, 0 timing errors detected.
-Report:  368.460MHz is the maximum frequency for this preference.
+<FONT COLOR=red><LI><A href='#map_twr_pref_0_0' Target='right'><FONT COLOR=red>FREQUENCY NET "expBCLK8_c_c" 146.028000 MHz (4096 errors)</FONT></A></LI>
+</FONT>            4096 items scored, 4096 timing errors detected.
+Warning: 105.452MHz is the maximum frequency for this preference.
 
-<LI><A href='#map_twr_pref_0_1' Target='right'>Default net enumeration(0 errors)</A></LI>            21 items scored, 0 timing errors detected.
+Report Type:     based on TRACE automatically generated preferences
+BLOCK ASYNCPATHS
+BLOCK RESETPATHS
+--------------------------------------------------------------------------------
+
+
+
+================================================================================
+<A name="map_twr_pref_0_0"></A>Preference: FREQUENCY NET "expBCLK8_c_c" 146.028000 MHz ;
+            4096 items scored, 4096 timing errors detected.
+--------------------------------------------------------------------------------
+
+
+Error: The following path exceeds requirements by 2.635ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              srDAC4_reg_279__i2  (from expBCLK8_c_c +)
+   Destination:    FF         Data in        expMDO1_23  (to expBCLK8_c_c +)
+
+   Delay:               9.350ns  (42.5% logic, 57.5% route), 8 logic levels.
+
+ Constraint Details:
+
+      9.350ns physical path delay SLICE_10 to SLICE_134 exceeds
+      6.848ns delay constraint less
+      0.133ns DIN_SET requirement (totaling 6.715ns) by 2.635ns
+
+ Physical Path Details:
+
+      Data path SLICE_10 to SLICE_134:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.367   SLICE_10.CLK to    SLICE_10.Q1 SLICE_10 (from expBCLK8_c_c)
+ROUTE        21   e 0.896    SLICE_10.Q1 to   SLICE_141.B1 n2157
+CTOF_DEL    ---     0.408   SLICE_141.B1 to   SLICE_141.F1 SLICE_141
+ROUTE         1   e 0.896   SLICE_141.F1 to   SLICE_158.C1 n3040
+CTOF_DEL    ---     0.408   SLICE_158.C1 to   SLICE_158.F1 SLICE_158
+ROUTE         7   e 0.896   SLICE_158.F1 to    SLICE_34.A1 n2779
+C1TOFCO_DE  ---     0.684    SLICE_34.A1 to   SLICE_34.FCO SLICE_34
+ROUTE         1   e 0.001   SLICE_34.FCO to   SLICE_30.FCI n2905
+FCITOF1_DE  ---     0.495   SLICE_30.FCI to    SLICE_30.F1 SLICE_30
+ROUTE        32   e 0.896    SLICE_30.F1 to */SLICE_101.D0 n2215
+CTOF_DEL    ---     0.408 */SLICE_101.D0 to */SLICE_101.F0 srDAC4_169_197_233_257/SLICE_101
+ROUTE         1   e 0.896 */SLICE_101.F0 to */SLICE_153.C1 n2553
+CTOOFX_DEL  ---     0.601 */SLICE_153.C1 to *LICE_153.OFX0 i599/SLICE_153
+ROUTE         1   e 0.896 *LICE_153.OFX0 to   SLICE_134.C1 n2977
+CTOOFX_DEL  ---     0.601   SLICE_134.C1 to SLICE_134.OFX0 SLICE_134
+ROUTE         1   e 0.001 SLICE_134.OFX0 to  SLICE_134.DI0 srDAC1_254 (to expBCLK8_c_c)
+                  --------
+                    9.350   (42.5% logic, 57.5% route), 8 logic levels.
+
+Warning: 105.452MHz is the maximum frequency for this preference.
+
+<A name="mtw1_set_rs"></A><B><U><big>Report Summary</big></U></B>
+--------------
+----------------------------------------------------------------------------
+Preference                              |   Constraint|       Actual|Levels
+----------------------------------------------------------------------------
+                                        |             |             |
+FREQUENCY NET "expBCLK8_c_c" 146.028000 |             |             |
+MHz ;                                   |  146.028 MHz|  105.452 MHz|   8 *
+                                        |             |             |
+----------------------------------------------------------------------------
+
+
+1 preference(marked by "*" above) not met.
+
+----------------------------------------------------------------------------
+Critical Nets                           |   Loads|  Errors| % of total
+----------------------------------------------------------------------------
+n2779                                   |       7|    1336|     32.62%
+                                        |        |        |
+n2773                                   |       7|    1336|     32.62%
+                                        |        |        |
+srDAC1_254                              |       1|    1028|     25.10%
+                                        |        |        |
+srDAC4_254                              |       1|    1026|     25.05%
+                                        |        |        |
+srDAC3_254                              |       1|    1022|     24.95%
+                                        |        |        |
+srDAC2_254                              |       1|    1020|     24.90%
+                                        |        |        |
+n2215                                   |      32|     992|     24.22%
+                                        |        |        |
+n2147                                   |      32|     992|     24.22%
+                                        |        |        |
+n2905                                   |       1|     808|     19.73%
+                                        |        |        |
+n2901                                   |       1|     808|     19.73%
+                                        |        |        |
+n3040                                   |       1|     792|     19.34%
+                                        |        |        |
+n3039                                   |       2|     792|     19.34%
+                                        |        |        |
+n2216                                   |      32|     576|     14.06%
+                                        |        |        |
+n2148                                   |      32|     576|     14.06%
+                                        |        |        |
+n2090                                   |      21|     520|     12.70%
+                                        |        |        |
+n2158                                   |      21|     520|     12.70%
+                                        |        |        |
+n3041                                   |       2|     416|     10.16%
+                                        |        |        |
+n3037                                   |       1|     416|     10.16%
+                                        |        |        |
+----------------------------------------------------------------------------
+
+
+<A name="mtw1_set_clkda"></A><B><U><big>Clock Domains Analysis</big></U></B>
+------------------------
+
+Found 1 clocks:
+
+Clock Domain: expBCLK8_c_c   Source: xBCLK.PAD   Loads: 56
+   Covered under: FREQUENCY NET "expBCLK8_c_c" 146.028000 MHz ;
+
+
+<A name="mtw1_set_ts"></A><B><U><big>Timing summary (Setup):</big></U></B>
+---------------
+
+Timing errors: 4096  Score: 6746208
+Cumulative negative slack: 6746208
+
+Constraints cover 10752 paths, 1 nets, and 1095 connections (84.43% coverage)
+
+--------------------------------------------------------------------------------
+<A name="Map_Twr_hold"></A><B><U><big>Lattice TRACE Report - Hold, Version Diamond (64-bit) 3.9.0.99.2</big></U></B>
+Tue Sep 25 18:44:15 2018
+
+Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
+Copyright (c) 1995 AT&T Corp.   All rights reserved.
+Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
+Copyright (c) 2001 Agere Systems   All rights reserved.
+Copyright (c) 2002-2017 Lattice Semiconductor Corporation,  All rights reserved.
+
+<A name="mtw1_hold_ri"></A><B><U><big>Report Information</big></U></B>
+------------------
+Command line:    trce -v 1 -gt -mapchkpnt 0 -sethld -o infinitas_impl1.tw1 -gui -msgset C:/lattice/infinitas/promote.xml infinitas_impl1_map.ncd infinitas_impl1.prf 
+Design file:     infinitas_impl1_map.ncd
+Preference file: infinitas_impl1.prf
+Device,speed:    LCMXO2-1200HC,M
+Report level:    verbose report, limited to 1 item per preference
+--------------------------------------------------------------------------------
+
+<A name="mtw1_hold_ps"></A><B><U><big>Preference Summary</big></U></B>
+
+<LI><A href='#map_twr_pref_1_0' Target='right'>FREQUENCY NET "expBCLK8_c_c" 146.028000 MHz (0 errors)</A></LI>            4096 items scored, 0 timing errors detected.
 
 BLOCK ASYNCPATHS
 BLOCK RESETPATHS
@@ -53,51 +202,46 @@ BLOCK RESETPATHS
 
 
 ================================================================================
-<A name="map_twr_pref_0_0"></A>Preference: Default path enumeration
-            38 items scored, 0 timing errors detected.
+<A name="map_twr_pref_1_0"></A>Preference: FREQUENCY NET "expBCLK8_c_c" 146.028000 MHz ;
+            4096 items scored, 0 timing errors detected.
 --------------------------------------------------------------------------------
 
-Report:    7.392ns delay clkin to exp_mclk4
+
+Passed: The following path meets requirements by 0.447ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              srDAC4_reg_279__i2  (from expBCLK8_c_c +)
+   Destination:    FF         Data in        srDAC4_reg_279__i2  (to expBCLK8_c_c +)
+
+   Delay:               0.434ns  (53.9% logic, 46.1% route), 2 logic levels.
+
+ Constraint Details:
+
+      0.434ns physical path delay SLICE_10 to SLICE_10 meets
+     -0.013ns DIN_HLD and
+      0.000ns delay constraint requirement (totaling -0.013ns) by 0.447ns
+
+ Physical Path Details:
+
+      Data path SLICE_10 to SLICE_10:
 
    Name    Fanout   Delay (ns)          Site               Resource
-PADI_DEL    ---     1.132          4.PAD to        4.PADDI clkin
-ROUTE         7   e 3.463        4.PADDI to       51.PADDO x_mclk_c_c
-DOPAD_DEL   ---     2.797       51.PADDO to         51.PAD exp_mclk4
+REG_DEL     ---     0.133   SLICE_10.CLK to    SLICE_10.Q1 SLICE_10 (from expBCLK8_c_c)
+ROUTE        21   e 0.199    SLICE_10.Q1 to    SLICE_10.A1 n2157
+CTOF_DEL    ---     0.101    SLICE_10.A1 to    SLICE_10.F1 SLICE_10
+ROUTE         1   e 0.001    SLICE_10.F1 to   SLICE_10.DI1 n35_adj_3 (to expBCLK8_c_c)
                   --------
-                    7.392   (53.2% logic, 46.8% route), 2 logic levels.
+                    0.434   (53.9% logic, 46.1% route), 2 logic levels.
 
-Report:  368.460MHz is the maximum frequency for this preference.
-
-Report:    7.392ns is the maximum delay for this preference.
-
-
-================================================================================
-<A name="map_twr_pref_0_1"></A>Preference: Default net enumeration
-            21 items scored, 0 timing errors detected.
---------------------------------------------------------------------------------
-
-Report:    3.463ns maximum delay on x_mclk_c_c
-
-           Delays             Connection(s)
-         e 2.431ns          4.PADDI to 32.PADDO        
-         e 3.463ns          4.PADDI to 51.PADDO        
-         e 2.900ns          4.PADDI to 58.PADDO        
-         e 3.026ns          4.PADDI to 63.PADDO        
-         e 2.425ns          4.PADDI to 68.PADDO        
-         e 1.961ns          4.PADDI to 97.PADDO        
-         e 2.305ns          4.PADDI to 87.PADDO        
-
-Report:    3.463ns is the maximum delay for this preference.
-
-<A name="mtw1_set_rs"></A><B><U><big>Report Summary</big></U></B>
+<A name="mtw1_hold_rs"></A><B><U><big>Report Summary</big></U></B>
 --------------
 ----------------------------------------------------------------------------
-Preference                              |   Constraint|       Actual|Levels
+Preference(MIN Delays)                  |   Constraint|       Actual|Levels
 ----------------------------------------------------------------------------
                                         |             |             |
-Default path enumeration                |     0.000 ns|     7.392 ns|   0  
-                                        |             |             |
-Default net enumeration                 |     0.000 ns|     3.463 ns|   0  
+FREQUENCY NET "expBCLK8_c_c" 146.028000 |             |             |
+MHz ;                                   |     0.000 ns|     0.447 ns|   2  
                                         |             |             |
 ----------------------------------------------------------------------------
 
@@ -105,22 +249,32 @@ Default net enumeration                 |     0.000 ns|     3.463 ns|   0
 All preferences were met.
 
 
-<A name="mtw1_set_clkda"></A><B><U><big>Clock Domains Analysis</big></U></B>
+<A name="mtw1_hold_clkda"></A><B><U><big>Clock Domains Analysis</big></U></B>
 ------------------------
 
 Found 1 clocks:
 
-Clock Domain: exp_bclk4_c_c   Source: x_bclk.PAD   Loads: 8
-   No transfer within this clock domain is found
+Clock Domain: expBCLK8_c_c   Source: xBCLK.PAD   Loads: 56
+   Covered under: FREQUENCY NET "expBCLK8_c_c" 146.028000 MHz ;
 
 
-<A name="mtw1_set_ts"></A><B><U><big>Timing summary (Setup):</big></U></B>
+<A name="mtw1_hold_ts"></A><B><U><big>Timing summary (Hold):</big></U></B>
 ---------------
 
 Timing errors: 0  Score: 0
 Cumulative negative slack: 0
 
-Constraints cover 42 paths, 21 nets, and 39 connections (100.00% coverage)
+Constraints cover 10752 paths, 1 nets, and 1127 connections (86.89% coverage)
+
+
+
+<A name="mtw1_ts"></A><B><U><big>Timing summary (Setup and Hold):</big></U></B>
+---------------
+
+Timing errors: 4096 (setup), 0 (hold)
+Score: 6746208 (setup), 0 (hold)
+Cumulative negative slack: 6746208 (6746208+0)
+--------------------------------------------------------------------------------
 
 --------------------------------------------------------------------------------
 

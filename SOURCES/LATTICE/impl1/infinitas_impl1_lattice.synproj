@@ -1,8 +1,8 @@
 -a "MachXO2"
--d LCMXO2-2000HC
--t TQFP100
--s 4
-
+-d LCMXO2-1200HC
+-t TQFP144
+-s 6
+-frequency 200
 -optimization_goal Balanced
 -bram_utilization 100
 -ramstyle Auto

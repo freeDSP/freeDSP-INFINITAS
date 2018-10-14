@@ -1,6 +1,6 @@
 --------------------------------------------------------------------------------
 Lattice Synthesis Timing Report, Version  
-Mon Jan 29 15:19:50 2018
+Tue Sep 25 18:44:13 2018
 
 Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
 Copyright (c) 1995 AT&T Corp.   All rights reserved.
@@ -18,9 +18,138 @@ Report level:    verbose report, limited to 3 items per constraint
 
 
 ================================================================================
-Constraint: create_clock -period 1000.000000 -name clk0 [get_nets exp_bclk4_c_c]
-            0 items scored, 0 timing errors detected.
+Constraint: create_clock -period 5.000000 -name clk0 [get_nets expBCLK8_c_c]
+            4096 items scored, 4096 timing errors detected.
 --------------------------------------------------------------------------------
+
+
+Error:  The following path violates requirements by 4.897ns
+
+ Logical Details:  Cell type  Pin type       Cell name  (clock net +/-)
+
+   Source:         FD1S3IX    CK             srDAC2_reg_278__i1  (from expBCLK8_c_c +)
+   Destination:    FD1S3AX    D              expMDO3_27  (to expBCLK8_c_c +)
+
+   Delay:                   9.764ns  (37.8% logic, 62.2% route), 10 logic levels.
+
+ Constraint Details:
+
+      9.764ns data_path srDAC2_reg_278__i1 to expMDO3_27 violates
+      5.000ns delay constraint less
+      0.133ns L_S requirement (totaling 4.867ns) by 4.897ns
+
+ Path Details: srDAC2_reg_278__i1 to expMDO3_27
+
+   Name    Fanout   Delay (ns)          Pins               Resource(Cell.Net)
+L_CO        ---     0.367             CK to Q              srDAC2_reg_278__i1 (from expBCLK8_c_c)
+Route        21   e 1.317                                  n2090
+LUT4        ---     0.408              A to Z              i2_3_lut_rep_14
+Route         2   e 0.798                                  n3039
+LUT4        ---     0.408              C to Z              i1_2_lut_3_lut_4_lut_adj_8
+Route         7   e 1.049                                  n2773
+A1_TO_FCO   ---     0.684           A[2] to COUT           sub_280_add_2_1
+Route         1   e 0.020                                  n2901
+FCI_TO_FCO  ---     0.130            CIN to COUT           sub_280_add_2_3
+Route         1   e 0.020                                  n2902
+FCI_TO_F    ---     0.495            CIN to S[2]           sub_280_add_2_5
+Route        16   e 1.506                                  n2146
+LUT4        ---     0.408              C to Z              i580_3_lut
+Route         1   e 0.020                                  n2958
+MUXL5       ---     0.193           ALUT to Z              i584
+Route         1   e 0.660                                  n2962
+LUT4        ---     0.408              B to Z              i586_3_lut
+Route         1   e 0.020                                  n2964
+MUXL5       ---     0.193           ALUT to Z              i587
+Route         1   e 0.660                                  srDAC3[254]
+                  --------
+                    9.764  (37.8% logic, 62.2% route), 10 logic levels.
+
+
+Error:  The following path violates requirements by 4.897ns
+
+ Logical Details:  Cell type  Pin type       Cell name  (clock net +/-)
+
+   Source:         FD1S3IX    CK             srDAC2_reg_278__i1  (from expBCLK8_c_c +)
+   Destination:    FD1S3AX    D              expMDO3_27  (to expBCLK8_c_c +)
+
+   Delay:                   9.764ns  (37.8% logic, 62.2% route), 10 logic levels.
+
+ Constraint Details:
+
+      9.764ns data_path srDAC2_reg_278__i1 to expMDO3_27 violates
+      5.000ns delay constraint less
+      0.133ns L_S requirement (totaling 4.867ns) by 4.897ns
+
+ Path Details: srDAC2_reg_278__i1 to expMDO3_27
+
+   Name    Fanout   Delay (ns)          Pins               Resource(Cell.Net)
+L_CO        ---     0.367             CK to Q              srDAC2_reg_278__i1 (from expBCLK8_c_c)
+Route        21   e 1.317                                  n2090
+LUT4        ---     0.408              A to Z              i2_3_lut_rep_14
+Route         2   e 0.798                                  n3039
+LUT4        ---     0.408              C to Z              i1_2_lut_3_lut_4_lut_adj_8
+Route         7   e 1.049                                  n2773
+A1_TO_FCO   ---     0.684           A[2] to COUT           sub_280_add_2_1
+Route         1   e 0.020                                  n2901
+FCI_TO_FCO  ---     0.130            CIN to COUT           sub_280_add_2_3
+Route         1   e 0.020                                  n2902
+FCI_TO_F    ---     0.495            CIN to S[2]           sub_280_add_2_5
+Route        16   e 1.506                                  n2146
+LUT4        ---     0.408              C to Z              i579_3_lut
+Route         1   e 0.020                                  n2957
+MUXL5       ---     0.193           BLUT to Z              i584
+Route         1   e 0.660                                  n2962
+LUT4        ---     0.408              B to Z              i586_3_lut
+Route         1   e 0.020                                  n2964
+MUXL5       ---     0.193           ALUT to Z              i587
+Route         1   e 0.660                                  srDAC3[254]
+                  --------
+                    9.764  (37.8% logic, 62.2% route), 10 logic levels.
+
+
+Error:  The following path violates requirements by 4.897ns
+
+ Logical Details:  Cell type  Pin type       Cell name  (clock net +/-)
+
+   Source:         FD1S3IX    CK             srDAC2_reg_278__i1  (from expBCLK8_c_c +)
+   Destination:    FD1S3AX    D              expMDO3_27  (to expBCLK8_c_c +)
+
+   Delay:                   9.764ns  (37.8% logic, 62.2% route), 10 logic levels.
+
+ Constraint Details:
+
+      9.764ns data_path srDAC2_reg_278__i1 to expMDO3_27 violates
+      5.000ns delay constraint less
+      0.133ns L_S requirement (totaling 4.867ns) by 4.897ns
+
+ Path Details: srDAC2_reg_278__i1 to expMDO3_27
+
+   Name    Fanout   Delay (ns)          Pins               Resource(Cell.Net)
+L_CO        ---     0.367             CK to Q              srDAC2_reg_278__i1 (from expBCLK8_c_c)
+Route        21   e 1.317                                  n2090
+LUT4        ---     0.408              A to Z              i2_3_lut_rep_14
+Route         2   e 0.798                                  n3039
+LUT4        ---     0.408              C to Z              i1_2_lut_3_lut_4_lut_adj_8
+Route         7   e 1.049                                  n2773
+A1_TO_FCO   ---     0.684           A[2] to COUT           sub_280_add_2_1
+Route         1   e 0.020                                  n2901
+FCI_TO_FCO  ---     0.130            CIN to COUT           sub_280_add_2_3
+Route         1   e 0.020                                  n2902
+FCI_TO_F    ---     0.495            CIN to S[2]           sub_280_add_2_5
+Route        16   e 1.506                                  n2146
+LUT4        ---     0.408              C to Z              i574_3_lut
+Route         1   e 0.020                                  n2952
+MUXL5       ---     0.193           ALUT to Z              i581
+Route         1   e 0.660                                  n2959
+LUT4        ---     0.408              A to Z              i585_3_lut
+Route         1   e 0.020                                  n2963
+MUXL5       ---     0.193           BLUT to Z              i587
+Route         1   e 0.660                                  srDAC3[254]
+                  --------
+                    9.764  (37.8% logic, 62.2% route), 10 logic levels.
+
+Warning: 9.897 ns is the maximum delay for this constraint.
+
 
 Timing Report Summary
 --------------
@@ -28,23 +157,71 @@ Timing Report Summary
 Constraint                              |   Constraint|       Actual|Levels
 --------------------------------------------------------------------------------
                                         |             |             |
-create_clock -period 1000.000000 -name  |             |             |
-clk0 [get_nets exp_bclk4_c_c]           |            -|            -|     0  
+create_clock -period 5.000000 -name     |             |             |
+clk0 [get_nets expBCLK8_c_c]            |     5.000 ns|     9.897 ns|    10 *
                                         |             |             |
 --------------------------------------------------------------------------------
 
 
-All constraints were met.
+1 constraints not met.
 
+--------------------------------------------------------------------------------
+Critical Nets                           |   Loads|  Errors| % of total
+--------------------------------------------------------------------------------
+n2902                                   |       1|    1218|     29.74%
+                                        |        |        |
+n2146                                   |      16|    1216|     29.69%
+                                        |        |        |
+n2214                                   |      16|    1216|     29.69%
+                                        |        |        |
+n2906                                   |       1|    1212|     29.59%
+                                        |        |        |
+n2773                                   |       7|    1054|     25.73%
+                                        |        |        |
+n2779                                   |       7|    1054|     25.73%
+                                        |        |        |
+srDAC2[254]                             |       1|    1027|     25.07%
+                                        |        |        |
+srDAC3[254]                             |       1|    1027|     25.07%
+                                        |        |        |
+srDAC4[254]                             |       1|    1023|     24.98%
+                                        |        |        |
+srDAC1[254]                             |       1|    1019|     24.88%
+                                        |        |        |
+n2145                                   |       8|     584|     14.26%
+                                        |        |        |
+n2213                                   |       8|     584|     14.26%
+                                        |        |        |
+n2948                                   |       1|     501|     12.23%
+                                        |        |        |
+n2949                                   |       1|     501|     12.23%
+                                        |        |        |
+n2963                                   |       1|     501|     12.23%
+                                        |        |        |
+n2964                                   |       1|     501|     12.23%
+                                        |        |        |
+n2994                                   |       1|     501|     12.23%
+                                        |        |        |
+n2978                                   |       1|     497|     12.13%
+                                        |        |        |
+n2979                                   |       1|     497|     12.13%
+                                        |        |        |
+n2993                                   |       1|     497|     12.13%
+                                        |        |        |
+n3039                                   |       2|     474|     11.57%
+                                        |        |        |
+n3040                                   |       1|     474|     11.57%
+                                        |        |        |
+--------------------------------------------------------------------------------
 
 
 Timing summary:
 ---------------
 
-Timing errors: 0  Score: 0
+Timing errors: 4096  Score: 12962704
 
-Constraints cover  0 paths, 0 nets, and 4 connections (10.0% coverage)
+Constraints cover  6046 paths, 170 nets, and 504 connections (51.9% coverage)
 
 
-Peak memory: 68501504 bytes, TRCE: 1384448 bytes, DLYMAN: 0 bytes
+Peak memory: 331218944 bytes, TRCE: 0 bytes, DLYMAN: 0 bytes
 CPU_TIME_REPORT: 0 secs 

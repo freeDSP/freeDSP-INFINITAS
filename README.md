@@ -1,8 +1,8 @@
 # freeDSP Infinitas
 
-freeDSP based on ADAU1452 and 32in/32out full duplex UAC2 interface
+USB Audio Class 2 compliant audio interface with up to 32 input and up to 32 output channels and optional ADAU1452 DSP.
 
-BOARD STATUS: TESTING - DO NOT BUILT!
+BOARD STATUS: RELEASED!
 
 MAIN COORDINATOR: [dspverden](https://github.com/dspverden)
 

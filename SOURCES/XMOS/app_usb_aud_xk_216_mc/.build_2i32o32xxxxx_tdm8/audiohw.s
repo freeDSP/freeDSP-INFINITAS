@@ -59,13 +59,15 @@ __xcc1_internal_1.info:
 	.globread default_download_IC_1,Param_Data_IC_1,"../src/extensions/dspfw_IC_1.h:484:82: note: object used here\n        SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_1, PARAM_ADDR_IC_1, PARAM_SIZE_IC_1, Param_Data_IC_1 );\n                                                                                        ^~~~~~~~~~~~~~~\n../src/extensions/SigmaStudioFW.h:44:135: note: expanded from macro \'SIGMA_WRITE_REGISTER_BLOCK\'\n#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }\n                                                                                                                                      ^"
 	.globread default_download_IC_1,Program_Data_IC_1,"../src/extensions/dspfw_IC_1.h:483:86: note: object used here\n        SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_1, PROGRAM_ADDR_IC_1, PROGRAM_SIZE_IC_1, Program_Data_IC_1 );\n                                                                                            ^~~~~~~~~~~~~~~~~\n../src/extensions/SigmaStudioFW.h:44:135: note: expanded from macro \'SIGMA_WRITE_REGISTER_BLOCK\'\n#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }\n                                                                                                                                      ^"
 	.globread default_download_IC_1,DM1_DATA_Data_IC_1,"../src/extensions/dspfw_IC_1.h:485:88: note: object used here\n        SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_1, DM1_DATA_ADDR_IC_1, DM1_DATA_SIZE_IC_1, DM1_DATA_Data_IC_1 );\n                                                                                              ^~~~~~~~~~~~~~~~~~\n../src/extensions/SigmaStudioFW.h:44:135: note: expanded from macro \'SIGMA_WRITE_REGISTER_BLOCK\'\n#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }\n                                                                                                                                      ^"
-	.globwrite AudioHwInit,r_i2c,"../src/extensions/audiohw.xc:128:28: note: object used here\n    i2c_shared_master_init(r_i2c);\n                           ^~~~~"
+	.globwrite AudioHwConfig,r_i2c,"../src/extensions/audiohw.xc:232:30: note: object used here\n    i2c_shared_master_write( r_i2c, I2C_ADDR_EXPANSION2>>1, data, 1 );\n                             ^~~~~"
+	.globwrite AudioHwInit,r_i2c,"../src/extensions/audiohw.xc:135:28: note: object used here\n    i2c_shared_master_init(r_i2c);\n                           ^~~~~"
 	.globwrite default_download_IC_1,r_i2c,"../src/extensions/dspfw_IC_1.h:449:2: note: object used here\n        SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_1, REG_SOFT_RESET_IC_1_ADDR, REG_SOFT_RESET_IC_1_BYTE, R0_SOFT_RESET_IC_1_Default );\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n../src/extensions/SigmaStudioFW.h:44:107: note: expanded from macro \'SIGMA_WRITE_REGISTER_BLOCK\'\n#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }\n                                                                                                          ^~~~~"
 	.call AudioHwConfig,wait_us
 	.call AudioHwConfig,set_gpio
+	.call AudioHwConfig,i2c_shared_master_write
+	.call AudioHwConfig,configAnalogIOx8
 	.call AudioHwInit,set_gpio
 	.call AudioHwInit,i2c_shared_master_init
-	.call AudioHwInit,default_download_IC_1
 	.call default_download_IC_1,usage.anon.1
 	.call default_download_IC_1,i2c_shared_master_write_reg16
 	.call usage.anon.2,delay_ticks_longlong
@@ -74,85 +76,97 @@ __xcc1_internal_1.info:
 	.set default_download_IC_1.locnoside, 0
 	.set wait_us.locnoside, 0
 	.set AudioHwInit.locnoside, 0
+	.set AudioHwConfig.locnoside, 0
 	.set default_download_IC_1.locnoglobalaccess, 0
 	.set AudioHwInit.locnoglobalaccess, 0
-	.globpassesref i2c_shared_master_init, r_i2c,"../src/extensions/audiohw.xc:128:5: error: call to `i2c_shared_master_init\' in `AudioHwInit\' makes alias of global \'r_i2c\'\n    i2c_shared_master_init(r_i2c);\n    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-	.globpassesref i2c_shared_master_write_reg16, R41_HIBERNATE_IC_1_Default,"In file included from ../src/extensions/audiohw.xc:35:\n../src/extensions/dspfw_IC_1.h:493:2: error: call to `i2c_shared_master_write_reg16\' in `default_download_IC_1\' makes alias of global \'R41_HIBERNATE_IC_1_Default\'\n        SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_1, REG_HIBERNATE_IC_1_ADDR, REG_HIBERNATE_IC_1_BYTE, R41_HIBERNATE_IC_1_Default );\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n../src/extensions/SigmaStudioFW.h:44:76: note: expanded from macro \'SIGMA_WRITE_REGISTER_BLOCK\'\n#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }\n                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-	.globpassesref i2c_shared_master_write_reg16, r_i2c,"In file included from ../src/extensions/audiohw.xc:35:\n../src/extensions/dspfw_IC_1.h:493:2: error: call to `i2c_shared_master_write_reg16\' in `default_download_IC_1\' makes alias of global \'r_i2c\'\n        SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_1, REG_HIBERNATE_IC_1_ADDR, REG_HIBERNATE_IC_1_BYTE, R41_HIBERNATE_IC_1_Default );\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n../src/extensions/SigmaStudioFW.h:44:76: note: expanded from macro \'SIGMA_WRITE_REGISTER_BLOCK\'\n#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }\n                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-	.globpassesref i2c_shared_master_write_reg16, R39_START_CORE_IC_1_Default,"In file included from ../src/extensions/audiohw.xc:35:\n../src/extensions/dspfw_IC_1.h:490:2: error: call to `i2c_shared_master_write_reg16\' in `default_download_IC_1\' makes alias of global \'R39_START_CORE_IC_1_Default\'\n        SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_1, REG_START_CORE_IC_1_ADDR, REG_START_CORE_IC_1_BYTE, R39_START_CORE_IC_1_Default );\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n../src/extensions/SigmaStudioFW.h:44:76: note: expanded from macro \'SIGMA_WRITE_REGISTER_BLOCK\'\n#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }\n                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-	.globpassesref i2c_shared_master_write_reg16, r_i2c,"In file included from ../src/extensions/audiohw.xc:35:\n../src/extensions/dspfw_IC_1.h:490:2: error: call to `i2c_shared_master_write_reg16\' in `default_download_IC_1\' makes alias of global \'r_i2c\'\n        SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_1, REG_START_CORE_IC_1_ADDR, REG_START_CORE_IC_1_BYTE, R39_START_CORE_IC_1_Default );\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n../src/extensions/SigmaStudioFW.h:44:76: note: expanded from macro \'SIGMA_WRITE_REGISTER_BLOCK\'\n#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }\n                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-	.globpassesref i2c_shared_master_write_reg16, R38_START_CORE_IC_1_Default,"In file included from ../src/extensions/audiohw.xc:35:\n../src/extensions/dspfw_IC_1.h:489:2: error: call to `i2c_shared_master_write_reg16\' in `default_download_IC_1\' makes alias of global \'R38_START_CORE_IC_1_Default\'\n        SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_1, REG_START_CORE_IC_1_ADDR, REG_START_CORE_IC_1_BYTE, R38_START_CORE_IC_1_Default );\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n../src/extensions/SigmaStudioFW.h:44:76: note: expanded from macro \'SIGMA_WRITE_REGISTER_BLOCK\'\n#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }\n                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-	.globpassesref i2c_shared_master_write_reg16, r_i2c,"In file included from ../src/extensions/audiohw.xc:35:\n../src/extensions/dspfw_IC_1.h:489:2: error: call to `i2c_shared_master_write_reg16\' in `default_download_IC_1\' makes alias of global \'r_i2c\'\n        SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_1, REG_START_CORE_IC_1_ADDR, REG_START_CORE_IC_1_BYTE, R38_START_CORE_IC_1_Default );\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n../src/extensions/SigmaStudioFW.h:44:76: note: expanded from macro \'SIGMA_WRITE_REGISTER_BLOCK\'\n#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }\n                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-	.globpassesref i2c_shared_master_write_reg16, R37_START_PULSE_IC_1_Default,"In file included from ../src/extensions/audiohw.xc:35:\n../src/extensions/dspfw_IC_1.h:488:2: error: call to `i2c_shared_master_write_reg16\' in `default_download_IC_1\' makes alias of global \'R37_START_PULSE_IC_1_Default\'\n        SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_1, REG_START_PULSE_IC_1_ADDR, REG_START_PULSE_IC_1_BYTE, R37_START_PULSE_IC_1_Default );\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n../src/extensions/SigmaStudioFW.h:44:76: note: expanded from macro \'SIGMA_WRITE_REGISTER_BLOCK\'\n#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }\n                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-	.globpassesref i2c_shared_master_write_reg16, r_i2c,"In file included from ../src/extensions/audiohw.xc:35:\n../src/extensions/dspfw_IC_1.h:488:2: error: call to `i2c_shared_master_write_reg16\' in `default_download_IC_1\' makes alias of global \'r_i2c\'\n        SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_1, REG_START_PULSE_IC_1_ADDR, REG_START_PULSE_IC_1_BYTE, R37_START_PULSE_IC_1_Default );\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n../src/extensions/SigmaStudioFW.h:44:76: note: expanded from macro \'SIGMA_WRITE_REGISTER_BLOCK\'\n#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }\n                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-	.globpassesref i2c_shared_master_write_reg16, R36_START_ADDRESS_IC_1_Default,"In file included from ../src/extensions/audiohw.xc:35:\n../src/extensions/dspfw_IC_1.h:487:2: error: call to `i2c_shared_master_write_reg16\' in `default_download_IC_1\' makes alias of global \'R36_START_ADDRESS_IC_1_Default\'\n        SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_1, REG_START_ADDRESS_IC_1_ADDR, REG_START_ADDRESS_IC_1_BYTE, R36_START_ADDRESS_IC_1_Default );\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n../src/extensions/SigmaStudioFW.h:44:76: note: expanded from macro \'SIGMA_WRITE_REGISTER_BLOCK\'\n#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }\n                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-	.globpassesref i2c_shared_master_write_reg16, r_i2c,"In file included from ../src/extensions/audiohw.xc:35:\n../src/extensions/dspfw_IC_1.h:487:2: error: call to `i2c_shared_master_write_reg16\' in `default_download_IC_1\' makes alias of global \'r_i2c\'\n        SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_1, REG_START_ADDRESS_IC_1_ADDR, REG_START_ADDRESS_IC_1_BYTE, R36_START_ADDRESS_IC_1_Default );\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n../src/extensions/SigmaStudioFW.h:44:76: note: expanded from macro \'SIGMA_WRITE_REGISTER_BLOCK\'\n#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }\n                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-	.globpassesref i2c_shared_master_write_reg16, R35_KILL_CORE_IC_1_Default,"In file included from ../src/extensions/audiohw.xc:35:\n../src/extensions/dspfw_IC_1.h:486:2: error: call to `i2c_shared_master_write_reg16\' in `default_download_IC_1\' makes alias of global \'R35_KILL_CORE_IC_1_Default\'\n        SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_1, REG_KILL_CORE_IC_1_ADDR, REG_KILL_CORE_IC_1_BYTE, R35_KILL_CORE_IC_1_Default );\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n../src/extensions/SigmaStudioFW.h:44:76: note: expanded from macro \'SIGMA_WRITE_REGISTER_BLOCK\'\n#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }\n                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-	.globpassesref i2c_shared_master_write_reg16, r_i2c,"In file included from ../src/extensions/audiohw.xc:35:\n../src/extensions/dspfw_IC_1.h:486:2: error: call to `i2c_shared_master_write_reg16\' in `default_download_IC_1\' makes alias of global \'r_i2c\'\n        SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_1, REG_KILL_CORE_IC_1_ADDR, REG_KILL_CORE_IC_1_BYTE, R35_KILL_CORE_IC_1_Default );\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n../src/extensions/SigmaStudioFW.h:44:76: note: expanded from macro \'SIGMA_WRITE_REGISTER_BLOCK\'\n#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }\n                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-	.globpassesref i2c_shared_master_write_reg16, DM1_DATA_Data_IC_1,"In file included from ../src/extensions/audiohw.xc:35:\n../src/extensions/dspfw_IC_1.h:485:2: error: call to `i2c_shared_master_write_reg16\' in `default_download_IC_1\' makes alias of global \'DM1_DATA_Data_IC_1\'\n        SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_1, DM1_DATA_ADDR_IC_1, DM1_DATA_SIZE_IC_1, DM1_DATA_Data_IC_1 );\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n../src/extensions/SigmaStudioFW.h:44:76: note: expanded from macro \'SIGMA_WRITE_REGISTER_BLOCK\'\n#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }\n                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-	.globpassesref i2c_shared_master_write_reg16, r_i2c,"In file included from ../src/extensions/audiohw.xc:35:\n../src/extensions/dspfw_IC_1.h:485:2: error: call to `i2c_shared_master_write_reg16\' in `default_download_IC_1\' makes alias of global \'r_i2c\'\n        SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_1, DM1_DATA_ADDR_IC_1, DM1_DATA_SIZE_IC_1, DM1_DATA_Data_IC_1 );\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n../src/extensions/SigmaStudioFW.h:44:76: note: expanded from macro \'SIGMA_WRITE_REGISTER_BLOCK\'\n#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }\n                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-	.globpassesref i2c_shared_master_write_reg16, Param_Data_IC_1,"In file included from ../src/extensions/audiohw.xc:35:\n../src/extensions/dspfw_IC_1.h:484:2: error: call to `i2c_shared_master_write_reg16\' in `default_download_IC_1\' makes alias of global \'Param_Data_IC_1\'\n        SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_1, PARAM_ADDR_IC_1, PARAM_SIZE_IC_1, Param_Data_IC_1 );\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n../src/extensions/SigmaStudioFW.h:44:76: note: expanded from macro \'SIGMA_WRITE_REGISTER_BLOCK\'\n#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }\n                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-	.globpassesref i2c_shared_master_write_reg16, r_i2c,"In file included from ../src/extensions/audiohw.xc:35:\n../src/extensions/dspfw_IC_1.h:484:2: error: call to `i2c_shared_master_write_reg16\' in `default_download_IC_1\' makes alias of global \'r_i2c\'\n        SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_1, PARAM_ADDR_IC_1, PARAM_SIZE_IC_1, Param_Data_IC_1 );\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n../src/extensions/SigmaStudioFW.h:44:76: note: expanded from macro \'SIGMA_WRITE_REGISTER_BLOCK\'\n#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }\n                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-	.globpassesref i2c_shared_master_write_reg16, Program_Data_IC_1,"In file included from ../src/extensions/audiohw.xc:35:\n../src/extensions/dspfw_IC_1.h:483:2: error: call to `i2c_shared_master_write_reg16\' in `default_download_IC_1\' makes alias of global \'Program_Data_IC_1\'\n        SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_1, PROGRAM_ADDR_IC_1, PROGRAM_SIZE_IC_1, Program_Data_IC_1 );\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n../src/extensions/SigmaStudioFW.h:44:76: note: expanded from macro \'SIGMA_WRITE_REGISTER_BLOCK\'\n#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }\n                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-	.globpassesref i2c_shared_master_write_reg16, r_i2c,"In file included from ../src/extensions/audiohw.xc:35:\n../src/extensions/dspfw_IC_1.h:483:2: error: call to `i2c_shared_master_write_reg16\' in `default_download_IC_1\' makes alias of global \'r_i2c\'\n        SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_1, PROGRAM_ADDR_IC_1, PROGRAM_SIZE_IC_1, Program_Data_IC_1 );\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n../src/extensions/SigmaStudioFW.h:44:76: note: expanded from macro \'SIGMA_WRITE_REGISTER_BLOCK\'\n#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }\n                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-	.globpassesref i2c_shared_master_write_reg16, R31_SERIAL_BYTE_4_0_IC_1_Default,"In file included from ../src/extensions/audiohw.xc:35:\n../src/extensions/dspfw_IC_1.h:482:2: error: call to `i2c_shared_master_write_reg16\' in `default_download_IC_1\' makes alias of global \'R31_SERIAL_BYTE_4_0_IC_1_Default\'\n        SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_1, REG_SERIAL_BYTE_4_0_IC_1_ADDR, REG_SERIAL_BYTE_4_0_IC_1_BYTE, R31_SERIAL_BYTE_4_0_IC_1_Default );\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n../src/extensions/SigmaStudioFW.h:44:76: note: expanded from macro \'SIGMA_WRITE_REGISTER_BLOCK\'\n#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }\n                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-	.globpassesref i2c_shared_master_write_reg16, r_i2c,"In file included from ../src/extensions/audiohw.xc:35:\n../src/extensions/dspfw_IC_1.h:482:2: error: call to `i2c_shared_master_write_reg16\' in `default_download_IC_1\' makes alias of global \'r_i2c\'\n        SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_1, REG_SERIAL_BYTE_4_0_IC_1_ADDR, REG_SERIAL_BYTE_4_0_IC_1_BYTE, R31_SERIAL_BYTE_4_0_IC_1_Default );\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n../src/extensions/SigmaStudioFW.h:44:76: note: expanded from macro \'SIGMA_WRITE_REGISTER_BLOCK\'\n#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }\n                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-	.globpassesref i2c_shared_master_write_reg16, R30_SOUT_SOURCE7_IC_1_Default,"In file included from ../src/extensions/audiohw.xc:35:\n../src/extensions/dspfw_IC_1.h:481:2: error: call to `i2c_shared_master_write_reg16\' in `default_download_IC_1\' makes alias of global \'R30_SOUT_SOURCE7_IC_1_Default\'\n        SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_1, REG_SOUT_SOURCE7_IC_1_ADDR, REG_SOUT_SOURCE7_IC_1_BYTE, R30_SOUT_SOURCE7_IC_1_Default );\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n../src/extensions/SigmaStudioFW.h:44:76: note: expanded from macro \'SIGMA_WRITE_REGISTER_BLOCK\'\n#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }\n                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-	.globpassesref i2c_shared_master_write_reg16, r_i2c,"In file included from ../src/extensions/audiohw.xc:35:\n../src/extensions/dspfw_IC_1.h:481:2: error: call to `i2c_shared_master_write_reg16\' in `default_download_IC_1\' makes alias of global \'r_i2c\'\n        SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_1, REG_SOUT_SOURCE7_IC_1_ADDR, REG_SOUT_SOURCE7_IC_1_BYTE, R30_SOUT_SOURCE7_IC_1_Default );\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n../src/extensions/SigmaStudioFW.h:44:76: note: expanded from macro \'SIGMA_WRITE_REGISTER_BLOCK\'\n#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }\n                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-	.globpassesref i2c_shared_master_write_reg16, R29_SOUT_SOURCE6_IC_1_Default,"In file included from ../src/extensions/audiohw.xc:35:\n../src/extensions/dspfw_IC_1.h:480:2: error: call to `i2c_shared_master_write_reg16\' in `default_download_IC_1\' makes alias of global \'R29_SOUT_SOURCE6_IC_1_Default\'\n        SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_1, REG_SOUT_SOURCE6_IC_1_ADDR, REG_SOUT_SOURCE6_IC_1_BYTE, R29_SOUT_SOURCE6_IC_1_Default );\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n../src/extensions/SigmaStudioFW.h:44:76: note: expanded from macro \'SIGMA_WRITE_REGISTER_BLOCK\'\n#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }\n                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-	.globpassesref i2c_shared_master_write_reg16, r_i2c,"In file included from ../src/extensions/audiohw.xc:35:\n../src/extensions/dspfw_IC_1.h:480:2: error: call to `i2c_shared_master_write_reg16\' in `default_download_IC_1\' makes alias of global \'r_i2c\'\n        SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_1, REG_SOUT_SOURCE6_IC_1_ADDR, REG_SOUT_SOURCE6_IC_1_BYTE, R29_SOUT_SOURCE6_IC_1_Default );\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n../src/extensions/SigmaStudioFW.h:44:76: note: expanded from macro \'SIGMA_WRITE_REGISTER_BLOCK\'\n#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }\n                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-	.globpassesref i2c_shared_master_write_reg16, R28_SOUT_SOURCE5_IC_1_Default,"In file included from ../src/extensions/audiohw.xc:35:\n../src/extensions/dspfw_IC_1.h:479:2: error: call to `i2c_shared_master_write_reg16\' in `default_download_IC_1\' makes alias of global \'R28_SOUT_SOURCE5_IC_1_Default\'\n        SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_1, REG_SOUT_SOURCE5_IC_1_ADDR, REG_SOUT_SOURCE5_IC_1_BYTE, R28_SOUT_SOURCE5_IC_1_Default );\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n../src/extensions/SigmaStudioFW.h:44:76: note: expanded from macro \'SIGMA_WRITE_REGISTER_BLOCK\'\n#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }\n                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-	.globpassesref i2c_shared_master_write_reg16, r_i2c,"In file included from ../src/extensions/audiohw.xc:35:\n../src/extensions/dspfw_IC_1.h:479:2: error: call to `i2c_shared_master_write_reg16\' in `default_download_IC_1\' makes alias of global \'r_i2c\'\n        SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_1, REG_SOUT_SOURCE5_IC_1_ADDR, REG_SOUT_SOURCE5_IC_1_BYTE, R28_SOUT_SOURCE5_IC_1_Default );\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n../src/extensions/SigmaStudioFW.h:44:76: note: expanded from macro \'SIGMA_WRITE_REGISTER_BLOCK\'\n#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }\n                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-	.globpassesref i2c_shared_master_write_reg16, R27_SOUT_SOURCE4_IC_1_Default,"In file included from ../src/extensions/audiohw.xc:35:\n../src/extensions/dspfw_IC_1.h:478:2: error: call to `i2c_shared_master_write_reg16\' in `default_download_IC_1\' makes alias of global \'R27_SOUT_SOURCE4_IC_1_Default\'\n        SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_1, REG_SOUT_SOURCE4_IC_1_ADDR, REG_SOUT_SOURCE4_IC_1_BYTE, R27_SOUT_SOURCE4_IC_1_Default );\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n../src/extensions/SigmaStudioFW.h:44:76: note: expanded from macro \'SIGMA_WRITE_REGISTER_BLOCK\'\n#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }\n                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-	.globpassesref i2c_shared_master_write_reg16, r_i2c,"In file included from ../src/extensions/audiohw.xc:35:\n../src/extensions/dspfw_IC_1.h:478:2: error: call to `i2c_shared_master_write_reg16\' in `default_download_IC_1\' makes alias of global \'r_i2c\'\n        SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_1, REG_SOUT_SOURCE4_IC_1_ADDR, REG_SOUT_SOURCE4_IC_1_BYTE, R27_SOUT_SOURCE4_IC_1_Default );\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n../src/extensions/SigmaStudioFW.h:44:76: note: expanded from macro \'SIGMA_WRITE_REGISTER_BLOCK\'\n#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }\n                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-	.globpassesref i2c_shared_master_write_reg16, R26_SOUT_SOURCE3_IC_1_Default,"In file included from ../src/extensions/audiohw.xc:35:\n../src/extensions/dspfw_IC_1.h:477:2: error: call to `i2c_shared_master_write_reg16\' in `default_download_IC_1\' makes alias of global \'R26_SOUT_SOURCE3_IC_1_Default\'\n        SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_1, REG_SOUT_SOURCE3_IC_1_ADDR, REG_SOUT_SOURCE3_IC_1_BYTE, R26_SOUT_SOURCE3_IC_1_Default );\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n../src/extensions/SigmaStudioFW.h:44:76: note: expanded from macro \'SIGMA_WRITE_REGISTER_BLOCK\'\n#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }\n                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-	.globpassesref i2c_shared_master_write_reg16, r_i2c,"In file included from ../src/extensions/audiohw.xc:35:\n../src/extensions/dspfw_IC_1.h:477:2: error: call to `i2c_shared_master_write_reg16\' in `default_download_IC_1\' makes alias of global \'r_i2c\'\n        SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_1, REG_SOUT_SOURCE3_IC_1_ADDR, REG_SOUT_SOURCE3_IC_1_BYTE, R26_SOUT_SOURCE3_IC_1_Default );\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n../src/extensions/SigmaStudioFW.h:44:76: note: expanded from macro \'SIGMA_WRITE_REGISTER_BLOCK\'\n#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }\n                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-	.globpassesref i2c_shared_master_write_reg16, R25_SOUT_SOURCE2_IC_1_Default,"In file included from ../src/extensions/audiohw.xc:35:\n../src/extensions/dspfw_IC_1.h:476:2: error: call to `i2c_shared_master_write_reg16\' in `default_download_IC_1\' makes alias of global \'R25_SOUT_SOURCE2_IC_1_Default\'\n        SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_1, REG_SOUT_SOURCE2_IC_1_ADDR, REG_SOUT_SOURCE2_IC_1_BYTE, R25_SOUT_SOURCE2_IC_1_Default );\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n../src/extensions/SigmaStudioFW.h:44:76: note: expanded from macro \'SIGMA_WRITE_REGISTER_BLOCK\'\n#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }\n                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-	.globpassesref i2c_shared_master_write_reg16, r_i2c,"In file included from ../src/extensions/audiohw.xc:35:\n../src/extensions/dspfw_IC_1.h:476:2: error: call to `i2c_shared_master_write_reg16\' in `default_download_IC_1\' makes alias of global \'r_i2c\'\n        SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_1, REG_SOUT_SOURCE2_IC_1_ADDR, REG_SOUT_SOURCE2_IC_1_BYTE, R25_SOUT_SOURCE2_IC_1_Default );\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n../src/extensions/SigmaStudioFW.h:44:76: note: expanded from macro \'SIGMA_WRITE_REGISTER_BLOCK\'\n#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }\n                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-	.globpassesref i2c_shared_master_write_reg16, R24_SOUT_SOURCE1_IC_1_Default,"In file included from ../src/extensions/audiohw.xc:35:\n../src/extensions/dspfw_IC_1.h:475:2: error: call to `i2c_shared_master_write_reg16\' in `default_download_IC_1\' makes alias of global \'R24_SOUT_SOURCE1_IC_1_Default\'\n        SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_1, REG_SOUT_SOURCE1_IC_1_ADDR, REG_SOUT_SOURCE1_IC_1_BYTE, R24_SOUT_SOURCE1_IC_1_Default );\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n../src/extensions/SigmaStudioFW.h:44:76: note: expanded from macro \'SIGMA_WRITE_REGISTER_BLOCK\'\n#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }\n                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-	.globpassesref i2c_shared_master_write_reg16, r_i2c,"In file included from ../src/extensions/audiohw.xc:35:\n../src/extensions/dspfw_IC_1.h:475:2: error: call to `i2c_shared_master_write_reg16\' in `default_download_IC_1\' makes alias of global \'r_i2c\'\n        SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_1, REG_SOUT_SOURCE1_IC_1_ADDR, REG_SOUT_SOURCE1_IC_1_BYTE, R24_SOUT_SOURCE1_IC_1_Default );\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n../src/extensions/SigmaStudioFW.h:44:76: note: expanded from macro \'SIGMA_WRITE_REGISTER_BLOCK\'\n#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }\n                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-	.globpassesref i2c_shared_master_write_reg16, R23_SOUT_SOURCE0_IC_1_Default,"In file included from ../src/extensions/audiohw.xc:35:\n../src/extensions/dspfw_IC_1.h:474:2: error: call to `i2c_shared_master_write_reg16\' in `default_download_IC_1\' makes alias of global \'R23_SOUT_SOURCE0_IC_1_Default\'\n        SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_1, REG_SOUT_SOURCE0_IC_1_ADDR, REG_SOUT_SOURCE0_IC_1_BYTE, R23_SOUT_SOURCE0_IC_1_Default );\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n../src/extensions/SigmaStudioFW.h:44:76: note: expanded from macro \'SIGMA_WRITE_REGISTER_BLOCK\'\n#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }\n                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-	.globpassesref i2c_shared_master_write_reg16, r_i2c,"In file included from ../src/extensions/audiohw.xc:35:\n../src/extensions/dspfw_IC_1.h:474:2: error: call to `i2c_shared_master_write_reg16\' in `default_download_IC_1\' makes alias of global \'r_i2c\'\n        SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_1, REG_SOUT_SOURCE0_IC_1_ADDR, REG_SOUT_SOURCE0_IC_1_BYTE, R23_SOUT_SOURCE0_IC_1_Default );\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n../src/extensions/SigmaStudioFW.h:44:76: note: expanded from macro \'SIGMA_WRITE_REGISTER_BLOCK\'\n#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }\n                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-	.globpassesref i2c_shared_master_write_reg16, R22_MOSI_M_PIN_IC_1_Default,"In file included from ../src/extensions/audiohw.xc:35:\n../src/extensions/dspfw_IC_1.h:473:2: error: call to `i2c_shared_master_write_reg16\' in `default_download_IC_1\' makes alias of global \'R22_MOSI_M_PIN_IC_1_Default\'\n        SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_1, REG_MOSI_M_PIN_IC_1_ADDR, REG_MOSI_M_PIN_IC_1_BYTE, R22_MOSI_M_PIN_IC_1_Default );\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n../src/extensions/SigmaStudioFW.h:44:76: note: expanded from macro \'SIGMA_WRITE_REGISTER_BLOCK\'\n#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }\n                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-	.globpassesref i2c_shared_master_write_reg16, r_i2c,"In file included from ../src/extensions/audiohw.xc:35:\n../src/extensions/dspfw_IC_1.h:473:2: error: call to `i2c_shared_master_write_reg16\' in `default_download_IC_1\' makes alias of global \'r_i2c\'\n        SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_1, REG_MOSI_M_PIN_IC_1_ADDR, REG_MOSI_M_PIN_IC_1_BYTE, R22_MOSI_M_PIN_IC_1_Default );\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n../src/extensions/SigmaStudioFW.h:44:76: note: expanded from macro \'SIGMA_WRITE_REGISTER_BLOCK\'\n#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }\n                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-	.globpassesref i2c_shared_master_write_reg16, R21_SS_M_PIN_IC_1_Default,"In file included from ../src/extensions/audiohw.xc:35:\n../src/extensions/dspfw_IC_1.h:472:2: error: call to `i2c_shared_master_write_reg16\' in `default_download_IC_1\' makes alias of global \'R21_SS_M_PIN_IC_1_Default\'\n        SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_1, REG_SS_M_PIN_IC_1_ADDR, REG_SS_M_PIN_IC_1_BYTE, R21_SS_M_PIN_IC_1_Default );\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n../src/extensions/SigmaStudioFW.h:44:76: note: expanded from macro \'SIGMA_WRITE_REGISTER_BLOCK\'\n#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }\n                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-	.globpassesref i2c_shared_master_write_reg16, r_i2c,"In file included from ../src/extensions/audiohw.xc:35:\n../src/extensions/dspfw_IC_1.h:472:2: error: call to `i2c_shared_master_write_reg16\' in `default_download_IC_1\' makes alias of global \'r_i2c\'\n        SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_1, REG_SS_M_PIN_IC_1_ADDR, REG_SS_M_PIN_IC_1_BYTE, R21_SS_M_PIN_IC_1_Default );\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n../src/extensions/SigmaStudioFW.h:44:76: note: expanded from macro \'SIGMA_WRITE_REGISTER_BLOCK\'\n#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }\n                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-	.globpassesref i2c_shared_master_write_reg16, R20_MISO_SDA_M_PIN_IC_1_Default,"In file included from ../src/extensions/audiohw.xc:35:\n../src/extensions/dspfw_IC_1.h:471:2: error: call to `i2c_shared_master_write_reg16\' in `default_download_IC_1\' makes alias of global \'R20_MISO_SDA_M_PIN_IC_1_Default\'\n        SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_1, REG_MISO_SDA_M_PIN_IC_1_ADDR, REG_MISO_SDA_M_PIN_IC_1_BYTE, R20_MISO_SDA_M_PIN_IC_1_Default );\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n../src/extensions/SigmaStudioFW.h:44:76: note: expanded from macro \'SIGMA_WRITE_REGISTER_BLOCK\'\n#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }\n                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-	.globpassesref i2c_shared_master_write_reg16, r_i2c,"In file included from ../src/extensions/audiohw.xc:35:\n../src/extensions/dspfw_IC_1.h:471:2: error: call to `i2c_shared_master_write_reg16\' in `default_download_IC_1\' makes alias of global \'r_i2c\'\n        SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_1, REG_MISO_SDA_M_PIN_IC_1_ADDR, REG_MISO_SDA_M_PIN_IC_1_BYTE, R20_MISO_SDA_M_PIN_IC_1_Default );\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n../src/extensions/SigmaStudioFW.h:44:76: note: expanded from macro \'SIGMA_WRITE_REGISTER_BLOCK\'\n#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }\n                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-	.globpassesref i2c_shared_master_write_reg16, R19_SCLK_SCL_M_PIN_IC_1_Default,"In file included from ../src/extensions/audiohw.xc:35:\n../src/extensions/dspfw_IC_1.h:470:2: error: call to `i2c_shared_master_write_reg16\' in `default_download_IC_1\' makes alias of global \'R19_SCLK_SCL_M_PIN_IC_1_Default\'\n        SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_1, REG_SCLK_SCL_M_PIN_IC_1_ADDR, REG_SCLK_SCL_M_PIN_IC_1_BYTE, R19_SCLK_SCL_M_PIN_IC_1_Default );\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n../src/extensions/SigmaStudioFW.h:44:76: note: expanded from macro \'SIGMA_WRITE_REGISTER_BLOCK\'\n#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }\n                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-	.globpassesref i2c_shared_master_write_reg16, r_i2c,"In file included from ../src/extensions/audiohw.xc:35:\n../src/extensions/dspfw_IC_1.h:470:2: error: call to `i2c_shared_master_write_reg16\' in `default_download_IC_1\' makes alias of global \'r_i2c\'\n        SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_1, REG_SCLK_SCL_M_PIN_IC_1_ADDR, REG_SCLK_SCL_M_PIN_IC_1_BYTE, R19_SCLK_SCL_M_PIN_IC_1_Default );\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n../src/extensions/SigmaStudioFW.h:44:76: note: expanded from macro \'SIGMA_WRITE_REGISTER_BLOCK\'\n#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }\n                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-	.globpassesref i2c_shared_master_write_reg16, R18_MP0_MODE_IC_1_Default,"In file included from ../src/extensions/audiohw.xc:35:\n../src/extensions/dspfw_IC_1.h:469:2: error: call to `i2c_shared_master_write_reg16\' in `default_download_IC_1\' makes alias of global \'R18_MP0_MODE_IC_1_Default\'\n        SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_1, REG_MP0_MODE_IC_1_ADDR, REG_MP0_MODE_IC_1_BYTE, R18_MP0_MODE_IC_1_Default );\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n../src/extensions/SigmaStudioFW.h:44:76: note: expanded from macro \'SIGMA_WRITE_REGISTER_BLOCK\'\n#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }\n                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-	.globpassesref i2c_shared_master_write_reg16, r_i2c,"In file included from ../src/extensions/audiohw.xc:35:\n../src/extensions/dspfw_IC_1.h:469:2: error: call to `i2c_shared_master_write_reg16\' in `default_download_IC_1\' makes alias of global \'r_i2c\'\n        SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_1, REG_MP0_MODE_IC_1_ADDR, REG_MP0_MODE_IC_1_BYTE, R18_MP0_MODE_IC_1_Default );\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n../src/extensions/SigmaStudioFW.h:44:76: note: expanded from macro \'SIGMA_WRITE_REGISTER_BLOCK\'\n#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }\n                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-	.globpassesref i2c_shared_master_write_reg16, R17_PANIC_PARITY_MASK_IC_1_Default,"In file included from ../src/extensions/audiohw.xc:35:\n../src/extensions/dspfw_IC_1.h:468:2: error: call to `i2c_shared_master_write_reg16\' in `default_download_IC_1\' makes alias of global \'R17_PANIC_PARITY_MASK_IC_1_Default\'\n        SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_1, REG_PANIC_PARITY_MASK_IC_1_ADDR, REG_PANIC_PARITY_MASK_IC_1_BYTE, R17_PANIC_PARITY_MASK_IC_1_Default );\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n../src/extensions/SigmaStudioFW.h:44:76: note: expanded from macro \'SIGMA_WRITE_REGISTER_BLOCK\'\n#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }\n                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-	.globpassesref i2c_shared_master_write_reg16, r_i2c,"In file included from ../src/extensions/audiohw.xc:35:\n../src/extensions/dspfw_IC_1.h:468:2: error: call to `i2c_shared_master_write_reg16\' in `default_download_IC_1\' makes alias of global \'r_i2c\'\n        SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_1, REG_PANIC_PARITY_MASK_IC_1_ADDR, REG_PANIC_PARITY_MASK_IC_1_BYTE, R17_PANIC_PARITY_MASK_IC_1_Default );\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n../src/extensions/SigmaStudioFW.h:44:76: note: expanded from macro \'SIGMA_WRITE_REGISTER_BLOCK\'\n#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }\n                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-	.globpassesref i2c_shared_master_write_reg16, R16_POWER_ENABLE1_IC_1_Default,"In file included from ../src/extensions/audiohw.xc:35:\n../src/extensions/dspfw_IC_1.h:467:2: error: call to `i2c_shared_master_write_reg16\' in `default_download_IC_1\' makes alias of global \'R16_POWER_ENABLE1_IC_1_Default\'\n        SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_1, REG_POWER_ENABLE1_IC_1_ADDR, REG_POWER_ENABLE1_IC_1_BYTE, R16_POWER_ENABLE1_IC_1_Default );\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n../src/extensions/SigmaStudioFW.h:44:76: note: expanded from macro \'SIGMA_WRITE_REGISTER_BLOCK\'\n#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }\n                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-	.globpassesref i2c_shared_master_write_reg16, r_i2c,"In file included from ../src/extensions/audiohw.xc:35:\n../src/extensions/dspfw_IC_1.h:467:2: error: call to `i2c_shared_master_write_reg16\' in `default_download_IC_1\' makes alias of global \'r_i2c\'\n        SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_1, REG_POWER_ENABLE1_IC_1_ADDR, REG_POWER_ENABLE1_IC_1_BYTE, R16_POWER_ENABLE1_IC_1_Default );\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n../src/extensions/SigmaStudioFW.h:44:76: note: expanded from macro \'SIGMA_WRITE_REGISTER_BLOCK\'\n#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }\n                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-	.globpassesref i2c_shared_master_write_reg16, R15_POWER_ENABLE0_IC_1_Default,"In file included from ../src/extensions/audiohw.xc:35:\n../src/extensions/dspfw_IC_1.h:466:2: error: call to `i2c_shared_master_write_reg16\' in `default_download_IC_1\' makes alias of global \'R15_POWER_ENABLE0_IC_1_Default\'\n        SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_1, REG_POWER_ENABLE0_IC_1_ADDR, REG_POWER_ENABLE0_IC_1_BYTE, R15_POWER_ENABLE0_IC_1_Default );\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n../src/extensions/SigmaStudioFW.h:44:76: note: expanded from macro \'SIGMA_WRITE_REGISTER_BLOCK\'\n#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }\n                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-	.globpassesref i2c_shared_master_write_reg16, r_i2c,"In file included from ../src/extensions/audiohw.xc:35:\n../src/extensions/dspfw_IC_1.h:466:2: error: call to `i2c_shared_master_write_reg16\' in `default_download_IC_1\' makes alias of global \'r_i2c\'\n        SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_1, REG_POWER_ENABLE0_IC_1_ADDR, REG_POWER_ENABLE0_IC_1_BYTE, R15_POWER_ENABLE0_IC_1_Default );\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n../src/extensions/SigmaStudioFW.h:44:76: note: expanded from macro \'SIGMA_WRITE_REGISTER_BLOCK\'\n#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }\n                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-	.globpassesref i2c_shared_master_write_reg16, R13_PLL_ENABLE_IC_1_Default,"In file included from ../src/extensions/audiohw.xc:35:\n../src/extensions/dspfw_IC_1.h:464:2: error: call to `i2c_shared_master_write_reg16\' in `default_download_IC_1\' makes alias of global \'R13_PLL_ENABLE_IC_1_Default\'\n        SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_1, REG_PLL_ENABLE_IC_1_ADDR, REG_PLL_ENABLE_IC_1_BYTE, R13_PLL_ENABLE_IC_1_Default );\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n../src/extensions/SigmaStudioFW.h:44:76: note: expanded from macro \'SIGMA_WRITE_REGISTER_BLOCK\'\n#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }\n                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-	.globpassesref i2c_shared_master_write_reg16, r_i2c,"In file included from ../src/extensions/audiohw.xc:35:\n../src/extensions/dspfw_IC_1.h:464:2: error: call to `i2c_shared_master_write_reg16\' in `default_download_IC_1\' makes alias of global \'r_i2c\'\n        SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_1, REG_PLL_ENABLE_IC_1_ADDR, REG_PLL_ENABLE_IC_1_BYTE, R13_PLL_ENABLE_IC_1_Default );\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n../src/extensions/SigmaStudioFW.h:44:76: note: expanded from macro \'SIGMA_WRITE_REGISTER_BLOCK\'\n#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }\n                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-	.globpassesref i2c_shared_master_write_reg16, R12_MCLK_OUT_IC_1_Default,"In file included from ../src/extensions/audiohw.xc:35:\n../src/extensions/dspfw_IC_1.h:463:2: error: call to `i2c_shared_master_write_reg16\' in `default_download_IC_1\' makes alias of global \'R12_MCLK_OUT_IC_1_Default\'\n        SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_1, REG_MCLK_OUT_IC_1_ADDR, REG_MCLK_OUT_IC_1_BYTE, R12_MCLK_OUT_IC_1_Default );\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n../src/extensions/SigmaStudioFW.h:44:76: note: expanded from macro \'SIGMA_WRITE_REGISTER_BLOCK\'\n#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }\n                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-	.globpassesref i2c_shared_master_write_reg16, r_i2c,"In file included from ../src/extensions/audiohw.xc:35:\n../src/extensions/dspfw_IC_1.h:463:2: error: call to `i2c_shared_master_write_reg16\' in `default_download_IC_1\' makes alias of global \'r_i2c\'\n        SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_1, REG_MCLK_OUT_IC_1_ADDR, REG_MCLK_OUT_IC_1_BYTE, R12_MCLK_OUT_IC_1_Default );\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n../src/extensions/SigmaStudioFW.h:44:76: note: expanded from macro \'SIGMA_WRITE_REGISTER_BLOCK\'\n#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }\n                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-	.globpassesref i2c_shared_master_write_reg16, R11_PLL_CLK_SRC_IC_1_Default,"In file included from ../src/extensions/audiohw.xc:35:\n../src/extensions/dspfw_IC_1.h:462:2: error: call to `i2c_shared_master_write_reg16\' in `default_download_IC_1\' makes alias of global \'R11_PLL_CLK_SRC_IC_1_Default\'\n        SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_1, REG_PLL_CLK_SRC_IC_1_ADDR, REG_PLL_CLK_SRC_IC_1_BYTE, R11_PLL_CLK_SRC_IC_1_Default );\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n../src/extensions/SigmaStudioFW.h:44:76: note: expanded from macro \'SIGMA_WRITE_REGISTER_BLOCK\'\n#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }\n                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-	.globpassesref i2c_shared_master_write_reg16, r_i2c,"In file included from ../src/extensions/audiohw.xc:35:\n../src/extensions/dspfw_IC_1.h:462:2: error: call to `i2c_shared_master_write_reg16\' in `default_download_IC_1\' makes alias of global \'r_i2c\'\n        SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_1, REG_PLL_CLK_SRC_IC_1_ADDR, REG_PLL_CLK_SRC_IC_1_BYTE, R11_PLL_CLK_SRC_IC_1_Default );\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n../src/extensions/SigmaStudioFW.h:44:76: note: expanded from macro \'SIGMA_WRITE_REGISTER_BLOCK\'\n#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }\n                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-	.globpassesref i2c_shared_master_write_reg16, R10_PLL_CTRL1_IC_1_Default,"In file included from ../src/extensions/audiohw.xc:35:\n../src/extensions/dspfw_IC_1.h:461:2: error: call to `i2c_shared_master_write_reg16\' in `default_download_IC_1\' makes alias of global \'R10_PLL_CTRL1_IC_1_Default\'\n        SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_1, REG_PLL_CTRL1_IC_1_ADDR, REG_PLL_CTRL1_IC_1_BYTE, R10_PLL_CTRL1_IC_1_Default );\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n../src/extensions/SigmaStudioFW.h:44:76: note: expanded from macro \'SIGMA_WRITE_REGISTER_BLOCK\'\n#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }\n                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-	.globpassesref i2c_shared_master_write_reg16, r_i2c,"In file included from ../src/extensions/audiohw.xc:35:\n../src/extensions/dspfw_IC_1.h:461:2: error: call to `i2c_shared_master_write_reg16\' in `default_download_IC_1\' makes alias of global \'r_i2c\'\n        SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_1, REG_PLL_CTRL1_IC_1_ADDR, REG_PLL_CTRL1_IC_1_BYTE, R10_PLL_CTRL1_IC_1_Default );\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n../src/extensions/SigmaStudioFW.h:44:76: note: expanded from macro \'SIGMA_WRITE_REGISTER_BLOCK\'\n#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }\n                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-	.globpassesref i2c_shared_master_write_reg16, R9_PLL_CTRL0_IC_1_Default,"In file included from ../src/extensions/audiohw.xc:35:\n../src/extensions/dspfw_IC_1.h:460:2: error: call to `i2c_shared_master_write_reg16\' in `default_download_IC_1\' makes alias of global \'R9_PLL_CTRL0_IC_1_Default\'\n        SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_1, REG_PLL_CTRL0_IC_1_ADDR, REG_PLL_CTRL0_IC_1_BYTE, R9_PLL_CTRL0_IC_1_Default );\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n../src/extensions/SigmaStudioFW.h:44:76: note: expanded from macro \'SIGMA_WRITE_REGISTER_BLOCK\'\n#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }\n                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-	.globpassesref i2c_shared_master_write_reg16, r_i2c,"In file included from ../src/extensions/audiohw.xc:35:\n../src/extensions/dspfw_IC_1.h:460:2: error: call to `i2c_shared_master_write_reg16\' in `default_download_IC_1\' makes alias of global \'r_i2c\'\n        SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_1, REG_PLL_CTRL0_IC_1_ADDR, REG_PLL_CTRL0_IC_1_BYTE, R9_PLL_CTRL0_IC_1_Default );\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n../src/extensions/SigmaStudioFW.h:44:76: note: expanded from macro \'SIGMA_WRITE_REGISTER_BLOCK\'\n#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }\n                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-	.globpassesref i2c_shared_master_write_reg16, R8_PLL_ENABLE_IC_1_Default,"In file included from ../src/extensions/audiohw.xc:35:\n../src/extensions/dspfw_IC_1.h:459:2: error: call to `i2c_shared_master_write_reg16\' in `default_download_IC_1\' makes alias of global \'R8_PLL_ENABLE_IC_1_Default\'\n        SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_1, REG_PLL_ENABLE_IC_1_ADDR, REG_PLL_ENABLE_IC_1_BYTE, R8_PLL_ENABLE_IC_1_Default );\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n../src/extensions/SigmaStudioFW.h:44:76: note: expanded from macro \'SIGMA_WRITE_REGISTER_BLOCK\'\n#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }\n                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-	.globpassesref i2c_shared_master_write_reg16, r_i2c,"In file included from ../src/extensions/audiohw.xc:35:\n../src/extensions/dspfw_IC_1.h:459:2: error: call to `i2c_shared_master_write_reg16\' in `default_download_IC_1\' makes alias of global \'r_i2c\'\n        SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_1, REG_PLL_ENABLE_IC_1_ADDR, REG_PLL_ENABLE_IC_1_BYTE, R8_PLL_ENABLE_IC_1_Default );\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n../src/extensions/SigmaStudioFW.h:44:76: note: expanded from macro \'SIGMA_WRITE_REGISTER_BLOCK\'\n#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }\n                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-	.globpassesref i2c_shared_master_write_reg16, R7_KILL_CORE_IC_1_Default,"In file included from ../src/extensions/audiohw.xc:35:\n../src/extensions/dspfw_IC_1.h:458:2: error: call to `i2c_shared_master_write_reg16\' in `default_download_IC_1\' makes alias of global \'R7_KILL_CORE_IC_1_Default\'\n        SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_1, REG_KILL_CORE_IC_1_ADDR, REG_KILL_CORE_IC_1_BYTE, R7_KILL_CORE_IC_1_Default );\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n../src/extensions/SigmaStudioFW.h:44:76: note: expanded from macro \'SIGMA_WRITE_REGISTER_BLOCK\'\n#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }\n                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-	.globpassesref i2c_shared_master_write_reg16, r_i2c,"In file included from ../src/extensions/audiohw.xc:35:\n../src/extensions/dspfw_IC_1.h:458:2: error: call to `i2c_shared_master_write_reg16\' in `default_download_IC_1\' makes alias of global \'r_i2c\'\n        SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_1, REG_KILL_CORE_IC_1_ADDR, REG_KILL_CORE_IC_1_BYTE, R7_KILL_CORE_IC_1_Default );\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n../src/extensions/SigmaStudioFW.h:44:76: note: expanded from macro \'SIGMA_WRITE_REGISTER_BLOCK\'\n#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }\n                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-	.globpassesref i2c_shared_master_write_reg16, R6_KILL_CORE_IC_1_Default,"In file included from ../src/extensions/audiohw.xc:35:\n../src/extensions/dspfw_IC_1.h:457:2: error: call to `i2c_shared_master_write_reg16\' in `default_download_IC_1\' makes alias of global \'R6_KILL_CORE_IC_1_Default\'\n        SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_1, REG_KILL_CORE_IC_1_ADDR, REG_KILL_CORE_IC_1_BYTE, R6_KILL_CORE_IC_1_Default );\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n../src/extensions/SigmaStudioFW.h:44:76: note: expanded from macro \'SIGMA_WRITE_REGISTER_BLOCK\'\n#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }\n                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-	.globpassesref i2c_shared_master_write_reg16, r_i2c,"In file included from ../src/extensions/audiohw.xc:35:\n../src/extensions/dspfw_IC_1.h:457:2: error: call to `i2c_shared_master_write_reg16\' in `default_download_IC_1\' makes alias of global \'r_i2c\'\n        SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_1, REG_KILL_CORE_IC_1_ADDR, REG_KILL_CORE_IC_1_BYTE, R6_KILL_CORE_IC_1_Default );\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n../src/extensions/SigmaStudioFW.h:44:76: note: expanded from macro \'SIGMA_WRITE_REGISTER_BLOCK\'\n#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }\n                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-	.globpassesref i2c_shared_master_write_reg16, R4_HIBERNATE_IC_1_Default,"In file included from ../src/extensions/audiohw.xc:35:\n../src/extensions/dspfw_IC_1.h:454:2: error: call to `i2c_shared_master_write_reg16\' in `default_download_IC_1\' makes alias of global \'R4_HIBERNATE_IC_1_Default\'\n        SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_1, REG_HIBERNATE_IC_1_ADDR, REG_HIBERNATE_IC_1_BYTE, R4_HIBERNATE_IC_1_Default );\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n../src/extensions/SigmaStudioFW.h:44:76: note: expanded from macro \'SIGMA_WRITE_REGISTER_BLOCK\'\n#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }\n                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-	.globpassesref i2c_shared_master_write_reg16, r_i2c,"In file included from ../src/extensions/audiohw.xc:35:\n../src/extensions/dspfw_IC_1.h:454:2: error: call to `i2c_shared_master_write_reg16\' in `default_download_IC_1\' makes alias of global \'r_i2c\'\n        SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_1, REG_HIBERNATE_IC_1_ADDR, REG_HIBERNATE_IC_1_BYTE, R4_HIBERNATE_IC_1_Default );\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n../src/extensions/SigmaStudioFW.h:44:76: note: expanded from macro \'SIGMA_WRITE_REGISTER_BLOCK\'\n#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }\n                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-	.globpassesref i2c_shared_master_write_reg16, R3_HIBERNATE_IC_1_Default,"In file included from ../src/extensions/audiohw.xc:35:\n../src/extensions/dspfw_IC_1.h:453:2: error: call to `i2c_shared_master_write_reg16\' in `default_download_IC_1\' makes alias of global \'R3_HIBERNATE_IC_1_Default\'\n        SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_1, REG_HIBERNATE_IC_1_ADDR, REG_HIBERNATE_IC_1_BYTE, R3_HIBERNATE_IC_1_Default );\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n../src/extensions/SigmaStudioFW.h:44:76: note: expanded from macro \'SIGMA_WRITE_REGISTER_BLOCK\'\n#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }\n                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-	.globpassesref i2c_shared_master_write_reg16, r_i2c,"In file included from ../src/extensions/audiohw.xc:35:\n../src/extensions/dspfw_IC_1.h:453:2: error: call to `i2c_shared_master_write_reg16\' in `default_download_IC_1\' makes alias of global \'r_i2c\'\n        SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_1, REG_HIBERNATE_IC_1_ADDR, REG_HIBERNATE_IC_1_BYTE, R3_HIBERNATE_IC_1_Default );\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n../src/extensions/SigmaStudioFW.h:44:76: note: expanded from macro \'SIGMA_WRITE_REGISTER_BLOCK\'\n#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }\n                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-	.globpassesref i2c_shared_master_write_reg16, R1_SOFT_RESET_IC_1_Default,"In file included from ../src/extensions/audiohw.xc:35:\n../src/extensions/dspfw_IC_1.h:450:2: error: call to `i2c_shared_master_write_reg16\' in `default_download_IC_1\' makes alias of global \'R1_SOFT_RESET_IC_1_Default\'\n        SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_1, REG_SOFT_RESET_IC_1_ADDR, REG_SOFT_RESET_IC_1_BYTE, R1_SOFT_RESET_IC_1_Default );\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n../src/extensions/SigmaStudioFW.h:44:76: note: expanded from macro \'SIGMA_WRITE_REGISTER_BLOCK\'\n#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }\n                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-	.globpassesref i2c_shared_master_write_reg16, r_i2c,"In file included from ../src/extensions/audiohw.xc:35:\n../src/extensions/dspfw_IC_1.h:450:2: error: call to `i2c_shared_master_write_reg16\' in `default_download_IC_1\' makes alias of global \'r_i2c\'\n        SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_1, REG_SOFT_RESET_IC_1_ADDR, REG_SOFT_RESET_IC_1_BYTE, R1_SOFT_RESET_IC_1_Default );\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n../src/extensions/SigmaStudioFW.h:44:76: note: expanded from macro \'SIGMA_WRITE_REGISTER_BLOCK\'\n#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }\n                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-	.globpassesref i2c_shared_master_write_reg16, R0_SOFT_RESET_IC_1_Default,"In file included from ../src/extensions/audiohw.xc:35:\n../src/extensions/dspfw_IC_1.h:449:2: error: call to `i2c_shared_master_write_reg16\' in `default_download_IC_1\' makes alias of global \'R0_SOFT_RESET_IC_1_Default\'\n        SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_1, REG_SOFT_RESET_IC_1_ADDR, REG_SOFT_RESET_IC_1_BYTE, R0_SOFT_RESET_IC_1_Default );\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n../src/extensions/SigmaStudioFW.h:44:76: note: expanded from macro \'SIGMA_WRITE_REGISTER_BLOCK\'\n#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }\n                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-	.globpassesref i2c_shared_master_write_reg16, r_i2c,"In file included from ../src/extensions/audiohw.xc:35:\n../src/extensions/dspfw_IC_1.h:449:2: error: call to `i2c_shared_master_write_reg16\' in `default_download_IC_1\' makes alias of global \'r_i2c\'\n        SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_1, REG_SOFT_RESET_IC_1_ADDR, REG_SOFT_RESET_IC_1_BYTE, R0_SOFT_RESET_IC_1_Default );\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n../src/extensions/SigmaStudioFW.h:44:76: note: expanded from macro \'SIGMA_WRITE_REGISTER_BLOCK\'\n#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }\n                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+	.set AudioHwConfig.locnoglobalaccess, 0
+	.globpassesref i2c_shared_master_write, r_i2c,"../src/extensions/audiohw.xc:289:5: error: call to `i2c_shared_master_write\' in `AudioHwConfig\' makes alias of global \'r_i2c\'\n    i2c_shared_master_write( r_i2c, I2C_ADDR_EXPANSION2>>1, data, 1 );\n    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+	.globpassesref i2c_shared_master_write, r_i2c,"../src/extensions/audiohw.xc:283:5: error: call to `i2c_shared_master_write\' in `AudioHwConfig\' makes alias of global \'r_i2c\'\n    i2c_shared_master_write( r_i2c, I2C_ADDR_EXPANSION2>>1, data, 1 );\n    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+	.globpassesref i2c_shared_master_write, r_i2c,"../src/extensions/audiohw.xc:278:5: error: call to `i2c_shared_master_write\' in `AudioHwConfig\' makes alias of global \'r_i2c\'\n    i2c_shared_master_write( r_i2c, I2C_ADDR_EXPANSION2>>1, data, 1 );\n    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+	.globpassesref i2c_shared_master_write, r_i2c,"../src/extensions/audiohw.xc:272:5: error: call to `i2c_shared_master_write\' in `AudioHwConfig\' makes alias of global \'r_i2c\'\n    i2c_shared_master_write( r_i2c, I2C_ADDR_EXPANSION2>>1, data, 1 );\n    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+	.globpassesref i2c_shared_master_write, r_i2c,"../src/extensions/audiohw.xc:261:5: error: call to `i2c_shared_master_write\' in `AudioHwConfig\' makes alias of global \'r_i2c\'\n    i2c_shared_master_write( r_i2c, I2C_ADDR_EXPANSION1>>1, data, 1 );\n    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+	.globpassesref i2c_shared_master_write, r_i2c,"../src/extensions/audiohw.xc:255:5: error: call to `i2c_shared_master_write\' in `AudioHwConfig\' makes alias of global \'r_i2c\'\n    i2c_shared_master_write( r_i2c, I2C_ADDR_EXPANSION1>>1, data, 1 );\n    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+	.globpassesref i2c_shared_master_write, r_i2c,"../src/extensions/audiohw.xc:250:5: error: call to `i2c_shared_master_write\' in `AudioHwConfig\' makes alias of global \'r_i2c\'\n    i2c_shared_master_write( r_i2c, I2C_ADDR_EXPANSION1>>1, data, 1 );\n    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+	.globpassesref i2c_shared_master_write, r_i2c,"../src/extensions/audiohw.xc:244:5: error: call to `i2c_shared_master_write\' in `AudioHwConfig\' makes alias of global \'r_i2c\'\n    i2c_shared_master_write( r_i2c, I2C_ADDR_EXPANSION1>>1, data, 1 );\n    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+	.globpassesref i2c_shared_master_write, r_i2c,"../src/extensions/audiohw.xc:233:5: error: call to `i2c_shared_master_write\' in `AudioHwConfig\' makes alias of global \'r_i2c\'\n    i2c_shared_master_write( r_i2c, I2C_ADDR_EXPANSION1>>1, data, 1 );\n    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+	.globpassesref i2c_shared_master_write, r_i2c,"../src/extensions/audiohw.xc:232:5: error: call to `i2c_shared_master_write\' in `AudioHwConfig\' makes alias of global \'r_i2c\'\n    i2c_shared_master_write( r_i2c, I2C_ADDR_EXPANSION2>>1, data, 1 );\n    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+	.globpassesref i2c_shared_master_init, r_i2c,"../src/extensions/audiohw.xc:135:5: error: call to `i2c_shared_master_init\' in `AudioHwInit\' makes alias of global \'r_i2c\'\n    i2c_shared_master_init(r_i2c);\n    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+	.globpassesref i2c_shared_master_write_reg16, R41_HIBERNATE_IC_1_Default,"In file included from ../src/extensions/audiohw.xc:39:\n../src/extensions/dspfw_IC_1.h:493:2: error: call to `i2c_shared_master_write_reg16\' in `default_download_IC_1\' makes alias of global \'R41_HIBERNATE_IC_1_Default\'\n        SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_1, REG_HIBERNATE_IC_1_ADDR, REG_HIBERNATE_IC_1_BYTE, R41_HIBERNATE_IC_1_Default );\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n../src/extensions/SigmaStudioFW.h:44:76: note: expanded from macro \'SIGMA_WRITE_REGISTER_BLOCK\'\n#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }\n                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+	.globpassesref i2c_shared_master_write_reg16, r_i2c,"In file included from ../src/extensions/audiohw.xc:39:\n../src/extensions/dspfw_IC_1.h:493:2: error: call to `i2c_shared_master_write_reg16\' in `default_download_IC_1\' makes alias of global \'r_i2c\'\n        SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_1, REG_HIBERNATE_IC_1_ADDR, REG_HIBERNATE_IC_1_BYTE, R41_HIBERNATE_IC_1_Default );\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n../src/extensions/SigmaStudioFW.h:44:76: note: expanded from macro \'SIGMA_WRITE_REGISTER_BLOCK\'\n#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }\n                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+	.globpassesref i2c_shared_master_write_reg16, R39_START_CORE_IC_1_Default,"In file included from ../src/extensions/audiohw.xc:39:\n../src/extensions/dspfw_IC_1.h:490:2: error: call to `i2c_shared_master_write_reg16\' in `default_download_IC_1\' makes alias of global \'R39_START_CORE_IC_1_Default\'\n        SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_1, REG_START_CORE_IC_1_ADDR, REG_START_CORE_IC_1_BYTE, R39_START_CORE_IC_1_Default );\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n../src/extensions/SigmaStudioFW.h:44:76: note: expanded from macro \'SIGMA_WRITE_REGISTER_BLOCK\'\n#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }\n                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+	.globpassesref i2c_shared_master_write_reg16, r_i2c,"In file included from ../src/extensions/audiohw.xc:39:\n../src/extensions/dspfw_IC_1.h:490:2: error: call to `i2c_shared_master_write_reg16\' in `default_download_IC_1\' makes alias of global \'r_i2c\'\n        SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_1, REG_START_CORE_IC_1_ADDR, REG_START_CORE_IC_1_BYTE, R39_START_CORE_IC_1_Default );\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n../src/extensions/SigmaStudioFW.h:44:76: note: expanded from macro \'SIGMA_WRITE_REGISTER_BLOCK\'\n#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }\n                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+	.globpassesref i2c_shared_master_write_reg16, R38_START_CORE_IC_1_Default,"In file included from ../src/extensions/audiohw.xc:39:\n../src/extensions/dspfw_IC_1.h:489:2: error: call to `i2c_shared_master_write_reg16\' in `default_download_IC_1\' makes alias of global \'R38_START_CORE_IC_1_Default\'\n        SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_1, REG_START_CORE_IC_1_ADDR, REG_START_CORE_IC_1_BYTE, R38_START_CORE_IC_1_Default );\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n../src/extensions/SigmaStudioFW.h:44:76: note: expanded from macro \'SIGMA_WRITE_REGISTER_BLOCK\'\n#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }\n                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+	.globpassesref i2c_shared_master_write_reg16, r_i2c,"In file included from ../src/extensions/audiohw.xc:39:\n../src/extensions/dspfw_IC_1.h:489:2: error: call to `i2c_shared_master_write_reg16\' in `default_download_IC_1\' makes alias of global \'r_i2c\'\n        SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_1, REG_START_CORE_IC_1_ADDR, REG_START_CORE_IC_1_BYTE, R38_START_CORE_IC_1_Default );\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n../src/extensions/SigmaStudioFW.h:44:76: note: expanded from macro \'SIGMA_WRITE_REGISTER_BLOCK\'\n#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }\n                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+	.globpassesref i2c_shared_master_write_reg16, R37_START_PULSE_IC_1_Default,"In file included from ../src/extensions/audiohw.xc:39:\n../src/extensions/dspfw_IC_1.h:488:2: error: call to `i2c_shared_master_write_reg16\' in `default_download_IC_1\' makes alias of global \'R37_START_PULSE_IC_1_Default\'\n        SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_1, REG_START_PULSE_IC_1_ADDR, REG_START_PULSE_IC_1_BYTE, R37_START_PULSE_IC_1_Default );\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n../src/extensions/SigmaStudioFW.h:44:76: note: expanded from macro \'SIGMA_WRITE_REGISTER_BLOCK\'\n#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }\n                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+	.globpassesref i2c_shared_master_write_reg16, r_i2c,"In file included from ../src/extensions/audiohw.xc:39:\n../src/extensions/dspfw_IC_1.h:488:2: error: call to `i2c_shared_master_write_reg16\' in `default_download_IC_1\' makes alias of global \'r_i2c\'\n        SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_1, REG_START_PULSE_IC_1_ADDR, REG_START_PULSE_IC_1_BYTE, R37_START_PULSE_IC_1_Default );\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n../src/extensions/SigmaStudioFW.h:44:76: note: expanded from macro \'SIGMA_WRITE_REGISTER_BLOCK\'\n#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }\n                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+	.globpassesref i2c_shared_master_write_reg16, R36_START_ADDRESS_IC_1_Default,"In file included from ../src/extensions/audiohw.xc:39:\n../src/extensions/dspfw_IC_1.h:487:2: error: call to `i2c_shared_master_write_reg16\' in `default_download_IC_1\' makes alias of global \'R36_START_ADDRESS_IC_1_Default\'\n        SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_1, REG_START_ADDRESS_IC_1_ADDR, REG_START_ADDRESS_IC_1_BYTE, R36_START_ADDRESS_IC_1_Default );\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n../src/extensions/SigmaStudioFW.h:44:76: note: expanded from macro \'SIGMA_WRITE_REGISTER_BLOCK\'\n#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }\n                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+	.globpassesref i2c_shared_master_write_reg16, r_i2c,"In file included from ../src/extensions/audiohw.xc:39:\n../src/extensions/dspfw_IC_1.h:487:2: error: call to `i2c_shared_master_write_reg16\' in `default_download_IC_1\' makes alias of global \'r_i2c\'\n        SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_1, REG_START_ADDRESS_IC_1_ADDR, REG_START_ADDRESS_IC_1_BYTE, R36_START_ADDRESS_IC_1_Default );\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n../src/extensions/SigmaStudioFW.h:44:76: note: expanded from macro \'SIGMA_WRITE_REGISTER_BLOCK\'\n#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }\n                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+	.globpassesref i2c_shared_master_write_reg16, R35_KILL_CORE_IC_1_Default,"In file included from ../src/extensions/audiohw.xc:39:\n../src/extensions/dspfw_IC_1.h:486:2: error: call to `i2c_shared_master_write_reg16\' in `default_download_IC_1\' makes alias of global \'R35_KILL_CORE_IC_1_Default\'\n        SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_1, REG_KILL_CORE_IC_1_ADDR, REG_KILL_CORE_IC_1_BYTE, R35_KILL_CORE_IC_1_Default );\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n../src/extensions/SigmaStudioFW.h:44:76: note: expanded from macro \'SIGMA_WRITE_REGISTER_BLOCK\'\n#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }\n                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+	.globpassesref i2c_shared_master_write_reg16, r_i2c,"In file included from ../src/extensions/audiohw.xc:39:\n../src/extensions/dspfw_IC_1.h:486:2: error: call to `i2c_shared_master_write_reg16\' in `default_download_IC_1\' makes alias of global \'r_i2c\'\n        SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_1, REG_KILL_CORE_IC_1_ADDR, REG_KILL_CORE_IC_1_BYTE, R35_KILL_CORE_IC_1_Default );\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n../src/extensions/SigmaStudioFW.h:44:76: note: expanded from macro \'SIGMA_WRITE_REGISTER_BLOCK\'\n#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }\n                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+	.globpassesref i2c_shared_master_write_reg16, DM1_DATA_Data_IC_1,"In file included from ../src/extensions/audiohw.xc:39:\n../src/extensions/dspfw_IC_1.h:485:2: error: call to `i2c_shared_master_write_reg16\' in `default_download_IC_1\' makes alias of global \'DM1_DATA_Data_IC_1\'\n        SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_1, DM1_DATA_ADDR_IC_1, DM1_DATA_SIZE_IC_1, DM1_DATA_Data_IC_1 );\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n../src/extensions/SigmaStudioFW.h:44:76: note: expanded from macro \'SIGMA_WRITE_REGISTER_BLOCK\'\n#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }\n                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+	.globpassesref i2c_shared_master_write_reg16, r_i2c,"In file included from ../src/extensions/audiohw.xc:39:\n../src/extensions/dspfw_IC_1.h:485:2: error: call to `i2c_shared_master_write_reg16\' in `default_download_IC_1\' makes alias of global \'r_i2c\'\n        SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_1, DM1_DATA_ADDR_IC_1, DM1_DATA_SIZE_IC_1, DM1_DATA_Data_IC_1 );\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n../src/extensions/SigmaStudioFW.h:44:76: note: expanded from macro \'SIGMA_WRITE_REGISTER_BLOCK\'\n#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }\n                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+	.globpassesref i2c_shared_master_write_reg16, Param_Data_IC_1,"In file included from ../src/extensions/audiohw.xc:39:\n../src/extensions/dspfw_IC_1.h:484:2: error: call to `i2c_shared_master_write_reg16\' in `default_download_IC_1\' makes alias of global \'Param_Data_IC_1\'\n        SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_1, PARAM_ADDR_IC_1, PARAM_SIZE_IC_1, Param_Data_IC_1 );\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n../src/extensions/SigmaStudioFW.h:44:76: note: expanded from macro \'SIGMA_WRITE_REGISTER_BLOCK\'\n#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }\n                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+	.globpassesref i2c_shared_master_write_reg16, r_i2c,"In file included from ../src/extensions/audiohw.xc:39:\n../src/extensions/dspfw_IC_1.h:484:2: error: call to `i2c_shared_master_write_reg16\' in `default_download_IC_1\' makes alias of global \'r_i2c\'\n        SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_1, PARAM_ADDR_IC_1, PARAM_SIZE_IC_1, Param_Data_IC_1 );\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n../src/extensions/SigmaStudioFW.h:44:76: note: expanded from macro \'SIGMA_WRITE_REGISTER_BLOCK\'\n#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }\n                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+	.globpassesref i2c_shared_master_write_reg16, Program_Data_IC_1,"In file included from ../src/extensions/audiohw.xc:39:\n../src/extensions/dspfw_IC_1.h:483:2: error: call to `i2c_shared_master_write_reg16\' in `default_download_IC_1\' makes alias of global \'Program_Data_IC_1\'\n        SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_1, PROGRAM_ADDR_IC_1, PROGRAM_SIZE_IC_1, Program_Data_IC_1 );\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n../src/extensions/SigmaStudioFW.h:44:76: note: expanded from macro \'SIGMA_WRITE_REGISTER_BLOCK\'\n#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }\n                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+	.globpassesref i2c_shared_master_write_reg16, r_i2c,"In file included from ../src/extensions/audiohw.xc:39:\n../src/extensions/dspfw_IC_1.h:483:2: error: call to `i2c_shared_master_write_reg16\' in `default_download_IC_1\' makes alias of global \'r_i2c\'\n        SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_1, PROGRAM_ADDR_IC_1, PROGRAM_SIZE_IC_1, Program_Data_IC_1 );\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n../src/extensions/SigmaStudioFW.h:44:76: note: expanded from macro \'SIGMA_WRITE_REGISTER_BLOCK\'\n#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }\n                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+	.globpassesref i2c_shared_master_write_reg16, R31_SERIAL_BYTE_4_0_IC_1_Default,"In file included from ../src/extensions/audiohw.xc:39:\n../src/extensions/dspfw_IC_1.h:482:2: error: call to `i2c_shared_master_write_reg16\' in `default_download_IC_1\' makes alias of global \'R31_SERIAL_BYTE_4_0_IC_1_Default\'\n        SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_1, REG_SERIAL_BYTE_4_0_IC_1_ADDR, REG_SERIAL_BYTE_4_0_IC_1_BYTE, R31_SERIAL_BYTE_4_0_IC_1_Default );\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n../src/extensions/SigmaStudioFW.h:44:76: note: expanded from macro \'SIGMA_WRITE_REGISTER_BLOCK\'\n#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }\n                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+	.globpassesref i2c_shared_master_write_reg16, r_i2c,"In file included from ../src/extensions/audiohw.xc:39:\n../src/extensions/dspfw_IC_1.h:482:2: error: call to `i2c_shared_master_write_reg16\' in `default_download_IC_1\' makes alias of global \'r_i2c\'\n        SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_1, REG_SERIAL_BYTE_4_0_IC_1_ADDR, REG_SERIAL_BYTE_4_0_IC_1_BYTE, R31_SERIAL_BYTE_4_0_IC_1_Default );\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n../src/extensions/SigmaStudioFW.h:44:76: note: expanded from macro \'SIGMA_WRITE_REGISTER_BLOCK\'\n#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }\n                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+	.globpassesref i2c_shared_master_write_reg16, R30_SOUT_SOURCE7_IC_1_Default,"In file included from ../src/extensions/audiohw.xc:39:\n../src/extensions/dspfw_IC_1.h:481:2: error: call to `i2c_shared_master_write_reg16\' in `default_download_IC_1\' makes alias of global \'R30_SOUT_SOURCE7_IC_1_Default\'\n        SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_1, REG_SOUT_SOURCE7_IC_1_ADDR, REG_SOUT_SOURCE7_IC_1_BYTE, R30_SOUT_SOURCE7_IC_1_Default );\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n../src/extensions/SigmaStudioFW.h:44:76: note: expanded from macro \'SIGMA_WRITE_REGISTER_BLOCK\'\n#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }\n                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+	.globpassesref i2c_shared_master_write_reg16, r_i2c,"In file included from ../src/extensions/audiohw.xc:39:\n../src/extensions/dspfw_IC_1.h:481:2: error: call to `i2c_shared_master_write_reg16\' in `default_download_IC_1\' makes alias of global \'r_i2c\'\n        SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_1, REG_SOUT_SOURCE7_IC_1_ADDR, REG_SOUT_SOURCE7_IC_1_BYTE, R30_SOUT_SOURCE7_IC_1_Default );\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n../src/extensions/SigmaStudioFW.h:44:76: note: expanded from macro \'SIGMA_WRITE_REGISTER_BLOCK\'\n#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }\n                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+	.globpassesref i2c_shared_master_write_reg16, R29_SOUT_SOURCE6_IC_1_Default,"In file included from ../src/extensions/audiohw.xc:39:\n../src/extensions/dspfw_IC_1.h:480:2: error: call to `i2c_shared_master_write_reg16\' in `default_download_IC_1\' makes alias of global \'R29_SOUT_SOURCE6_IC_1_Default\'\n        SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_1, REG_SOUT_SOURCE6_IC_1_ADDR, REG_SOUT_SOURCE6_IC_1_BYTE, R29_SOUT_SOURCE6_IC_1_Default );\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n../src/extensions/SigmaStudioFW.h:44:76: note: expanded from macro \'SIGMA_WRITE_REGISTER_BLOCK\'\n#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }\n                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+	.globpassesref i2c_shared_master_write_reg16, r_i2c,"In file included from ../src/extensions/audiohw.xc:39:\n../src/extensions/dspfw_IC_1.h:480:2: error: call to `i2c_shared_master_write_reg16\' in `default_download_IC_1\' makes alias of global \'r_i2c\'\n        SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_1, REG_SOUT_SOURCE6_IC_1_ADDR, REG_SOUT_SOURCE6_IC_1_BYTE, R29_SOUT_SOURCE6_IC_1_Default );\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n../src/extensions/SigmaStudioFW.h:44:76: note: expanded from macro \'SIGMA_WRITE_REGISTER_BLOCK\'\n#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }\n                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+	.globpassesref i2c_shared_master_write_reg16, R28_SOUT_SOURCE5_IC_1_Default,"In file included from ../src/extensions/audiohw.xc:39:\n../src/extensions/dspfw_IC_1.h:479:2: error: call to `i2c_shared_master_write_reg16\' in `default_download_IC_1\' makes alias of global \'R28_SOUT_SOURCE5_IC_1_Default\'\n        SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_1, REG_SOUT_SOURCE5_IC_1_ADDR, REG_SOUT_SOURCE5_IC_1_BYTE, R28_SOUT_SOURCE5_IC_1_Default );\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n../src/extensions/SigmaStudioFW.h:44:76: note: expanded from macro \'SIGMA_WRITE_REGISTER_BLOCK\'\n#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }\n                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+	.globpassesref i2c_shared_master_write_reg16, r_i2c,"In file included from ../src/extensions/audiohw.xc:39:\n../src/extensions/dspfw_IC_1.h:479:2: error: call to `i2c_shared_master_write_reg16\' in `default_download_IC_1\' makes alias of global \'r_i2c\'\n        SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_1, REG_SOUT_SOURCE5_IC_1_ADDR, REG_SOUT_SOURCE5_IC_1_BYTE, R28_SOUT_SOURCE5_IC_1_Default );\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n../src/extensions/SigmaStudioFW.h:44:76: note: expanded from macro \'SIGMA_WRITE_REGISTER_BLOCK\'\n#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }\n                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+	.globpassesref i2c_shared_master_write_reg16, R27_SOUT_SOURCE4_IC_1_Default,"In file included from ../src/extensions/audiohw.xc:39:\n../src/extensions/dspfw_IC_1.h:478:2: error: call to `i2c_shared_master_write_reg16\' in `default_download_IC_1\' makes alias of global \'R27_SOUT_SOURCE4_IC_1_Default\'\n        SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_1, REG_SOUT_SOURCE4_IC_1_ADDR, REG_SOUT_SOURCE4_IC_1_BYTE, R27_SOUT_SOURCE4_IC_1_Default );\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n../src/extensions/SigmaStudioFW.h:44:76: note: expanded from macro \'SIGMA_WRITE_REGISTER_BLOCK\'\n#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }\n                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+	.globpassesref i2c_shared_master_write_reg16, r_i2c,"In file included from ../src/extensions/audiohw.xc:39:\n../src/extensions/dspfw_IC_1.h:478:2: error: call to `i2c_shared_master_write_reg16\' in `default_download_IC_1\' makes alias of global \'r_i2c\'\n        SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_1, REG_SOUT_SOURCE4_IC_1_ADDR, REG_SOUT_SOURCE4_IC_1_BYTE, R27_SOUT_SOURCE4_IC_1_Default );\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n../src/extensions/SigmaStudioFW.h:44:76: note: expanded from macro \'SIGMA_WRITE_REGISTER_BLOCK\'\n#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }\n                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+	.globpassesref i2c_shared_master_write_reg16, R26_SOUT_SOURCE3_IC_1_Default,"In file included from ../src/extensions/audiohw.xc:39:\n../src/extensions/dspfw_IC_1.h:477:2: error: call to `i2c_shared_master_write_reg16\' in `default_download_IC_1\' makes alias of global \'R26_SOUT_SOURCE3_IC_1_Default\'\n        SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_1, REG_SOUT_SOURCE3_IC_1_ADDR, REG_SOUT_SOURCE3_IC_1_BYTE, R26_SOUT_SOURCE3_IC_1_Default );\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n../src/extensions/SigmaStudioFW.h:44:76: note: expanded from macro \'SIGMA_WRITE_REGISTER_BLOCK\'\n#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }\n                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+	.globpassesref i2c_shared_master_write_reg16, r_i2c,"In file included from ../src/extensions/audiohw.xc:39:\n../src/extensions/dspfw_IC_1.h:477:2: error: call to `i2c_shared_master_write_reg16\' in `default_download_IC_1\' makes alias of global \'r_i2c\'\n        SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_1, REG_SOUT_SOURCE3_IC_1_ADDR, REG_SOUT_SOURCE3_IC_1_BYTE, R26_SOUT_SOURCE3_IC_1_Default );\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n../src/extensions/SigmaStudioFW.h:44:76: note: expanded from macro \'SIGMA_WRITE_REGISTER_BLOCK\'\n#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }\n                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+	.globpassesref i2c_shared_master_write_reg16, R25_SOUT_SOURCE2_IC_1_Default,"In file included from ../src/extensions/audiohw.xc:39:\n../src/extensions/dspfw_IC_1.h:476:2: error: call to `i2c_shared_master_write_reg16\' in `default_download_IC_1\' makes alias of global \'R25_SOUT_SOURCE2_IC_1_Default\'\n        SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_1, REG_SOUT_SOURCE2_IC_1_ADDR, REG_SOUT_SOURCE2_IC_1_BYTE, R25_SOUT_SOURCE2_IC_1_Default );\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n../src/extensions/SigmaStudioFW.h:44:76: note: expanded from macro \'SIGMA_WRITE_REGISTER_BLOCK\'\n#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }\n                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+	.globpassesref i2c_shared_master_write_reg16, r_i2c,"In file included from ../src/extensions/audiohw.xc:39:\n../src/extensions/dspfw_IC_1.h:476:2: error: call to `i2c_shared_master_write_reg16\' in `default_download_IC_1\' makes alias of global \'r_i2c\'\n        SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_1, REG_SOUT_SOURCE2_IC_1_ADDR, REG_SOUT_SOURCE2_IC_1_BYTE, R25_SOUT_SOURCE2_IC_1_Default );\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n../src/extensions/SigmaStudioFW.h:44:76: note: expanded from macro \'SIGMA_WRITE_REGISTER_BLOCK\'\n#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }\n                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+	.globpassesref i2c_shared_master_write_reg16, R24_SOUT_SOURCE1_IC_1_Default,"In file included from ../src/extensions/audiohw.xc:39:\n../src/extensions/dspfw_IC_1.h:475:2: error: call to `i2c_shared_master_write_reg16\' in `default_download_IC_1\' makes alias of global \'R24_SOUT_SOURCE1_IC_1_Default\'\n        SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_1, REG_SOUT_SOURCE1_IC_1_ADDR, REG_SOUT_SOURCE1_IC_1_BYTE, R24_SOUT_SOURCE1_IC_1_Default );\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n../src/extensions/SigmaStudioFW.h:44:76: note: expanded from macro \'SIGMA_WRITE_REGISTER_BLOCK\'\n#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }\n                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+	.globpassesref i2c_shared_master_write_reg16, r_i2c,"In file included from ../src/extensions/audiohw.xc:39:\n../src/extensions/dspfw_IC_1.h:475:2: error: call to `i2c_shared_master_write_reg16\' in `default_download_IC_1\' makes alias of global \'r_i2c\'\n        SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_1, REG_SOUT_SOURCE1_IC_1_ADDR, REG_SOUT_SOURCE1_IC_1_BYTE, R24_SOUT_SOURCE1_IC_1_Default );\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n../src/extensions/SigmaStudioFW.h:44:76: note: expanded from macro \'SIGMA_WRITE_REGISTER_BLOCK\'\n#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }\n                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+	.globpassesref i2c_shared_master_write_reg16, R23_SOUT_SOURCE0_IC_1_Default,"In file included from ../src/extensions/audiohw.xc:39:\n../src/extensions/dspfw_IC_1.h:474:2: error: call to `i2c_shared_master_write_reg16\' in `default_download_IC_1\' makes alias of global \'R23_SOUT_SOURCE0_IC_1_Default\'\n        SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_1, REG_SOUT_SOURCE0_IC_1_ADDR, REG_SOUT_SOURCE0_IC_1_BYTE, R23_SOUT_SOURCE0_IC_1_Default );\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n../src/extensions/SigmaStudioFW.h:44:76: note: expanded from macro \'SIGMA_WRITE_REGISTER_BLOCK\'\n#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }\n                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+	.globpassesref i2c_shared_master_write_reg16, r_i2c,"In file included from ../src/extensions/audiohw.xc:39:\n../src/extensions/dspfw_IC_1.h:474:2: error: call to `i2c_shared_master_write_reg16\' in `default_download_IC_1\' makes alias of global \'r_i2c\'\n        SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_1, REG_SOUT_SOURCE0_IC_1_ADDR, REG_SOUT_SOURCE0_IC_1_BYTE, R23_SOUT_SOURCE0_IC_1_Default );\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n../src/extensions/SigmaStudioFW.h:44:76: note: expanded from macro \'SIGMA_WRITE_REGISTER_BLOCK\'\n#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }\n                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+	.globpassesref i2c_shared_master_write_reg16, R22_MOSI_M_PIN_IC_1_Default,"In file included from ../src/extensions/audiohw.xc:39:\n../src/extensions/dspfw_IC_1.h:473:2: error: call to `i2c_shared_master_write_reg16\' in `default_download_IC_1\' makes alias of global \'R22_MOSI_M_PIN_IC_1_Default\'\n        SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_1, REG_MOSI_M_PIN_IC_1_ADDR, REG_MOSI_M_PIN_IC_1_BYTE, R22_MOSI_M_PIN_IC_1_Default );\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n../src/extensions/SigmaStudioFW.h:44:76: note: expanded from macro \'SIGMA_WRITE_REGISTER_BLOCK\'\n#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }\n                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+	.globpassesref i2c_shared_master_write_reg16, r_i2c,"In file included from ../src/extensions/audiohw.xc:39:\n../src/extensions/dspfw_IC_1.h:473:2: error: call to `i2c_shared_master_write_reg16\' in `default_download_IC_1\' makes alias of global \'r_i2c\'\n        SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_1, REG_MOSI_M_PIN_IC_1_ADDR, REG_MOSI_M_PIN_IC_1_BYTE, R22_MOSI_M_PIN_IC_1_Default );\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n../src/extensions/SigmaStudioFW.h:44:76: note: expanded from macro \'SIGMA_WRITE_REGISTER_BLOCK\'\n#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }\n                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+	.globpassesref i2c_shared_master_write_reg16, R21_SS_M_PIN_IC_1_Default,"In file included from ../src/extensions/audiohw.xc:39:\n../src/extensions/dspfw_IC_1.h:472:2: error: call to `i2c_shared_master_write_reg16\' in `default_download_IC_1\' makes alias of global \'R21_SS_M_PIN_IC_1_Default\'\n        SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_1, REG_SS_M_PIN_IC_1_ADDR, REG_SS_M_PIN_IC_1_BYTE, R21_SS_M_PIN_IC_1_Default );\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n../src/extensions/SigmaStudioFW.h:44:76: note: expanded from macro \'SIGMA_WRITE_REGISTER_BLOCK\'\n#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }\n                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+	.globpassesref i2c_shared_master_write_reg16, r_i2c,"In file included from ../src/extensions/audiohw.xc:39:\n../src/extensions/dspfw_IC_1.h:472:2: error: call to `i2c_shared_master_write_reg16\' in `default_download_IC_1\' makes alias of global \'r_i2c\'\n        SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_1, REG_SS_M_PIN_IC_1_ADDR, REG_SS_M_PIN_IC_1_BYTE, R21_SS_M_PIN_IC_1_Default );\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n../src/extensions/SigmaStudioFW.h:44:76: note: expanded from macro \'SIGMA_WRITE_REGISTER_BLOCK\'\n#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }\n                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+	.globpassesref i2c_shared_master_write_reg16, R20_MISO_SDA_M_PIN_IC_1_Default,"In file included from ../src/extensions/audiohw.xc:39:\n../src/extensions/dspfw_IC_1.h:471:2: error: call to `i2c_shared_master_write_reg16\' in `default_download_IC_1\' makes alias of global \'R20_MISO_SDA_M_PIN_IC_1_Default\'\n        SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_1, REG_MISO_SDA_M_PIN_IC_1_ADDR, REG_MISO_SDA_M_PIN_IC_1_BYTE, R20_MISO_SDA_M_PIN_IC_1_Default );\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n../src/extensions/SigmaStudioFW.h:44:76: note: expanded from macro \'SIGMA_WRITE_REGISTER_BLOCK\'\n#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }\n                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+	.globpassesref i2c_shared_master_write_reg16, r_i2c,"In file included from ../src/extensions/audiohw.xc:39:\n../src/extensions/dspfw_IC_1.h:471:2: error: call to `i2c_shared_master_write_reg16\' in `default_download_IC_1\' makes alias of global \'r_i2c\'\n        SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_1, REG_MISO_SDA_M_PIN_IC_1_ADDR, REG_MISO_SDA_M_PIN_IC_1_BYTE, R20_MISO_SDA_M_PIN_IC_1_Default );\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n../src/extensions/SigmaStudioFW.h:44:76: note: expanded from macro \'SIGMA_WRITE_REGISTER_BLOCK\'\n#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }\n                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+	.globpassesref i2c_shared_master_write_reg16, R19_SCLK_SCL_M_PIN_IC_1_Default,"In file included from ../src/extensions/audiohw.xc:39:\n../src/extensions/dspfw_IC_1.h:470:2: error: call to `i2c_shared_master_write_reg16\' in `default_download_IC_1\' makes alias of global \'R19_SCLK_SCL_M_PIN_IC_1_Default\'\n        SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_1, REG_SCLK_SCL_M_PIN_IC_1_ADDR, REG_SCLK_SCL_M_PIN_IC_1_BYTE, R19_SCLK_SCL_M_PIN_IC_1_Default );\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n../src/extensions/SigmaStudioFW.h:44:76: note: expanded from macro \'SIGMA_WRITE_REGISTER_BLOCK\'\n#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }\n                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+	.globpassesref i2c_shared_master_write_reg16, r_i2c,"In file included from ../src/extensions/audiohw.xc:39:\n../src/extensions/dspfw_IC_1.h:470:2: error: call to `i2c_shared_master_write_reg16\' in `default_download_IC_1\' makes alias of global \'r_i2c\'\n        SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_1, REG_SCLK_SCL_M_PIN_IC_1_ADDR, REG_SCLK_SCL_M_PIN_IC_1_BYTE, R19_SCLK_SCL_M_PIN_IC_1_Default );\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n../src/extensions/SigmaStudioFW.h:44:76: note: expanded from macro \'SIGMA_WRITE_REGISTER_BLOCK\'\n#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }\n                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+	.globpassesref i2c_shared_master_write_reg16, R18_MP0_MODE_IC_1_Default,"In file included from ../src/extensions/audiohw.xc:39:\n../src/extensions/dspfw_IC_1.h:469:2: error: call to `i2c_shared_master_write_reg16\' in `default_download_IC_1\' makes alias of global \'R18_MP0_MODE_IC_1_Default\'\n        SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_1, REG_MP0_MODE_IC_1_ADDR, REG_MP0_MODE_IC_1_BYTE, R18_MP0_MODE_IC_1_Default );\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n../src/extensions/SigmaStudioFW.h:44:76: note: expanded from macro \'SIGMA_WRITE_REGISTER_BLOCK\'\n#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }\n                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+	.globpassesref i2c_shared_master_write_reg16, r_i2c,"In file included from ../src/extensions/audiohw.xc:39:\n../src/extensions/dspfw_IC_1.h:469:2: error: call to `i2c_shared_master_write_reg16\' in `default_download_IC_1\' makes alias of global \'r_i2c\'\n        SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_1, REG_MP0_MODE_IC_1_ADDR, REG_MP0_MODE_IC_1_BYTE, R18_MP0_MODE_IC_1_Default );\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n../src/extensions/SigmaStudioFW.h:44:76: note: expanded from macro \'SIGMA_WRITE_REGISTER_BLOCK\'\n#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }\n                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+	.globpassesref i2c_shared_master_write_reg16, R17_PANIC_PARITY_MASK_IC_1_Default,"In file included from ../src/extensions/audiohw.xc:39:\n../src/extensions/dspfw_IC_1.h:468:2: error: call to `i2c_shared_master_write_reg16\' in `default_download_IC_1\' makes alias of global \'R17_PANIC_PARITY_MASK_IC_1_Default\'\n        SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_1, REG_PANIC_PARITY_MASK_IC_1_ADDR, REG_PANIC_PARITY_MASK_IC_1_BYTE, R17_PANIC_PARITY_MASK_IC_1_Default );\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n../src/extensions/SigmaStudioFW.h:44:76: note: expanded from macro \'SIGMA_WRITE_REGISTER_BLOCK\'\n#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }\n                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+	.globpassesref i2c_shared_master_write_reg16, r_i2c,"In file included from ../src/extensions/audiohw.xc:39:\n../src/extensions/dspfw_IC_1.h:468:2: error: call to `i2c_shared_master_write_reg16\' in `default_download_IC_1\' makes alias of global \'r_i2c\'\n        SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_1, REG_PANIC_PARITY_MASK_IC_1_ADDR, REG_PANIC_PARITY_MASK_IC_1_BYTE, R17_PANIC_PARITY_MASK_IC_1_Default );\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n../src/extensions/SigmaStudioFW.h:44:76: note: expanded from macro \'SIGMA_WRITE_REGISTER_BLOCK\'\n#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }\n                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+	.globpassesref i2c_shared_master_write_reg16, R16_POWER_ENABLE1_IC_1_Default,"In file included from ../src/extensions/audiohw.xc:39:\n../src/extensions/dspfw_IC_1.h:467:2: error: call to `i2c_shared_master_write_reg16\' in `default_download_IC_1\' makes alias of global \'R16_POWER_ENABLE1_IC_1_Default\'\n        SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_1, REG_POWER_ENABLE1_IC_1_ADDR, REG_POWER_ENABLE1_IC_1_BYTE, R16_POWER_ENABLE1_IC_1_Default );\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n../src/extensions/SigmaStudioFW.h:44:76: note: expanded from macro \'SIGMA_WRITE_REGISTER_BLOCK\'\n#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }\n                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+	.globpassesref i2c_shared_master_write_reg16, r_i2c,"In file included from ../src/extensions/audiohw.xc:39:\n../src/extensions/dspfw_IC_1.h:467:2: error: call to `i2c_shared_master_write_reg16\' in `default_download_IC_1\' makes alias of global \'r_i2c\'\n        SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_1, REG_POWER_ENABLE1_IC_1_ADDR, REG_POWER_ENABLE1_IC_1_BYTE, R16_POWER_ENABLE1_IC_1_Default );\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n../src/extensions/SigmaStudioFW.h:44:76: note: expanded from macro \'SIGMA_WRITE_REGISTER_BLOCK\'\n#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }\n                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+	.globpassesref i2c_shared_master_write_reg16, R15_POWER_ENABLE0_IC_1_Default,"In file included from ../src/extensions/audiohw.xc:39:\n../src/extensions/dspfw_IC_1.h:466:2: error: call to `i2c_shared_master_write_reg16\' in `default_download_IC_1\' makes alias of global \'R15_POWER_ENABLE0_IC_1_Default\'\n        SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_1, REG_POWER_ENABLE0_IC_1_ADDR, REG_POWER_ENABLE0_IC_1_BYTE, R15_POWER_ENABLE0_IC_1_Default );\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n../src/extensions/SigmaStudioFW.h:44:76: note: expanded from macro \'SIGMA_WRITE_REGISTER_BLOCK\'\n#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }\n                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+	.globpassesref i2c_shared_master_write_reg16, r_i2c,"In file included from ../src/extensions/audiohw.xc:39:\n../src/extensions/dspfw_IC_1.h:466:2: error: call to `i2c_shared_master_write_reg16\' in `default_download_IC_1\' makes alias of global \'r_i2c\'\n        SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_1, REG_POWER_ENABLE0_IC_1_ADDR, REG_POWER_ENABLE0_IC_1_BYTE, R15_POWER_ENABLE0_IC_1_Default );\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n../src/extensions/SigmaStudioFW.h:44:76: note: expanded from macro \'SIGMA_WRITE_REGISTER_BLOCK\'\n#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }\n                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+	.globpassesref i2c_shared_master_write_reg16, R13_PLL_ENABLE_IC_1_Default,"In file included from ../src/extensions/audiohw.xc:39:\n../src/extensions/dspfw_IC_1.h:464:2: error: call to `i2c_shared_master_write_reg16\' in `default_download_IC_1\' makes alias of global \'R13_PLL_ENABLE_IC_1_Default\'\n        SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_1, REG_PLL_ENABLE_IC_1_ADDR, REG_PLL_ENABLE_IC_1_BYTE, R13_PLL_ENABLE_IC_1_Default );\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n../src/extensions/SigmaStudioFW.h:44:76: note: expanded from macro \'SIGMA_WRITE_REGISTER_BLOCK\'\n#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }\n                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+	.globpassesref i2c_shared_master_write_reg16, r_i2c,"In file included from ../src/extensions/audiohw.xc:39:\n../src/extensions/dspfw_IC_1.h:464:2: error: call to `i2c_shared_master_write_reg16\' in `default_download_IC_1\' makes alias of global \'r_i2c\'\n        SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_1, REG_PLL_ENABLE_IC_1_ADDR, REG_PLL_ENABLE_IC_1_BYTE, R13_PLL_ENABLE_IC_1_Default );\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n../src/extensions/SigmaStudioFW.h:44:76: note: expanded from macro \'SIGMA_WRITE_REGISTER_BLOCK\'\n#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }\n                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+	.globpassesref i2c_shared_master_write_reg16, R12_MCLK_OUT_IC_1_Default,"In file included from ../src/extensions/audiohw.xc:39:\n../src/extensions/dspfw_IC_1.h:463:2: error: call to `i2c_shared_master_write_reg16\' in `default_download_IC_1\' makes alias of global \'R12_MCLK_OUT_IC_1_Default\'\n        SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_1, REG_MCLK_OUT_IC_1_ADDR, REG_MCLK_OUT_IC_1_BYTE, R12_MCLK_OUT_IC_1_Default );\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n../src/extensions/SigmaStudioFW.h:44:76: note: expanded from macro \'SIGMA_WRITE_REGISTER_BLOCK\'\n#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }\n                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+	.globpassesref i2c_shared_master_write_reg16, r_i2c,"In file included from ../src/extensions/audiohw.xc:39:\n../src/extensions/dspfw_IC_1.h:463:2: error: call to `i2c_shared_master_write_reg16\' in `default_download_IC_1\' makes alias of global \'r_i2c\'\n        SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_1, REG_MCLK_OUT_IC_1_ADDR, REG_MCLK_OUT_IC_1_BYTE, R12_MCLK_OUT_IC_1_Default );\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n../src/extensions/SigmaStudioFW.h:44:76: note: expanded from macro \'SIGMA_WRITE_REGISTER_BLOCK\'\n#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }\n                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+	.globpassesref i2c_shared_master_write_reg16, R11_PLL_CLK_SRC_IC_1_Default,"In file included from ../src/extensions/audiohw.xc:39:\n../src/extensions/dspfw_IC_1.h:462:2: error: call to `i2c_shared_master_write_reg16\' in `default_download_IC_1\' makes alias of global \'R11_PLL_CLK_SRC_IC_1_Default\'\n        SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_1, REG_PLL_CLK_SRC_IC_1_ADDR, REG_PLL_CLK_SRC_IC_1_BYTE, R11_PLL_CLK_SRC_IC_1_Default );\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n../src/extensions/SigmaStudioFW.h:44:76: note: expanded from macro \'SIGMA_WRITE_REGISTER_BLOCK\'\n#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }\n                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+	.globpassesref i2c_shared_master_write_reg16, r_i2c,"In file included from ../src/extensions/audiohw.xc:39:\n../src/extensions/dspfw_IC_1.h:462:2: error: call to `i2c_shared_master_write_reg16\' in `default_download_IC_1\' makes alias of global \'r_i2c\'\n        SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_1, REG_PLL_CLK_SRC_IC_1_ADDR, REG_PLL_CLK_SRC_IC_1_BYTE, R11_PLL_CLK_SRC_IC_1_Default );\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n../src/extensions/SigmaStudioFW.h:44:76: note: expanded from macro \'SIGMA_WRITE_REGISTER_BLOCK\'\n#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }\n                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+	.globpassesref i2c_shared_master_write_reg16, R10_PLL_CTRL1_IC_1_Default,"In file included from ../src/extensions/audiohw.xc:39:\n../src/extensions/dspfw_IC_1.h:461:2: error: call to `i2c_shared_master_write_reg16\' in `default_download_IC_1\' makes alias of global \'R10_PLL_CTRL1_IC_1_Default\'\n        SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_1, REG_PLL_CTRL1_IC_1_ADDR, REG_PLL_CTRL1_IC_1_BYTE, R10_PLL_CTRL1_IC_1_Default );\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n../src/extensions/SigmaStudioFW.h:44:76: note: expanded from macro \'SIGMA_WRITE_REGISTER_BLOCK\'\n#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }\n                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+	.globpassesref i2c_shared_master_write_reg16, r_i2c,"In file included from ../src/extensions/audiohw.xc:39:\n../src/extensions/dspfw_IC_1.h:461:2: error: call to `i2c_shared_master_write_reg16\' in `default_download_IC_1\' makes alias of global \'r_i2c\'\n        SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_1, REG_PLL_CTRL1_IC_1_ADDR, REG_PLL_CTRL1_IC_1_BYTE, R10_PLL_CTRL1_IC_1_Default );\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n../src/extensions/SigmaStudioFW.h:44:76: note: expanded from macro \'SIGMA_WRITE_REGISTER_BLOCK\'\n#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }\n                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+	.globpassesref i2c_shared_master_write_reg16, R9_PLL_CTRL0_IC_1_Default,"In file included from ../src/extensions/audiohw.xc:39:\n../src/extensions/dspfw_IC_1.h:460:2: error: call to `i2c_shared_master_write_reg16\' in `default_download_IC_1\' makes alias of global \'R9_PLL_CTRL0_IC_1_Default\'\n        SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_1, REG_PLL_CTRL0_IC_1_ADDR, REG_PLL_CTRL0_IC_1_BYTE, R9_PLL_CTRL0_IC_1_Default );\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n../src/extensions/SigmaStudioFW.h:44:76: note: expanded from macro \'SIGMA_WRITE_REGISTER_BLOCK\'\n#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }\n                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+	.globpassesref i2c_shared_master_write_reg16, r_i2c,"In file included from ../src/extensions/audiohw.xc:39:\n../src/extensions/dspfw_IC_1.h:460:2: error: call to `i2c_shared_master_write_reg16\' in `default_download_IC_1\' makes alias of global \'r_i2c\'\n        SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_1, REG_PLL_CTRL0_IC_1_ADDR, REG_PLL_CTRL0_IC_1_BYTE, R9_PLL_CTRL0_IC_1_Default );\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n../src/extensions/SigmaStudioFW.h:44:76: note: expanded from macro \'SIGMA_WRITE_REGISTER_BLOCK\'\n#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }\n                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+	.globpassesref i2c_shared_master_write_reg16, R8_PLL_ENABLE_IC_1_Default,"In file included from ../src/extensions/audiohw.xc:39:\n../src/extensions/dspfw_IC_1.h:459:2: error: call to `i2c_shared_master_write_reg16\' in `default_download_IC_1\' makes alias of global \'R8_PLL_ENABLE_IC_1_Default\'\n        SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_1, REG_PLL_ENABLE_IC_1_ADDR, REG_PLL_ENABLE_IC_1_BYTE, R8_PLL_ENABLE_IC_1_Default );\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n../src/extensions/SigmaStudioFW.h:44:76: note: expanded from macro \'SIGMA_WRITE_REGISTER_BLOCK\'\n#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }\n                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+	.globpassesref i2c_shared_master_write_reg16, r_i2c,"In file included from ../src/extensions/audiohw.xc:39:\n../src/extensions/dspfw_IC_1.h:459:2: error: call to `i2c_shared_master_write_reg16\' in `default_download_IC_1\' makes alias of global \'r_i2c\'\n        SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_1, REG_PLL_ENABLE_IC_1_ADDR, REG_PLL_ENABLE_IC_1_BYTE, R8_PLL_ENABLE_IC_1_Default );\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n../src/extensions/SigmaStudioFW.h:44:76: note: expanded from macro \'SIGMA_WRITE_REGISTER_BLOCK\'\n#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }\n                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+	.globpassesref i2c_shared_master_write_reg16, R7_KILL_CORE_IC_1_Default,"In file included from ../src/extensions/audiohw.xc:39:\n../src/extensions/dspfw_IC_1.h:458:2: error: call to `i2c_shared_master_write_reg16\' in `default_download_IC_1\' makes alias of global \'R7_KILL_CORE_IC_1_Default\'\n        SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_1, REG_KILL_CORE_IC_1_ADDR, REG_KILL_CORE_IC_1_BYTE, R7_KILL_CORE_IC_1_Default );\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n../src/extensions/SigmaStudioFW.h:44:76: note: expanded from macro \'SIGMA_WRITE_REGISTER_BLOCK\'\n#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }\n                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+	.globpassesref i2c_shared_master_write_reg16, r_i2c,"In file included from ../src/extensions/audiohw.xc:39:\n../src/extensions/dspfw_IC_1.h:458:2: error: call to `i2c_shared_master_write_reg16\' in `default_download_IC_1\' makes alias of global \'r_i2c\'\n        SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_1, REG_KILL_CORE_IC_1_ADDR, REG_KILL_CORE_IC_1_BYTE, R7_KILL_CORE_IC_1_Default );\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n../src/extensions/SigmaStudioFW.h:44:76: note: expanded from macro \'SIGMA_WRITE_REGISTER_BLOCK\'\n#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }\n                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+	.globpassesref i2c_shared_master_write_reg16, R6_KILL_CORE_IC_1_Default,"In file included from ../src/extensions/audiohw.xc:39:\n../src/extensions/dspfw_IC_1.h:457:2: error: call to `i2c_shared_master_write_reg16\' in `default_download_IC_1\' makes alias of global \'R6_KILL_CORE_IC_1_Default\'\n        SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_1, REG_KILL_CORE_IC_1_ADDR, REG_KILL_CORE_IC_1_BYTE, R6_KILL_CORE_IC_1_Default );\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n../src/extensions/SigmaStudioFW.h:44:76: note: expanded from macro \'SIGMA_WRITE_REGISTER_BLOCK\'\n#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }\n                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+	.globpassesref i2c_shared_master_write_reg16, r_i2c,"In file included from ../src/extensions/audiohw.xc:39:\n../src/extensions/dspfw_IC_1.h:457:2: error: call to `i2c_shared_master_write_reg16\' in `default_download_IC_1\' makes alias of global \'r_i2c\'\n        SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_1, REG_KILL_CORE_IC_1_ADDR, REG_KILL_CORE_IC_1_BYTE, R6_KILL_CORE_IC_1_Default );\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n../src/extensions/SigmaStudioFW.h:44:76: note: expanded from macro \'SIGMA_WRITE_REGISTER_BLOCK\'\n#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }\n                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+	.globpassesref i2c_shared_master_write_reg16, R4_HIBERNATE_IC_1_Default,"In file included from ../src/extensions/audiohw.xc:39:\n../src/extensions/dspfw_IC_1.h:454:2: error: call to `i2c_shared_master_write_reg16\' in `default_download_IC_1\' makes alias of global \'R4_HIBERNATE_IC_1_Default\'\n        SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_1, REG_HIBERNATE_IC_1_ADDR, REG_HIBERNATE_IC_1_BYTE, R4_HIBERNATE_IC_1_Default );\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n../src/extensions/SigmaStudioFW.h:44:76: note: expanded from macro \'SIGMA_WRITE_REGISTER_BLOCK\'\n#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }\n                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+	.globpassesref i2c_shared_master_write_reg16, r_i2c,"In file included from ../src/extensions/audiohw.xc:39:\n../src/extensions/dspfw_IC_1.h:454:2: error: call to `i2c_shared_master_write_reg16\' in `default_download_IC_1\' makes alias of global \'r_i2c\'\n        SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_1, REG_HIBERNATE_IC_1_ADDR, REG_HIBERNATE_IC_1_BYTE, R4_HIBERNATE_IC_1_Default );\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n../src/extensions/SigmaStudioFW.h:44:76: note: expanded from macro \'SIGMA_WRITE_REGISTER_BLOCK\'\n#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }\n                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+	.globpassesref i2c_shared_master_write_reg16, R3_HIBERNATE_IC_1_Default,"In file included from ../src/extensions/audiohw.xc:39:\n../src/extensions/dspfw_IC_1.h:453:2: error: call to `i2c_shared_master_write_reg16\' in `default_download_IC_1\' makes alias of global \'R3_HIBERNATE_IC_1_Default\'\n        SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_1, REG_HIBERNATE_IC_1_ADDR, REG_HIBERNATE_IC_1_BYTE, R3_HIBERNATE_IC_1_Default );\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n../src/extensions/SigmaStudioFW.h:44:76: note: expanded from macro \'SIGMA_WRITE_REGISTER_BLOCK\'\n#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }\n                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+	.globpassesref i2c_shared_master_write_reg16, r_i2c,"In file included from ../src/extensions/audiohw.xc:39:\n../src/extensions/dspfw_IC_1.h:453:2: error: call to `i2c_shared_master_write_reg16\' in `default_download_IC_1\' makes alias of global \'r_i2c\'\n        SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_1, REG_HIBERNATE_IC_1_ADDR, REG_HIBERNATE_IC_1_BYTE, R3_HIBERNATE_IC_1_Default );\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n../src/extensions/SigmaStudioFW.h:44:76: note: expanded from macro \'SIGMA_WRITE_REGISTER_BLOCK\'\n#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }\n                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+	.globpassesref i2c_shared_master_write_reg16, R1_SOFT_RESET_IC_1_Default,"In file included from ../src/extensions/audiohw.xc:39:\n../src/extensions/dspfw_IC_1.h:450:2: error: call to `i2c_shared_master_write_reg16\' in `default_download_IC_1\' makes alias of global \'R1_SOFT_RESET_IC_1_Default\'\n        SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_1, REG_SOFT_RESET_IC_1_ADDR, REG_SOFT_RESET_IC_1_BYTE, R1_SOFT_RESET_IC_1_Default );\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n../src/extensions/SigmaStudioFW.h:44:76: note: expanded from macro \'SIGMA_WRITE_REGISTER_BLOCK\'\n#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }\n                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+	.globpassesref i2c_shared_master_write_reg16, r_i2c,"In file included from ../src/extensions/audiohw.xc:39:\n../src/extensions/dspfw_IC_1.h:450:2: error: call to `i2c_shared_master_write_reg16\' in `default_download_IC_1\' makes alias of global \'r_i2c\'\n        SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_1, REG_SOFT_RESET_IC_1_ADDR, REG_SOFT_RESET_IC_1_BYTE, R1_SOFT_RESET_IC_1_Default );\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n../src/extensions/SigmaStudioFW.h:44:76: note: expanded from macro \'SIGMA_WRITE_REGISTER_BLOCK\'\n#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }\n                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+	.globpassesref i2c_shared_master_write_reg16, R0_SOFT_RESET_IC_1_Default,"In file included from ../src/extensions/audiohw.xc:39:\n../src/extensions/dspfw_IC_1.h:449:2: error: call to `i2c_shared_master_write_reg16\' in `default_download_IC_1\' makes alias of global \'R0_SOFT_RESET_IC_1_Default\'\n        SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_1, REG_SOFT_RESET_IC_1_ADDR, REG_SOFT_RESET_IC_1_BYTE, R0_SOFT_RESET_IC_1_Default );\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n../src/extensions/SigmaStudioFW.h:44:76: note: expanded from macro \'SIGMA_WRITE_REGISTER_BLOCK\'\n#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }\n                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+	.globpassesref i2c_shared_master_write_reg16, r_i2c,"In file included from ../src/extensions/audiohw.xc:39:\n../src/extensions/dspfw_IC_1.h:449:2: error: call to `i2c_shared_master_write_reg16\' in `default_download_IC_1\' makes alias of global \'r_i2c\'\n        SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_1, REG_SOFT_RESET_IC_1_ADDR, REG_SOFT_RESET_IC_1_BYTE, R0_SOFT_RESET_IC_1_Default );\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n../src/extensions/SigmaStudioFW.h:44:76: note: expanded from macro \'SIGMA_WRITE_REGISTER_BLOCK\'\n#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }\n                                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 
                                         # End of file scope inline assembly
 	.section	.debug_info,"",@progbits
@@ -271,8 +285,8 @@ default_download_IC_1:                  # @default_download_IC_1
 		ldc r7, 0
 		mov r0, r6
 	}
-	.file	3 "/Applications/XMOS_xTIMEcomposer_Community_14.3.2/target/include/timer.h"
-	.loc	3 55 0                  # /Applications/XMOS_xTIMEcomposer_Community_14.3.2/target/include/timer.h:55:0
+	.file	3 "/Applications/XMOS_xTIMEcomposer_Community_14.3.3/target/include/timer.h"
+	.loc	3 55 0                  # /Applications/XMOS_xTIMEcomposer_Community_14.3.3/target/include/timer.h:55:0
 .Ltmp11:
 	{
 		mov r1, r7
@@ -324,7 +338,7 @@ default_download_IC_1:                  # @default_download_IC_1
 	bl i2c_shared_master_write_reg16
 .Ltmp13:
 	#DEBUG_VALUE: delay_milliseconds:delay <- 11
-	.loc	3 55 0                  # /Applications/XMOS_xTIMEcomposer_Community_14.3.2/target/include/timer.h:55:0
+	.loc	3 55 0                  # /Applications/XMOS_xTIMEcomposer_Community_14.3.3/target/include/timer.h:55:0
 	{
 		mov r0, r6
 		mov r1, r7
@@ -484,7 +498,7 @@ default_download_IC_1:                  # @default_download_IC_1
 	bl i2c_shared_master_write_reg16
 .Ltmp15:
 	#DEBUG_VALUE: delay_milliseconds:delay <- 11
-	.loc	3 55 0                  # /Applications/XMOS_xTIMEcomposer_Community_14.3.2/target/include/timer.h:55:0
+	.loc	3 55 0                  # /Applications/XMOS_xTIMEcomposer_Community_14.3.3/target/include/timer.h:55:0
 	{
 		mov r0, r6
 		mov r1, r7
@@ -938,7 +952,7 @@ default_download_IC_1:                  # @default_download_IC_1
 	bl i2c_shared_master_write_reg16
 .Ltmp17:
 	#DEBUG_VALUE: delay_milliseconds:delay <- 11
-	.loc	3 55 0                  # /Applications/XMOS_xTIMEcomposer_Community_14.3.2/target/include/timer.h:55:0
+	.loc	3 55 0                  # /Applications/XMOS_xTIMEcomposer_Community_14.3.3/target/include/timer.h:55:0
 	{
 		mov r0, r6
 		mov r1, r7
@@ -996,7 +1010,7 @@ default_download_IC_1:                  # @default_download_IC_1
 	.cc_top wait_us.function,wait_us
 wait_us:                                # @wait_us
 .Lfunc_begin1:
-	.loc	1 110 0                 # ../src/extensions/audiohw.xc:110:0
+	.loc	1 117 0                 # ../src/extensions/audiohw.xc:117:0
 	.cfi_startproc
 	.issue_mode dual
 # BB#0:                                 # %allocas
@@ -1008,37 +1022,37 @@ wait_us:                                # @wait_us
 		dualentsp 0
 	}
 .Ltmp21:
-	.loc	1 115 0 prologue_end    # ../src/extensions/audiohw.xc:115:0
+	.loc	1 122 0 prologue_end    # ../src/extensions/audiohw.xc:122:0
 	{
 		get r11, id
 		nop
 	}
-	.loc	1 115 0                 # ../src/extensions/audiohw.xc:115:0
+	.loc	1 122 0                 # ../src/extensions/audiohw.xc:122:0
 	ldaw r2, dp[__timers]
 	{
 		nop
 		ldw r2, r2[r11]
 	}
 	ldc r3, 100
-	.loc	1 115 0                 # ../src/extensions/audiohw.xc:115:0
+	.loc	1 122 0                 # ../src/extensions/audiohw.xc:122:0
 	mul r0, r0, r3
 .Ltmp22:
-	.loc	1 115 0                 # ../src/extensions/audiohw.xc:115:0
+	.loc	1 122 0                 # ../src/extensions/audiohw.xc:122:0
 	{
 		add r0, r1, r0
 		nop
 	}
-	.loc	1 115 0                 # ../src/extensions/audiohw.xc:115:0
+	.loc	1 122 0                 # ../src/extensions/audiohw.xc:122:0
 	{
 		setd res[r2], r0
 		nop
 	}
-	.loc	1 115 0                 # ../src/extensions/audiohw.xc:115:0
+	.loc	1 122 0                 # ../src/extensions/audiohw.xc:122:0
 	{
 		setc res[r2], 9
 		nop
 	}
-	.loc	1 115 0                 # ../src/extensions/audiohw.xc:115:0
+	.loc	1 122 0                 # ../src/extensions/audiohw.xc:122:0
 .Ltmp23:
 .Lxta.endpoint_labels0:
 	{
@@ -1076,7 +1090,7 @@ wait_us:                                # @wait_us
 	.cc_top _Swait_us_0.function,_Swait_us_0
 _Swait_us_0:                            # @_Swait_us_0
 .Lfunc_begin2:
-	.loc	1 110 0                 # ../src/extensions/audiohw.xc:110:0
+	.loc	1 117 0                 # ../src/extensions/audiohw.xc:117:0
 	.cfi_startproc
 	.issue_mode dual
 # BB#0:                                 # %allocas
@@ -1088,34 +1102,34 @@ _Swait_us_0:                            # @_Swait_us_0
 		dualentsp 0
 	}
 .Ltmp26:
-	.loc	1 115 0 prologue_end    # ../src/extensions/audiohw.xc:115:0
+	.loc	1 122 0 prologue_end    # ../src/extensions/audiohw.xc:122:0
 	{
 		get r11, id
 		nop
 	}
-	.loc	1 115 0                 # ../src/extensions/audiohw.xc:115:0
+	.loc	1 122 0                 # ../src/extensions/audiohw.xc:122:0
 	ldaw r1, dp[__timers]
 	{
 		nop
 		ldw r1, r1[r11]
 	}
 	ldw r2, cp[.LCPI2_0]
-	.loc	1 115 0                 # ../src/extensions/audiohw.xc:115:0
+	.loc	1 122 0                 # ../src/extensions/audiohw.xc:122:0
 	{
 		add r0, r0, r2
 		nop
 	}
-	.loc	1 115 0                 # ../src/extensions/audiohw.xc:115:0
+	.loc	1 122 0                 # ../src/extensions/audiohw.xc:122:0
 	{
 		setd res[r1], r0
 		nop
 	}
-	.loc	1 115 0                 # ../src/extensions/audiohw.xc:115:0
+	.loc	1 122 0                 # ../src/extensions/audiohw.xc:122:0
 	{
 		setc res[r1], 9
 		nop
 	}
-	.loc	1 115 0                 # ../src/extensions/audiohw.xc:115:0
+	.loc	1 122 0                 # ../src/extensions/audiohw.xc:122:0
 .Ltmp27:
 .Lxta.endpoint_labels1:
 	{
@@ -1144,7 +1158,7 @@ _Swait_us_0:                            # @_Swait_us_0
 	.cc_top AudioHwInit.function,AudioHwInit
 AudioHwInit:                            # @AudioHwInit
 .Lfunc_begin3:
-	.loc	1 119 0                 # ../src/extensions/audiohw.xc:119:0
+	.loc	1 126 0                 # ../src/extensions/audiohw.xc:126:0
 	.cfi_startproc
 	.issue_mode dual
 # BB#0:                                 # %allocas
@@ -1164,7 +1178,7 @@ AudioHwInit:                            # @AudioHwInit
 .Ltmp32:
 	.cfi_offset 4, -8
 	#DEBUG_VALUE: AudioHwInit:c_codec <- R0
-	.loc	1 128 0 prologue_end    # ../src/extensions/audiohw.xc:128:0
+	.loc	1 135 0 prologue_end    # ../src/extensions/audiohw.xc:135:0
 .Ltmp33:
 	ldaw r0, dp[r_i2c]
 .Ltmp34:
@@ -1174,7 +1188,7 @@ AudioHwInit:                            # @AudioHwInit
 		ldc r0, 2
 		ldc r4, 0
 	}
-	.loc	1 131 0                 # ../src/extensions/audiohw.xc:131:0
+	.loc	1 138 0                 # ../src/extensions/audiohw.xc:138:0
 	{
 		mov r1, r4
 		nop
@@ -1182,7 +1196,7 @@ AudioHwInit:                            # @AudioHwInit
 .Lxta.call_labels43:
 	bl set_gpio
 	ldc r0, 64
-	.loc	1 132 0                 # ../src/extensions/audiohw.xc:132:0
+	.loc	1 139 0                 # ../src/extensions/audiohw.xc:139:0
 	{
 		mov r1, r4
 		nop
@@ -1193,7 +1207,7 @@ AudioHwInit:                            # @AudioHwInit
 		ldc r0, 4
 		mkmsk r4, 1
 	}
-	.loc	1 141 0                 # ../src/extensions/audiohw.xc:141:0
+	.loc	1 148 0                 # ../src/extensions/audiohw.xc:148:0
 	{
 		mov r1, r4
 		nop
@@ -1204,12 +1218,9 @@ AudioHwInit:                            # @AudioHwInit
 		ldc r0, 8
 		mov r1, r4
 	}
-	.loc	1 142 0                 # ../src/extensions/audiohw.xc:142:0
+	.loc	1 149 0                 # ../src/extensions/audiohw.xc:149:0
 .Lxta.call_labels46:
 	bl set_gpio
-	.loc	1 160 0                 # ../src/extensions/audiohw.xc:160:0
-.Lxta.call_labels47:
-	bl default_download_IC_1
 	{
 		nop
 		ldw r4, sp[2]
@@ -1221,13 +1232,13 @@ AudioHwInit:                            # @AudioHwInit
 	# RETURN_REG_HOLDER
 .Ltmp35:
 	.cc_bottom AudioHwInit.function
-	.set	AudioHwInit.nstackwords,((i2c_shared_master_init.nstackwords $M set_gpio.nstackwords $M default_download_IC_1.nstackwords) + 4)
+	.set	AudioHwInit.nstackwords,((i2c_shared_master_init.nstackwords $M set_gpio.nstackwords) + 4)
 	.globl	AudioHwInit.nstackwords
-	.set	AudioHwInit.maxcores,default_download_IC_1.maxcores $M i2c_shared_master_init.maxcores $M set_gpio.maxcores $M 1
+	.set	AudioHwInit.maxcores,i2c_shared_master_init.maxcores $M set_gpio.maxcores $M 1
 	.globl	AudioHwInit.maxcores
-	.set	AudioHwInit.maxtimers,default_download_IC_1.maxtimers $M i2c_shared_master_init.maxtimers $M set_gpio.maxtimers $M 0
+	.set	AudioHwInit.maxtimers,i2c_shared_master_init.maxtimers $M set_gpio.maxtimers $M 0
 	.globl	AudioHwInit.maxtimers
-	.set	AudioHwInit.maxchanends,default_download_IC_1.maxchanends $M i2c_shared_master_init.maxchanends $M set_gpio.maxchanends $M 0
+	.set	AudioHwInit.maxchanends,i2c_shared_master_init.maxchanends $M set_gpio.maxchanends $M 0
 	.globl	AudioHwInit.maxchanends
 .Ltmp36:
 	.size	AudioHwInit, .Ltmp36-AudioHwInit
@@ -1240,7 +1251,7 @@ AudioHwInit:                            # @AudioHwInit
 	.cc_top _SAudioHwInit_0.function,_SAudioHwInit_0
 _SAudioHwInit_0:                        # @_SAudioHwInit_0
 .Lfunc_begin4:
-	.loc	1 119 0                 # ../src/extensions/audiohw.xc:119:0
+	.loc	1 126 0                 # ../src/extensions/audiohw.xc:126:0
 	.cfi_startproc
 	.issue_mode dual
 # BB#0:                                 # %allocas
@@ -1259,24 +1270,35 @@ _SAudioHwInit_0:                        # @_SAudioHwInit_0
 	}
 .Ltmp39:
 	.cfi_offset 4, -8
-	.loc	1 128 0 prologue_end    # ../src/extensions/audiohw.xc:128:0
+	.loc	1 135 0 prologue_end    # ../src/extensions/audiohw.xc:135:0
 .Ltmp40:
 	ldaw r0, dp[r_i2c]
-.Lxta.call_labels48:
+.Lxta.call_labels47:
 	bl i2c_shared_master_init
 	{
 		ldc r0, 2
 		ldc r4, 0
 	}
-	.loc	1 131 0                 # ../src/extensions/audiohw.xc:131:0
+	.loc	1 138 0                 # ../src/extensions/audiohw.xc:138:0
+	{
+		mov r1, r4
+		nop
+	}
+.Lxta.call_labels48:
+	bl set_gpio
+	ldc r0, 64
+	.loc	1 139 0                 # ../src/extensions/audiohw.xc:139:0
 	{
 		mov r1, r4
 		nop
 	}
 .Lxta.call_labels49:
 	bl set_gpio
-	ldc r0, 64
-	.loc	1 132 0                 # ../src/extensions/audiohw.xc:132:0
+	{
+		ldc r0, 4
+		mkmsk r4, 1
+	}
+	.loc	1 148 0                 # ../src/extensions/audiohw.xc:148:0
 	{
 		mov r1, r4
 		nop
@@ -1284,26 +1306,12 @@ _SAudioHwInit_0:                        # @_SAudioHwInit_0
 .Lxta.call_labels50:
 	bl set_gpio
 	{
-		ldc r0, 4
-		mkmsk r4, 1
-	}
-	.loc	1 141 0                 # ../src/extensions/audiohw.xc:141:0
-	{
-		mov r1, r4
-		nop
-	}
-.Lxta.call_labels51:
-	bl set_gpio
-	{
 		ldc r0, 8
 		mov r1, r4
 	}
-	.loc	1 142 0                 # ../src/extensions/audiohw.xc:142:0
-.Lxta.call_labels52:
+	.loc	1 149 0                 # ../src/extensions/audiohw.xc:149:0
+.Lxta.call_labels51:
 	bl set_gpio
-	.loc	1 160 0                 # ../src/extensions/audiohw.xc:160:0
-.Lxta.call_labels53:
-	bl default_download_IC_1
 	{
 		nop
 		ldw r4, sp[2]
@@ -1315,13 +1323,13 @@ _SAudioHwInit_0:                        # @_SAudioHwInit_0
 	# RETURN_REG_HOLDER
 .Ltmp41:
 	.cc_bottom _SAudioHwInit_0.function
-	.set	_SAudioHwInit_0.nstackwords,((i2c_shared_master_init.nstackwords $M set_gpio.nstackwords $M default_download_IC_1.nstackwords) + 4)
+	.set	_SAudioHwInit_0.nstackwords,((i2c_shared_master_init.nstackwords $M set_gpio.nstackwords) + 4)
 	.globl	_SAudioHwInit_0.nstackwords
-	.set	_SAudioHwInit_0.maxcores,default_download_IC_1.maxcores $M i2c_shared_master_init.maxcores $M set_gpio.maxcores $M 1
+	.set	_SAudioHwInit_0.maxcores,i2c_shared_master_init.maxcores $M set_gpio.maxcores $M 1
 	.globl	_SAudioHwInit_0.maxcores
-	.set	_SAudioHwInit_0.maxtimers,default_download_IC_1.maxtimers $M i2c_shared_master_init.maxtimers $M set_gpio.maxtimers $M 0
+	.set	_SAudioHwInit_0.maxtimers,i2c_shared_master_init.maxtimers $M set_gpio.maxtimers $M 0
 	.globl	_SAudioHwInit_0.maxtimers
-	.set	_SAudioHwInit_0.maxchanends,default_download_IC_1.maxchanends $M i2c_shared_master_init.maxchanends $M set_gpio.maxchanends $M 0
+	.set	_SAudioHwInit_0.maxchanends,i2c_shared_master_init.maxchanends $M set_gpio.maxchanends $M 0
 	.globl	_SAudioHwInit_0.maxchanends
 .Ltmp42:
 	.size	_SAudioHwInit_0, .Ltmp42-_SAudioHwInit_0
@@ -1343,118 +1351,325 @@ _SAudioHwInit_0:                        # @_SAudioHwInit_0
 	.cc_top AudioHwConfig.function,AudioHwConfig
 AudioHwConfig:                          # @AudioHwConfig
 .Lfunc_begin5:
-	.loc	1 175 0                 # ../src/extensions/audiohw.xc:175:0
+	.loc	1 182 0                 # ../src/extensions/audiohw.xc:182:0
 	.cfi_startproc
 	.issue_mode dual
 # BB#0:                                 # %allocas
 .Lxtalabel5:
 	{
 		nop
-		dualentsp 4
+		dualentsp 12
 	}
 .Ltmp43:
-	.cfi_def_cfa_offset 16
+	.cfi_def_cfa_offset 48
 .Ltmp44:
 	.cfi_offset 15, 0
+	std r5, r4, sp[2]               # 4-byte Folded Spill
+.Ltmp45:
+	.cfi_offset 4, -32
+.Ltmp46:
+	.cfi_offset 5, -28
+	std r7, r6, sp[3]               # 4-byte Folded Spill
+.Ltmp47:
+	.cfi_offset 6, -24
+.Ltmp48:
+	.cfi_offset 7, -20
+	std r9, r8, sp[4]               # 4-byte Folded Spill
+.Ltmp49:
+	.cfi_offset 8, -16
+.Ltmp50:
+	.cfi_offset 9, -12
 	{
 		nop
-		stw r4, sp[2]
+		stw r10, sp[10]
 	}
-.Ltmp45:
-	.cfi_offset 4, -8
+.Ltmp51:
+	.cfi_offset 10, -8
 	#DEBUG_VALUE: AudioHwConfig:samFreq <- R0
 	#DEBUG_VALUE: AudioHwConfig:mClk <- R1
 	#DEBUG_VALUE: AudioHwConfig:c_codec <- R2
 	#DEBUG_VALUE: AudioHwConfig:dsdMode <- R3
-	#DEBUG_VALUE: AudioHwConfig:sampRes_DAC <- [SP+20]
-	#DEBUG_VALUE: AudioHwConfig:sampRes_ADC <- [SP+24]
-	ldc r0, 64
-.Ltmp46:
-	{
-		ldc r4, 0
-		nop
-	}
-	.loc	1 179 0 prologue_end    # ../src/extensions/audiohw.xc:179:0
-.Ltmp47:
-	{
-		mov r1, r4
-		nop
-	}
-.Ltmp48:
-.Lxta.call_labels54:
-	bl set_gpio
-.Ltmp49:
-	{
-		ldc r0, 2
-		mov r1, r4
-	}
-	.loc	1 180 0                 # ../src/extensions/audiohw.xc:180:0
-.Lxta.call_labels55:
-	bl set_gpio
+	#DEBUG_VALUE: AudioHwConfig:sampRes_DAC <- [SP+52]
+	#DEBUG_VALUE: AudioHwConfig:sampRes_ADC <- [SP+56]
 	ldc r0, 128
+.Ltmp52:
 	{
-		mkmsk r1, 1
+		mkmsk r4, 1
 		nop
 	}
-	.loc	1 212 0                 # ../src/extensions/audiohw.xc:212:0
-.Lxta.call_labels56:
+	.loc	1 219 0 prologue_end    # ../src/extensions/audiohw.xc:219:0
+.Ltmp53:
+	{
+		mov r1, r4
+		nop
+	}
+.Ltmp54:
+.Lxta.call_labels52:
 	bl set_gpio
-.Ltmp50:
+.Ltmp55:
 	#DEBUG_VALUE: microseconds <- 20000
 	#DEBUG_VALUE: time <- R0
-	.loc	1 114 0                 # ../src/extensions/audiohw.xc:114:0
+	.loc	1 121 0                 # ../src/extensions/audiohw.xc:121:0
 	{
 		gettime r0
 		get r11, id
 	}
-.Ltmp51:
-	.loc	1 115 0                 # ../src/extensions/audiohw.xc:115:0
+.Ltmp56:
+	.loc	1 122 0                 # ../src/extensions/audiohw.xc:122:0
 	ldaw r1, dp[__timers]
 	{
 		nop
 		ldw r1, r1[r11]
 	}
 	ldw r2, cp[.LCPI5_0]
-	.loc	1 115 0                 # ../src/extensions/audiohw.xc:115:0
+	.loc	1 122 0                 # ../src/extensions/audiohw.xc:122:0
 	{
 		add r0, r0, r2
 		nop
 	}
-	.loc	1 115 0                 # ../src/extensions/audiohw.xc:115:0
+	.loc	1 122 0                 # ../src/extensions/audiohw.xc:122:0
 	{
 		setd res[r1], r0
 		nop
 	}
-	.loc	1 115 0                 # ../src/extensions/audiohw.xc:115:0
+	.loc	1 122 0                 # ../src/extensions/audiohw.xc:122:0
 	{
 		setc res[r1], 9
 		nop
 	}
-	.loc	1 115 0                 # ../src/extensions/audiohw.xc:115:0
-.Ltmp52:
+	.loc	1 122 0                 # ../src/extensions/audiohw.xc:122:0
+.Ltmp57:
 .Lxta.endpoint_labels2:
 	{
 		in r0, res[r1]
-		ldw r4, sp[2]
+		ldaw r5, sp[3]
 	}
+.Ltmp58:
+	.loc	1 288 0                 # ../src/extensions/audiohw.xc:288:0
+	{
+		ldc r9, 0
+		nop
+	}
+	.loc	1 231 0                 # ../src/extensions/audiohw.xc:231:0
+	st8 r9, r5[r9]
 	{
 		nop
-		retsp 4
+		stw r4, sp[1]
 	}
-.Ltmp53:
+	.loc	1 232 0                 # ../src/extensions/audiohw.xc:232:0
+	ldaw r6, dp[r_i2c]
+	ldc r7, 112
+	{
+		mov r0, r6
+		mov r1, r7
+	}
+	{
+		mov r2, r5
+		mov r3, r4
+	}
+.Lxta.call_labels53:
+	bl i2c_shared_master_write
+	{
+		nop
+		stw r4, sp[1]
+	}
+	ldc r8, 114
+	.loc	1 233 0                 # ../src/extensions/audiohw.xc:233:0
+	{
+		mov r0, r6
+		mov r1, r8
+	}
+	{
+		mov r2, r5
+		mov r3, r4
+	}
+.Lxta.call_labels54:
+	bl i2c_shared_master_write
+	{
+		ldc r0, 8
+		nop
+	}
+	.loc	1 243 0                 # ../src/extensions/audiohw.xc:243:0
+	st8 r0, r5[r9]
+	.loc	1 244 0                 # ../src/extensions/audiohw.xc:244:0
+	{
+		mov r0, r6
+		stw r4, sp[1]
+	}
+	{
+		mov r1, r8
+		mov r2, r5
+	}
+	{
+		mov r3, r4
+		nop
+	}
+.Lxta.call_labels55:
+	bl i2c_shared_master_write
+	.loc	1 246 0                 # ../src/extensions/audiohw.xc:246:0
+.Lxta.call_labels56:
+	bl configAnalogIOx8
+	.loc	1 249 0                 # ../src/extensions/audiohw.xc:249:0
+	st8 r9, r5[r9]
+	.loc	1 250 0                 # ../src/extensions/audiohw.xc:250:0
+	{
+		mov r0, r6
+		stw r4, sp[1]
+	}
+	{
+		mov r1, r8
+		mov r2, r5
+	}
+	{
+		mov r3, r4
+		nop
+	}
+.Lxta.call_labels57:
+	bl i2c_shared_master_write
+	{
+		ldc r10, 4
+		nop
+	}
+	.loc	1 254 0                 # ../src/extensions/audiohw.xc:254:0
+	st8 r10, r5[r9]
+	.loc	1 255 0                 # ../src/extensions/audiohw.xc:255:0
+	{
+		mov r0, r6
+		stw r4, sp[1]
+	}
+	{
+		mov r1, r8
+		mov r2, r5
+	}
+	{
+		mov r3, r4
+		nop
+	}
+.Lxta.call_labels58:
+	bl i2c_shared_master_write
+	.loc	1 257 0                 # ../src/extensions/audiohw.xc:257:0
+.Lxta.call_labels59:
+	bl configAnalogIOx8
+	.loc	1 260 0                 # ../src/extensions/audiohw.xc:260:0
+	st8 r9, r5[r9]
+	.loc	1 261 0                 # ../src/extensions/audiohw.xc:261:0
+	{
+		mov r0, r6
+		stw r4, sp[1]
+	}
+	{
+		mov r1, r8
+		mov r2, r5
+	}
+	{
+		mov r3, r4
+		nop
+	}
+.Lxta.call_labels60:
+	bl i2c_shared_master_write
+	.loc	1 271 0                 # ../src/extensions/audiohw.xc:271:0
+	st8 r10, r5[r9]
+	.loc	1 272 0                 # ../src/extensions/audiohw.xc:272:0
+	{
+		mov r0, r6
+		stw r4, sp[1]
+	}
+	{
+		mov r1, r7
+		mov r2, r5
+	}
+	{
+		mov r3, r4
+		nop
+	}
+.Lxta.call_labels61:
+	bl i2c_shared_master_write
+	.loc	1 274 0                 # ../src/extensions/audiohw.xc:274:0
+.Lxta.call_labels62:
+	bl configAnalogIOx8
+	.loc	1 277 0                 # ../src/extensions/audiohw.xc:277:0
+	st8 r9, r5[r9]
+	.loc	1 278 0                 # ../src/extensions/audiohw.xc:278:0
+	{
+		mov r0, r6
+		stw r4, sp[1]
+	}
+	{
+		mov r1, r7
+		mov r2, r5
+	}
+	{
+		mov r3, r4
+		nop
+	}
+.Lxta.call_labels63:
+	bl i2c_shared_master_write
+	{
+		ldc r0, 8
+		nop
+	}
+	.loc	1 282 0                 # ../src/extensions/audiohw.xc:282:0
+	st8 r0, r5[r9]
+	.loc	1 283 0                 # ../src/extensions/audiohw.xc:283:0
+	{
+		mov r0, r6
+		stw r4, sp[1]
+	}
+	{
+		mov r1, r7
+		mov r2, r5
+	}
+	{
+		mov r3, r4
+		nop
+	}
+.Lxta.call_labels64:
+	bl i2c_shared_master_write
+	.loc	1 285 0                 # ../src/extensions/audiohw.xc:285:0
+.Lxta.call_labels65:
+	bl configAnalogIOx8
+	.loc	1 288 0                 # ../src/extensions/audiohw.xc:288:0
+	st8 r9, r5[r9]
+	.loc	1 289 0                 # ../src/extensions/audiohw.xc:289:0
+	{
+		mov r0, r6
+		stw r4, sp[1]
+	}
+	{
+		mov r1, r7
+		mov r2, r5
+	}
+	{
+		mov r3, r4
+		nop
+	}
+.Lxta.call_labels66:
+	bl i2c_shared_master_write
+	{
+		nop
+		ldw r10, sp[10]
+	}
+	ldd r9, r8, sp[4]               # 4-byte Folded Reload
+	ldd r7, r6, sp[3]               # 4-byte Folded Reload
+	ldd r5, r4, sp[2]               # 4-byte Folded Reload
+	{
+		nop
+		retsp 12
+	}
+.Ltmp59:
 	# RETURN_REG_HOLDER
-.Ltmp54:
+.Ltmp60:
 	.cc_bottom AudioHwConfig.function
-	.set	AudioHwConfig.nstackwords,(set_gpio.nstackwords + 4)
+	.set	AudioHwConfig.nstackwords,((set_gpio.nstackwords $M configAnalogIOx8.nstackwords $M i2c_shared_master_write.nstackwords) + 12)
 	.globl	AudioHwConfig.nstackwords
-	.set	AudioHwConfig.maxcores,set_gpio.maxcores $M 1
+	.set	AudioHwConfig.maxcores,configAnalogIOx8.maxcores $M i2c_shared_master_write.maxcores $M set_gpio.maxcores $M 1
 	.globl	AudioHwConfig.maxcores
-	.set	AudioHwConfig.maxtimers,set_gpio.maxtimers $M 0
+	.set	AudioHwConfig.maxtimers,configAnalogIOx8.maxtimers $M i2c_shared_master_write.maxtimers $M set_gpio.maxtimers $M 0
 	.globl	AudioHwConfig.maxtimers
-	.set	AudioHwConfig.maxchanends,set_gpio.maxchanends $M 0
+	.set	AudioHwConfig.maxchanends,configAnalogIOx8.maxchanends $M i2c_shared_master_write.maxchanends $M set_gpio.maxchanends $M 0
 	.globl	AudioHwConfig.maxchanends
-.Ltmp55:
-	.size	AudioHwConfig, .Ltmp55-AudioHwConfig
+.Ltmp61:
+	.size	AudioHwConfig, .Ltmp61-AudioHwConfig
 .Lfunc_end5:
 	.cfi_endproc
 
@@ -1473,117 +1688,324 @@ AudioHwConfig:                          # @AudioHwConfig
 	.cc_top _SAudioHwConfig_0.function,_SAudioHwConfig_0
 _SAudioHwConfig_0:                      # @_SAudioHwConfig_0
 .Lfunc_begin6:
-	.loc	1 175 0                 # ../src/extensions/audiohw.xc:175:0
+	.loc	1 182 0                 # ../src/extensions/audiohw.xc:182:0
 	.cfi_startproc
 	.issue_mode dual
 # BB#0:                                 # %allocas
 .Lxtalabel6:
 	{
 		nop
-		dualentsp 4
+		dualentsp 12
 	}
-.Ltmp56:
-	.cfi_def_cfa_offset 16
-.Ltmp57:
+.Ltmp62:
+	.cfi_def_cfa_offset 48
+.Ltmp63:
 	.cfi_offset 15, 0
+	std r5, r4, sp[2]               # 4-byte Folded Spill
+.Ltmp64:
+	.cfi_offset 4, -32
+.Ltmp65:
+	.cfi_offset 5, -28
+	std r7, r6, sp[3]               # 4-byte Folded Spill
+.Ltmp66:
+	.cfi_offset 6, -24
+.Ltmp67:
+	.cfi_offset 7, -20
+	std r9, r8, sp[4]               # 4-byte Folded Spill
+.Ltmp68:
+	.cfi_offset 8, -16
+.Ltmp69:
+	.cfi_offset 9, -12
 	{
 		nop
-		stw r4, sp[2]
+		stw r10, sp[10]
 	}
-.Ltmp58:
-	.cfi_offset 4, -8
+.Ltmp70:
+	.cfi_offset 10, -8
 	#DEBUG_VALUE: AudioHwConfig:samFreq <- R0
 	#DEBUG_VALUE: AudioHwConfig:mClk <- R1
 	#DEBUG_VALUE: AudioHwConfig:dsdMode <- R2
 	#DEBUG_VALUE: AudioHwConfig:sampRes_DAC <- R3
-	#DEBUG_VALUE: AudioHwConfig:sampRes_ADC <- [SP+20]
-	ldc r0, 64
-.Ltmp59:
-	{
-		ldc r4, 0
-		nop
-	}
-	.loc	1 179 0 prologue_end    # ../src/extensions/audiohw.xc:179:0
-.Ltmp60:
-	{
-		mov r1, r4
-		nop
-	}
-.Ltmp61:
-.Lxta.call_labels57:
-	bl set_gpio
-.Ltmp62:
-	{
-		ldc r0, 2
-		mov r1, r4
-	}
-	.loc	1 180 0                 # ../src/extensions/audiohw.xc:180:0
-.Lxta.call_labels58:
-	bl set_gpio
+	#DEBUG_VALUE: AudioHwConfig:sampRes_ADC <- [SP+52]
 	ldc r0, 128
+.Ltmp71:
 	{
-		mkmsk r1, 1
+		mkmsk r4, 1
 		nop
 	}
-	.loc	1 212 0                 # ../src/extensions/audiohw.xc:212:0
-.Lxta.call_labels59:
+	.loc	1 219 0 prologue_end    # ../src/extensions/audiohw.xc:219:0
+.Ltmp72:
+	{
+		mov r1, r4
+		nop
+	}
+.Ltmp73:
+.Lxta.call_labels67:
 	bl set_gpio
-.Ltmp63:
+.Ltmp74:
 	#DEBUG_VALUE: microseconds <- 20000
 	#DEBUG_VALUE: time <- R0
-	.loc	1 114 0                 # ../src/extensions/audiohw.xc:114:0
+	.loc	1 121 0                 # ../src/extensions/audiohw.xc:121:0
 	{
 		gettime r0
 		get r11, id
 	}
-.Ltmp64:
-	.loc	1 115 0                 # ../src/extensions/audiohw.xc:115:0
+.Ltmp75:
+	.loc	1 122 0                 # ../src/extensions/audiohw.xc:122:0
 	ldaw r1, dp[__timers]
 	{
 		nop
 		ldw r1, r1[r11]
 	}
 	ldw r2, cp[.LCPI6_0]
-	.loc	1 115 0                 # ../src/extensions/audiohw.xc:115:0
+	.loc	1 122 0                 # ../src/extensions/audiohw.xc:122:0
 	{
 		add r0, r0, r2
 		nop
 	}
-	.loc	1 115 0                 # ../src/extensions/audiohw.xc:115:0
+	.loc	1 122 0                 # ../src/extensions/audiohw.xc:122:0
 	{
 		setd res[r1], r0
 		nop
 	}
-	.loc	1 115 0                 # ../src/extensions/audiohw.xc:115:0
+	.loc	1 122 0                 # ../src/extensions/audiohw.xc:122:0
 	{
 		setc res[r1], 9
 		nop
 	}
-	.loc	1 115 0                 # ../src/extensions/audiohw.xc:115:0
-.Ltmp65:
+	.loc	1 122 0                 # ../src/extensions/audiohw.xc:122:0
+.Ltmp76:
 .Lxta.endpoint_labels3:
 	{
 		in r0, res[r1]
-		ldw r4, sp[2]
+		ldaw r5, sp[3]
 	}
+.Ltmp77:
+	.loc	1 288 0                 # ../src/extensions/audiohw.xc:288:0
+	{
+		ldc r9, 0
+		nop
+	}
+	.loc	1 231 0                 # ../src/extensions/audiohw.xc:231:0
+	st8 r9, r5[r9]
 	{
 		nop
-		retsp 4
+		stw r4, sp[1]
 	}
-.Ltmp66:
+	.loc	1 232 0                 # ../src/extensions/audiohw.xc:232:0
+	ldaw r6, dp[r_i2c]
+	ldc r7, 112
+	{
+		mov r0, r6
+		mov r1, r7
+	}
+	{
+		mov r2, r5
+		mov r3, r4
+	}
+.Lxta.call_labels68:
+	bl i2c_shared_master_write
+	{
+		nop
+		stw r4, sp[1]
+	}
+	ldc r8, 114
+	.loc	1 233 0                 # ../src/extensions/audiohw.xc:233:0
+	{
+		mov r0, r6
+		mov r1, r8
+	}
+	{
+		mov r2, r5
+		mov r3, r4
+	}
+.Lxta.call_labels69:
+	bl i2c_shared_master_write
+	{
+		ldc r0, 8
+		nop
+	}
+	.loc	1 243 0                 # ../src/extensions/audiohw.xc:243:0
+	st8 r0, r5[r9]
+	.loc	1 244 0                 # ../src/extensions/audiohw.xc:244:0
+	{
+		mov r0, r6
+		stw r4, sp[1]
+	}
+	{
+		mov r1, r8
+		mov r2, r5
+	}
+	{
+		mov r3, r4
+		nop
+	}
+.Lxta.call_labels70:
+	bl i2c_shared_master_write
+	.loc	1 246 0                 # ../src/extensions/audiohw.xc:246:0
+.Lxta.call_labels71:
+	bl configAnalogIOx8
+	.loc	1 249 0                 # ../src/extensions/audiohw.xc:249:0
+	st8 r9, r5[r9]
+	.loc	1 250 0                 # ../src/extensions/audiohw.xc:250:0
+	{
+		mov r0, r6
+		stw r4, sp[1]
+	}
+	{
+		mov r1, r8
+		mov r2, r5
+	}
+	{
+		mov r3, r4
+		nop
+	}
+.Lxta.call_labels72:
+	bl i2c_shared_master_write
+	{
+		ldc r10, 4
+		nop
+	}
+	.loc	1 254 0                 # ../src/extensions/audiohw.xc:254:0
+	st8 r10, r5[r9]
+	.loc	1 255 0                 # ../src/extensions/audiohw.xc:255:0
+	{
+		mov r0, r6
+		stw r4, sp[1]
+	}
+	{
+		mov r1, r8
+		mov r2, r5
+	}
+	{
+		mov r3, r4
+		nop
+	}
+.Lxta.call_labels73:
+	bl i2c_shared_master_write
+	.loc	1 257 0                 # ../src/extensions/audiohw.xc:257:0
+.Lxta.call_labels74:
+	bl configAnalogIOx8
+	.loc	1 260 0                 # ../src/extensions/audiohw.xc:260:0
+	st8 r9, r5[r9]
+	.loc	1 261 0                 # ../src/extensions/audiohw.xc:261:0
+	{
+		mov r0, r6
+		stw r4, sp[1]
+	}
+	{
+		mov r1, r8
+		mov r2, r5
+	}
+	{
+		mov r3, r4
+		nop
+	}
+.Lxta.call_labels75:
+	bl i2c_shared_master_write
+	.loc	1 271 0                 # ../src/extensions/audiohw.xc:271:0
+	st8 r10, r5[r9]
+	.loc	1 272 0                 # ../src/extensions/audiohw.xc:272:0
+	{
+		mov r0, r6
+		stw r4, sp[1]
+	}
+	{
+		mov r1, r7
+		mov r2, r5
+	}
+	{
+		mov r3, r4
+		nop
+	}
+.Lxta.call_labels76:
+	bl i2c_shared_master_write
+	.loc	1 274 0                 # ../src/extensions/audiohw.xc:274:0
+.Lxta.call_labels77:
+	bl configAnalogIOx8
+	.loc	1 277 0                 # ../src/extensions/audiohw.xc:277:0
+	st8 r9, r5[r9]
+	.loc	1 278 0                 # ../src/extensions/audiohw.xc:278:0
+	{
+		mov r0, r6
+		stw r4, sp[1]
+	}
+	{
+		mov r1, r7
+		mov r2, r5
+	}
+	{
+		mov r3, r4
+		nop
+	}
+.Lxta.call_labels78:
+	bl i2c_shared_master_write
+	{
+		ldc r0, 8
+		nop
+	}
+	.loc	1 282 0                 # ../src/extensions/audiohw.xc:282:0
+	st8 r0, r5[r9]
+	.loc	1 283 0                 # ../src/extensions/audiohw.xc:283:0
+	{
+		mov r0, r6
+		stw r4, sp[1]
+	}
+	{
+		mov r1, r7
+		mov r2, r5
+	}
+	{
+		mov r3, r4
+		nop
+	}
+.Lxta.call_labels79:
+	bl i2c_shared_master_write
+	.loc	1 285 0                 # ../src/extensions/audiohw.xc:285:0
+.Lxta.call_labels80:
+	bl configAnalogIOx8
+	.loc	1 288 0                 # ../src/extensions/audiohw.xc:288:0
+	st8 r9, r5[r9]
+	.loc	1 289 0                 # ../src/extensions/audiohw.xc:289:0
+	{
+		mov r0, r6
+		stw r4, sp[1]
+	}
+	{
+		mov r1, r7
+		mov r2, r5
+	}
+	{
+		mov r3, r4
+		nop
+	}
+.Lxta.call_labels81:
+	bl i2c_shared_master_write
+	{
+		nop
+		ldw r10, sp[10]
+	}
+	ldd r9, r8, sp[4]               # 4-byte Folded Reload
+	ldd r7, r6, sp[3]               # 4-byte Folded Reload
+	ldd r5, r4, sp[2]               # 4-byte Folded Reload
+	{
+		nop
+		retsp 12
+	}
+.Ltmp78:
 	# RETURN_REG_HOLDER
-.Ltmp67:
+.Ltmp79:
 	.cc_bottom _SAudioHwConfig_0.function
-	.set	_SAudioHwConfig_0.nstackwords,(set_gpio.nstackwords + 4)
+	.set	_SAudioHwConfig_0.nstackwords,((set_gpio.nstackwords $M configAnalogIOx8.nstackwords $M i2c_shared_master_write.nstackwords) + 12)
 	.globl	_SAudioHwConfig_0.nstackwords
-	.set	_SAudioHwConfig_0.maxcores,set_gpio.maxcores $M 1
+	.set	_SAudioHwConfig_0.maxcores,configAnalogIOx8.maxcores $M i2c_shared_master_write.maxcores $M set_gpio.maxcores $M 1
 	.globl	_SAudioHwConfig_0.maxcores
-	.set	_SAudioHwConfig_0.maxtimers,set_gpio.maxtimers $M 0
+	.set	_SAudioHwConfig_0.maxtimers,configAnalogIOx8.maxtimers $M i2c_shared_master_write.maxtimers $M set_gpio.maxtimers $M 0
 	.globl	_SAudioHwConfig_0.maxtimers
-	.set	_SAudioHwConfig_0.maxchanends,set_gpio.maxchanends $M 0
+	.set	_SAudioHwConfig_0.maxchanends,configAnalogIOx8.maxchanends $M i2c_shared_master_write.maxchanends $M set_gpio.maxchanends $M 0
 	.globl	_SAudioHwConfig_0.maxchanends
-.Ltmp68:
-	.size	_SAudioHwConfig_0, .Ltmp68-_SAudioHwConfig_0
+.Ltmp80:
+	.size	_SAudioHwConfig_0, .Ltmp80-_SAudioHwConfig_0
 .Lfunc_end6:
 	.cfi_endproc
 
@@ -2102,7 +2524,7 @@ __xcc1_internal_1:
 .Ldebug_end3:
 	.section	.debug_str,"MS",@progbits,1
 .Linfo_string0:
-.asciiz"XMOS 32-bit XC Compiler Community_14.3.2 (build 25550, Sep-30-2017)"
+.asciiz"XMOS 32-bit XC Compiler Community_14.3.3 (build 22296, Apr-19-2018)"
 .Linfo_string1:
 .asciiz"../src/extensions/audiohw.xc"
 .Linfo_string2:
@@ -2238,24 +2660,24 @@ __xcc1_internal_1:
 .Linfo_string67:
 .asciiz"chanend"
 .Linfo_string68:
-.asciiz"samFreq"
-.Linfo_string69:
-.asciiz"mClk"
-.Linfo_string70:
-.asciiz"dsdMode"
-.Linfo_string71:
-.asciiz"sampRes_DAC"
-.Linfo_string72:
-.asciiz"sampRes_ADC"
-.Linfo_string73:
 .asciiz"data"
+.Linfo_string69:
+.asciiz"samFreq"
+.Linfo_string70:
+.asciiz"mClk"
+.Linfo_string71:
+.asciiz"dsdMode"
+.Linfo_string72:
+.asciiz"sampRes_DAC"
+.Linfo_string73:
+.asciiz"sampRes_ADC"
 	.section	.debug_info,"",@progbits
 .L.debug_info_begin0:
-	.long	1939                    # Length of Unit
+	.long	1945                    # Length of Unit
 	.short	3                       # DWARF version number
 	.long	.Lsection_abbrev        # Offset Into Abbrev. Section
 	.byte	4                       # Address Size (in bytes)
-	.byte	1                       # Abbrev [1] 0xb:0x78c DW_TAG_compile_unit
+	.byte	1                       # Abbrev [1] 0xb:0x792 DW_TAG_compile_unit
 	.long	.Linfo_string0          # DW_AT_producer
 	.short	49152                   # DW_AT_language
 	.long	.Linfo_string1          # DW_AT_name
@@ -2267,7 +2689,7 @@ __xcc1_internal_1:
 	.long	43                      # DW_AT_type
 	.byte	1                       # DW_AT_external
 	.byte	1                       # DW_AT_decl_file
-	.byte	24                      # DW_AT_decl_line
+	.byte	28                      # DW_AT_decl_line
 	.byte	3                       # Abbrev [3] 0x2b:0x7 DW_TAG_base_type
 	.long	.Linfo_string4          # DW_AT_name
 	.byte	7                       # DW_AT_encoding
@@ -2277,7 +2699,7 @@ __xcc1_internal_1:
 	.long	72                      # DW_AT_type
 	.byte	1                       # DW_AT_external
 	.byte	1                       # DW_AT_decl_file
-	.byte	26                      # DW_AT_decl_line
+	.byte	30                      # DW_AT_decl_line
 	.byte	5                       # DW_AT_location
 	.byte	3
 	.long	data_i2c
@@ -2302,7 +2724,7 @@ __xcc1_internal_1:
 	.long	121                     # DW_AT_type
 	.byte	1                       # DW_AT_external
 	.byte	1                       # DW_AT_decl_file
-	.byte	30                      # DW_AT_decl_line
+	.byte	34                      # DW_AT_decl_line
 	.byte	5                       # DW_AT_location
 	.byte	3
 	.long	r_i2c
@@ -2311,12 +2733,12 @@ __xcc1_internal_1:
 	.long	.Linfo_string8          # DW_AT_name
 	.byte	4                       # DW_AT_byte_size
 	.byte	1                       # DW_AT_decl_file
-	.byte	30                      # DW_AT_decl_line
+	.byte	34                      # DW_AT_decl_line
 	.byte	9                       # Abbrev [9] 0x81:0xc DW_TAG_member
 	.long	.Linfo_string9          # DW_AT_name
 	.long	43                      # DW_AT_type
 	.byte	1                       # DW_AT_decl_file
-	.byte	30                      # DW_AT_decl_line
+	.byte	34                      # DW_AT_decl_line
 	.byte	0                       # DW_AT_data_member_location
 	.byte	0                       # End Of Children Mark
 	.byte	4                       # Abbrev [4] 0x8e:0x16 DW_TAG_variable
@@ -2832,20 +3254,20 @@ __xcc1_internal_1:
 	.long	.Linfo_string55         # DW_AT_MIPS_linkage_name
 	.long	.Linfo_string55         # DW_AT_name
 	.byte	1                       # DW_AT_decl_file
-	.byte	110                     # DW_AT_decl_line
+	.byte	117                     # DW_AT_decl_line
 	.byte	1                       # DW_AT_external
 	.byte	18                      # Abbrev [18] 0x50a:0xf DW_TAG_formal_parameter
 	.long	.Ldebug_loc0            # DW_AT_location
 	.long	.Linfo_string56         # DW_AT_name
 	.byte	1                       # DW_AT_decl_file
-	.byte	109                     # DW_AT_decl_line
+	.byte	116                     # DW_AT_decl_line
 	.long	1522                    # DW_AT_type
 	.byte	19                      # Abbrev [19] 0x519:0x26 DW_TAG_lexical_block
 	.long	.Ldebug_ranges7         # DW_AT_ranges
 	.byte	20                      # Abbrev [20] 0x51e:0xb DW_TAG_variable
 	.long	.Linfo_string58         # DW_AT_name
 	.byte	1                       # DW_AT_decl_file
-	.byte	111                     # DW_AT_decl_line
+	.byte	118                     # DW_AT_decl_line
 	.long	1529                    # DW_AT_type
 	.byte	19                      # Abbrev [19] 0x529:0x15 DW_TAG_lexical_block
 	.long	.Ldebug_ranges6         # DW_AT_ranges
@@ -2853,7 +3275,7 @@ __xcc1_internal_1:
 	.long	.Ldebug_loc1            # DW_AT_location
 	.long	.Linfo_string60         # DW_AT_name
 	.byte	1                       # DW_AT_decl_file
-	.byte	112                     # DW_AT_decl_line
+	.byte	119                     # DW_AT_decl_line
 	.long	1167                    # DW_AT_type
 	.byte	0                       # End Of Children Mark
 	.byte	0                       # End Of Children Mark
@@ -2890,14 +3312,14 @@ __xcc1_internal_1:
 	.long	.Linfo_string64         # DW_AT_MIPS_linkage_name
 	.long	.Linfo_string64         # DW_AT_name
 	.byte	1                       # DW_AT_decl_file
-	.byte	119                     # DW_AT_decl_line
+	.byte	126                     # DW_AT_decl_line
 	.byte	1                       # DW_AT_external
 	.byte	18                      # Abbrev [18] 0x588:0xf DW_TAG_formal_parameter
 	.long	.Ldebug_loc3            # DW_AT_location
 	.long	.Linfo_string66         # DW_AT_name
 	.byte	1                       # DW_AT_decl_file
-	.byte	118                     # DW_AT_decl_line
-	.long	1922                    # DW_AT_type
+	.byte	125                     # DW_AT_decl_line
+	.long	1928                    # DW_AT_type
 	.byte	0                       # End Of Children Mark
 	.byte	17                      # Abbrev [17] 0x598:0x25 DW_TAG_subprogram
 	.long	.Ldebug_ranges13        # DW_AT_ranges
@@ -2907,41 +3329,41 @@ __xcc1_internal_1:
 	.long	.Linfo_string64         # DW_AT_MIPS_linkage_name
 	.long	.Linfo_string64         # DW_AT_name
 	.byte	1                       # DW_AT_decl_file
-	.byte	119                     # DW_AT_decl_line
+	.byte	126                     # DW_AT_decl_line
 	.byte	1                       # DW_AT_external
 	.byte	19                      # Abbrev [19] 0x5ab:0x11 DW_TAG_lexical_block
 	.long	.Ldebug_ranges14        # DW_AT_ranges
 	.byte	20                      # Abbrev [20] 0x5b0:0xb DW_TAG_variable
 	.long	.Linfo_string66         # DW_AT_name
 	.byte	1                       # DW_AT_decl_file
-	.byte	118                     # DW_AT_decl_line
-	.long	1922                    # DW_AT_type
+	.byte	125                     # DW_AT_decl_line
+	.long	1928                    # DW_AT_type
 	.byte	0                       # End Of Children Mark
 	.byte	0                       # End Of Children Mark
 	.byte	12                      # Abbrev [12] 0x5bd:0x35 DW_TAG_subprogram
 	.long	.Linfo_string55         # DW_AT_MIPS_linkage_name
 	.long	.Linfo_string55         # DW_AT_name
 	.byte	1                       # DW_AT_decl_file
-	.byte	110                     # DW_AT_decl_line
+	.byte	117                     # DW_AT_decl_line
 	.byte	1                       # DW_AT_external
 	.byte	1                       # DW_AT_inline
 	.byte	26                      # Abbrev [26] 0x5ca:0x27 DW_TAG_lexical_block
 	.byte	20                      # Abbrev [20] 0x5cb:0xb DW_TAG_variable
 	.long	.Linfo_string56         # DW_AT_name
 	.byte	1                       # DW_AT_decl_file
-	.byte	109                     # DW_AT_decl_line
+	.byte	116                     # DW_AT_decl_line
 	.long	1522                    # DW_AT_type
 	.byte	26                      # Abbrev [26] 0x5d6:0x1a DW_TAG_lexical_block
 	.byte	20                      # Abbrev [20] 0x5d7:0xb DW_TAG_variable
 	.long	.Linfo_string58         # DW_AT_name
 	.byte	1                       # DW_AT_decl_file
-	.byte	111                     # DW_AT_decl_line
+	.byte	118                     # DW_AT_decl_line
 	.long	1529                    # DW_AT_type
 	.byte	26                      # Abbrev [26] 0x5e2:0xd DW_TAG_lexical_block
 	.byte	20                      # Abbrev [20] 0x5e3:0xb DW_TAG_variable
 	.long	.Linfo_string60         # DW_AT_name
 	.byte	1                       # DW_AT_decl_file
-	.byte	112                     # DW_AT_decl_line
+	.byte	119                     # DW_AT_decl_line
 	.long	1167                    # DW_AT_type
 	.byte	0                       # End Of Children Mark
 	.byte	0                       # End Of Children Mark
@@ -2955,7 +3377,7 @@ __xcc1_internal_1:
 	.long	.Linfo_string59         # DW_AT_name
 	.byte	7                       # DW_AT_encoding
 	.byte	4                       # DW_AT_byte_size
-	.byte	17                      # Abbrev [17] 0x600:0xa8 DW_TAG_subprogram
+	.byte	17                      # Abbrev [17] 0x600:0xab DW_TAG_subprogram
 	.long	.Ldebug_ranges15        # DW_AT_ranges
 	.byte	1                       # DW_AT_frame_base
 	.byte	94
@@ -2963,64 +3385,67 @@ __xcc1_internal_1:
 	.long	.Linfo_string65         # DW_AT_MIPS_linkage_name
 	.long	.Linfo_string65         # DW_AT_name
 	.byte	1                       # DW_AT_decl_file
-	.byte	175                     # DW_AT_decl_line
+	.byte	182                     # DW_AT_decl_line
 	.byte	1                       # DW_AT_external
 	.byte	18                      # Abbrev [18] 0x613:0xf DW_TAG_formal_parameter
 	.long	.Ldebug_loc4            # DW_AT_location
-	.long	.Linfo_string68         # DW_AT_name
+	.long	.Linfo_string69         # DW_AT_name
 	.byte	1                       # DW_AT_decl_file
-	.byte	173                     # DW_AT_decl_line
+	.byte	180                     # DW_AT_decl_line
 	.long	1167                    # DW_AT_type
 	.byte	18                      # Abbrev [18] 0x622:0xf DW_TAG_formal_parameter
 	.long	.Ldebug_loc5            # DW_AT_location
-	.long	.Linfo_string69         # DW_AT_name
+	.long	.Linfo_string70         # DW_AT_name
 	.byte	1                       # DW_AT_decl_file
-	.byte	173                     # DW_AT_decl_line
+	.byte	180                     # DW_AT_decl_line
 	.long	1167                    # DW_AT_type
 	.byte	18                      # Abbrev [18] 0x631:0xf DW_TAG_formal_parameter
 	.long	.Ldebug_loc6            # DW_AT_location
 	.long	.Linfo_string66         # DW_AT_name
 	.byte	1                       # DW_AT_decl_file
-	.byte	173                     # DW_AT_decl_line
-	.long	1922                    # DW_AT_type
+	.byte	180                     # DW_AT_decl_line
+	.long	1928                    # DW_AT_type
 	.byte	18                      # Abbrev [18] 0x640:0xf DW_TAG_formal_parameter
 	.long	.Ldebug_loc7            # DW_AT_location
-	.long	.Linfo_string70         # DW_AT_name
+	.long	.Linfo_string71         # DW_AT_name
 	.byte	1                       # DW_AT_decl_file
-	.byte	173                     # DW_AT_decl_line
+	.byte	180                     # DW_AT_decl_line
 	.long	1167                    # DW_AT_type
 	.byte	18                      # Abbrev [18] 0x64f:0xf DW_TAG_formal_parameter
 	.long	.Ldebug_loc8            # DW_AT_location
-	.long	.Linfo_string71         # DW_AT_name
+	.long	.Linfo_string72         # DW_AT_name
 	.byte	1                       # DW_AT_decl_file
-	.byte	174                     # DW_AT_decl_line
+	.byte	181                     # DW_AT_decl_line
 	.long	1167                    # DW_AT_type
 	.byte	18                      # Abbrev [18] 0x65e:0xf DW_TAG_formal_parameter
 	.long	.Ldebug_loc9            # DW_AT_location
-	.long	.Linfo_string72         # DW_AT_name
-	.byte	1                       # DW_AT_decl_file
-	.byte	174                     # DW_AT_decl_line
-	.long	1167                    # DW_AT_type
-	.byte	19                      # Abbrev [19] 0x66d:0x3a DW_TAG_lexical_block
-	.long	.Ldebug_ranges19        # DW_AT_ranges
-	.byte	20                      # Abbrev [20] 0x672:0xb DW_TAG_variable
 	.long	.Linfo_string73         # DW_AT_name
 	.byte	1                       # DW_AT_decl_file
-	.byte	176                     # DW_AT_decl_line
-	.long	1929                    # DW_AT_type
-	.byte	27                      # Abbrev [27] 0x67d:0x29 DW_TAG_inlined_subroutine
+	.byte	181                     # DW_AT_decl_line
+	.long	1167                    # DW_AT_type
+	.byte	19                      # Abbrev [19] 0x66d:0x3d DW_TAG_lexical_block
+	.long	.Ldebug_ranges19        # DW_AT_ranges
+	.byte	27                      # Abbrev [27] 0x672:0xe DW_TAG_variable
+	.byte	2                       # DW_AT_location
+	.byte	145
+	.byte	12
+	.long	.Linfo_string68         # DW_AT_name
+	.byte	1                       # DW_AT_decl_file
+	.byte	183                     # DW_AT_decl_line
+	.long	1935                    # DW_AT_type
+	.byte	28                      # Abbrev [28] 0x680:0x29 DW_TAG_inlined_subroutine
 	.long	1469                    # DW_AT_abstract_origin
 	.long	.Ldebug_ranges16        # DW_AT_ranges
 	.byte	1                       # DW_AT_call_file
-	.byte	216                     # DW_AT_call_line
-	.byte	19                      # Abbrev [19] 0x688:0x1d DW_TAG_lexical_block
+	.byte	223                     # DW_AT_call_line
+	.byte	19                      # Abbrev [19] 0x68b:0x1d DW_TAG_lexical_block
 	.long	.Ldebug_ranges18        # DW_AT_ranges
-	.byte	23                      # Abbrev [23] 0x68d:0x8 DW_TAG_variable
+	.byte	23                      # Abbrev [23] 0x690:0x8 DW_TAG_variable
 	.ascii	"\240\234\001"          # DW_AT_const_value
 	.long	1483                    # DW_AT_abstract_origin
-	.byte	19                      # Abbrev [19] 0x695:0xf DW_TAG_lexical_block
+	.byte	19                      # Abbrev [19] 0x698:0xf DW_TAG_lexical_block
 	.long	.Ldebug_ranges17        # DW_AT_ranges
-	.byte	25                      # Abbrev [25] 0x69a:0x9 DW_TAG_variable
+	.byte	25                      # Abbrev [25] 0x69d:0x9 DW_TAG_variable
 	.long	.Ldebug_loc10           # DW_AT_location
 	.long	1507                    # DW_AT_abstract_origin
 	.byte	0                       # End Of Children Mark
@@ -3028,7 +3453,7 @@ __xcc1_internal_1:
 	.byte	0                       # End Of Children Mark
 	.byte	0                       # End Of Children Mark
 	.byte	0                       # End Of Children Mark
-	.byte	17                      # Abbrev [17] 0x6a8:0xaa DW_TAG_subprogram
+	.byte	17                      # Abbrev [17] 0x6ab:0xad DW_TAG_subprogram
 	.long	.Ldebug_ranges20        # DW_AT_ranges
 	.byte	1                       # DW_AT_frame_base
 	.byte	94
@@ -3036,65 +3461,68 @@ __xcc1_internal_1:
 	.long	.Linfo_string65         # DW_AT_MIPS_linkage_name
 	.long	.Linfo_string65         # DW_AT_name
 	.byte	1                       # DW_AT_decl_file
-	.byte	175                     # DW_AT_decl_line
+	.byte	182                     # DW_AT_decl_line
 	.byte	1                       # DW_AT_external
-	.byte	18                      # Abbrev [18] 0x6bb:0xf DW_TAG_formal_parameter
+	.byte	18                      # Abbrev [18] 0x6be:0xf DW_TAG_formal_parameter
 	.long	.Ldebug_loc11           # DW_AT_location
-	.long	.Linfo_string68         # DW_AT_name
-	.byte	1                       # DW_AT_decl_file
-	.byte	173                     # DW_AT_decl_line
-	.long	1167                    # DW_AT_type
-	.byte	18                      # Abbrev [18] 0x6ca:0xf DW_TAG_formal_parameter
-	.long	.Ldebug_loc12           # DW_AT_location
 	.long	.Linfo_string69         # DW_AT_name
 	.byte	1                       # DW_AT_decl_file
-	.byte	173                     # DW_AT_decl_line
+	.byte	180                     # DW_AT_decl_line
 	.long	1167                    # DW_AT_type
-	.byte	18                      # Abbrev [18] 0x6d9:0xf DW_TAG_formal_parameter
-	.long	.Ldebug_loc13           # DW_AT_location
+	.byte	18                      # Abbrev [18] 0x6cd:0xf DW_TAG_formal_parameter
+	.long	.Ldebug_loc12           # DW_AT_location
 	.long	.Linfo_string70         # DW_AT_name
 	.byte	1                       # DW_AT_decl_file
-	.byte	173                     # DW_AT_decl_line
+	.byte	180                     # DW_AT_decl_line
 	.long	1167                    # DW_AT_type
-	.byte	18                      # Abbrev [18] 0x6e8:0xf DW_TAG_formal_parameter
-	.long	.Ldebug_loc14           # DW_AT_location
+	.byte	18                      # Abbrev [18] 0x6dc:0xf DW_TAG_formal_parameter
+	.long	.Ldebug_loc13           # DW_AT_location
 	.long	.Linfo_string71         # DW_AT_name
 	.byte	1                       # DW_AT_decl_file
-	.byte	174                     # DW_AT_decl_line
+	.byte	180                     # DW_AT_decl_line
 	.long	1167                    # DW_AT_type
-	.byte	18                      # Abbrev [18] 0x6f7:0xf DW_TAG_formal_parameter
-	.long	.Ldebug_loc15           # DW_AT_location
+	.byte	18                      # Abbrev [18] 0x6eb:0xf DW_TAG_formal_parameter
+	.long	.Ldebug_loc14           # DW_AT_location
 	.long	.Linfo_string72         # DW_AT_name
 	.byte	1                       # DW_AT_decl_file
-	.byte	174                     # DW_AT_decl_line
+	.byte	181                     # DW_AT_decl_line
 	.long	1167                    # DW_AT_type
-	.byte	19                      # Abbrev [19] 0x706:0x4b DW_TAG_lexical_block
-	.long	.Ldebug_ranges25        # DW_AT_ranges
-	.byte	20                      # Abbrev [20] 0x70b:0xb DW_TAG_variable
-	.long	.Linfo_string66         # DW_AT_name
-	.byte	1                       # DW_AT_decl_file
-	.byte	173                     # DW_AT_decl_line
-	.long	1922                    # DW_AT_type
-	.byte	19                      # Abbrev [19] 0x716:0x3a DW_TAG_lexical_block
-	.long	.Ldebug_ranges24        # DW_AT_ranges
-	.byte	20                      # Abbrev [20] 0x71b:0xb DW_TAG_variable
+	.byte	18                      # Abbrev [18] 0x6fa:0xf DW_TAG_formal_parameter
+	.long	.Ldebug_loc15           # DW_AT_location
 	.long	.Linfo_string73         # DW_AT_name
 	.byte	1                       # DW_AT_decl_file
-	.byte	176                     # DW_AT_decl_line
-	.long	1929                    # DW_AT_type
-	.byte	27                      # Abbrev [27] 0x726:0x29 DW_TAG_inlined_subroutine
+	.byte	181                     # DW_AT_decl_line
+	.long	1167                    # DW_AT_type
+	.byte	19                      # Abbrev [19] 0x709:0x4e DW_TAG_lexical_block
+	.long	.Ldebug_ranges25        # DW_AT_ranges
+	.byte	20                      # Abbrev [20] 0x70e:0xb DW_TAG_variable
+	.long	.Linfo_string66         # DW_AT_name
+	.byte	1                       # DW_AT_decl_file
+	.byte	180                     # DW_AT_decl_line
+	.long	1928                    # DW_AT_type
+	.byte	19                      # Abbrev [19] 0x719:0x3d DW_TAG_lexical_block
+	.long	.Ldebug_ranges24        # DW_AT_ranges
+	.byte	27                      # Abbrev [27] 0x71e:0xe DW_TAG_variable
+	.byte	2                       # DW_AT_location
+	.byte	145
+	.byte	12
+	.long	.Linfo_string68         # DW_AT_name
+	.byte	1                       # DW_AT_decl_file
+	.byte	183                     # DW_AT_decl_line
+	.long	1935                    # DW_AT_type
+	.byte	28                      # Abbrev [28] 0x72c:0x29 DW_TAG_inlined_subroutine
 	.long	1469                    # DW_AT_abstract_origin
 	.long	.Ldebug_ranges21        # DW_AT_ranges
 	.byte	1                       # DW_AT_call_file
-	.byte	216                     # DW_AT_call_line
-	.byte	19                      # Abbrev [19] 0x731:0x1d DW_TAG_lexical_block
+	.byte	223                     # DW_AT_call_line
+	.byte	19                      # Abbrev [19] 0x737:0x1d DW_TAG_lexical_block
 	.long	.Ldebug_ranges23        # DW_AT_ranges
-	.byte	23                      # Abbrev [23] 0x736:0x8 DW_TAG_variable
+	.byte	23                      # Abbrev [23] 0x73c:0x8 DW_TAG_variable
 	.ascii	"\240\234\001"          # DW_AT_const_value
 	.long	1483                    # DW_AT_abstract_origin
-	.byte	19                      # Abbrev [19] 0x73e:0xf DW_TAG_lexical_block
+	.byte	19                      # Abbrev [19] 0x744:0xf DW_TAG_lexical_block
 	.long	.Ldebug_ranges22        # DW_AT_ranges
-	.byte	25                      # Abbrev [25] 0x743:0x9 DW_TAG_variable
+	.byte	25                      # Abbrev [25] 0x749:0x9 DW_TAG_variable
 	.long	.Ldebug_loc16           # DW_AT_location
 	.long	1507                    # DW_AT_abstract_origin
 	.byte	0                       # End Of Children Mark
@@ -3103,37 +3531,37 @@ __xcc1_internal_1:
 	.byte	0                       # End Of Children Mark
 	.byte	0                       # End Of Children Mark
 	.byte	0                       # End Of Children Mark
-	.byte	28                      # Abbrev [28] 0x752:0x18 DW_TAG_subprogram
+	.byte	29                      # Abbrev [29] 0x758:0x18 DW_TAG_subprogram
 	.long	.Linfo_string61         # DW_AT_MIPS_linkage_name
 	.long	.Linfo_string61         # DW_AT_name
 	.byte	3                       # DW_AT_decl_file
 	.byte	46                      # DW_AT_decl_line
 	.byte	1                       # DW_AT_external
-	.byte	13                      # Abbrev [13] 0x75e:0xb DW_TAG_formal_parameter
+	.byte	13                      # Abbrev [13] 0x764:0xb DW_TAG_formal_parameter
 	.long	.Linfo_string53         # DW_AT_name
 	.byte	3                       # DW_AT_decl_file
 	.byte	46                      # DW_AT_decl_line
 	.long	1167                    # DW_AT_type
 	.byte	0                       # End Of Children Mark
-	.byte	28                      # Abbrev [28] 0x76a:0x18 DW_TAG_subprogram
+	.byte	29                      # Abbrev [29] 0x770:0x18 DW_TAG_subprogram
 	.long	.Linfo_string62         # DW_AT_MIPS_linkage_name
 	.long	.Linfo_string62         # DW_AT_name
 	.byte	3                       # DW_AT_decl_file
 	.byte	62                      # DW_AT_decl_line
 	.byte	1                       # DW_AT_external
-	.byte	13                      # Abbrev [13] 0x776:0xb DW_TAG_formal_parameter
+	.byte	13                      # Abbrev [13] 0x77c:0xb DW_TAG_formal_parameter
 	.long	.Linfo_string53         # DW_AT_name
 	.byte	3                       # DW_AT_decl_file
 	.byte	62                      # DW_AT_decl_line
 	.long	1167                    # DW_AT_type
 	.byte	0                       # End Of Children Mark
-	.byte	3                       # Abbrev [3] 0x782:0x7 DW_TAG_base_type
+	.byte	3                       # Abbrev [3] 0x788:0x7 DW_TAG_base_type
 	.long	.Linfo_string67         # DW_AT_name
 	.byte	7                       # DW_AT_encoding
 	.byte	4                       # DW_AT_byte_size
-	.byte	5                       # Abbrev [5] 0x789:0xd DW_TAG_array_type
+	.byte	5                       # Abbrev [5] 0x78f:0xd DW_TAG_array_type
 	.long	85                      # DW_AT_type
-	.byte	6                       # Abbrev [6] 0x78e:0x7 DW_TAG_subrange_type
+	.byte	6                       # Abbrev [6] 0x794:0x7 DW_TAG_subrange_type
 	.long	92                      # DW_AT_type
 	.byte	0                       # DW_AT_lower_bound
 	.byte	0                       # DW_AT_upper_bound
@@ -3478,6 +3906,21 @@ __xcc1_internal_1:
 	.byte	0                       # EOM(1)
 	.byte	0                       # EOM(2)
 	.byte	27                      # Abbreviation Code
+	.byte	52                      # DW_TAG_variable
+	.byte	0                       # DW_CHILDREN_no
+	.byte	2                       # DW_AT_location
+	.byte	10                      # DW_FORM_block1
+	.byte	3                       # DW_AT_name
+	.byte	14                      # DW_FORM_strp
+	.byte	58                      # DW_AT_decl_file
+	.byte	11                      # DW_FORM_data1
+	.byte	59                      # DW_AT_decl_line
+	.byte	11                      # DW_FORM_data1
+	.byte	73                      # DW_AT_type
+	.byte	19                      # DW_FORM_ref4
+	.byte	0                       # EOM(1)
+	.byte	0                       # EOM(2)
+	.byte	28                      # Abbreviation Code
 	.byte	29                      # DW_TAG_inlined_subroutine
 	.byte	1                       # DW_CHILDREN_yes
 	.byte	49                      # DW_AT_abstract_origin
@@ -3490,7 +3933,7 @@ __xcc1_internal_1:
 	.byte	11                      # DW_FORM_data1
 	.byte	0                       # EOM(1)
 	.byte	0                       # EOM(2)
-	.byte	28                      # Abbreviation Code
+	.byte	29                      # Abbreviation Code
 	.byte	46                      # DW_TAG_subprogram
 	.byte	1                       # DW_CHILDREN_yes
 	.ascii	"\207@"                 # DW_AT_MIPS_linkage_name
@@ -3588,23 +4031,23 @@ __xcc1_internal_1:
 	.long	0
 	.long	0
 .Ldebug_ranges16:
-	.long	.Ltmp50
-	.long	.Ltmp54
+	.long	.Ltmp55
+	.long	.Ltmp58
 	.long	0
 	.long	0
 .Ldebug_ranges17:
-	.long	.Ltmp50
-	.long	.Ltmp54
+	.long	.Ltmp55
+	.long	.Ltmp58
 	.long	0
 	.long	0
 .Ldebug_ranges18:
-	.long	.Ltmp50
-	.long	.Ltmp54
+	.long	.Ltmp55
+	.long	.Ltmp58
 	.long	0
 	.long	0
 .Ldebug_ranges19:
-	.long	.Ltmp47
-	.long	.Ltmp54
+	.long	.Ltmp53
+	.long	.Ltmp60
 	.long	0
 	.long	0
 .Ldebug_ranges20:
@@ -3613,202 +4056,202 @@ __xcc1_internal_1:
 	.long	0
 	.long	0
 .Ldebug_ranges21:
-	.long	.Ltmp63
-	.long	.Ltmp67
+	.long	.Ltmp74
+	.long	.Ltmp77
 	.long	0
 	.long	0
 .Ldebug_ranges22:
-	.long	.Ltmp63
-	.long	.Ltmp67
+	.long	.Ltmp74
+	.long	.Ltmp77
 	.long	0
 	.long	0
 .Ldebug_ranges23:
-	.long	.Ltmp63
-	.long	.Ltmp67
+	.long	.Ltmp74
+	.long	.Ltmp77
 	.long	0
 	.long	0
 .Ldebug_ranges24:
-	.long	.Ltmp60
-	.long	.Ltmp67
+	.long	.Ltmp72
+	.long	.Ltmp79
 	.long	0
 	.long	0
 .Ldebug_ranges25:
-	.long	.Ltmp60
-	.long	.Ltmp67
+	.long	.Ltmp72
+	.long	.Ltmp79
 	.long	0
 	.long	0
 	.section	.debug_loc,"",@progbits
 .Ldebug_loc0:
 	.long	.Lfunc_begin1
 	.long	.Ltmp22
-.Lset0 = .Ltmp70-.Ltmp69                # Loc expr size
+.Lset0 = .Ltmp82-.Ltmp81                # Loc expr size
 	.short	.Lset0
-.Ltmp69:
+.Ltmp81:
 	.byte	80                      # DW_OP_reg0
-.Ltmp70:
+.Ltmp82:
 	.long	0
 	.long	0
 .Ldebug_loc1:
 	.long	.Lfunc_begin1
 	.long	.Ltmp21
-.Lset1 = .Ltmp72-.Ltmp71                # Loc expr size
+.Lset1 = .Ltmp84-.Ltmp83                # Loc expr size
 	.short	.Lset1
-.Ltmp71:
+.Ltmp83:
 	.byte	81                      # DW_OP_reg1
-.Ltmp72:
+.Ltmp84:
 	.long	0
 	.long	0
 .Ldebug_loc2:
 	.long	.Lfunc_begin2
 	.long	.Ltmp26
-.Lset2 = .Ltmp74-.Ltmp73                # Loc expr size
+.Lset2 = .Ltmp86-.Ltmp85                # Loc expr size
 	.short	.Lset2
-.Ltmp73:
+.Ltmp85:
 	.byte	80                      # DW_OP_reg0
-.Ltmp74:
+.Ltmp86:
 	.long	0
 	.long	0
 .Ldebug_loc3:
 	.long	.Lfunc_begin3
 	.long	.Ltmp34
-.Lset3 = .Ltmp76-.Ltmp75                # Loc expr size
+.Lset3 = .Ltmp88-.Ltmp87                # Loc expr size
 	.short	.Lset3
-.Ltmp75:
+.Ltmp87:
 	.byte	80                      # DW_OP_reg0
-.Ltmp76:
+.Ltmp88:
 	.long	0
 	.long	0
 .Ldebug_loc4:
 	.long	.Lfunc_begin5
-	.long	.Ltmp46
-.Lset4 = .Ltmp78-.Ltmp77                # Loc expr size
+	.long	.Ltmp52
+.Lset4 = .Ltmp90-.Ltmp89                # Loc expr size
 	.short	.Lset4
-.Ltmp77:
-	.byte	80                      # DW_OP_reg0
-.Ltmp78:
-	.long	0
-	.long	0
-.Ldebug_loc5:
-	.long	.Lfunc_begin5
-	.long	.Ltmp48
-.Lset5 = .Ltmp80-.Ltmp79                # Loc expr size
-	.short	.Lset5
-.Ltmp79:
-	.byte	81                      # DW_OP_reg1
-.Ltmp80:
-	.long	0
-	.long	0
-.Ldebug_loc6:
-	.long	.Lfunc_begin5
-	.long	.Ltmp49
-.Lset6 = .Ltmp82-.Ltmp81                # Loc expr size
-	.short	.Lset6
-.Ltmp81:
-	.byte	82                      # DW_OP_reg2
-.Ltmp82:
-	.long	0
-	.long	0
-.Ldebug_loc7:
-	.long	.Lfunc_begin5
-	.long	.Ltmp49
-.Lset7 = .Ltmp84-.Ltmp83                # Loc expr size
-	.short	.Lset7
-.Ltmp83:
-	.byte	83                      # DW_OP_reg3
-.Ltmp84:
-	.long	0
-	.long	0
-.Ldebug_loc8:
-	.long	.Lfunc_begin5
-	.long	.Ltmp53
-.Lset8 = .Ltmp86-.Ltmp85                # Loc expr size
-	.short	.Lset8
-.Ltmp85:
-	.byte	126                     # DW_OP_breg14
-	.byte	20                      # 
-.Ltmp86:
-	.long	0
-	.long	0
-.Ldebug_loc9:
-	.long	.Lfunc_begin5
-	.long	.Ltmp53
-.Lset9 = .Ltmp88-.Ltmp87                # Loc expr size
-	.short	.Lset9
-.Ltmp87:
-	.byte	126                     # DW_OP_breg14
-	.byte	24                      # 
-.Ltmp88:
-	.long	0
-	.long	0
-.Ldebug_loc10:
-	.long	.Ltmp50
-	.long	.Ltmp51
-.Lset10 = .Ltmp90-.Ltmp89               # Loc expr size
-	.short	.Lset10
 .Ltmp89:
 	.byte	80                      # DW_OP_reg0
 .Ltmp90:
 	.long	0
 	.long	0
+.Ldebug_loc5:
+	.long	.Lfunc_begin5
+	.long	.Ltmp54
+.Lset5 = .Ltmp92-.Ltmp91                # Loc expr size
+	.short	.Lset5
+.Ltmp91:
+	.byte	81                      # DW_OP_reg1
+.Ltmp92:
+	.long	0
+	.long	0
+.Ldebug_loc6:
+	.long	.Lfunc_begin5
+	.long	.Ltmp55
+.Lset6 = .Ltmp94-.Ltmp93                # Loc expr size
+	.short	.Lset6
+.Ltmp93:
+	.byte	82                      # DW_OP_reg2
+.Ltmp94:
+	.long	0
+	.long	0
+.Ldebug_loc7:
+	.long	.Lfunc_begin5
+	.long	.Ltmp55
+.Lset7 = .Ltmp96-.Ltmp95                # Loc expr size
+	.short	.Lset7
+.Ltmp95:
+	.byte	83                      # DW_OP_reg3
+.Ltmp96:
+	.long	0
+	.long	0
+.Ldebug_loc8:
+	.long	.Lfunc_begin5
+	.long	.Ltmp59
+.Lset8 = .Ltmp98-.Ltmp97                # Loc expr size
+	.short	.Lset8
+.Ltmp97:
+	.byte	126                     # DW_OP_breg14
+	.byte	52                      # 
+.Ltmp98:
+	.long	0
+	.long	0
+.Ldebug_loc9:
+	.long	.Lfunc_begin5
+	.long	.Ltmp59
+.Lset9 = .Ltmp100-.Ltmp99               # Loc expr size
+	.short	.Lset9
+.Ltmp99:
+	.byte	126                     # DW_OP_breg14
+	.byte	56                      # 
+.Ltmp100:
+	.long	0
+	.long	0
+.Ldebug_loc10:
+	.long	.Ltmp55
+	.long	.Ltmp56
+.Lset10 = .Ltmp102-.Ltmp101             # Loc expr size
+	.short	.Lset10
+.Ltmp101:
+	.byte	80                      # DW_OP_reg0
+.Ltmp102:
+	.long	0
+	.long	0
 .Ldebug_loc11:
 	.long	.Lfunc_begin6
-	.long	.Ltmp59
-.Lset11 = .Ltmp92-.Ltmp91               # Loc expr size
+	.long	.Ltmp71
+.Lset11 = .Ltmp104-.Ltmp103             # Loc expr size
 	.short	.Lset11
-.Ltmp91:
+.Ltmp103:
 	.byte	80                      # DW_OP_reg0
-.Ltmp92:
+.Ltmp104:
 	.long	0
 	.long	0
 .Ldebug_loc12:
 	.long	.Lfunc_begin6
-	.long	.Ltmp61
-.Lset12 = .Ltmp94-.Ltmp93               # Loc expr size
+	.long	.Ltmp73
+.Lset12 = .Ltmp106-.Ltmp105             # Loc expr size
 	.short	.Lset12
-.Ltmp93:
+.Ltmp105:
 	.byte	81                      # DW_OP_reg1
-.Ltmp94:
+.Ltmp106:
 	.long	0
 	.long	0
 .Ldebug_loc13:
 	.long	.Lfunc_begin6
-	.long	.Ltmp62
-.Lset13 = .Ltmp96-.Ltmp95               # Loc expr size
+	.long	.Ltmp74
+.Lset13 = .Ltmp108-.Ltmp107             # Loc expr size
 	.short	.Lset13
-.Ltmp95:
+.Ltmp107:
 	.byte	82                      # DW_OP_reg2
-.Ltmp96:
+.Ltmp108:
 	.long	0
 	.long	0
 .Ldebug_loc14:
 	.long	.Lfunc_begin6
-	.long	.Ltmp62
-.Lset14 = .Ltmp98-.Ltmp97               # Loc expr size
+	.long	.Ltmp74
+.Lset14 = .Ltmp110-.Ltmp109             # Loc expr size
 	.short	.Lset14
-.Ltmp97:
+.Ltmp109:
 	.byte	83                      # DW_OP_reg3
-.Ltmp98:
+.Ltmp110:
 	.long	0
 	.long	0
 .Ldebug_loc15:
 	.long	.Lfunc_begin6
-	.long	.Ltmp66
-.Lset15 = .Ltmp100-.Ltmp99              # Loc expr size
+	.long	.Ltmp78
+.Lset15 = .Ltmp112-.Ltmp111             # Loc expr size
 	.short	.Lset15
-.Ltmp99:
+.Ltmp111:
 	.byte	126                     # DW_OP_breg14
-	.byte	20                      # 
-.Ltmp100:
+	.byte	52                      # 
+.Ltmp112:
 	.long	0
 	.long	0
 .Ldebug_loc16:
-	.long	.Ltmp63
-	.long	.Ltmp64
-.Lset16 = .Ltmp102-.Ltmp101             # Loc expr size
+	.long	.Ltmp74
+	.long	.Ltmp75
+.Lset16 = .Ltmp114-.Ltmp113             # Loc expr size
 	.short	.Lset16
-.Ltmp101:
+.Ltmp113:
 	.byte	80                      # DW_OP_reg0
-.Ltmp102:
+.Ltmp114:
 	.long	0
 	.long	0
 	.section	.debug_pubnames,"",@progbits
@@ -3821,7 +4264,7 @@ __xcc1_internal_1:
 	.long	.Lset18
 	.long	843                     # DIE offset
 .asciiz"R26_SOUT_SOURCE3_IC_1_Default"  # External Name
-	.long	1704                    # DIE offset
+	.long	1707                    # DIE offset
 .asciiz"AudioHwConfig"                  # External Name
 	.long	728                     # DIE offset
 .asciiz"R21_SS_M_PIN_IC_1_Default"      # External Name
@@ -3911,7 +4354,7 @@ __xcc1_internal_1:
 .asciiz"R2_RESET_DELAY_IC_1_Default"    # External Name
 	.long	337                     # DIE offset
 .asciiz"R4_HIBERNATE_IC_1_Default"      # External Name
-	.long	1898                    # DIE offset
+	.long	1904                    # DIE offset
 .asciiz"delay_microseconds"             # External Name
 	.long	1174                    # DIE offset
 .asciiz"default_download_IC_1"          # External Name
@@ -3919,7 +4362,7 @@ __xcc1_internal_1:
 .asciiz"R19_SCLK_SCL_M_PIN_IC_1_Default" # External Name
 	.long	406                     # DIE offset
 .asciiz"R7_KILL_CORE_IC_1_Default"      # External Name
-	.long	1874                    # DIE offset
+	.long	1880                    # DIE offset
 .asciiz"delay_seconds"                  # External Name
 	.long	751                     # DIE offset
 .asciiz"R22_MOSI_M_PIN_IC_1_Default"    # External Name
@@ -3935,7 +4378,7 @@ __xcc1_internal_1:
 	.long	.Lset20
 	.long	1529                    # DIE offset
 .asciiz"timer"                          # External Name
-	.long	1922                    # DIE offset
+	.long	1928                    # DIE offset
 .asciiz"chanend"                        # External Name
 	.long	43                      # DIE offset
 .asciiz"port"                           # External Name
@@ -3955,6 +4398,8 @@ __xcc1_internal_1:
 	.typestring set_gpio, "f{0}(ui,ui)"
 	.typestring i2c_shared_master_init, "f{0}(&(s(r_i2c){m(p_i2c){p}}))"
 	.typestring i2c_shared_master_write_reg16, "f{si}(&(s(r_i2c){m(p_i2c){p}}),si,si,&(a(:c:uc)),si)"
+	.typestring i2c_shared_master_write, "f{si}(&(s(r_i2c){m(p_i2c){p}}),si,&(a(:c:uc)),si)"
+	.typestring configAnalogIOx8, "f{0}(0)"
 	.typestring default_download_IC_1, "f{0}(0)"
 	.typestring wait_us, "f{0}(si)"
 	.typestring _Swait_us_0, "f{0}(0)"
@@ -4015,363 +4460,495 @@ __xcc1_internal_1:
 .cc_top cc_0,.Lxta.call_labels42
 	.ascii	"../src/extensions/audiohw.xc"
 	.byte	0
-	.long	128
+	.long	135
 	.long	.Lxta.call_labels42
 .cc_bottom cc_0
-.cc_top cc_1,.Lxta.call_labels48
+.cc_top cc_1,.Lxta.call_labels47
 	.ascii	"../src/extensions/audiohw.xc"
 	.byte	0
-	.long	128
-	.long	.Lxta.call_labels48
-.cc_bottom cc_1
-.cc_top cc_2,.Lxta.call_labels43
-	.ascii	"../src/extensions/audiohw.xc"
-	.byte	0
-	.long	131
-	.long	.Lxta.call_labels43
-.cc_bottom cc_2
-.cc_top cc_3,.Lxta.call_labels49
-	.ascii	"../src/extensions/audiohw.xc"
-	.byte	0
-	.long	131
-	.long	.Lxta.call_labels49
-.cc_bottom cc_3
-.cc_top cc_4,.Lxta.call_labels50
-	.ascii	"../src/extensions/audiohw.xc"
-	.byte	0
-	.long	132
-	.long	.Lxta.call_labels50
-.cc_bottom cc_4
-.cc_top cc_5,.Lxta.call_labels44
-	.ascii	"../src/extensions/audiohw.xc"
-	.byte	0
-	.long	132
-	.long	.Lxta.call_labels44
-.cc_bottom cc_5
-.cc_top cc_6,.Lxta.call_labels51
-	.ascii	"../src/extensions/audiohw.xc"
-	.byte	0
-	.long	141
-	.long	.Lxta.call_labels51
-.cc_bottom cc_6
-.cc_top cc_7,.Lxta.call_labels45
-	.ascii	"../src/extensions/audiohw.xc"
-	.byte	0
-	.long	141
-	.long	.Lxta.call_labels45
-.cc_bottom cc_7
-.cc_top cc_8,.Lxta.call_labels52
-	.ascii	"../src/extensions/audiohw.xc"
-	.byte	0
-	.long	142
-	.long	.Lxta.call_labels52
-.cc_bottom cc_8
-.cc_top cc_9,.Lxta.call_labels46
-	.ascii	"../src/extensions/audiohw.xc"
-	.byte	0
-	.long	142
-	.long	.Lxta.call_labels46
-.cc_bottom cc_9
-.cc_top cc_10,.Lxta.call_labels53
-	.ascii	"../src/extensions/audiohw.xc"
-	.byte	0
-	.long	160
-	.long	.Lxta.call_labels53
-.cc_bottom cc_10
-.cc_top cc_11,.Lxta.call_labels47
-	.ascii	"../src/extensions/audiohw.xc"
-	.byte	0
-	.long	160
+	.long	135
 	.long	.Lxta.call_labels47
+.cc_bottom cc_1
+.cc_top cc_2,.Lxta.call_labels48
+	.ascii	"../src/extensions/audiohw.xc"
+	.byte	0
+	.long	138
+	.long	.Lxta.call_labels48
+.cc_bottom cc_2
+.cc_top cc_3,.Lxta.call_labels43
+	.ascii	"../src/extensions/audiohw.xc"
+	.byte	0
+	.long	138
+	.long	.Lxta.call_labels43
+.cc_bottom cc_3
+.cc_top cc_4,.Lxta.call_labels44
+	.ascii	"../src/extensions/audiohw.xc"
+	.byte	0
+	.long	139
+	.long	.Lxta.call_labels44
+.cc_bottom cc_4
+.cc_top cc_5,.Lxta.call_labels49
+	.ascii	"../src/extensions/audiohw.xc"
+	.byte	0
+	.long	139
+	.long	.Lxta.call_labels49
+.cc_bottom cc_5
+.cc_top cc_6,.Lxta.call_labels45
+	.ascii	"../src/extensions/audiohw.xc"
+	.byte	0
+	.long	148
+	.long	.Lxta.call_labels45
+.cc_bottom cc_6
+.cc_top cc_7,.Lxta.call_labels50
+	.ascii	"../src/extensions/audiohw.xc"
+	.byte	0
+	.long	148
+	.long	.Lxta.call_labels50
+.cc_bottom cc_7
+.cc_top cc_8,.Lxta.call_labels46
+	.ascii	"../src/extensions/audiohw.xc"
+	.byte	0
+	.long	149
+	.long	.Lxta.call_labels46
+.cc_bottom cc_8
+.cc_top cc_9,.Lxta.call_labels51
+	.ascii	"../src/extensions/audiohw.xc"
+	.byte	0
+	.long	149
+	.long	.Lxta.call_labels51
+.cc_bottom cc_9
+.cc_top cc_10,.Lxta.call_labels67
+	.ascii	"../src/extensions/audiohw.xc"
+	.byte	0
+	.long	219
+	.long	.Lxta.call_labels67
+.cc_bottom cc_10
+.cc_top cc_11,.Lxta.call_labels52
+	.ascii	"../src/extensions/audiohw.xc"
+	.byte	0
+	.long	219
+	.long	.Lxta.call_labels52
 .cc_bottom cc_11
-.cc_top cc_12,.Lxta.call_labels57
+.cc_top cc_12,.Lxta.call_labels53
 	.ascii	"../src/extensions/audiohw.xc"
 	.byte	0
-	.long	179
-	.long	.Lxta.call_labels57
+	.long	232
+	.long	.Lxta.call_labels53
 .cc_bottom cc_12
-.cc_top cc_13,.Lxta.call_labels54
+.cc_top cc_13,.Lxta.call_labels68
 	.ascii	"../src/extensions/audiohw.xc"
 	.byte	0
-	.long	179
-	.long	.Lxta.call_labels54
+	.long	232
+	.long	.Lxta.call_labels68
 .cc_bottom cc_13
-.cc_top cc_14,.Lxta.call_labels55
+.cc_top cc_14,.Lxta.call_labels54
 	.ascii	"../src/extensions/audiohw.xc"
 	.byte	0
-	.long	180
-	.long	.Lxta.call_labels55
+	.long	233
+	.long	.Lxta.call_labels54
 .cc_bottom cc_14
-.cc_top cc_15,.Lxta.call_labels58
+.cc_top cc_15,.Lxta.call_labels69
 	.ascii	"../src/extensions/audiohw.xc"
 	.byte	0
-	.long	180
-	.long	.Lxta.call_labels58
+	.long	233
+	.long	.Lxta.call_labels69
 .cc_bottom cc_15
-.cc_top cc_16,.Lxta.call_labels56
+.cc_top cc_16,.Lxta.call_labels70
 	.ascii	"../src/extensions/audiohw.xc"
 	.byte	0
-	.long	212
-	.long	.Lxta.call_labels56
+	.long	244
+	.long	.Lxta.call_labels70
 .cc_bottom cc_16
-.cc_top cc_17,.Lxta.call_labels59
+.cc_top cc_17,.Lxta.call_labels55
 	.ascii	"../src/extensions/audiohw.xc"
 	.byte	0
-	.long	212
-	.long	.Lxta.call_labels59
+	.long	244
+	.long	.Lxta.call_labels55
 .cc_bottom cc_17
-.cc_top cc_18,.Lxta.call_labels0
+.cc_top cc_18,.Lxta.call_labels56
+	.ascii	"../src/extensions/audiohw.xc"
+	.byte	0
+	.long	246
+	.long	.Lxta.call_labels56
+.cc_bottom cc_18
+.cc_top cc_19,.Lxta.call_labels71
+	.ascii	"../src/extensions/audiohw.xc"
+	.byte	0
+	.long	246
+	.long	.Lxta.call_labels71
+.cc_bottom cc_19
+.cc_top cc_20,.Lxta.call_labels72
+	.ascii	"../src/extensions/audiohw.xc"
+	.byte	0
+	.long	250
+	.long	.Lxta.call_labels72
+.cc_bottom cc_20
+.cc_top cc_21,.Lxta.call_labels57
+	.ascii	"../src/extensions/audiohw.xc"
+	.byte	0
+	.long	250
+	.long	.Lxta.call_labels57
+.cc_bottom cc_21
+.cc_top cc_22,.Lxta.call_labels58
+	.ascii	"../src/extensions/audiohw.xc"
+	.byte	0
+	.long	255
+	.long	.Lxta.call_labels58
+.cc_bottom cc_22
+.cc_top cc_23,.Lxta.call_labels73
+	.ascii	"../src/extensions/audiohw.xc"
+	.byte	0
+	.long	255
+	.long	.Lxta.call_labels73
+.cc_bottom cc_23
+.cc_top cc_24,.Lxta.call_labels59
+	.ascii	"../src/extensions/audiohw.xc"
+	.byte	0
+	.long	257
+	.long	.Lxta.call_labels59
+.cc_bottom cc_24
+.cc_top cc_25,.Lxta.call_labels74
+	.ascii	"../src/extensions/audiohw.xc"
+	.byte	0
+	.long	257
+	.long	.Lxta.call_labels74
+.cc_bottom cc_25
+.cc_top cc_26,.Lxta.call_labels75
+	.ascii	"../src/extensions/audiohw.xc"
+	.byte	0
+	.long	261
+	.long	.Lxta.call_labels75
+.cc_bottom cc_26
+.cc_top cc_27,.Lxta.call_labels60
+	.ascii	"../src/extensions/audiohw.xc"
+	.byte	0
+	.long	261
+	.long	.Lxta.call_labels60
+.cc_bottom cc_27
+.cc_top cc_28,.Lxta.call_labels61
+	.ascii	"../src/extensions/audiohw.xc"
+	.byte	0
+	.long	272
+	.long	.Lxta.call_labels61
+.cc_bottom cc_28
+.cc_top cc_29,.Lxta.call_labels76
+	.ascii	"../src/extensions/audiohw.xc"
+	.byte	0
+	.long	272
+	.long	.Lxta.call_labels76
+.cc_bottom cc_29
+.cc_top cc_30,.Lxta.call_labels62
+	.ascii	"../src/extensions/audiohw.xc"
+	.byte	0
+	.long	274
+	.long	.Lxta.call_labels62
+.cc_bottom cc_30
+.cc_top cc_31,.Lxta.call_labels77
+	.ascii	"../src/extensions/audiohw.xc"
+	.byte	0
+	.long	274
+	.long	.Lxta.call_labels77
+.cc_bottom cc_31
+.cc_top cc_32,.Lxta.call_labels78
+	.ascii	"../src/extensions/audiohw.xc"
+	.byte	0
+	.long	278
+	.long	.Lxta.call_labels78
+.cc_bottom cc_32
+.cc_top cc_33,.Lxta.call_labels63
+	.ascii	"../src/extensions/audiohw.xc"
+	.byte	0
+	.long	278
+	.long	.Lxta.call_labels63
+.cc_bottom cc_33
+.cc_top cc_34,.Lxta.call_labels64
+	.ascii	"../src/extensions/audiohw.xc"
+	.byte	0
+	.long	283
+	.long	.Lxta.call_labels64
+.cc_bottom cc_34
+.cc_top cc_35,.Lxta.call_labels79
+	.ascii	"../src/extensions/audiohw.xc"
+	.byte	0
+	.long	283
+	.long	.Lxta.call_labels79
+.cc_bottom cc_35
+.cc_top cc_36,.Lxta.call_labels65
+	.ascii	"../src/extensions/audiohw.xc"
+	.byte	0
+	.long	285
+	.long	.Lxta.call_labels65
+.cc_bottom cc_36
+.cc_top cc_37,.Lxta.call_labels80
+	.ascii	"../src/extensions/audiohw.xc"
+	.byte	0
+	.long	285
+	.long	.Lxta.call_labels80
+.cc_bottom cc_37
+.cc_top cc_38,.Lxta.call_labels66
+	.ascii	"../src/extensions/audiohw.xc"
+	.byte	0
+	.long	289
+	.long	.Lxta.call_labels66
+.cc_bottom cc_38
+.cc_top cc_39,.Lxta.call_labels81
+	.ascii	"../src/extensions/audiohw.xc"
+	.byte	0
+	.long	289
+	.long	.Lxta.call_labels81
+.cc_bottom cc_39
+.cc_top cc_40,.Lxta.call_labels0
 	.ascii	"../src/extensions/dspfw_IC_1.h"
 	.byte	0
 	.long	449
 	.long	.Lxta.call_labels0
-.cc_bottom cc_18
-.cc_top cc_19,.Lxta.call_labels1
+.cc_bottom cc_40
+.cc_top cc_41,.Lxta.call_labels1
 	.ascii	"../src/extensions/dspfw_IC_1.h"
 	.byte	0
 	.long	450
 	.long	.Lxta.call_labels1
-.cc_bottom cc_19
-.cc_top cc_20,.Lxta.call_labels3
+.cc_bottom cc_41
+.cc_top cc_42,.Lxta.call_labels3
 	.ascii	"../src/extensions/dspfw_IC_1.h"
 	.byte	0
 	.long	453
 	.long	.Lxta.call_labels3
-.cc_bottom cc_20
-.cc_top cc_21,.Lxta.call_labels4
+.cc_bottom cc_42
+.cc_top cc_43,.Lxta.call_labels4
 	.ascii	"../src/extensions/dspfw_IC_1.h"
 	.byte	0
 	.long	454
 	.long	.Lxta.call_labels4
-.cc_bottom cc_21
-.cc_top cc_22,.Lxta.call_labels6
+.cc_bottom cc_43
+.cc_top cc_44,.Lxta.call_labels6
 	.ascii	"../src/extensions/dspfw_IC_1.h"
 	.byte	0
 	.long	457
 	.long	.Lxta.call_labels6
-.cc_bottom cc_22
-.cc_top cc_23,.Lxta.call_labels7
+.cc_bottom cc_44
+.cc_top cc_45,.Lxta.call_labels7
 	.ascii	"../src/extensions/dspfw_IC_1.h"
 	.byte	0
 	.long	458
 	.long	.Lxta.call_labels7
-.cc_bottom cc_23
-.cc_top cc_24,.Lxta.call_labels8
+.cc_bottom cc_45
+.cc_top cc_46,.Lxta.call_labels8
 	.ascii	"../src/extensions/dspfw_IC_1.h"
 	.byte	0
 	.long	459
 	.long	.Lxta.call_labels8
-.cc_bottom cc_24
-.cc_top cc_25,.Lxta.call_labels9
+.cc_bottom cc_46
+.cc_top cc_47,.Lxta.call_labels9
 	.ascii	"../src/extensions/dspfw_IC_1.h"
 	.byte	0
 	.long	460
 	.long	.Lxta.call_labels9
-.cc_bottom cc_25
-.cc_top cc_26,.Lxta.call_labels10
+.cc_bottom cc_47
+.cc_top cc_48,.Lxta.call_labels10
 	.ascii	"../src/extensions/dspfw_IC_1.h"
 	.byte	0
 	.long	461
 	.long	.Lxta.call_labels10
-.cc_bottom cc_26
-.cc_top cc_27,.Lxta.call_labels11
+.cc_bottom cc_48
+.cc_top cc_49,.Lxta.call_labels11
 	.ascii	"../src/extensions/dspfw_IC_1.h"
 	.byte	0
 	.long	462
 	.long	.Lxta.call_labels11
-.cc_bottom cc_27
-.cc_top cc_28,.Lxta.call_labels12
+.cc_bottom cc_49
+.cc_top cc_50,.Lxta.call_labels12
 	.ascii	"../src/extensions/dspfw_IC_1.h"
 	.byte	0
 	.long	463
 	.long	.Lxta.call_labels12
-.cc_bottom cc_28
-.cc_top cc_29,.Lxta.call_labels13
+.cc_bottom cc_50
+.cc_top cc_51,.Lxta.call_labels13
 	.ascii	"../src/extensions/dspfw_IC_1.h"
 	.byte	0
 	.long	464
 	.long	.Lxta.call_labels13
-.cc_bottom cc_29
-.cc_top cc_30,.Lxta.call_labels15
+.cc_bottom cc_51
+.cc_top cc_52,.Lxta.call_labels15
 	.ascii	"../src/extensions/dspfw_IC_1.h"
 	.byte	0
 	.long	466
 	.long	.Lxta.call_labels15
-.cc_bottom cc_30
-.cc_top cc_31,.Lxta.call_labels16
+.cc_bottom cc_52
+.cc_top cc_53,.Lxta.call_labels16
 	.ascii	"../src/extensions/dspfw_IC_1.h"
 	.byte	0
 	.long	467
 	.long	.Lxta.call_labels16
-.cc_bottom cc_31
-.cc_top cc_32,.Lxta.call_labels17
+.cc_bottom cc_53
+.cc_top cc_54,.Lxta.call_labels17
 	.ascii	"../src/extensions/dspfw_IC_1.h"
 	.byte	0
 	.long	468
 	.long	.Lxta.call_labels17
-.cc_bottom cc_32
-.cc_top cc_33,.Lxta.call_labels18
+.cc_bottom cc_54
+.cc_top cc_55,.Lxta.call_labels18
 	.ascii	"../src/extensions/dspfw_IC_1.h"
 	.byte	0
 	.long	469
 	.long	.Lxta.call_labels18
-.cc_bottom cc_33
-.cc_top cc_34,.Lxta.call_labels19
+.cc_bottom cc_55
+.cc_top cc_56,.Lxta.call_labels19
 	.ascii	"../src/extensions/dspfw_IC_1.h"
 	.byte	0
 	.long	470
 	.long	.Lxta.call_labels19
-.cc_bottom cc_34
-.cc_top cc_35,.Lxta.call_labels20
+.cc_bottom cc_56
+.cc_top cc_57,.Lxta.call_labels20
 	.ascii	"../src/extensions/dspfw_IC_1.h"
 	.byte	0
 	.long	471
 	.long	.Lxta.call_labels20
-.cc_bottom cc_35
-.cc_top cc_36,.Lxta.call_labels21
+.cc_bottom cc_57
+.cc_top cc_58,.Lxta.call_labels21
 	.ascii	"../src/extensions/dspfw_IC_1.h"
 	.byte	0
 	.long	472
 	.long	.Lxta.call_labels21
-.cc_bottom cc_36
-.cc_top cc_37,.Lxta.call_labels22
+.cc_bottom cc_58
+.cc_top cc_59,.Lxta.call_labels22
 	.ascii	"../src/extensions/dspfw_IC_1.h"
 	.byte	0
 	.long	473
 	.long	.Lxta.call_labels22
-.cc_bottom cc_37
-.cc_top cc_38,.Lxta.call_labels23
+.cc_bottom cc_59
+.cc_top cc_60,.Lxta.call_labels23
 	.ascii	"../src/extensions/dspfw_IC_1.h"
 	.byte	0
 	.long	474
 	.long	.Lxta.call_labels23
-.cc_bottom cc_38
-.cc_top cc_39,.Lxta.call_labels24
+.cc_bottom cc_60
+.cc_top cc_61,.Lxta.call_labels24
 	.ascii	"../src/extensions/dspfw_IC_1.h"
 	.byte	0
 	.long	475
 	.long	.Lxta.call_labels24
-.cc_bottom cc_39
-.cc_top cc_40,.Lxta.call_labels25
+.cc_bottom cc_61
+.cc_top cc_62,.Lxta.call_labels25
 	.ascii	"../src/extensions/dspfw_IC_1.h"
 	.byte	0
 	.long	476
 	.long	.Lxta.call_labels25
-.cc_bottom cc_40
-.cc_top cc_41,.Lxta.call_labels26
+.cc_bottom cc_62
+.cc_top cc_63,.Lxta.call_labels26
 	.ascii	"../src/extensions/dspfw_IC_1.h"
 	.byte	0
 	.long	477
 	.long	.Lxta.call_labels26
-.cc_bottom cc_41
-.cc_top cc_42,.Lxta.call_labels27
+.cc_bottom cc_63
+.cc_top cc_64,.Lxta.call_labels27
 	.ascii	"../src/extensions/dspfw_IC_1.h"
 	.byte	0
 	.long	478
 	.long	.Lxta.call_labels27
-.cc_bottom cc_42
-.cc_top cc_43,.Lxta.call_labels28
+.cc_bottom cc_64
+.cc_top cc_65,.Lxta.call_labels28
 	.ascii	"../src/extensions/dspfw_IC_1.h"
 	.byte	0
 	.long	479
 	.long	.Lxta.call_labels28
-.cc_bottom cc_43
-.cc_top cc_44,.Lxta.call_labels29
+.cc_bottom cc_65
+.cc_top cc_66,.Lxta.call_labels29
 	.ascii	"../src/extensions/dspfw_IC_1.h"
 	.byte	0
 	.long	480
 	.long	.Lxta.call_labels29
-.cc_bottom cc_44
-.cc_top cc_45,.Lxta.call_labels30
+.cc_bottom cc_66
+.cc_top cc_67,.Lxta.call_labels30
 	.ascii	"../src/extensions/dspfw_IC_1.h"
 	.byte	0
 	.long	481
 	.long	.Lxta.call_labels30
-.cc_bottom cc_45
-.cc_top cc_46,.Lxta.call_labels31
+.cc_bottom cc_67
+.cc_top cc_68,.Lxta.call_labels31
 	.ascii	"../src/extensions/dspfw_IC_1.h"
 	.byte	0
 	.long	482
 	.long	.Lxta.call_labels31
-.cc_bottom cc_46
-.cc_top cc_47,.Lxta.call_labels32
+.cc_bottom cc_68
+.cc_top cc_69,.Lxta.call_labels32
 	.ascii	"../src/extensions/dspfw_IC_1.h"
 	.byte	0
 	.long	483
 	.long	.Lxta.call_labels32
-.cc_bottom cc_47
-.cc_top cc_48,.Lxta.call_labels33
+.cc_bottom cc_69
+.cc_top cc_70,.Lxta.call_labels33
 	.ascii	"../src/extensions/dspfw_IC_1.h"
 	.byte	0
 	.long	484
 	.long	.Lxta.call_labels33
-.cc_bottom cc_48
-.cc_top cc_49,.Lxta.call_labels34
+.cc_bottom cc_70
+.cc_top cc_71,.Lxta.call_labels34
 	.ascii	"../src/extensions/dspfw_IC_1.h"
 	.byte	0
 	.long	485
 	.long	.Lxta.call_labels34
-.cc_bottom cc_49
-.cc_top cc_50,.Lxta.call_labels35
+.cc_bottom cc_71
+.cc_top cc_72,.Lxta.call_labels35
 	.ascii	"../src/extensions/dspfw_IC_1.h"
 	.byte	0
 	.long	486
 	.long	.Lxta.call_labels35
-.cc_bottom cc_50
-.cc_top cc_51,.Lxta.call_labels36
+.cc_bottom cc_72
+.cc_top cc_73,.Lxta.call_labels36
 	.ascii	"../src/extensions/dspfw_IC_1.h"
 	.byte	0
 	.long	487
 	.long	.Lxta.call_labels36
-.cc_bottom cc_51
-.cc_top cc_52,.Lxta.call_labels37
+.cc_bottom cc_73
+.cc_top cc_74,.Lxta.call_labels37
 	.ascii	"../src/extensions/dspfw_IC_1.h"
 	.byte	0
 	.long	488
 	.long	.Lxta.call_labels37
-.cc_bottom cc_52
-.cc_top cc_53,.Lxta.call_labels38
+.cc_bottom cc_74
+.cc_top cc_75,.Lxta.call_labels38
 	.ascii	"../src/extensions/dspfw_IC_1.h"
 	.byte	0
 	.long	489
 	.long	.Lxta.call_labels38
-.cc_bottom cc_53
-.cc_top cc_54,.Lxta.call_labels39
+.cc_bottom cc_75
+.cc_top cc_76,.Lxta.call_labels39
 	.ascii	"../src/extensions/dspfw_IC_1.h"
 	.byte	0
 	.long	490
 	.long	.Lxta.call_labels39
-.cc_bottom cc_54
-.cc_top cc_55,.Lxta.call_labels41
+.cc_bottom cc_76
+.cc_top cc_77,.Lxta.call_labels41
 	.ascii	"../src/extensions/dspfw_IC_1.h"
 	.byte	0
 	.long	493
 	.long	.Lxta.call_labels41
-.cc_bottom cc_55
-.cc_top cc_56,.Lxta.call_labels5
-	.ascii	"/Applications/XMOS_xTIMEcomposer_Community_14.3.2/target/include/timer.h"
-	.byte	0
-	.long	55
-	.long	.Lxta.call_labels5
-.cc_bottom cc_56
-.cc_top cc_57,.Lxta.call_labels14
-	.ascii	"/Applications/XMOS_xTIMEcomposer_Community_14.3.2/target/include/timer.h"
+.cc_bottom cc_77
+.cc_top cc_78,.Lxta.call_labels14
+	.ascii	"/Applications/XMOS_xTIMEcomposer_Community_14.3.3/target/include/timer.h"
 	.byte	0
 	.long	55
 	.long	.Lxta.call_labels14
-.cc_bottom cc_57
-.cc_top cc_58,.Lxta.call_labels2
-	.ascii	"/Applications/XMOS_xTIMEcomposer_Community_14.3.2/target/include/timer.h"
+.cc_bottom cc_78
+.cc_top cc_79,.Lxta.call_labels2
+	.ascii	"/Applications/XMOS_xTIMEcomposer_Community_14.3.3/target/include/timer.h"
 	.byte	0
 	.long	55
 	.long	.Lxta.call_labels2
-.cc_bottom cc_58
-.cc_top cc_59,.Lxta.call_labels40
-	.ascii	"/Applications/XMOS_xTIMEcomposer_Community_14.3.2/target/include/timer.h"
+.cc_bottom cc_79
+.cc_top cc_80,.Lxta.call_labels5
+	.ascii	"/Applications/XMOS_xTIMEcomposer_Community_14.3.3/target/include/timer.h"
+	.byte	0
+	.long	55
+	.long	.Lxta.call_labels5
+.cc_bottom cc_80
+.cc_top cc_81,.Lxta.call_labels40
+	.ascii	"/Applications/XMOS_xTIMEcomposer_Community_14.3.3/target/include/timer.h"
 	.byte	0
 	.long	55
 	.long	.Lxta.call_labels40
-.cc_bottom cc_59
+.cc_bottom cc_81
 .Lentries_end1:
 	.section	.xtaendpointtable,"",@progbits
 .Lentries_start2:
@@ -4379,30 +4956,30 @@ __xcc1_internal_1:
 	.long	0
 	.ascii	"/Users/rkn/Documents/xTIMEcomposer/workspace/app_usb_aud_xk_216_mc/.build_2i32o32xxxxx_tdm8"
 	.byte	0
-.cc_top cc_60,.Lxta.endpoint_labels0
+.cc_top cc_82,.Lxta.endpoint_labels0
 	.ascii	"../src/extensions/audiohw.xc"
 	.byte	0
-	.long	115
+	.long	122
 	.long	.Lxta.endpoint_labels0
-.cc_bottom cc_60
-.cc_top cc_61,.Lxta.endpoint_labels1
+.cc_bottom cc_82
+.cc_top cc_83,.Lxta.endpoint_labels1
 	.ascii	"../src/extensions/audiohw.xc"
 	.byte	0
-	.long	115
+	.long	122
 	.long	.Lxta.endpoint_labels1
-.cc_bottom cc_61
-.cc_top cc_62,.Lxta.endpoint_labels2
+.cc_bottom cc_83
+.cc_top cc_84,.Lxta.endpoint_labels2
 	.ascii	"../src/extensions/audiohw.xc"
 	.byte	0
-	.long	115
+	.long	122
 	.long	.Lxta.endpoint_labels2
-.cc_bottom cc_62
-.cc_top cc_63,.Lxta.endpoint_labels3
+.cc_bottom cc_84
+.cc_top cc_85,.Lxta.endpoint_labels3
 	.ascii	"../src/extensions/audiohw.xc"
 	.byte	0
-	.long	115
+	.long	122
 	.long	.Lxta.endpoint_labels3
-.cc_bottom cc_63
+.cc_bottom cc_85
 .Lentries_end3:
 	.section	.xtalabeltable,"",@progbits
 .Lentries_start4:
@@ -4410,545 +4987,699 @@ __xcc1_internal_1:
 	.long	0
 	.ascii	"/Users/rkn/Documents/xTIMEcomposer/workspace/app_usb_aud_xk_216_mc/.build_2i32o32xxxxx_tdm8"
 	.byte	0
-.cc_top cc_64,.Lxtalabel2
+.cc_top cc_86,.Lxtalabel2
 	.ascii	"../src/extensions/audiohw.xc"
 	.byte	0
-	.long	110
-	.long	112
+	.long	117
+	.long	119
 	.long	.Lxtalabel2
-.cc_bottom cc_64
-.cc_top cc_65,.Lxtalabel6
-	.ascii	"../src/extensions/audiohw.xc"
-	.byte	0
-	.long	110
-	.long	112
-	.long	.Lxtalabel6
-.cc_bottom cc_65
-.cc_top cc_66,.Lxtalabel1
-	.ascii	"../src/extensions/audiohw.xc"
-	.byte	0
-	.long	110
-	.long	112
-	.long	.Lxtalabel1
-.cc_bottom cc_66
-.cc_top cc_67,.Lxtalabel5
-	.ascii	"../src/extensions/audiohw.xc"
-	.byte	0
-	.long	110
-	.long	112
-	.long	.Lxtalabel5
-.cc_bottom cc_67
-.cc_top cc_68,.Lxtalabel5
-	.ascii	"../src/extensions/audiohw.xc"
-	.byte	0
-	.long	114
-	.long	116
-	.long	.Lxtalabel5
-.cc_bottom cc_68
-.cc_top cc_69,.Lxtalabel1
-	.ascii	"../src/extensions/audiohw.xc"
-	.byte	0
-	.long	114
-	.long	116
-	.long	.Lxtalabel1
-.cc_bottom cc_69
-.cc_top cc_70,.Lxtalabel6
-	.ascii	"../src/extensions/audiohw.xc"
-	.byte	0
-	.long	114
-	.long	116
-	.long	.Lxtalabel6
-.cc_bottom cc_70
-.cc_top cc_71,.Lxtalabel2
-	.ascii	"../src/extensions/audiohw.xc"
-	.byte	0
-	.long	114
-	.long	116
-	.long	.Lxtalabel2
-.cc_bottom cc_71
-.cc_top cc_72,.Lxtalabel3
-	.ascii	"../src/extensions/audiohw.xc"
-	.byte	0
-	.long	119
-	.long	119
-	.long	.Lxtalabel3
-.cc_bottom cc_72
-.cc_top cc_73,.Lxtalabel4
-	.ascii	"../src/extensions/audiohw.xc"
-	.byte	0
-	.long	119
-	.long	119
-	.long	.Lxtalabel4
-.cc_bottom cc_73
-.cc_top cc_74,.Lxtalabel3
-	.ascii	"../src/extensions/audiohw.xc"
-	.byte	0
-	.long	128
-	.long	128
-	.long	.Lxtalabel3
-.cc_bottom cc_74
-.cc_top cc_75,.Lxtalabel4
-	.ascii	"../src/extensions/audiohw.xc"
-	.byte	0
-	.long	128
-	.long	128
-	.long	.Lxtalabel4
-.cc_bottom cc_75
-.cc_top cc_76,.Lxtalabel3
-	.ascii	"../src/extensions/audiohw.xc"
-	.byte	0
-	.long	131
-	.long	132
-	.long	.Lxtalabel3
-.cc_bottom cc_76
-.cc_top cc_77,.Lxtalabel4
-	.ascii	"../src/extensions/audiohw.xc"
-	.byte	0
-	.long	131
-	.long	132
-	.long	.Lxtalabel4
-.cc_bottom cc_77
-.cc_top cc_78,.Lxtalabel4
-	.ascii	"../src/extensions/audiohw.xc"
-	.byte	0
-	.long	141
-	.long	142
-	.long	.Lxtalabel4
-.cc_bottom cc_78
-.cc_top cc_79,.Lxtalabel3
-	.ascii	"../src/extensions/audiohw.xc"
-	.byte	0
-	.long	141
-	.long	142
-	.long	.Lxtalabel3
-.cc_bottom cc_79
-.cc_top cc_80,.Lxtalabel3
-	.ascii	"../src/extensions/audiohw.xc"
-	.byte	0
-	.long	160
-	.long	160
-	.long	.Lxtalabel3
-.cc_bottom cc_80
-.cc_top cc_81,.Lxtalabel4
-	.ascii	"../src/extensions/audiohw.xc"
-	.byte	0
-	.long	160
-	.long	160
-	.long	.Lxtalabel4
-.cc_bottom cc_81
-.cc_top cc_82,.Lxtalabel3
-	.ascii	"../src/extensions/audiohw.xc"
-	.byte	0
-	.long	168
-	.long	168
-	.long	.Lxtalabel3
-.cc_bottom cc_82
-.cc_top cc_83,.Lxtalabel4
-	.ascii	"../src/extensions/audiohw.xc"
-	.byte	0
-	.long	168
-	.long	168
-	.long	.Lxtalabel4
-.cc_bottom cc_83
-.cc_top cc_84,.Lxtalabel6
-	.ascii	"../src/extensions/audiohw.xc"
-	.byte	0
-	.long	175
-	.long	176
-	.long	.Lxtalabel6
-.cc_bottom cc_84
-.cc_top cc_85,.Lxtalabel5
-	.ascii	"../src/extensions/audiohw.xc"
-	.byte	0
-	.long	175
-	.long	176
-	.long	.Lxtalabel5
-.cc_bottom cc_85
-.cc_top cc_86,.Lxtalabel5
-	.ascii	"../src/extensions/audiohw.xc"
-	.byte	0
-	.long	179
-	.long	180
-	.long	.Lxtalabel5
 .cc_bottom cc_86
-.cc_top cc_87,.Lxtalabel6
+.cc_top cc_87,.Lxtalabel1
 	.ascii	"../src/extensions/audiohw.xc"
 	.byte	0
-	.long	179
-	.long	180
-	.long	.Lxtalabel6
+	.long	117
+	.long	119
+	.long	.Lxtalabel1
 .cc_bottom cc_87
-.cc_top cc_88,.Lxtalabel6
+.cc_top cc_88,.Lxtalabel5
 	.ascii	"../src/extensions/audiohw.xc"
 	.byte	0
-	.long	212
-	.long	212
-	.long	.Lxtalabel6
+	.long	117
+	.long	119
+	.long	.Lxtalabel5
 .cc_bottom cc_88
-.cc_top cc_89,.Lxtalabel5
+.cc_top cc_89,.Lxtalabel6
 	.ascii	"../src/extensions/audiohw.xc"
 	.byte	0
-	.long	212
-	.long	212
-	.long	.Lxtalabel5
+	.long	117
+	.long	119
+	.long	.Lxtalabel6
 .cc_bottom cc_89
-.cc_top cc_90,.Lxtalabel5
+.cc_top cc_90,.Lxtalabel2
 	.ascii	"../src/extensions/audiohw.xc"
 	.byte	0
-	.long	216
-	.long	216
-	.long	.Lxtalabel5
+	.long	121
+	.long	123
+	.long	.Lxtalabel2
 .cc_bottom cc_90
-.cc_top cc_91,.Lxtalabel6
+.cc_top cc_91,.Lxtalabel5
 	.ascii	"../src/extensions/audiohw.xc"
 	.byte	0
-	.long	216
-	.long	216
-	.long	.Lxtalabel6
-.cc_bottom cc_91
-.cc_top cc_92,.Lxtalabel6
-	.ascii	"../src/extensions/audiohw.xc"
-	.byte	0
-	.long	383
-	.long	384
-	.long	.Lxtalabel6
-.cc_bottom cc_92
-.cc_top cc_93,.Lxtalabel5
-	.ascii	"../src/extensions/audiohw.xc"
-	.byte	0
-	.long	383
-	.long	384
+	.long	121
+	.long	123
 	.long	.Lxtalabel5
+.cc_bottom cc_91
+.cc_top cc_92,.Lxtalabel1
+	.ascii	"../src/extensions/audiohw.xc"
+	.byte	0
+	.long	121
+	.long	123
+	.long	.Lxtalabel1
+.cc_bottom cc_92
+.cc_top cc_93,.Lxtalabel6
+	.ascii	"../src/extensions/audiohw.xc"
+	.byte	0
+	.long	121
+	.long	123
+	.long	.Lxtalabel6
 .cc_bottom cc_93
-.cc_top cc_94,.Lxtalabel0
-	.ascii	"../src/extensions/dspfw_IC_1.h"
+.cc_top cc_94,.Lxtalabel3
+	.ascii	"../src/extensions/audiohw.xc"
 	.byte	0
-	.long	449
-	.long	449
-	.long	.Lxtalabel0
+	.long	126
+	.long	126
+	.long	.Lxtalabel3
 .cc_bottom cc_94
-.cc_top cc_95,.Lxtalabel0
-	.ascii	"../src/extensions/dspfw_IC_1.h"
+.cc_top cc_95,.Lxtalabel4
+	.ascii	"../src/extensions/audiohw.xc"
 	.byte	0
-	.long	450
-	.long	450
-	.long	.Lxtalabel0
+	.long	126
+	.long	126
+	.long	.Lxtalabel4
 .cc_bottom cc_95
-.cc_top cc_96,.Lxtalabel0
-	.ascii	"../src/extensions/dspfw_IC_1.h"
+.cc_top cc_96,.Lxtalabel3
+	.ascii	"../src/extensions/audiohw.xc"
 	.byte	0
-	.long	451
-	.long	451
-	.long	.Lxtalabel0
+	.long	135
+	.long	135
+	.long	.Lxtalabel3
 .cc_bottom cc_96
-.cc_top cc_97,.Lxtalabel0
-	.ascii	"../src/extensions/dspfw_IC_1.h"
+.cc_top cc_97,.Lxtalabel4
+	.ascii	"../src/extensions/audiohw.xc"
 	.byte	0
-	.long	453
-	.long	453
-	.long	.Lxtalabel0
+	.long	135
+	.long	135
+	.long	.Lxtalabel4
 .cc_bottom cc_97
-.cc_top cc_98,.Lxtalabel0
-	.ascii	"../src/extensions/dspfw_IC_1.h"
+.cc_top cc_98,.Lxtalabel4
+	.ascii	"../src/extensions/audiohw.xc"
 	.byte	0
-	.long	454
-	.long	454
-	.long	.Lxtalabel0
+	.long	138
+	.long	139
+	.long	.Lxtalabel4
 .cc_bottom cc_98
-.cc_top cc_99,.Lxtalabel0
-	.ascii	"../src/extensions/dspfw_IC_1.h"
+.cc_top cc_99,.Lxtalabel3
+	.ascii	"../src/extensions/audiohw.xc"
 	.byte	0
-	.long	455
-	.long	455
-	.long	.Lxtalabel0
+	.long	138
+	.long	139
+	.long	.Lxtalabel3
 .cc_bottom cc_99
-.cc_top cc_100,.Lxtalabel0
-	.ascii	"../src/extensions/dspfw_IC_1.h"
+.cc_top cc_100,.Lxtalabel3
+	.ascii	"../src/extensions/audiohw.xc"
 	.byte	0
-	.long	457
-	.long	457
-	.long	.Lxtalabel0
+	.long	148
+	.long	149
+	.long	.Lxtalabel3
 .cc_bottom cc_100
-.cc_top cc_101,.Lxtalabel0
-	.ascii	"../src/extensions/dspfw_IC_1.h"
+.cc_top cc_101,.Lxtalabel4
+	.ascii	"../src/extensions/audiohw.xc"
 	.byte	0
-	.long	458
-	.long	458
-	.long	.Lxtalabel0
+	.long	148
+	.long	149
+	.long	.Lxtalabel4
 .cc_bottom cc_101
-.cc_top cc_102,.Lxtalabel0
-	.ascii	"../src/extensions/dspfw_IC_1.h"
+.cc_top cc_102,.Lxtalabel4
+	.ascii	"../src/extensions/audiohw.xc"
 	.byte	0
-	.long	459
-	.long	459
-	.long	.Lxtalabel0
+	.long	175
+	.long	175
+	.long	.Lxtalabel4
 .cc_bottom cc_102
-.cc_top cc_103,.Lxtalabel0
-	.ascii	"../src/extensions/dspfw_IC_1.h"
+.cc_top cc_103,.Lxtalabel3
+	.ascii	"../src/extensions/audiohw.xc"
 	.byte	0
-	.long	460
-	.long	460
-	.long	.Lxtalabel0
+	.long	175
+	.long	175
+	.long	.Lxtalabel3
 .cc_bottom cc_103
-.cc_top cc_104,.Lxtalabel0
-	.ascii	"../src/extensions/dspfw_IC_1.h"
+.cc_top cc_104,.Lxtalabel6
+	.ascii	"../src/extensions/audiohw.xc"
 	.byte	0
-	.long	461
-	.long	461
-	.long	.Lxtalabel0
+	.long	182
+	.long	183
+	.long	.Lxtalabel6
 .cc_bottom cc_104
-.cc_top cc_105,.Lxtalabel0
-	.ascii	"../src/extensions/dspfw_IC_1.h"
+.cc_top cc_105,.Lxtalabel5
+	.ascii	"../src/extensions/audiohw.xc"
 	.byte	0
-	.long	462
-	.long	462
-	.long	.Lxtalabel0
+	.long	182
+	.long	183
+	.long	.Lxtalabel5
 .cc_bottom cc_105
-.cc_top cc_106,.Lxtalabel0
-	.ascii	"../src/extensions/dspfw_IC_1.h"
+.cc_top cc_106,.Lxtalabel6
+	.ascii	"../src/extensions/audiohw.xc"
 	.byte	0
-	.long	463
-	.long	463
-	.long	.Lxtalabel0
+	.long	219
+	.long	219
+	.long	.Lxtalabel6
 .cc_bottom cc_106
-.cc_top cc_107,.Lxtalabel0
-	.ascii	"../src/extensions/dspfw_IC_1.h"
+.cc_top cc_107,.Lxtalabel5
+	.ascii	"../src/extensions/audiohw.xc"
 	.byte	0
-	.long	464
-	.long	464
-	.long	.Lxtalabel0
+	.long	219
+	.long	219
+	.long	.Lxtalabel5
 .cc_bottom cc_107
-.cc_top cc_108,.Lxtalabel0
-	.ascii	"../src/extensions/dspfw_IC_1.h"
+.cc_top cc_108,.Lxtalabel5
+	.ascii	"../src/extensions/audiohw.xc"
 	.byte	0
-	.long	465
-	.long	465
-	.long	.Lxtalabel0
+	.long	223
+	.long	223
+	.long	.Lxtalabel5
 .cc_bottom cc_108
-.cc_top cc_109,.Lxtalabel0
-	.ascii	"../src/extensions/dspfw_IC_1.h"
+.cc_top cc_109,.Lxtalabel6
+	.ascii	"../src/extensions/audiohw.xc"
 	.byte	0
-	.long	466
-	.long	466
-	.long	.Lxtalabel0
+	.long	223
+	.long	223
+	.long	.Lxtalabel6
 .cc_bottom cc_109
-.cc_top cc_110,.Lxtalabel0
-	.ascii	"../src/extensions/dspfw_IC_1.h"
+.cc_top cc_110,.Lxtalabel6
+	.ascii	"../src/extensions/audiohw.xc"
 	.byte	0
-	.long	467
-	.long	467
-	.long	.Lxtalabel0
+	.long	231
+	.long	233
+	.long	.Lxtalabel6
 .cc_bottom cc_110
-.cc_top cc_111,.Lxtalabel0
-	.ascii	"../src/extensions/dspfw_IC_1.h"
+.cc_top cc_111,.Lxtalabel5
+	.ascii	"../src/extensions/audiohw.xc"
 	.byte	0
-	.long	468
-	.long	468
-	.long	.Lxtalabel0
+	.long	231
+	.long	233
+	.long	.Lxtalabel5
 .cc_bottom cc_111
-.cc_top cc_112,.Lxtalabel0
-	.ascii	"../src/extensions/dspfw_IC_1.h"
+.cc_top cc_112,.Lxtalabel5
+	.ascii	"../src/extensions/audiohw.xc"
 	.byte	0
-	.long	469
-	.long	469
-	.long	.Lxtalabel0
+	.long	243
+	.long	244
+	.long	.Lxtalabel5
 .cc_bottom cc_112
-.cc_top cc_113,.Lxtalabel0
-	.ascii	"../src/extensions/dspfw_IC_1.h"
+.cc_top cc_113,.Lxtalabel6
+	.ascii	"../src/extensions/audiohw.xc"
 	.byte	0
-	.long	470
-	.long	470
-	.long	.Lxtalabel0
+	.long	243
+	.long	244
+	.long	.Lxtalabel6
 .cc_bottom cc_113
-.cc_top cc_114,.Lxtalabel0
-	.ascii	"../src/extensions/dspfw_IC_1.h"
+.cc_top cc_114,.Lxtalabel6
+	.ascii	"../src/extensions/audiohw.xc"
 	.byte	0
-	.long	471
-	.long	471
-	.long	.Lxtalabel0
+	.long	246
+	.long	246
+	.long	.Lxtalabel6
 .cc_bottom cc_114
-.cc_top cc_115,.Lxtalabel0
-	.ascii	"../src/extensions/dspfw_IC_1.h"
+.cc_top cc_115,.Lxtalabel5
+	.ascii	"../src/extensions/audiohw.xc"
 	.byte	0
-	.long	472
-	.long	472
-	.long	.Lxtalabel0
+	.long	246
+	.long	246
+	.long	.Lxtalabel5
 .cc_bottom cc_115
-.cc_top cc_116,.Lxtalabel0
-	.ascii	"../src/extensions/dspfw_IC_1.h"
+.cc_top cc_116,.Lxtalabel5
+	.ascii	"../src/extensions/audiohw.xc"
 	.byte	0
-	.long	473
-	.long	473
-	.long	.Lxtalabel0
+	.long	249
+	.long	250
+	.long	.Lxtalabel5
 .cc_bottom cc_116
-.cc_top cc_117,.Lxtalabel0
-	.ascii	"../src/extensions/dspfw_IC_1.h"
+.cc_top cc_117,.Lxtalabel6
+	.ascii	"../src/extensions/audiohw.xc"
 	.byte	0
-	.long	474
-	.long	474
-	.long	.Lxtalabel0
+	.long	249
+	.long	250
+	.long	.Lxtalabel6
 .cc_bottom cc_117
-.cc_top cc_118,.Lxtalabel0
-	.ascii	"../src/extensions/dspfw_IC_1.h"
+.cc_top cc_118,.Lxtalabel6
+	.ascii	"../src/extensions/audiohw.xc"
 	.byte	0
-	.long	475
-	.long	475
-	.long	.Lxtalabel0
+	.long	254
+	.long	255
+	.long	.Lxtalabel6
 .cc_bottom cc_118
-.cc_top cc_119,.Lxtalabel0
-	.ascii	"../src/extensions/dspfw_IC_1.h"
+.cc_top cc_119,.Lxtalabel5
+	.ascii	"../src/extensions/audiohw.xc"
 	.byte	0
-	.long	476
-	.long	476
-	.long	.Lxtalabel0
+	.long	254
+	.long	255
+	.long	.Lxtalabel5
 .cc_bottom cc_119
-.cc_top cc_120,.Lxtalabel0
-	.ascii	"../src/extensions/dspfw_IC_1.h"
+.cc_top cc_120,.Lxtalabel5
+	.ascii	"../src/extensions/audiohw.xc"
 	.byte	0
-	.long	477
-	.long	477
-	.long	.Lxtalabel0
+	.long	257
+	.long	257
+	.long	.Lxtalabel5
 .cc_bottom cc_120
-.cc_top cc_121,.Lxtalabel0
-	.ascii	"../src/extensions/dspfw_IC_1.h"
+.cc_top cc_121,.Lxtalabel6
+	.ascii	"../src/extensions/audiohw.xc"
 	.byte	0
-	.long	478
-	.long	478
-	.long	.Lxtalabel0
+	.long	257
+	.long	257
+	.long	.Lxtalabel6
 .cc_bottom cc_121
-.cc_top cc_122,.Lxtalabel0
-	.ascii	"../src/extensions/dspfw_IC_1.h"
+.cc_top cc_122,.Lxtalabel5
+	.ascii	"../src/extensions/audiohw.xc"
 	.byte	0
-	.long	479
-	.long	479
-	.long	.Lxtalabel0
+	.long	260
+	.long	261
+	.long	.Lxtalabel5
 .cc_bottom cc_122
-.cc_top cc_123,.Lxtalabel0
-	.ascii	"../src/extensions/dspfw_IC_1.h"
+.cc_top cc_123,.Lxtalabel6
+	.ascii	"../src/extensions/audiohw.xc"
 	.byte	0
-	.long	480
-	.long	480
-	.long	.Lxtalabel0
+	.long	260
+	.long	261
+	.long	.Lxtalabel6
 .cc_bottom cc_123
-.cc_top cc_124,.Lxtalabel0
-	.ascii	"../src/extensions/dspfw_IC_1.h"
+.cc_top cc_124,.Lxtalabel5
+	.ascii	"../src/extensions/audiohw.xc"
 	.byte	0
-	.long	481
-	.long	481
-	.long	.Lxtalabel0
+	.long	271
+	.long	272
+	.long	.Lxtalabel5
 .cc_bottom cc_124
-.cc_top cc_125,.Lxtalabel0
-	.ascii	"../src/extensions/dspfw_IC_1.h"
+.cc_top cc_125,.Lxtalabel6
+	.ascii	"../src/extensions/audiohw.xc"
 	.byte	0
-	.long	482
-	.long	482
-	.long	.Lxtalabel0
+	.long	271
+	.long	272
+	.long	.Lxtalabel6
 .cc_bottom cc_125
-.cc_top cc_126,.Lxtalabel0
-	.ascii	"../src/extensions/dspfw_IC_1.h"
+.cc_top cc_126,.Lxtalabel6
+	.ascii	"../src/extensions/audiohw.xc"
 	.byte	0
-	.long	483
-	.long	483
-	.long	.Lxtalabel0
+	.long	274
+	.long	274
+	.long	.Lxtalabel6
 .cc_bottom cc_126
-.cc_top cc_127,.Lxtalabel0
-	.ascii	"../src/extensions/dspfw_IC_1.h"
+.cc_top cc_127,.Lxtalabel5
+	.ascii	"../src/extensions/audiohw.xc"
 	.byte	0
-	.long	484
-	.long	484
-	.long	.Lxtalabel0
+	.long	274
+	.long	274
+	.long	.Lxtalabel5
 .cc_bottom cc_127
-.cc_top cc_128,.Lxtalabel0
-	.ascii	"../src/extensions/dspfw_IC_1.h"
+.cc_top cc_128,.Lxtalabel5
+	.ascii	"../src/extensions/audiohw.xc"
 	.byte	0
-	.long	485
-	.long	485
-	.long	.Lxtalabel0
+	.long	277
+	.long	278
+	.long	.Lxtalabel5
 .cc_bottom cc_128
-.cc_top cc_129,.Lxtalabel0
-	.ascii	"../src/extensions/dspfw_IC_1.h"
+.cc_top cc_129,.Lxtalabel6
+	.ascii	"../src/extensions/audiohw.xc"
 	.byte	0
-	.long	486
-	.long	486
-	.long	.Lxtalabel0
+	.long	277
+	.long	278
+	.long	.Lxtalabel6
 .cc_bottom cc_129
-.cc_top cc_130,.Lxtalabel0
-	.ascii	"../src/extensions/dspfw_IC_1.h"
+.cc_top cc_130,.Lxtalabel5
+	.ascii	"../src/extensions/audiohw.xc"
 	.byte	0
-	.long	487
-	.long	487
-	.long	.Lxtalabel0
+	.long	282
+	.long	283
+	.long	.Lxtalabel5
 .cc_bottom cc_130
-.cc_top cc_131,.Lxtalabel0
-	.ascii	"../src/extensions/dspfw_IC_1.h"
+.cc_top cc_131,.Lxtalabel6
+	.ascii	"../src/extensions/audiohw.xc"
 	.byte	0
-	.long	488
-	.long	488
-	.long	.Lxtalabel0
+	.long	282
+	.long	283
+	.long	.Lxtalabel6
 .cc_bottom cc_131
-.cc_top cc_132,.Lxtalabel0
-	.ascii	"../src/extensions/dspfw_IC_1.h"
+.cc_top cc_132,.Lxtalabel6
+	.ascii	"../src/extensions/audiohw.xc"
 	.byte	0
-	.long	489
-	.long	489
-	.long	.Lxtalabel0
+	.long	285
+	.long	285
+	.long	.Lxtalabel6
 .cc_bottom cc_132
-.cc_top cc_133,.Lxtalabel0
-	.ascii	"../src/extensions/dspfw_IC_1.h"
+.cc_top cc_133,.Lxtalabel5
+	.ascii	"../src/extensions/audiohw.xc"
 	.byte	0
-	.long	490
-	.long	490
-	.long	.Lxtalabel0
+	.long	285
+	.long	285
+	.long	.Lxtalabel5
 .cc_bottom cc_133
-.cc_top cc_134,.Lxtalabel0
-	.ascii	"../src/extensions/dspfw_IC_1.h"
+.cc_top cc_134,.Lxtalabel6
+	.ascii	"../src/extensions/audiohw.xc"
 	.byte	0
-	.long	491
-	.long	491
-	.long	.Lxtalabel0
+	.long	288
+	.long	289
+	.long	.Lxtalabel6
 .cc_bottom cc_134
-.cc_top cc_135,.Lxtalabel0
-	.ascii	"../src/extensions/dspfw_IC_1.h"
+.cc_top cc_135,.Lxtalabel5
+	.ascii	"../src/extensions/audiohw.xc"
 	.byte	0
-	.long	493
-	.long	493
-	.long	.Lxtalabel0
+	.long	288
+	.long	289
+	.long	.Lxtalabel5
 .cc_bottom cc_135
-.cc_top cc_136,.Lxtalabel0
-	.ascii	"../src/extensions/dspfw_IC_1.h"
+.cc_top cc_136,.Lxtalabel6
+	.ascii	"../src/extensions/audiohw.xc"
 	.byte	0
-	.long	495
-	.long	495
-	.long	.Lxtalabel0
+	.long	456
+	.long	457
+	.long	.Lxtalabel6
 .cc_bottom cc_136
-.cc_top cc_137,.Lxtalabel0
-	.ascii	"/Applications/XMOS_xTIMEcomposer_Community_14.3.2/target/include/timer.h"
+.cc_top cc_137,.Lxtalabel5
+	.ascii	"../src/extensions/audiohw.xc"
 	.byte	0
-	.long	55
-	.long	56
-	.long	.Lxtalabel0
+	.long	456
+	.long	457
+	.long	.Lxtalabel5
 .cc_bottom cc_137
 .cc_top cc_138,.Lxtalabel0
-	.ascii	"/Applications/XMOS_xTIMEcomposer_Community_14.3.2/target/include/timer.h"
+	.ascii	"../src/extensions/dspfw_IC_1.h"
 	.byte	0
-	.long	55
-	.long	56
+	.long	449
+	.long	449
 	.long	.Lxtalabel0
 .cc_bottom cc_138
 .cc_top cc_139,.Lxtalabel0
-	.ascii	"/Applications/XMOS_xTIMEcomposer_Community_14.3.2/target/include/timer.h"
+	.ascii	"../src/extensions/dspfw_IC_1.h"
 	.byte	0
-	.long	55
-	.long	56
+	.long	450
+	.long	450
 	.long	.Lxtalabel0
 .cc_bottom cc_139
 .cc_top cc_140,.Lxtalabel0
-	.ascii	"/Applications/XMOS_xTIMEcomposer_Community_14.3.2/target/include/timer.h"
+	.ascii	"../src/extensions/dspfw_IC_1.h"
+	.byte	0
+	.long	451
+	.long	451
+	.long	.Lxtalabel0
+.cc_bottom cc_140
+.cc_top cc_141,.Lxtalabel0
+	.ascii	"../src/extensions/dspfw_IC_1.h"
+	.byte	0
+	.long	453
+	.long	453
+	.long	.Lxtalabel0
+.cc_bottom cc_141
+.cc_top cc_142,.Lxtalabel0
+	.ascii	"../src/extensions/dspfw_IC_1.h"
+	.byte	0
+	.long	454
+	.long	454
+	.long	.Lxtalabel0
+.cc_bottom cc_142
+.cc_top cc_143,.Lxtalabel0
+	.ascii	"../src/extensions/dspfw_IC_1.h"
+	.byte	0
+	.long	455
+	.long	455
+	.long	.Lxtalabel0
+.cc_bottom cc_143
+.cc_top cc_144,.Lxtalabel0
+	.ascii	"../src/extensions/dspfw_IC_1.h"
+	.byte	0
+	.long	457
+	.long	457
+	.long	.Lxtalabel0
+.cc_bottom cc_144
+.cc_top cc_145,.Lxtalabel0
+	.ascii	"../src/extensions/dspfw_IC_1.h"
+	.byte	0
+	.long	458
+	.long	458
+	.long	.Lxtalabel0
+.cc_bottom cc_145
+.cc_top cc_146,.Lxtalabel0
+	.ascii	"../src/extensions/dspfw_IC_1.h"
+	.byte	0
+	.long	459
+	.long	459
+	.long	.Lxtalabel0
+.cc_bottom cc_146
+.cc_top cc_147,.Lxtalabel0
+	.ascii	"../src/extensions/dspfw_IC_1.h"
+	.byte	0
+	.long	460
+	.long	460
+	.long	.Lxtalabel0
+.cc_bottom cc_147
+.cc_top cc_148,.Lxtalabel0
+	.ascii	"../src/extensions/dspfw_IC_1.h"
+	.byte	0
+	.long	461
+	.long	461
+	.long	.Lxtalabel0
+.cc_bottom cc_148
+.cc_top cc_149,.Lxtalabel0
+	.ascii	"../src/extensions/dspfw_IC_1.h"
+	.byte	0
+	.long	462
+	.long	462
+	.long	.Lxtalabel0
+.cc_bottom cc_149
+.cc_top cc_150,.Lxtalabel0
+	.ascii	"../src/extensions/dspfw_IC_1.h"
+	.byte	0
+	.long	463
+	.long	463
+	.long	.Lxtalabel0
+.cc_bottom cc_150
+.cc_top cc_151,.Lxtalabel0
+	.ascii	"../src/extensions/dspfw_IC_1.h"
+	.byte	0
+	.long	464
+	.long	464
+	.long	.Lxtalabel0
+.cc_bottom cc_151
+.cc_top cc_152,.Lxtalabel0
+	.ascii	"../src/extensions/dspfw_IC_1.h"
+	.byte	0
+	.long	465
+	.long	465
+	.long	.Lxtalabel0
+.cc_bottom cc_152
+.cc_top cc_153,.Lxtalabel0
+	.ascii	"../src/extensions/dspfw_IC_1.h"
+	.byte	0
+	.long	466
+	.long	466
+	.long	.Lxtalabel0
+.cc_bottom cc_153
+.cc_top cc_154,.Lxtalabel0
+	.ascii	"../src/extensions/dspfw_IC_1.h"
+	.byte	0
+	.long	467
+	.long	467
+	.long	.Lxtalabel0
+.cc_bottom cc_154
+.cc_top cc_155,.Lxtalabel0
+	.ascii	"../src/extensions/dspfw_IC_1.h"
+	.byte	0
+	.long	468
+	.long	468
+	.long	.Lxtalabel0
+.cc_bottom cc_155
+.cc_top cc_156,.Lxtalabel0
+	.ascii	"../src/extensions/dspfw_IC_1.h"
+	.byte	0
+	.long	469
+	.long	469
+	.long	.Lxtalabel0
+.cc_bottom cc_156
+.cc_top cc_157,.Lxtalabel0
+	.ascii	"../src/extensions/dspfw_IC_1.h"
+	.byte	0
+	.long	470
+	.long	470
+	.long	.Lxtalabel0
+.cc_bottom cc_157
+.cc_top cc_158,.Lxtalabel0
+	.ascii	"../src/extensions/dspfw_IC_1.h"
+	.byte	0
+	.long	471
+	.long	471
+	.long	.Lxtalabel0
+.cc_bottom cc_158
+.cc_top cc_159,.Lxtalabel0
+	.ascii	"../src/extensions/dspfw_IC_1.h"
+	.byte	0
+	.long	472
+	.long	472
+	.long	.Lxtalabel0
+.cc_bottom cc_159
+.cc_top cc_160,.Lxtalabel0
+	.ascii	"../src/extensions/dspfw_IC_1.h"
+	.byte	0
+	.long	473
+	.long	473
+	.long	.Lxtalabel0
+.cc_bottom cc_160
+.cc_top cc_161,.Lxtalabel0
+	.ascii	"../src/extensions/dspfw_IC_1.h"
+	.byte	0
+	.long	474
+	.long	474
+	.long	.Lxtalabel0
+.cc_bottom cc_161
+.cc_top cc_162,.Lxtalabel0
+	.ascii	"../src/extensions/dspfw_IC_1.h"
+	.byte	0
+	.long	475
+	.long	475
+	.long	.Lxtalabel0
+.cc_bottom cc_162
+.cc_top cc_163,.Lxtalabel0
+	.ascii	"../src/extensions/dspfw_IC_1.h"
+	.byte	0
+	.long	476
+	.long	476
+	.long	.Lxtalabel0
+.cc_bottom cc_163
+.cc_top cc_164,.Lxtalabel0
+	.ascii	"../src/extensions/dspfw_IC_1.h"
+	.byte	0
+	.long	477
+	.long	477
+	.long	.Lxtalabel0
+.cc_bottom cc_164
+.cc_top cc_165,.Lxtalabel0
+	.ascii	"../src/extensions/dspfw_IC_1.h"
+	.byte	0
+	.long	478
+	.long	478
+	.long	.Lxtalabel0
+.cc_bottom cc_165
+.cc_top cc_166,.Lxtalabel0
+	.ascii	"../src/extensions/dspfw_IC_1.h"
+	.byte	0
+	.long	479
+	.long	479
+	.long	.Lxtalabel0
+.cc_bottom cc_166
+.cc_top cc_167,.Lxtalabel0
+	.ascii	"../src/extensions/dspfw_IC_1.h"
+	.byte	0
+	.long	480
+	.long	480
+	.long	.Lxtalabel0
+.cc_bottom cc_167
+.cc_top cc_168,.Lxtalabel0
+	.ascii	"../src/extensions/dspfw_IC_1.h"
+	.byte	0
+	.long	481
+	.long	481
+	.long	.Lxtalabel0
+.cc_bottom cc_168
+.cc_top cc_169,.Lxtalabel0
+	.ascii	"../src/extensions/dspfw_IC_1.h"
+	.byte	0
+	.long	482
+	.long	482
+	.long	.Lxtalabel0
+.cc_bottom cc_169
+.cc_top cc_170,.Lxtalabel0
+	.ascii	"../src/extensions/dspfw_IC_1.h"
+	.byte	0
+	.long	483
+	.long	483
+	.long	.Lxtalabel0
+.cc_bottom cc_170
+.cc_top cc_171,.Lxtalabel0
+	.ascii	"../src/extensions/dspfw_IC_1.h"
+	.byte	0
+	.long	484
+	.long	484
+	.long	.Lxtalabel0
+.cc_bottom cc_171
+.cc_top cc_172,.Lxtalabel0
+	.ascii	"../src/extensions/dspfw_IC_1.h"
+	.byte	0
+	.long	485
+	.long	485
+	.long	.Lxtalabel0
+.cc_bottom cc_172
+.cc_top cc_173,.Lxtalabel0
+	.ascii	"../src/extensions/dspfw_IC_1.h"
+	.byte	0
+	.long	486
+	.long	486
+	.long	.Lxtalabel0
+.cc_bottom cc_173
+.cc_top cc_174,.Lxtalabel0
+	.ascii	"../src/extensions/dspfw_IC_1.h"
+	.byte	0
+	.long	487
+	.long	487
+	.long	.Lxtalabel0
+.cc_bottom cc_174
+.cc_top cc_175,.Lxtalabel0
+	.ascii	"../src/extensions/dspfw_IC_1.h"
+	.byte	0
+	.long	488
+	.long	488
+	.long	.Lxtalabel0
+.cc_bottom cc_175
+.cc_top cc_176,.Lxtalabel0
+	.ascii	"../src/extensions/dspfw_IC_1.h"
+	.byte	0
+	.long	489
+	.long	489
+	.long	.Lxtalabel0
+.cc_bottom cc_176
+.cc_top cc_177,.Lxtalabel0
+	.ascii	"../src/extensions/dspfw_IC_1.h"
+	.byte	0
+	.long	490
+	.long	490
+	.long	.Lxtalabel0
+.cc_bottom cc_177
+.cc_top cc_178,.Lxtalabel0
+	.ascii	"../src/extensions/dspfw_IC_1.h"
+	.byte	0
+	.long	491
+	.long	491
+	.long	.Lxtalabel0
+.cc_bottom cc_178
+.cc_top cc_179,.Lxtalabel0
+	.ascii	"../src/extensions/dspfw_IC_1.h"
+	.byte	0
+	.long	493
+	.long	493
+	.long	.Lxtalabel0
+.cc_bottom cc_179
+.cc_top cc_180,.Lxtalabel0
+	.ascii	"../src/extensions/dspfw_IC_1.h"
+	.byte	0
+	.long	495
+	.long	495
+	.long	.Lxtalabel0
+.cc_bottom cc_180
+.cc_top cc_181,.Lxtalabel0
+	.ascii	"/Applications/XMOS_xTIMEcomposer_Community_14.3.3/target/include/timer.h"
 	.byte	0
 	.long	55
 	.long	56
 	.long	.Lxtalabel0
-.cc_bottom cc_140
+.cc_bottom cc_181
+.cc_top cc_182,.Lxtalabel0
+	.ascii	"/Applications/XMOS_xTIMEcomposer_Community_14.3.3/target/include/timer.h"
+	.byte	0
+	.long	55
+	.long	56
+	.long	.Lxtalabel0
+.cc_bottom cc_182
+.cc_top cc_183,.Lxtalabel0
+	.ascii	"/Applications/XMOS_xTIMEcomposer_Community_14.3.3/target/include/timer.h"
+	.byte	0
+	.long	55
+	.long	56
+	.long	.Lxtalabel0
+.cc_bottom cc_183
+.cc_top cc_184,.Lxtalabel0
+	.ascii	"/Applications/XMOS_xTIMEcomposer_Community_14.3.3/target/include/timer.h"
+	.byte	0
+	.long	55
+	.long	56
+	.long	.Lxtalabel0
+.cc_bottom cc_184
 .Lentries_end5:
 	.section	.trap_info,"",@progbits
 .Ltrap_info_entries_start0:
