@@ -231,9 +231,9 @@ clk_audio_bclk.info:
 	.set usage.anon.10,0
 	.set usage.anon.11,0
 	.set usage.anon.12,0
-	.globwrite usage.anon.8,p_mclk_in2,"/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/main.xc:331:44: note: object used here\n            set_clock_src(clk_audio_mclk2, p_mclk_in2);\n                                           ^~~~~~~~~~\n/Applications/XMOS_xTIMEcomposer_Community_14.3.2/target/include/xs1.h:404:73: note: expanded from macro \'set_clock_src\'\n#define set_clock_src(clk, p)                __builtin_set_clk_src(clk, p)\n                                                                        ^"
-	.globwrite usage.anon.8,clk_audio_mclk2,"/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/main.xc:331:27: note: object used here\n            set_clock_src(clk_audio_mclk2, p_mclk_in2);\n                          ^~~~~~~~~~~~~~~\n/Applications/XMOS_xTIMEcomposer_Community_14.3.2/target/include/xs1.h:404:68: note: expanded from macro \'set_clock_src\'\n#define set_clock_src(clk, p)                __builtin_set_clk_src(clk, p)\n                                                                   ^"
-	.globwrite usage.anon.8,p_for_mclk_count,"/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/main.xc:332:28: note: object used here\n            set_port_clock(p_for_mclk_count, clk_audio_mclk2);\n                           ^~~~~~~~~~~~~~~~\n/Applications/XMOS_xTIMEcomposer_Community_14.3.2/target/include/xs1.h:498:69: note: expanded from macro \'set_port_clock\'\n#define set_port_clock(p, clk)               __builtin_set_port_clk(p, clk)\n                                                                    ^"
+	.globwrite usage.anon.8,p_mclk_in2,"/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/main.xc:331:44: note: object used here\n            set_clock_src(clk_audio_mclk2, p_mclk_in2);\n                                           ^~~~~~~~~~\n/Applications/XMOS_xTIMEcomposer_Community_14.3.3/target/include/xs1.h:404:73: note: expanded from macro \'set_clock_src\'\n#define set_clock_src(clk, p)                __builtin_set_clk_src(clk, p)\n                                                                        ^"
+	.globwrite usage.anon.8,clk_audio_mclk2,"/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/main.xc:331:27: note: object used here\n            set_clock_src(clk_audio_mclk2, p_mclk_in2);\n                          ^~~~~~~~~~~~~~~\n/Applications/XMOS_xTIMEcomposer_Community_14.3.3/target/include/xs1.h:404:68: note: expanded from macro \'set_clock_src\'\n#define set_clock_src(clk, p)                __builtin_set_clk_src(clk, p)\n                                                                   ^"
+	.globwrite usage.anon.8,p_for_mclk_count,"/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/main.xc:332:28: note: object used here\n            set_port_clock(p_for_mclk_count, clk_audio_mclk2);\n                           ^~~~~~~~~~~~~~~~\n/Applications/XMOS_xTIMEcomposer_Community_14.3.3/target/include/xs1.h:498:69: note: expanded from macro \'set_port_clock\'\n#define set_port_clock(p, clk)               __builtin_set_port_clk(p, clk)\n                                                                    ^"
 	.globwrite usage.anon.7,epTypeTableIn,"/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/main.xc:315:36: note: object used here\n            c_sof, epTypeTableOut, epTypeTableIn, p_usb_rst,\n                                   ^~~~~~~~~~~~~"
 	.globwrite usage.anon.7,epTypeTableOut,"/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/main.xc:315:20: note: object used here\n            c_sof, epTypeTableOut, epTypeTableIn, p_usb_rst,\n                   ^~~~~~~~~~~~~~"
 	.call main,usb_audio_io
@@ -2771,10 +2771,10 @@ __xcc1_internal_8:
 .Ldebug_end2:
 	.text
 .Ldebug_end3:
-	.file	4 "/Applications/XMOS_xTIMEcomposer_Community_14.3.2/target/include/timer.h"
+	.file	4 "/Applications/XMOS_xTIMEcomposer_Community_14.3.3/target/include/timer.h"
 	.section	.debug_str,"MS",@progbits,1
 .Linfo_string0:
-.asciiz"XMOS 32-bit XC Compiler Community_14.3.2 (build 25550, Sep-30-2017)"
+.asciiz"XMOS 32-bit XC Compiler Community_14.3.3 (build 22296, Apr-19-2018)"
 .Linfo_string1:
 .asciiz"/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/main.xc"
 .Linfo_string2:

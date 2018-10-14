@@ -9,7 +9,7 @@
 	.set usage.anon.2,0
 	.globread adat_transmit_port_until_ct_2x,lookup20,"/Users/rkn/Documents/xTIMEcomposer/workspace/module_adat_tx/src/adat_tx_port.xc:217:24: note: object used here\n        last_lookup = ~lookup20[(w[i] >> 24) & 0xFF];\n                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 	.globread adat_transmit_port_until_ct_4x,lookup40b,"/Users/rkn/Documents/xTIMEcomposer/workspace/module_adat_tx/src/adat_tx_port.xc:93:26: note: object used here\n          last_lookup = ~lookup40b[(w[i] >> j) & 0xFF];\n                         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-	.globread adat_transmit_port_until_ct_4x,lookup40w,"/Users/rkn/Documents/xTIMEcomposer/workspace/module_adat_tx/src/adat_tx_port.xc:92:30: note: object used here\n          p_data <: byterev(~lookup40w[(w[i] >> j) & 0xFF]);\n                             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n/Applications/XMOS_xTIMEcomposer_Community_14.3.2/target/include/xclib.h:50:45: note: expanded from macro \'byterev\'\n#define byterev(x)        __builtin_byterev(x)\n                                            ^"
+	.globread adat_transmit_port_until_ct_4x,lookup40w,"/Users/rkn/Documents/xTIMEcomposer/workspace/module_adat_tx/src/adat_tx_port.xc:92:30: note: object used here\n          p_data <: byterev(~lookup40w[(w[i] >> j) & 0xFF]);\n                             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n/Applications/XMOS_xTIMEcomposer_Community_14.3.3/target/include/xclib.h:50:45: note: expanded from macro \'byterev\'\n#define byterev(x)        __builtin_byterev(x)\n                                            ^"
 	.call adat_tx_port,adat_transmit_port_until_ct_4x
 	.call adat_tx_port,adat_transmit_port_until_ct_2x
 	.call adat_tx_port,adat_transmit_port_until_ct_1x
@@ -3218,10 +3218,10 @@ adat_tx_port:                           # @adat_tx_port
 	.cfi_endproc
 
 .Ldebug_end0:
-	.file	2 "/Applications/XMOS_xTIMEcomposer_Community_14.3.2/target/include/timer.h"
+	.file	2 "/Applications/XMOS_xTIMEcomposer_Community_14.3.3/target/include/timer.h"
 	.section	.debug_str,"MS",@progbits,1
 .Linfo_string0:
-.asciiz"XMOS 32-bit XC Compiler Community_14.3.2 (build 25550, Sep-30-2017)"
+.asciiz"XMOS 32-bit XC Compiler Community_14.3.3 (build 22296, Apr-19-2018)"
 .Linfo_string1:
 .asciiz"/Users/rkn/Documents/xTIMEcomposer/workspace/module_adat_tx/src/adat_tx_port.xc"
 .Linfo_string2:

@@ -1,0 +1,904 @@
+<preCompilationAnalysis file="../src/extensions/analogio-x8.xc">
+<fDef name="highPulseDrive" global="false" unit="../src/extensions/analogio-x8.xc" noreturn="false" doNotSpecialize="false" numParams="2"/>
+<fDef name="highPulseSample" global="false" unit="../src/extensions/analogio-x8.xc" noreturn="false" doNotSpecialize="false" numParams="2"/>
+<fDef name="startBit" global="false" unit="../src/extensions/analogio-x8.xc" noreturn="false" doNotSpecialize="false" numParams="1"/>
+<fDef name="stopBit" global="false" unit="../src/extensions/analogio-x8.xc" noreturn="false" doNotSpecialize="false" numParams="1"/>
+<fDef name="tx8" global="false" unit="../src/extensions/analogio-x8.xc" noreturn="false" doNotSpecialize="false" numParams="2"/>
+<fDef name="waitBeforeNextStart" global="false" unit="../src/extensions/analogio-x8.xc" noreturn="false" doNotSpecialize="false" numParams="1"/>
+<fDef name="waitHalf" global="false" unit="../src/extensions/analogio-x8.xc" noreturn="false" doNotSpecialize="false" numParams="0"/>
+<fDef name="waitQuarter" global="false" unit="../src/extensions/analogio-x8.xc" noreturn="false" doNotSpecialize="false" numParams="0"/>
+<fDef name="AKM_i2c_master_read_reg" global="true" noreturn="false" doNotSpecialize="false" numParams="5"/>
+<fDef name="AKM_i2c_master_write_reg" global="true" noreturn="false" doNotSpecialize="false" numParams="5"/>
+<fDef name="AKM_i2c_shared_master_read_reg" global="true" noreturn="false" doNotSpecialize="false" numParams="5"/>
+<fDef name="AKM_i2c_shared_master_write_reg" global="true" noreturn="false" doNotSpecialize="false" numParams="5"/>
+<fDef name="configAnalogIOx8" global="true" noreturn="false" doNotSpecialize="false" numParams="0"/>
+<fDef name="delay_microseconds" global="true" noreturn="false" doNotSpecialize="true" numParams="1"/>
+<fDef name="delay_milliseconds" global="true" noreturn="false" doNotSpecialize="true" numParams="1"/>
+<fDef name="delay_seconds" global="true" noreturn="false" doNotSpecialize="true" numParams="1"/>
+<fCall name="delay_ticks_longlong" global="true" numArgs="1">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="delay_ticks_longlong" global="true" numArgs="1">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="delay_ticks_longlong" global="true" numArgs="1">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="__builtin_timer_after" global="true" numArgs="2">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="waitQuarter" global="false" unit="../src/extensions/analogio-x8.xc" numArgs="0">
+</fCall>
+<fCall name="waitQuarter" global="false" unit="../src/extensions/analogio-x8.xc" numArgs="0">
+</fCall>
+<fCall name="__builtin_timer_after" global="true" numArgs="2">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="waitQuarter" global="false" unit="../src/extensions/analogio-x8.xc" numArgs="0">
+</fCall>
+<fCall name="waitHalf" global="false" unit="../src/extensions/analogio-x8.xc" numArgs="0">
+</fCall>
+<fCall name="waitQuarter" global="false" unit="../src/extensions/analogio-x8.xc" numArgs="0">
+</fCall>
+<fCall name="waitQuarter" global="false" unit="../src/extensions/analogio-x8.xc" numArgs="0">
+</fCall>
+<fCall name="waitHalf" global="false" unit="../src/extensions/analogio-x8.xc" numArgs="0">
+</fCall>
+<fCall name="waitQuarter" global="false" unit="../src/extensions/analogio-x8.xc" numArgs="0">
+</fCall>
+<fCall name="waitQuarter" global="false" unit="../src/extensions/analogio-x8.xc" numArgs="0">
+</fCall>
+<fCall name="waitQuarter" global="false" unit="../src/extensions/analogio-x8.xc" numArgs="0">
+</fCall>
+<fCall name="__builtin_peek" global="true" numArgs="1">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="waitQuarter" global="false" unit="../src/extensions/analogio-x8.xc" numArgs="0">
+</fCall>
+<fCall name="waitQuarter" global="false" unit="../src/extensions/analogio-x8.xc" numArgs="0">
+</fCall>
+<fCall name="waitQuarter" global="false" unit="../src/extensions/analogio-x8.xc" numArgs="0">
+</fCall>
+<fCall name="waitHalf" global="false" unit="../src/extensions/analogio-x8.xc" numArgs="0">
+</fCall>
+<fCall name="waitQuarter" global="false" unit="../src/extensions/analogio-x8.xc" numArgs="0">
+</fCall>
+<fCall name="waitQuarter" global="false" unit="../src/extensions/analogio-x8.xc" numArgs="0">
+</fCall>
+<fCall name="waitHalf" global="false" unit="../src/extensions/analogio-x8.xc" numArgs="0">
+</fCall>
+<fCall name="waitQuarter" global="false" unit="../src/extensions/analogio-x8.xc" numArgs="0">
+</fCall>
+<fCall name="__builtin_bitrev" global="true" numArgs="1">
+  <arg num="0">
+    <passThroughArg param="1" caller="tx8" global="false" unit="../src/extensions/analogio-x8.xc"/>
+    <values>
+    </values>
+  </arg>
+</fCall>
+<fCall name="highPulseDrive" global="false" unit="../src/extensions/analogio-x8.xc" numArgs="2">
+  <arg num="0">
+    <passThroughArg param="0" caller="tx8" global="false" unit="../src/extensions/analogio-x8.xc"/>
+    <values>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="highPulseSample" global="false" unit="../src/extensions/analogio-x8.xc" numArgs="2">
+  <arg num="0">
+    <passThroughArg param="0" caller="tx8" global="false" unit="../src/extensions/analogio-x8.xc"/>
+    <values>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="intval"><intval isSigned="true" val="0"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="startBit" global="false" unit="../src/extensions/analogio-x8.xc" numArgs="1">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="tx8" global="false" unit="../src/extensions/analogio-x8.xc" numArgs="2">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="tx8" global="false" unit="../src/extensions/analogio-x8.xc" numArgs="2">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="waitBeforeNextStart" global="false" unit="../src/extensions/analogio-x8.xc" numArgs="1">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="startBit" global="false" unit="../src/extensions/analogio-x8.xc" numArgs="1">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="tx8" global="false" unit="../src/extensions/analogio-x8.xc" numArgs="2">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="highPulseSample" global="false" unit="../src/extensions/analogio-x8.xc" numArgs="2">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="highPulseDrive" global="false" unit="../src/extensions/analogio-x8.xc" numArgs="2">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="intval"><intval isSigned="true" val="0"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="stopBit" global="false" unit="../src/extensions/analogio-x8.xc" numArgs="1">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="waitBeforeNextStart" global="false" unit="../src/extensions/analogio-x8.xc" numArgs="1">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="startBit" global="false" unit="../src/extensions/analogio-x8.xc" numArgs="1">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="tx8" global="false" unit="../src/extensions/analogio-x8.xc" numArgs="2">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="tx8" global="false" unit="../src/extensions/analogio-x8.xc" numArgs="2">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="tx8" global="false" unit="../src/extensions/analogio-x8.xc" numArgs="2">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="stopBit" global="false" unit="../src/extensions/analogio-x8.xc" numArgs="1">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="swlock_acquire" global="true" numArgs="1">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="AKM_i2c_master_read_reg" global="true" numArgs="5">
+  <arg num="0">
+    <passThroughArg param="1" caller="AKM_i2c_shared_master_read_reg" global="true"/>
+    <values>
+    </values>
+  </arg>
+  <arg num="1">
+    <passThroughArg param="2" caller="AKM_i2c_shared_master_read_reg" global="true"/>
+    <values>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="3">
+    <passThroughArg param="4" caller="AKM_i2c_shared_master_read_reg" global="true"/>
+    <values>
+    </values>
+  </arg>
+  <arg num="4">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="swlock_release" global="true" numArgs="1">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="swlock_acquire" global="true" numArgs="1">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="AKM_i2c_master_write_reg" global="true" numArgs="5">
+  <arg num="0">
+    <passThroughArg param="1" caller="AKM_i2c_shared_master_write_reg" global="true"/>
+    <values>
+    </values>
+  </arg>
+  <arg num="1">
+    <passThroughArg param="2" caller="AKM_i2c_shared_master_write_reg" global="true"/>
+    <values>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="3">
+    <passThroughArg param="4" caller="AKM_i2c_shared_master_write_reg" global="true"/>
+    <values>
+    </values>
+  </arg>
+  <arg num="4">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="swlock_release" global="true" numArgs="1">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="AKM_i2c_shared_master_write_reg" global="true" numArgs="5">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="intval"><intval isSigned="true" val="34"/></value>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="intval"><intval isSigned="true" val="1"/></value>
+    </values>
+  </arg>
+  <arg num="3">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="4">
+    <values>
+      <value type="intval"><intval isSigned="true" val="1"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="AKM_i2c_shared_master_write_reg" global="true" numArgs="5">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="intval"><intval isSigned="true" val="34"/></value>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="intval"><intval isSigned="true" val="2"/></value>
+    </values>
+  </arg>
+  <arg num="3">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="4">
+    <values>
+      <value type="intval"><intval isSigned="true" val="1"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="AKM_i2c_shared_master_write_reg" global="true" numArgs="5">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="intval"><intval isSigned="true" val="34"/></value>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="intval"><intval isSigned="true" val="3"/></value>
+    </values>
+  </arg>
+  <arg num="3">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="4">
+    <values>
+      <value type="intval"><intval isSigned="true" val="1"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="AKM_i2c_shared_master_write_reg" global="true" numArgs="5">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="intval"><intval isSigned="true" val="34"/></value>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="intval"><intval isSigned="true" val="4"/></value>
+    </values>
+  </arg>
+  <arg num="3">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="4">
+    <values>
+      <value type="intval"><intval isSigned="true" val="1"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="AKM_i2c_shared_master_write_reg" global="true" numArgs="5">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="intval"><intval isSigned="true" val="34"/></value>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="intval"><intval isSigned="true" val="5"/></value>
+    </values>
+  </arg>
+  <arg num="3">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="4">
+    <values>
+      <value type="intval"><intval isSigned="true" val="1"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="AKM_i2c_shared_master_write_reg" global="true" numArgs="5">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="intval"><intval isSigned="true" val="34"/></value>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="intval"><intval isSigned="true" val="1"/></value>
+    </values>
+  </arg>
+  <arg num="3">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="4">
+    <values>
+      <value type="intval"><intval isSigned="true" val="1"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="AKM_i2c_shared_master_write_reg" global="true" numArgs="5">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="intval"><intval isSigned="true" val="32"/></value>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="intval"><intval isSigned="true" val="0"/></value>
+    </values>
+  </arg>
+  <arg num="3">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="4">
+    <values>
+      <value type="intval"><intval isSigned="true" val="1"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="AKM_i2c_shared_master_write_reg" global="true" numArgs="5">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="intval"><intval isSigned="true" val="32"/></value>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="intval"><intval isSigned="true" val="1"/></value>
+    </values>
+  </arg>
+  <arg num="3">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="4">
+    <values>
+      <value type="intval"><intval isSigned="true" val="1"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="AKM_i2c_shared_master_write_reg" global="true" numArgs="5">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="intval"><intval isSigned="true" val="32"/></value>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="intval"><intval isSigned="true" val="2"/></value>
+    </values>
+  </arg>
+  <arg num="3">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="4">
+    <values>
+      <value type="intval"><intval isSigned="true" val="1"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="AKM_i2c_shared_master_write_reg" global="true" numArgs="5">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="intval"><intval isSigned="true" val="32"/></value>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="intval"><intval isSigned="true" val="5"/></value>
+    </values>
+  </arg>
+  <arg num="3">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="4">
+    <values>
+      <value type="intval"><intval isSigned="true" val="1"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="AKM_i2c_shared_master_write_reg" global="true" numArgs="5">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="intval"><intval isSigned="true" val="32"/></value>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="intval"><intval isSigned="true" val="7"/></value>
+    </values>
+  </arg>
+  <arg num="3">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="4">
+    <values>
+      <value type="intval"><intval isSigned="true" val="1"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="AKM_i2c_shared_master_write_reg" global="true" numArgs="5">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="intval"><intval isSigned="true" val="32"/></value>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="intval"><intval isSigned="true" val="7"/></value>
+    </values>
+  </arg>
+  <arg num="3">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="4">
+    <values>
+      <value type="intval"><intval isSigned="true" val="1"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="AKM_i2c_shared_master_write_reg" global="true" numArgs="5">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="intval"><intval isSigned="true" val="32"/></value>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="intval"><intval isSigned="true" val="10"/></value>
+    </values>
+  </arg>
+  <arg num="3">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="4">
+    <values>
+      <value type="intval"><intval isSigned="true" val="1"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="AKM_i2c_shared_master_write_reg" global="true" numArgs="5">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="intval"><intval isSigned="true" val="32"/></value>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="intval"><intval isSigned="true" val="11"/></value>
+    </values>
+  </arg>
+  <arg num="3">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="4">
+    <values>
+      <value type="intval"><intval isSigned="true" val="1"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="AKM_i2c_shared_master_write_reg" global="true" numArgs="5">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="intval"><intval isSigned="true" val="32"/></value>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="intval"><intval isSigned="true" val="12"/></value>
+    </values>
+  </arg>
+  <arg num="3">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="4">
+    <values>
+      <value type="intval"><intval isSigned="true" val="1"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="AKM_i2c_shared_master_write_reg" global="true" numArgs="5">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="intval"><intval isSigned="true" val="32"/></value>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="intval"><intval isSigned="true" val="13"/></value>
+    </values>
+  </arg>
+  <arg num="3">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="4">
+    <values>
+      <value type="intval"><intval isSigned="true" val="1"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="AKM_i2c_shared_master_write_reg" global="true" numArgs="5">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="intval"><intval isSigned="true" val="32"/></value>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="intval"><intval isSigned="true" val="14"/></value>
+    </values>
+  </arg>
+  <arg num="3">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="4">
+    <values>
+      <value type="intval"><intval isSigned="true" val="1"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="AKM_i2c_shared_master_write_reg" global="true" numArgs="5">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="intval"><intval isSigned="true" val="32"/></value>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="intval"><intval isSigned="true" val="0"/></value>
+    </values>
+  </arg>
+  <arg num="3">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="4">
+    <values>
+      <value type="intval"><intval isSigned="true" val="1"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="AKM_i2c_shared_master_read_reg" global="true" numArgs="5">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="intval"><intval isSigned="true" val="32"/></value>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="intval"><intval isSigned="true" val="14"/></value>
+    </values>
+  </arg>
+  <arg num="3">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="4">
+    <values>
+      <value type="intval"><intval isSigned="true" val="1"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="AKM_i2c_shared_master_read_reg" global="true" numArgs="5">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="intval"><intval isSigned="true" val="32"/></value>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="intval"><intval isSigned="true" val="0"/></value>
+    </values>
+  </arg>
+  <arg num="3">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="4">
+    <values>
+      <value type="intval"><intval isSigned="true" val="1"/></value>
+    </values>
+  </arg>
+</fCall>
+</preCompilationAnalysis>

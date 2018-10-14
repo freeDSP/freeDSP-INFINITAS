@@ -2135,10 +2135,10 @@ authenticating:
 .Ldebug_end0:
 	.text
 .Ldebug_end1:
-	.file	4 "/Applications/XMOS_xTIMEcomposer_Community_14.3.2/target/include/timer.h"
+	.file	4 "/Applications/XMOS_xTIMEcomposer_Community_14.3.3/target/include/timer.h"
 	.section	.debug_str,"MS",@progbits,1
 .Linfo_string0:
-.asciiz"XMOS 32-bit XC Compiler Community_14.3.2 (build 25550, Sep-30-2017)"
+.asciiz"XMOS 32-bit XC Compiler Community_14.3.3 (build 22296, Apr-19-2018)"
 .Linfo_string1:
 .asciiz"/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_midi/src/usb_midi.xc"
 .Linfo_string2:
@@ -6121,7 +6121,7 @@ authenticating:
 .cc_bottom cc_trapinfo_5
 	.section	.trap_info_str,"MS",@progbits
 .Ltrap_info_str6:
-.asciiz"/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_midi/src/usb_midi.xc:200:45: error: passing null argument to a non-null parameter\n                                    outuint(c_midi, event);\n                                            ^~~~~~\n/Applications/XMOS_xTIMEcomposer_Community_14.3.2/target/include/xs1.h:968:64: note: expanded from macro 'outuint'\n#define outuint(c, val)                     __builtin_out_uint(c, val)\n                                                               ^\n"
+.asciiz"/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_midi/src/usb_midi.xc:200:45: error: passing null argument to a non-null parameter\n                                    outuint(c_midi, event);\n                                            ^~~~~~\n/Applications/XMOS_xTIMEcomposer_Community_14.3.3/target/include/xs1.h:968:64: note: expanded from macro 'outuint'\n#define outuint(c, val)                     __builtin_out_uint(c, val)\n                                                               ^\n"
 	.section	.trap_info,"",@progbits
 .cc_top cc_trapinfo_6,.Ltrap_info6
 	.long	.Ltrap_info6

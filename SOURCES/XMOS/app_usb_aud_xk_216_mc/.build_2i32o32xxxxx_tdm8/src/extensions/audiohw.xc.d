@@ -10,7 +10,9 @@
   ../../workspace/app_usb_aud_xk_216_mc/src/extensions/cs5368.h \
   ../../workspace/app_usb_aud_xk_216_mc/src/extensions/cs2100.h \
   ../../workspace/module_usb_audio/dsd_support.h \
+  ../../workspace/app_usb_aud_xk_216_mc/src/extensions/infinitas.h \
   ../../workspace/app_usb_aud_xk_216_mc/src/extensions/ak4458.h \
+  ../../workspace/app_usb_aud_xk_216_mc/src/extensions/analogio-x8.h \
   ../../workspace/app_usb_aud_xk_216_mc/src/extensions/dspfw_IC_1.h \
   ../../workspace/app_usb_aud_xk_216_mc/src/extensions/SigmaStudioFW.h \
   ../../workspace/app_usb_aud_xk_216_mc/src/extensions/dspfw_IC_1_REG.h

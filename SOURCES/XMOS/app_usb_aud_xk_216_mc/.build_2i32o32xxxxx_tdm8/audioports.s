@@ -7,7 +7,7 @@
 	.set usage.anon.0,0
 	.set usage.anon.1,0
 	.set usage.anon.2,0
-	.globwrite ConfigAudioPorts,clk_audio_bclk,"/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/ports/audioports.xc:36:16: note: object used here\n    stop_clock(clk_audio_bclk);\n               ^~~~~~~~~~~~~~\n/Applications/XMOS_xTIMEcomposer_Community_14.3.2/target/include/xs1.h:572:67: note: expanded from macro \'stop_clock\'\n#define stop_clock(clk)                      __builtin_stop_clock(clk)\n                                                                  ^"
+	.globwrite ConfigAudioPorts,clk_audio_bclk,"/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/ports/audioports.xc:36:16: note: object used here\n    stop_clock(clk_audio_bclk);\n               ^~~~~~~~~~~~~~\n/Applications/XMOS_xTIMEcomposer_Community_14.3.3/target/include/xs1.h:572:67: note: expanded from macro \'stop_clock\'\n#define stop_clock(clk)                      __builtin_stop_clock(clk)\n                                                                  ^"
 	.globwrite ConfigAudioPorts,p_mclk_in,"/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/ports/audioports.xc:60:48: note: object used here\n    configure_clock_src_divide(clk_audio_bclk, p_mclk_in, (divide/2));\n                                               ^~~~~~~~~"
 	.call ConfigAudioPorts,configure_port_clock_output
 	.call ConfigAudioPorts,configure_out_port
@@ -18,9 +18,9 @@
 	.call usage.anon.0,delay_ticks_longlong
 	.set ConfigAudioPorts.locnoside, 0
 	.set ConfigAudioPorts.locnoglobalaccess, 0
-	.globpassesref configure_in_port, clk_audio_bclk,"/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/ports/audioports.xc:104:9: error: call to `configure_in_port\' in `ConfigAudioPorts\' makes alias of global \'clk_audio_bclk\'\n        configure_in_port_no_ready(p_i2s_adc[i], clk_audio_bclk);\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n/Applications/XMOS_xTIMEcomposer_Community_14.3.2/target/include/xs1.h:227:44: note: expanded from macro \'configure_in_port_no_ready\'\n#define configure_in_port_no_ready(p, clk) configure_in_port(p, clk)\n                                           ^~~~~~~~~~~~~~~~~~~~~~~~~"
-	.globpassesref configure_out_port, clk_audio_bclk,"/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/ports/audioports.xc:96:9: error: call to `configure_out_port\' in `ConfigAudioPorts\' makes alias of global \'clk_audio_bclk\'\n        configure_out_port_no_ready(p_i2s_dac[i], clk_audio_bclk, 0);\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n/Applications/XMOS_xTIMEcomposer_Community_14.3.2/target/include/xs1.h:256:54: note: expanded from macro \'configure_out_port_no_ready\'\n#define configure_out_port_no_ready(p, clk, initial) configure_out_port(p, clk, initial)\n                                                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-	.globpassesref configure_out_port, clk_audio_bclk,"/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/ports/audioports.xc:89:9: error: call to `configure_out_port\' in `ConfigAudioPorts\' makes alias of global \'clk_audio_bclk\'\n        configure_out_port_no_ready(p_lrclk, clk_audio_bclk, 0);\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n/Applications/XMOS_xTIMEcomposer_Community_14.3.2/target/include/xs1.h:256:54: note: expanded from macro \'configure_out_port_no_ready\'\n#define configure_out_port_no_ready(p, clk, initial) configure_out_port(p, clk, initial)\n                                                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+	.globpassesref configure_in_port, clk_audio_bclk,"/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/ports/audioports.xc:104:9: error: call to `configure_in_port\' in `ConfigAudioPorts\' makes alias of global \'clk_audio_bclk\'\n        configure_in_port_no_ready(p_i2s_adc[i], clk_audio_bclk);\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n/Applications/XMOS_xTIMEcomposer_Community_14.3.3/target/include/xs1.h:227:44: note: expanded from macro \'configure_in_port_no_ready\'\n#define configure_in_port_no_ready(p, clk) configure_in_port(p, clk)\n                                           ^~~~~~~~~~~~~~~~~~~~~~~~~"
+	.globpassesref configure_out_port, clk_audio_bclk,"/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/ports/audioports.xc:96:9: error: call to `configure_out_port\' in `ConfigAudioPorts\' makes alias of global \'clk_audio_bclk\'\n        configure_out_port_no_ready(p_i2s_dac[i], clk_audio_bclk, 0);\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n/Applications/XMOS_xTIMEcomposer_Community_14.3.3/target/include/xs1.h:256:54: note: expanded from macro \'configure_out_port_no_ready\'\n#define configure_out_port_no_ready(p, clk, initial) configure_out_port(p, clk, initial)\n                                                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+	.globpassesref configure_out_port, clk_audio_bclk,"/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/ports/audioports.xc:89:9: error: call to `configure_out_port\' in `ConfigAudioPorts\' makes alias of global \'clk_audio_bclk\'\n        configure_out_port_no_ready(p_lrclk, clk_audio_bclk, 0);\n        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n/Applications/XMOS_xTIMEcomposer_Community_14.3.3/target/include/xs1.h:256:54: note: expanded from macro \'configure_out_port_no_ready\'\n#define configure_out_port_no_ready(p, clk, initial) configure_out_port(p, clk, initial)\n                                                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 	.globpassesref configure_port_clock_output, clk_audio_bclk,"/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/ports/audioports.xc:61:5: error: call to `configure_port_clock_output\' in `ConfigAudioPorts\' makes alias of global \'clk_audio_bclk\'\n    configure_port_clock_output(p_bclk, clk_audio_bclk);\n    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 	.globpassesref configure_clock_src_divide, p_mclk_in,"/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/ports/audioports.xc:60:5: error: call to `configure_clock_src_divide\' in `ConfigAudioPorts\' makes alias of global \'p_mclk_in\'\n    configure_clock_src_divide(clk_audio_bclk, p_mclk_in, (divide/2));\n    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 	.globpassesref configure_clock_src_divide, clk_audio_bclk,"/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/ports/audioports.xc:60:5: error: call to `configure_clock_src_divide\' in `ConfigAudioPorts\' makes alias of global \'clk_audio_bclk\'\n    configure_clock_src_divide(clk_audio_bclk, p_mclk_in, (divide/2));\n    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
@@ -499,10 +499,10 @@ ConfigAudioPorts:                       # @ConfigAudioPorts
 	.cfi_endproc
 
 .Ldebug_end0:
-	.file	2 "/Applications/XMOS_xTIMEcomposer_Community_14.3.2/target/include/timer.h"
+	.file	2 "/Applications/XMOS_xTIMEcomposer_Community_14.3.3/target/include/timer.h"
 	.section	.debug_str,"MS",@progbits,1
 .Linfo_string0:
-.asciiz"XMOS 32-bit XC Compiler Community_14.3.2 (build 25550, Sep-30-2017)"
+.asciiz"XMOS 32-bit XC Compiler Community_14.3.3 (build 22296, Apr-19-2018)"
 .Linfo_string1:
 .asciiz"/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/ports/audioports.xc"
 .Linfo_string2:
@@ -1468,7 +1468,7 @@ ConfigAudioPorts:                       # @ConfigAudioPorts
 	.long	1
 	.section	.trap_info_str,"MS",@progbits
 .Ltrap_info_str0:
-.asciiz"/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/ports/audioports.xc:47:18: error: out of bounds array access\n        clearbuf(p_i2s_adc[i]);\n                 ^~~~~~~~~~~~\n/Applications/XMOS_xTIMEcomposer_Community_14.3.2/target/include/xs1.h:1070:67: note: expanded from macro 'clearbuf'\n#define clearbuf(p)                          __builtin_clear_buff(p)\n                                                                  ^\n"
+.asciiz"/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/ports/audioports.xc:47:18: error: out of bounds array access\n        clearbuf(p_i2s_adc[i]);\n                 ^~~~~~~~~~~~\n/Applications/XMOS_xTIMEcomposer_Community_14.3.3/target/include/xs1.h:1070:67: note: expanded from macro 'clearbuf'\n#define clearbuf(p)                          __builtin_clear_buff(p)\n                                                                  ^\n"
 	.section	.trap_info,"",@progbits
 .cc_top cc_trapinfo_0,.Ltrap_info0
 	.long	.Ltrap_info0
@@ -1476,7 +1476,7 @@ ConfigAudioPorts:                       # @ConfigAudioPorts
 .cc_bottom cc_trapinfo_0
 	.section	.trap_info_str,"MS",@progbits
 .Ltrap_info_str1:
-.asciiz"/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/ports/audioports.xc:54:18: error: out of bounds array access\n        clearbuf(p_i2s_dac[i]);\n                 ^~~~~~~~~~~~\n/Applications/XMOS_xTIMEcomposer_Community_14.3.2/target/include/xs1.h:1070:67: note: expanded from macro 'clearbuf'\n#define clearbuf(p)                          __builtin_clear_buff(p)\n                                                                  ^\n"
+.asciiz"/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/ports/audioports.xc:54:18: error: out of bounds array access\n        clearbuf(p_i2s_dac[i]);\n                 ^~~~~~~~~~~~\n/Applications/XMOS_xTIMEcomposer_Community_14.3.3/target/include/xs1.h:1070:67: note: expanded from macro 'clearbuf'\n#define clearbuf(p)                          __builtin_clear_buff(p)\n                                                                  ^\n"
 	.section	.trap_info,"",@progbits
 .cc_top cc_trapinfo_1,.Ltrap_info1
 	.long	.Ltrap_info1
@@ -1484,7 +1484,7 @@ ConfigAudioPorts:                       # @ConfigAudioPorts
 .cc_bottom cc_trapinfo_1
 	.section	.trap_info_str,"MS",@progbits
 .Ltrap_info_str2:
-.asciiz"/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/ports/audioports.xc:96:37: error: out of bounds array access\n        configure_out_port_no_ready(p_i2s_dac[i], clk_audio_bclk, 0);\n                                    ^~~~~~~~~~~~\n/Applications/XMOS_xTIMEcomposer_Community_14.3.2/target/include/xs1.h:256:73: note: expanded from macro 'configure_out_port_no_ready'\n#define configure_out_port_no_ready(p, clk, initial) configure_out_port(p, clk, initial)\n                                                                        ^\n"
+.asciiz"/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/ports/audioports.xc:96:37: error: out of bounds array access\n        configure_out_port_no_ready(p_i2s_dac[i], clk_audio_bclk, 0);\n                                    ^~~~~~~~~~~~\n/Applications/XMOS_xTIMEcomposer_Community_14.3.3/target/include/xs1.h:256:73: note: expanded from macro 'configure_out_port_no_ready'\n#define configure_out_port_no_ready(p, clk, initial) configure_out_port(p, clk, initial)\n                                                                        ^\n"
 	.section	.trap_info,"",@progbits
 .cc_top cc_trapinfo_2,.Ltrap_info2
 	.long	.Ltrap_info2
@@ -1492,7 +1492,7 @@ ConfigAudioPorts:                       # @ConfigAudioPorts
 .cc_bottom cc_trapinfo_2
 	.section	.trap_info_str,"MS",@progbits
 .Ltrap_info_str3:
-.asciiz"/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/ports/audioports.xc:104:36: error: out of bounds array access\n        configure_in_port_no_ready(p_i2s_adc[i], clk_audio_bclk);\n                                   ^~~~~~~~~~~~\n/Applications/XMOS_xTIMEcomposer_Community_14.3.2/target/include/xs1.h:227:62: note: expanded from macro 'configure_in_port_no_ready'\n#define configure_in_port_no_ready(p, clk) configure_in_port(p, clk)\n                                                             ^\n"
+.asciiz"/Users/rkn/Documents/xTIMEcomposer/workspace/module_usb_audio/ports/audioports.xc:104:36: error: out of bounds array access\n        configure_in_port_no_ready(p_i2s_adc[i], clk_audio_bclk);\n                                   ^~~~~~~~~~~~\n/Applications/XMOS_xTIMEcomposer_Community_14.3.3/target/include/xs1.h:227:62: note: expanded from macro 'configure_in_port_no_ready'\n#define configure_in_port_no_ready(p, clk) configure_in_port(p, clk)\n                                                             ^\n"
 	.section	.trap_info,"",@progbits
 .cc_top cc_trapinfo_3,.Ltrap_info3
 	.long	.Ltrap_info3

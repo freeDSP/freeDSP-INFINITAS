@@ -18,7 +18,7 @@
 .Ldebug_end0:
 	.section	.debug_str,"MS",@progbits,1
 .Linfo_string0:
-.asciiz"XMOS-25550-Sep-30-2017 clang version 3.6.0  (based on LLVM 3.6.0svn)"
+.asciiz"XMOS-22296-Apr-19-2018 clang version 3.6.0  (based on LLVM 3.6.0svn)"
 .Linfo_string1:
 .asciiz".././src/extensions/SigmaStudioFW.c"
 .Linfo_string2:
@@ -59,7 +59,7 @@
 	.section	.debug_ranges,"",@progbits
 	.section	.debug_loc,"",@progbits
 
-	.ident	"XMOS-25550-Sep-30-2017 clang version 3.6.0  (based on LLVM 3.6.0svn)"
+	.ident	"XMOS-22296-Apr-19-2018 clang version 3.6.0  (based on LLVM 3.6.0svn)"
 	.section	.trap_info,"",@progbits
 .Ltrap_info_entries_start0:
 	.long	.Ltrap_info_entries_end0-.Ltrap_info_entries_start0

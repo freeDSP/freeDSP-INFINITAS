@@ -405,11 +405,11 @@ i2c_shared_master_read_reg16:
 .Lfunc_end3:
 	.cfi_endproc
 
-	.globl	AK4458_i2c_shared_master_read_reg
+	.globl	i2c_shared_master_write
 	.align	4
-	.type	AK4458_i2c_shared_master_read_reg,@function
-	.cc_top AK4458_i2c_shared_master_read_reg.function,AK4458_i2c_shared_master_read_reg
-AK4458_i2c_shared_master_read_reg:
+	.type	i2c_shared_master_write,@function
+	.cc_top i2c_shared_master_write.function,i2c_shared_master_write
+i2c_shared_master_write:
 .Lfunc_begin4:
 	.loc	2 50 0
 	.cfi_startproc
@@ -432,162 +432,53 @@ AK4458_i2c_shared_master_read_reg:
 	.cfi_offset 6, -16
 .Ltmp72:
 	.cfi_offset 7, -12
-	std r9, r8, sp[3]
 .Ltmp73:
 	.cfi_offset 8, -8
 .Ltmp74:
-	.cfi_offset 9, -4
-.Ltmp75:
-	{
-		mov r4, r3
-		mov r5, r2
-	}
-.Ltmp76:
-	{
-		mov r6, r1
-		mov r7, r0
-	}
-.Ltmp77:
-	{
-		nop
-		ldw r8, sp[9]
-	}
-	.loc	2 52 5 prologue_end
-.Ltmp78:
-	ldaw r9, dp[i2c_swlock]
-	{
-		mov r0, r9
-		nop
-	}
-	bl swlock_acquire
-.Ltmp79:
-	.loc	2 53 14
-	{
-		mov r0, r6
-		stw r7, sp[1]
-	}
-.Ltmp80:
-	{
-		mov r1, r5
-		mov r2, r4
-	}
-.Ltmp81:
-	{
-		mov r3, r8
-		nop
-	}
-	bl AK4458_i2c_master_read_reg
-.Ltmp82:
-	{
-		mov r4, r0
-		mov r0, r9
-	}
-.Ltmp83:
-	.loc	2 54 5
-	bl swlock_release
-	.loc	2 55 5
-	{
-		mov r0, r4
-		nop
-	}
-	ldd r9, r8, sp[3]
-	ldd r7, r6, sp[2]
-	ldd r5, r4, sp[1]
-	{
-		nop
-		retsp 8
-	}
-.Ltmp84:
-	# RETURN_REG_HOLDER
-.Ltmp85:
-	.cc_bottom AK4458_i2c_shared_master_read_reg.function
-	.set	AK4458_i2c_shared_master_read_reg.nstackwords,((swlock_acquire.nstackwords $M AK4458_i2c_master_read_reg.nstackwords $M swlock_release.nstackwords) + 8)
-	.globl	AK4458_i2c_shared_master_read_reg.nstackwords
-	.set	AK4458_i2c_shared_master_read_reg.maxcores,AK4458_i2c_master_read_reg.maxcores $M swlock_acquire.maxcores $M swlock_release.maxcores $M 1
-	.globl	AK4458_i2c_shared_master_read_reg.maxcores
-	.set	AK4458_i2c_shared_master_read_reg.maxtimers,AK4458_i2c_master_read_reg.maxtimers $M swlock_acquire.maxtimers $M swlock_release.maxtimers $M 0
-	.globl	AK4458_i2c_shared_master_read_reg.maxtimers
-	.set	AK4458_i2c_shared_master_read_reg.maxchanends,AK4458_i2c_master_read_reg.maxchanends $M swlock_acquire.maxchanends $M swlock_release.maxchanends $M 0
-	.globl	AK4458_i2c_shared_master_read_reg.maxchanends
-.Ltmp86:
-	.size	AK4458_i2c_shared_master_read_reg, .Ltmp86-AK4458_i2c_shared_master_read_reg
-.Lfunc_end4:
-	.cfi_endproc
-
-	.globl	i2c_shared_master_write
-	.align	4
-	.type	i2c_shared_master_write,@function
-	.cc_top i2c_shared_master_write.function,i2c_shared_master_write
-i2c_shared_master_write:
-.Lfunc_begin5:
-	.loc	2 61 0
-	.cfi_startproc
-	.issue_mode dual
-	{
-		nop
-		dualentsp 8
-	}
-.Ltmp87:
-	.cfi_def_cfa_offset 32
-.Ltmp88:
-	.cfi_offset 15, 0
-	std r5, r4, sp[1]
-.Ltmp89:
-	.cfi_offset 4, -24
-.Ltmp90:
-	.cfi_offset 5, -20
-	std r7, r6, sp[2]
-.Ltmp91:
-	.cfi_offset 6, -16
-.Ltmp92:
-	.cfi_offset 7, -12
-.Ltmp93:
-	.cfi_offset 8, -8
-.Ltmp94:
 	{
 		mov r4, r3
 		stw r8, sp[6]
 	}
-.Ltmp95:
+.Ltmp75:
 	{
 		mov r5, r2
 		mov r6, r1
 	}
-.Ltmp96:
+.Ltmp76:
 	{
 		mov r7, r0
 		nop
 	}
-.Ltmp97:
-	.loc	2 63 5 prologue_end
+.Ltmp77:
+	.loc	2 52 5 prologue_end
 	ldaw r8, dp[i2c_swlock]
 	{
 		mov r0, r8
 		nop
 	}
 	bl swlock_acquire
-.Ltmp98:
-	.loc	2 64 14
+.Ltmp78:
+	.loc	2 53 14
 	{
 		mov r0, r6
 		mov r1, r5
 	}
-.Ltmp99:
+.Ltmp79:
 	{
 		mov r2, r4
 		mov r3, r7
 	}
-.Ltmp100:
+.Ltmp80:
 	bl i2c_master_write
-.Ltmp101:
+.Ltmp81:
 	{
 		mov r4, r0
 		mov r0, r8
 	}
-.Ltmp102:
-	.loc	2 65 5
+.Ltmp82:
+	.loc	2 54 5
 	bl swlock_release
-	.loc	2 66 5
+	.loc	2 55 5
 	{
 		mov r0, r4
 		ldw r8, sp[6]
@@ -599,7 +490,7 @@ i2c_shared_master_write:
 		retsp 8
 	}
 	# RETURN_REG_HOLDER
-.Ltmp103:
+.Ltmp83:
 	.cc_bottom i2c_shared_master_write.function
 	.set	i2c_shared_master_write.nstackwords,((swlock_acquire.nstackwords $M i2c_master_write.nstackwords $M swlock_release.nstackwords) + 8)
 	.globl	i2c_shared_master_write.nstackwords
@@ -609,9 +500,9 @@ i2c_shared_master_write:
 	.globl	i2c_shared_master_write.maxtimers
 	.set	i2c_shared_master_write.maxchanends,i2c_master_write.maxchanends $M swlock_acquire.maxchanends $M swlock_release.maxchanends $M 0
 	.globl	i2c_shared_master_write.maxchanends
-.Ltmp104:
-	.size	i2c_shared_master_write, .Ltmp104-i2c_shared_master_write
-.Lfunc_end5:
+.Ltmp84:
+	.size	i2c_shared_master_write, .Ltmp84-i2c_shared_master_write
+.Lfunc_end4:
 	.cfi_endproc
 
 	.globl	i2c_shared_master_write_reg
@@ -619,8 +510,117 @@ i2c_shared_master_write:
 	.type	i2c_shared_master_write_reg,@function
 	.cc_top i2c_shared_master_write_reg.function,i2c_shared_master_write_reg
 i2c_shared_master_write_reg:
+.Lfunc_begin5:
+	.loc	2 60 0
+	.cfi_startproc
+	.issue_mode dual
+	{
+		nop
+		dualentsp 8
+	}
+.Ltmp85:
+	.cfi_def_cfa_offset 32
+.Ltmp86:
+	.cfi_offset 15, 0
+	std r5, r4, sp[1]
+.Ltmp87:
+	.cfi_offset 4, -24
+.Ltmp88:
+	.cfi_offset 5, -20
+	std r7, r6, sp[2]
+.Ltmp89:
+	.cfi_offset 6, -16
+.Ltmp90:
+	.cfi_offset 7, -12
+	std r9, r8, sp[3]
+.Ltmp91:
+	.cfi_offset 8, -8
+.Ltmp92:
+	.cfi_offset 9, -4
+.Ltmp93:
+	{
+		mov r4, r3
+		mov r5, r2
+	}
+.Ltmp94:
+	{
+		mov r6, r1
+		mov r7, r0
+	}
+.Ltmp95:
+	{
+		nop
+		ldw r8, sp[9]
+	}
+	.loc	2 62 5 prologue_end
+.Ltmp96:
+	ldaw r9, dp[i2c_swlock]
+	{
+		mov r0, r9
+		nop
+	}
+	bl swlock_acquire
+.Ltmp97:
+	.loc	2 63 14
+	{
+		mov r0, r6
+		stw r7, sp[1]
+	}
+.Ltmp98:
+	{
+		mov r1, r5
+		mov r2, r4
+	}
+.Ltmp99:
+	{
+		mov r3, r8
+		nop
+	}
+	bl i2c_master_write_reg
+.Ltmp100:
+	{
+		mov r4, r0
+		mov r0, r9
+	}
+.Ltmp101:
+	.loc	2 64 5
+	bl swlock_release
+	.loc	2 65 5
+	{
+		mov r0, r4
+		nop
+	}
+	ldd r9, r8, sp[3]
+	ldd r7, r6, sp[2]
+	ldd r5, r4, sp[1]
+	{
+		nop
+		retsp 8
+	}
+.Ltmp102:
+	# RETURN_REG_HOLDER
+.Ltmp103:
+	.cc_bottom i2c_shared_master_write_reg.function
+	.set	i2c_shared_master_write_reg.nstackwords,((swlock_acquire.nstackwords $M i2c_master_write_reg.nstackwords $M swlock_release.nstackwords) + 8)
+	.globl	i2c_shared_master_write_reg.nstackwords
+	.set	i2c_shared_master_write_reg.maxcores,i2c_master_write_reg.maxcores $M swlock_acquire.maxcores $M swlock_release.maxcores $M 1
+	.globl	i2c_shared_master_write_reg.maxcores
+	.set	i2c_shared_master_write_reg.maxtimers,i2c_master_write_reg.maxtimers $M swlock_acquire.maxtimers $M swlock_release.maxtimers $M 0
+	.globl	i2c_shared_master_write_reg.maxtimers
+	.set	i2c_shared_master_write_reg.maxchanends,i2c_master_write_reg.maxchanends $M swlock_acquire.maxchanends $M swlock_release.maxchanends $M 0
+	.globl	i2c_shared_master_write_reg.maxchanends
+.Ltmp104:
+	.size	i2c_shared_master_write_reg, .Ltmp104-i2c_shared_master_write_reg
+.Lfunc_end5:
+	.cfi_endproc
+
+	.globl	i2c_shared_master_write_reg16
+	.align	4
+	.type	i2c_shared_master_write_reg16,@function
+	.cc_top i2c_shared_master_write_reg16.function,i2c_shared_master_write_reg16
+i2c_shared_master_write_reg16:
 .Lfunc_begin6:
-	.loc	2 71 0
+	.loc	2 70 0
 	.cfi_startproc
 	.issue_mode dual
 	{
@@ -661,7 +661,7 @@ i2c_shared_master_write_reg:
 		nop
 		ldw r8, sp[9]
 	}
-	.loc	2 73 5 prologue_end
+	.loc	2 72 5 prologue_end
 .Ltmp116:
 	ldaw r9, dp[i2c_swlock]
 	{
@@ -670,7 +670,7 @@ i2c_shared_master_write_reg:
 	}
 	bl swlock_acquire
 .Ltmp117:
-	.loc	2 74 14
+	.loc	2 73 14
 	{
 		mov r0, r6
 		stw r7, sp[1]
@@ -685,16 +685,16 @@ i2c_shared_master_write_reg:
 		mov r3, r8
 		nop
 	}
-	bl i2c_master_write_reg
+	bl i2c_master_write_reg16
 .Ltmp120:
 	{
 		mov r4, r0
 		mov r0, r9
 	}
 .Ltmp121:
-	.loc	2 75 5
+	.loc	2 74 5
 	bl swlock_release
-	.loc	2 76 5
+	.loc	2 75 5
 	{
 		mov r0, r4
 		nop
@@ -709,224 +709,6 @@ i2c_shared_master_write_reg:
 .Ltmp122:
 	# RETURN_REG_HOLDER
 .Ltmp123:
-	.cc_bottom i2c_shared_master_write_reg.function
-	.set	i2c_shared_master_write_reg.nstackwords,((swlock_acquire.nstackwords $M i2c_master_write_reg.nstackwords $M swlock_release.nstackwords) + 8)
-	.globl	i2c_shared_master_write_reg.nstackwords
-	.set	i2c_shared_master_write_reg.maxcores,i2c_master_write_reg.maxcores $M swlock_acquire.maxcores $M swlock_release.maxcores $M 1
-	.globl	i2c_shared_master_write_reg.maxcores
-	.set	i2c_shared_master_write_reg.maxtimers,i2c_master_write_reg.maxtimers $M swlock_acquire.maxtimers $M swlock_release.maxtimers $M 0
-	.globl	i2c_shared_master_write_reg.maxtimers
-	.set	i2c_shared_master_write_reg.maxchanends,i2c_master_write_reg.maxchanends $M swlock_acquire.maxchanends $M swlock_release.maxchanends $M 0
-	.globl	i2c_shared_master_write_reg.maxchanends
-.Ltmp124:
-	.size	i2c_shared_master_write_reg, .Ltmp124-i2c_shared_master_write_reg
-.Lfunc_end6:
-	.cfi_endproc
-
-	.globl	AK4458_i2c_shared_master_write_reg
-	.align	4
-	.type	AK4458_i2c_shared_master_write_reg,@function
-	.cc_top AK4458_i2c_shared_master_write_reg.function,AK4458_i2c_shared_master_write_reg
-AK4458_i2c_shared_master_write_reg:
-.Lfunc_begin7:
-	.loc	2 81 0
-	.cfi_startproc
-	.issue_mode dual
-	{
-		nop
-		dualentsp 8
-	}
-.Ltmp125:
-	.cfi_def_cfa_offset 32
-.Ltmp126:
-	.cfi_offset 15, 0
-	std r5, r4, sp[1]
-.Ltmp127:
-	.cfi_offset 4, -24
-.Ltmp128:
-	.cfi_offset 5, -20
-	std r7, r6, sp[2]
-.Ltmp129:
-	.cfi_offset 6, -16
-.Ltmp130:
-	.cfi_offset 7, -12
-	std r9, r8, sp[3]
-.Ltmp131:
-	.cfi_offset 8, -8
-.Ltmp132:
-	.cfi_offset 9, -4
-.Ltmp133:
-	{
-		mov r4, r3
-		mov r5, r2
-	}
-.Ltmp134:
-	{
-		mov r6, r1
-		mov r7, r0
-	}
-.Ltmp135:
-	{
-		nop
-		ldw r8, sp[9]
-	}
-	.loc	2 83 5 prologue_end
-.Ltmp136:
-	ldaw r9, dp[i2c_swlock]
-	{
-		mov r0, r9
-		nop
-	}
-	bl swlock_acquire
-.Ltmp137:
-	.loc	2 84 14
-	{
-		mov r0, r6
-		stw r7, sp[1]
-	}
-.Ltmp138:
-	{
-		mov r1, r5
-		mov r2, r4
-	}
-.Ltmp139:
-	{
-		mov r3, r8
-		nop
-	}
-	bl AK4458_i2c_master_write_reg
-.Ltmp140:
-	{
-		mov r4, r0
-		mov r0, r9
-	}
-.Ltmp141:
-	.loc	2 85 5
-	bl swlock_release
-	.loc	2 86 5
-	{
-		mov r0, r4
-		nop
-	}
-	ldd r9, r8, sp[3]
-	ldd r7, r6, sp[2]
-	ldd r5, r4, sp[1]
-	{
-		nop
-		retsp 8
-	}
-.Ltmp142:
-	# RETURN_REG_HOLDER
-.Ltmp143:
-	.cc_bottom AK4458_i2c_shared_master_write_reg.function
-	.set	AK4458_i2c_shared_master_write_reg.nstackwords,((swlock_acquire.nstackwords $M AK4458_i2c_master_write_reg.nstackwords $M swlock_release.nstackwords) + 8)
-	.globl	AK4458_i2c_shared_master_write_reg.nstackwords
-	.set	AK4458_i2c_shared_master_write_reg.maxcores,AK4458_i2c_master_write_reg.maxcores $M swlock_acquire.maxcores $M swlock_release.maxcores $M 1
-	.globl	AK4458_i2c_shared_master_write_reg.maxcores
-	.set	AK4458_i2c_shared_master_write_reg.maxtimers,AK4458_i2c_master_write_reg.maxtimers $M swlock_acquire.maxtimers $M swlock_release.maxtimers $M 0
-	.globl	AK4458_i2c_shared_master_write_reg.maxtimers
-	.set	AK4458_i2c_shared_master_write_reg.maxchanends,AK4458_i2c_master_write_reg.maxchanends $M swlock_acquire.maxchanends $M swlock_release.maxchanends $M 0
-	.globl	AK4458_i2c_shared_master_write_reg.maxchanends
-.Ltmp144:
-	.size	AK4458_i2c_shared_master_write_reg, .Ltmp144-AK4458_i2c_shared_master_write_reg
-.Lfunc_end7:
-	.cfi_endproc
-
-	.globl	i2c_shared_master_write_reg16
-	.align	4
-	.type	i2c_shared_master_write_reg16,@function
-	.cc_top i2c_shared_master_write_reg16.function,i2c_shared_master_write_reg16
-i2c_shared_master_write_reg16:
-.Lfunc_begin8:
-	.loc	2 91 0
-	.cfi_startproc
-	.issue_mode dual
-	{
-		nop
-		dualentsp 8
-	}
-.Ltmp145:
-	.cfi_def_cfa_offset 32
-.Ltmp146:
-	.cfi_offset 15, 0
-	std r5, r4, sp[1]
-.Ltmp147:
-	.cfi_offset 4, -24
-.Ltmp148:
-	.cfi_offset 5, -20
-	std r7, r6, sp[2]
-.Ltmp149:
-	.cfi_offset 6, -16
-.Ltmp150:
-	.cfi_offset 7, -12
-	std r9, r8, sp[3]
-.Ltmp151:
-	.cfi_offset 8, -8
-.Ltmp152:
-	.cfi_offset 9, -4
-.Ltmp153:
-	{
-		mov r4, r3
-		mov r5, r2
-	}
-.Ltmp154:
-	{
-		mov r6, r1
-		mov r7, r0
-	}
-.Ltmp155:
-	{
-		nop
-		ldw r8, sp[9]
-	}
-	.loc	2 93 5 prologue_end
-.Ltmp156:
-	ldaw r9, dp[i2c_swlock]
-	{
-		mov r0, r9
-		nop
-	}
-	bl swlock_acquire
-.Ltmp157:
-	.loc	2 94 14
-	{
-		mov r0, r6
-		stw r7, sp[1]
-	}
-.Ltmp158:
-	{
-		mov r1, r5
-		mov r2, r4
-	}
-.Ltmp159:
-	{
-		mov r3, r8
-		nop
-	}
-	bl i2c_master_write_reg16
-.Ltmp160:
-	{
-		mov r4, r0
-		mov r0, r9
-	}
-.Ltmp161:
-	.loc	2 95 5
-	bl swlock_release
-	.loc	2 96 5
-	{
-		mov r0, r4
-		nop
-	}
-	ldd r9, r8, sp[3]
-	ldd r7, r6, sp[2]
-	ldd r5, r4, sp[1]
-	{
-		nop
-		retsp 8
-	}
-.Ltmp162:
-	# RETURN_REG_HOLDER
-.Ltmp163:
 	.cc_bottom i2c_shared_master_write_reg16.function
 	.set	i2c_shared_master_write_reg16.nstackwords,((swlock_acquire.nstackwords $M i2c_master_write_reg16.nstackwords $M swlock_release.nstackwords) + 8)
 	.globl	i2c_shared_master_write_reg16.nstackwords
@@ -936,9 +718,9 @@ i2c_shared_master_write_reg16:
 	.globl	i2c_shared_master_write_reg16.maxtimers
 	.set	i2c_shared_master_write_reg16.maxchanends,i2c_master_write_reg16.maxchanends $M swlock_acquire.maxchanends $M swlock_release.maxchanends $M 0
 	.globl	i2c_shared_master_write_reg16.maxchanends
-.Ltmp164:
-	.size	i2c_shared_master_write_reg16, .Ltmp164-i2c_shared_master_write_reg16
-.Lfunc_end8:
+.Ltmp124:
+	.size	i2c_shared_master_write_reg16, .Ltmp124-i2c_shared_master_write_reg16
+.Lfunc_end6:
 	.cfi_endproc
 
 	.section	.dp.bss.4,"awd",@nobits
@@ -953,11 +735,11 @@ i2c_swlock:
 .Ldebug_end0:
 	.text
 .Ldebug_end1:
-	.file	3 "/Applications/XMOS_xTIMEcomposer_Community_14.3.2/target/include/xccompat.h"
+	.file	3 "/Applications/XMOS_xTIMEcomposer_Community_14.3.3/target/include/xccompat.h"
 	.file	4 "/Users/rkn/Documents/xTIMEcomposer/workspace/module_i2c_single_port/src/i2c.h"
 	.section	.debug_str,"MS",@progbits,1
 .Linfo_string0:
-.asciiz"XMOS-25550-Sep-30-2017 clang version 3.6.0  (based on LLVM 3.6.0svn)"
+.asciiz"XMOS-22296-Apr-19-2018 clang version 3.6.0  (based on LLVM 3.6.0svn)"
 .Linfo_string1:
 .asciiz"/Users/rkn/Documents/xTIMEcomposer/workspace/module_i2c_shared/src/i2c_shared.c"
 .Linfo_string2:
@@ -979,38 +761,34 @@ i2c_swlock:
 .Linfo_string10:
 .asciiz"i2c_shared_master_read_reg16"
 .Linfo_string11:
-.asciiz"AK4458_i2c_shared_master_read_reg"
-.Linfo_string12:
 .asciiz"i2c_shared_master_write"
-.Linfo_string13:
+.Linfo_string12:
 .asciiz"i2c_shared_master_write_reg"
-.Linfo_string14:
-.asciiz"AK4458_i2c_shared_master_write_reg"
-.Linfo_string15:
+.Linfo_string13:
 .asciiz"i2c_shared_master_write_reg16"
-.Linfo_string16:
+.Linfo_string14:
 .asciiz"i2cPorts"
-.Linfo_string17:
+.Linfo_string15:
 .asciiz"p_i2c"
-.Linfo_string18:
+.Linfo_string16:
 .asciiz"port"
-.Linfo_string19:
+.Linfo_string17:
 .asciiz"r_i2c"
-.Linfo_string20:
+.Linfo_string18:
 .asciiz"device"
-.Linfo_string21:
+.Linfo_string19:
 .asciiz"data"
-.Linfo_string22:
+.Linfo_string20:
 .asciiz"unsigned char"
-.Linfo_string23:
+.Linfo_string21:
 .asciiz"nbytes"
-.Linfo_string24:
+.Linfo_string22:
 .asciiz"retval"
-.Linfo_string25:
+.Linfo_string23:
 .asciiz"reg_addr"
 	.section	.debug_info,"",@progbits
 .L.debug_info_begin0:
-	.long	1020
+	.long	798
 	.short	3
 	.long	.Lsection_abbrev
 	.byte	4
@@ -1051,10 +829,10 @@ i2c_swlock:
 	.byte	1
 	.byte	6
 	.long	.Ldebug_loc0
-	.long	.Linfo_string16
+	.long	.Linfo_string14
 	.byte	2
 	.byte	6
-	.long	964
+	.long	742
 	.byte	0
 	.byte	7
 	.long	.Ldebug_ranges1
@@ -1065,38 +843,38 @@ i2c_swlock:
 	.byte	2
 	.byte	15
 	.byte	1
-	.long	957
+	.long	735
 	.byte	1
 	.byte	6
 	.long	.Ldebug_loc1
-	.long	.Linfo_string16
+	.long	.Linfo_string14
 	.byte	2
 	.byte	15
-	.long	964
+	.long	742
 	.byte	6
 	.long	.Ldebug_loc2
-	.long	.Linfo_string20
+	.long	.Linfo_string18
 	.byte	2
 	.byte	15
-	.long	957
+	.long	735
 	.byte	6
 	.long	.Ldebug_loc3
-	.long	.Linfo_string21
+	.long	.Linfo_string19
 	.byte	2
 	.byte	15
-	.long	1001
+	.long	779
 	.byte	6
 	.long	.Ldebug_loc4
-	.long	.Linfo_string23
+	.long	.Linfo_string21
 	.byte	2
 	.byte	16
-	.long	957
+	.long	735
 	.byte	8
 	.long	.Ldebug_loc5
-	.long	.Linfo_string24
+	.long	.Linfo_string22
 	.byte	2
 	.byte	18
-	.long	957
+	.long	735
 	.byte	0
 	.byte	7
 	.long	.Ldebug_ranges2
@@ -1107,44 +885,44 @@ i2c_swlock:
 	.byte	2
 	.byte	25
 	.byte	1
-	.long	957
+	.long	735
 	.byte	1
 	.byte	6
 	.long	.Ldebug_loc6
-	.long	.Linfo_string16
+	.long	.Linfo_string14
 	.byte	2
 	.byte	25
-	.long	964
+	.long	742
 	.byte	6
 	.long	.Ldebug_loc7
-	.long	.Linfo_string20
+	.long	.Linfo_string18
 	.byte	2
 	.byte	25
-	.long	957
+	.long	735
 	.byte	6
 	.long	.Ldebug_loc8
-	.long	.Linfo_string25
+	.long	.Linfo_string23
 	.byte	2
 	.byte	25
-	.long	957
+	.long	735
 	.byte	6
 	.long	.Ldebug_loc9
+	.long	.Linfo_string19
+	.byte	2
+	.byte	26
+	.long	779
+	.byte	6
+	.long	.Ldebug_loc10
 	.long	.Linfo_string21
 	.byte	2
 	.byte	26
-	.long	1001
-	.byte	6
-	.long	.Ldebug_loc10
-	.long	.Linfo_string23
-	.byte	2
-	.byte	26
-	.long	957
+	.long	735
 	.byte	8
 	.long	.Ldebug_loc11
-	.long	.Linfo_string24
+	.long	.Linfo_string22
 	.byte	2
 	.byte	28
-	.long	957
+	.long	735
 	.byte	0
 	.byte	7
 	.long	.Ldebug_ranges3
@@ -1155,44 +933,44 @@ i2c_swlock:
 	.byte	2
 	.byte	37
 	.byte	1
-	.long	957
+	.long	735
 	.byte	1
 	.byte	6
 	.long	.Ldebug_loc12
-	.long	.Linfo_string16
+	.long	.Linfo_string14
 	.byte	2
 	.byte	37
-	.long	964
+	.long	742
 	.byte	6
 	.long	.Ldebug_loc13
-	.long	.Linfo_string20
+	.long	.Linfo_string18
 	.byte	2
 	.byte	37
-	.long	957
+	.long	735
 	.byte	6
 	.long	.Ldebug_loc14
-	.long	.Linfo_string25
+	.long	.Linfo_string23
 	.byte	2
 	.byte	37
-	.long	957
+	.long	735
 	.byte	6
 	.long	.Ldebug_loc15
+	.long	.Linfo_string19
+	.byte	2
+	.byte	38
+	.long	779
+	.byte	6
+	.long	.Ldebug_loc16
 	.long	.Linfo_string21
 	.byte	2
 	.byte	38
-	.long	1001
-	.byte	6
-	.long	.Ldebug_loc16
-	.long	.Linfo_string23
-	.byte	2
-	.byte	38
-	.long	957
+	.long	735
 	.byte	8
 	.long	.Ldebug_loc17
-	.long	.Linfo_string24
+	.long	.Linfo_string22
 	.byte	2
 	.byte	40
-	.long	957
+	.long	735
 	.byte	0
 	.byte	7
 	.long	.Ldebug_ranges4
@@ -1201,46 +979,40 @@ i2c_swlock:
 	.byte	1
 	.long	.Linfo_string11
 	.byte	2
-	.byte	48
+	.byte	49
 	.byte	1
-	.long	957
+	.long	735
 	.byte	1
 	.byte	6
 	.long	.Ldebug_loc18
-	.long	.Linfo_string16
+	.long	.Linfo_string14
 	.byte	2
-	.byte	48
-	.long	964
+	.byte	49
+	.long	742
 	.byte	6
 	.long	.Ldebug_loc19
-	.long	.Linfo_string20
+	.long	.Linfo_string18
 	.byte	2
-	.byte	48
-	.long	957
+	.byte	49
+	.long	735
 	.byte	6
 	.long	.Ldebug_loc20
-	.long	.Linfo_string25
+	.long	.Linfo_string19
 	.byte	2
-	.byte	48
-	.long	957
+	.byte	49
+	.long	791
 	.byte	6
 	.long	.Ldebug_loc21
 	.long	.Linfo_string21
 	.byte	2
 	.byte	49
-	.long	1001
-	.byte	6
-	.long	.Ldebug_loc22
-	.long	.Linfo_string23
-	.byte	2
-	.byte	49
-	.long	957
+	.long	735
 	.byte	8
-	.long	.Ldebug_loc23
-	.long	.Linfo_string24
+	.long	.Ldebug_loc22
+	.long	.Linfo_string22
 	.byte	2
 	.byte	51
-	.long	957
+	.long	735
 	.byte	0
 	.byte	7
 	.long	.Ldebug_ranges5
@@ -1249,40 +1021,46 @@ i2c_swlock:
 	.byte	1
 	.long	.Linfo_string12
 	.byte	2
-	.byte	60
+	.byte	58
 	.byte	1
-	.long	957
+	.long	735
 	.byte	1
+	.byte	6
+	.long	.Ldebug_loc23
+	.long	.Linfo_string14
+	.byte	2
+	.byte	58
+	.long	742
 	.byte	6
 	.long	.Ldebug_loc24
-	.long	.Linfo_string16
+	.long	.Linfo_string18
 	.byte	2
-	.byte	60
-	.long	964
+	.byte	58
+	.long	735
 	.byte	6
 	.long	.Ldebug_loc25
-	.long	.Linfo_string20
-	.byte	2
-	.byte	60
-	.long	957
-	.byte	6
-	.long	.Ldebug_loc26
-	.long	.Linfo_string21
-	.byte	2
-	.byte	60
-	.long	1013
-	.byte	6
-	.long	.Ldebug_loc27
 	.long	.Linfo_string23
 	.byte	2
-	.byte	60
-	.long	957
+	.byte	58
+	.long	735
+	.byte	6
+	.long	.Ldebug_loc26
+	.long	.Linfo_string19
+	.byte	2
+	.byte	59
+	.long	791
+	.byte	6
+	.long	.Ldebug_loc27
+	.long	.Linfo_string21
+	.byte	2
+	.byte	59
+	.long	735
 	.byte	8
 	.long	.Ldebug_loc28
-	.long	.Linfo_string24
+	.long	.Linfo_string22
 	.byte	2
-	.byte	62
-	.long	957
+	.byte	61
+	.long	735
 	.byte	0
 	.byte	7
 	.long	.Ldebug_ranges6
@@ -1291,176 +1069,80 @@ i2c_swlock:
 	.byte	1
 	.long	.Linfo_string13
 	.byte	2
-	.byte	69
+	.byte	68
 	.byte	1
-	.long	957
+	.long	735
 	.byte	1
 	.byte	6
 	.long	.Ldebug_loc29
-	.long	.Linfo_string16
-	.byte	2
-	.byte	69
-	.long	964
-	.byte	6
-	.long	.Ldebug_loc30
-	.long	.Linfo_string20
-	.byte	2
-	.byte	69
-	.long	957
-	.byte	6
-	.long	.Ldebug_loc31
-	.long	.Linfo_string25
-	.byte	2
-	.byte	69
-	.long	957
-	.byte	6
-	.long	.Ldebug_loc32
-	.long	.Linfo_string21
-	.byte	2
-	.byte	70
-	.long	1013
-	.byte	6
-	.long	.Ldebug_loc33
-	.long	.Linfo_string23
-	.byte	2
-	.byte	70
-	.long	957
-	.byte	8
-	.long	.Ldebug_loc34
-	.long	.Linfo_string24
-	.byte	2
-	.byte	72
-	.long	957
-	.byte	0
-	.byte	7
-	.long	.Ldebug_ranges7
-	.byte	1
-	.byte	94
-	.byte	1
 	.long	.Linfo_string14
 	.byte	2
-	.byte	79
-	.byte	1
-	.long	957
-	.byte	1
+	.byte	68
+	.long	742
 	.byte	6
-	.long	.Ldebug_loc35
-	.long	.Linfo_string16
+	.long	.Ldebug_loc30
+	.long	.Linfo_string18
 	.byte	2
-	.byte	79
-	.long	964
+	.byte	68
+	.long	735
 	.byte	6
-	.long	.Ldebug_loc36
-	.long	.Linfo_string20
-	.byte	2
-	.byte	79
-	.long	957
-	.byte	6
-	.long	.Ldebug_loc37
-	.long	.Linfo_string25
-	.byte	2
-	.byte	79
-	.long	957
-	.byte	6
-	.long	.Ldebug_loc38
-	.long	.Linfo_string21
-	.byte	2
-	.byte	80
-	.long	1013
-	.byte	6
-	.long	.Ldebug_loc39
+	.long	.Ldebug_loc31
 	.long	.Linfo_string23
 	.byte	2
-	.byte	80
-	.long	957
-	.byte	8
-	.long	.Ldebug_loc40
-	.long	.Linfo_string24
-	.byte	2
-	.byte	82
-	.long	957
-	.byte	0
-	.byte	7
-	.long	.Ldebug_ranges8
-	.byte	1
-	.byte	94
-	.byte	1
-	.long	.Linfo_string15
-	.byte	2
-	.byte	89
-	.byte	1
-	.long	957
-	.byte	1
+	.byte	68
+	.long	735
 	.byte	6
-	.long	.Ldebug_loc41
-	.long	.Linfo_string16
+	.long	.Ldebug_loc32
+	.long	.Linfo_string19
 	.byte	2
-	.byte	89
-	.long	964
+	.byte	69
+	.long	791
 	.byte	6
-	.long	.Ldebug_loc42
-	.long	.Linfo_string20
-	.byte	2
-	.byte	89
-	.long	957
-	.byte	6
-	.long	.Ldebug_loc43
-	.long	.Linfo_string25
-	.byte	2
-	.byte	89
-	.long	957
-	.byte	6
-	.long	.Ldebug_loc44
+	.long	.Ldebug_loc33
 	.long	.Linfo_string21
 	.byte	2
-	.byte	90
-	.long	1013
-	.byte	6
-	.long	.Ldebug_loc45
-	.long	.Linfo_string23
-	.byte	2
-	.byte	90
-	.long	957
+	.byte	69
+	.long	735
 	.byte	8
-	.long	.Ldebug_loc46
-	.long	.Linfo_string24
+	.long	.Ldebug_loc34
+	.long	.Linfo_string22
 	.byte	2
-	.byte	92
-	.long	957
+	.byte	71
+	.long	735
 	.byte	0
 	.byte	4
 	.long	.Linfo_string8
 	.byte	5
 	.byte	4
 	.byte	9
-	.long	969
+	.long	747
 	.byte	10
-	.long	.Linfo_string19
+	.long	.Linfo_string17
 	.byte	4
 	.byte	4
 	.byte	92
 	.byte	11
-	.long	.Linfo_string17
-	.long	990
+	.long	.Linfo_string15
+	.long	768
 	.byte	4
 	.byte	93
 	.byte	0
 	.byte	0
 	.byte	3
 	.long	60
-	.long	.Linfo_string18
+	.long	.Linfo_string16
 	.byte	3
 	.byte	136
 	.byte	9
-	.long	1006
+	.long	784
 	.byte	4
-	.long	.Linfo_string22
+	.long	.Linfo_string20
 	.byte	8
 	.byte	1
 	.byte	9
-	.long	1018
+	.long	796
 	.byte	12
-	.long	1006
+	.long	784
 	.byte	0
 .L.debug_info_end0:
 	.section	.debug_abbrev,"",@progbits
@@ -1675,968 +1357,734 @@ i2c_swlock:
 	.long	.Lfunc_end6
 	.long	0
 	.long	0
-.Ldebug_ranges7:
-	.long	.Lfunc_begin7
-	.long	.Lfunc_end7
-	.long	0
-	.long	0
-.Ldebug_ranges8:
-	.long	.Lfunc_begin8
-	.long	.Lfunc_end8
-	.long	0
-	.long	0
 	.section	.debug_loc,"",@progbits
 .Ldebug_loc0:
 	.long	.Lfunc_begin0
 	.long	.Ltmp4
-.Lset0 = .Ltmp166-.Ltmp165
+.Lset0 = .Ltmp126-.Ltmp125
 	.short	.Lset0
-.Ltmp165:
+.Ltmp125:
 	.byte	80
-.Ltmp166:
+.Ltmp126:
 	.long	.Ltmp4
 	.long	.Ltmp5
-.Lset1 = .Ltmp168-.Ltmp167
+.Lset1 = .Ltmp128-.Ltmp127
 	.short	.Lset1
-.Ltmp167:
+.Ltmp127:
 	.byte	84
-.Ltmp168:
+.Ltmp128:
 	.long	.Ltmp5
 	.long	.Ltmp6
-.Lset2 = .Ltmp170-.Ltmp169
+.Lset2 = .Ltmp130-.Ltmp129
 	.short	.Lset2
-.Ltmp169:
+.Ltmp129:
 	.byte	80
-.Ltmp170:
+.Ltmp130:
 	.long	0
 	.long	0
 .Ldebug_loc1:
 	.long	.Lfunc_begin1
 	.long	.Ltmp19
-.Lset3 = .Ltmp172-.Ltmp171
+.Lset3 = .Ltmp132-.Ltmp131
 	.short	.Lset3
-.Ltmp171:
+.Ltmp131:
 	.byte	80
-.Ltmp172:
+.Ltmp132:
 	.long	.Ltmp19
 	.long	.Ltmp21
-.Lset4 = .Ltmp174-.Ltmp173
+.Lset4 = .Ltmp134-.Ltmp133
 	.short	.Lset4
-.Ltmp173:
+.Ltmp133:
 	.byte	87
-.Ltmp174:
+.Ltmp134:
 	.long	.Ltmp21
 	.long	.Ltmp22
-.Lset5 = .Ltmp176-.Ltmp175
+.Lset5 = .Ltmp136-.Ltmp135
 	.short	.Lset5
-.Ltmp175:
+.Ltmp135:
 	.byte	83
-.Ltmp176:
+.Ltmp136:
 	.long	0
 	.long	0
 .Ldebug_loc2:
 	.long	.Lfunc_begin1
 	.long	.Ltmp17
-.Lset6 = .Ltmp178-.Ltmp177
+.Lset6 = .Ltmp138-.Ltmp137
 	.short	.Lset6
-.Ltmp177:
+.Ltmp137:
 	.byte	81
-.Ltmp178:
+.Ltmp138:
 	.long	.Ltmp17
 	.long	.Ltmp18
-.Lset7 = .Ltmp180-.Ltmp179
+.Lset7 = .Ltmp140-.Ltmp139
 	.short	.Lset7
-.Ltmp179:
+.Ltmp139:
 	.byte	86
-.Ltmp180:
+.Ltmp140:
 	.long	.Ltmp20
 	.long	.Ltmp21
-.Lset8 = .Ltmp182-.Ltmp181
+.Lset8 = .Ltmp142-.Ltmp141
 	.short	.Lset8
-.Ltmp181:
+.Ltmp141:
 	.byte	80
-.Ltmp182:
+.Ltmp142:
 	.long	0
 	.long	0
 .Ldebug_loc3:
 	.long	.Lfunc_begin1
 	.long	.Ltmp17
-.Lset9 = .Ltmp184-.Ltmp183
+.Lset9 = .Ltmp144-.Ltmp143
 	.short	.Lset9
-.Ltmp183:
+.Ltmp143:
 	.byte	82
-.Ltmp184:
+.Ltmp144:
 	.long	.Ltmp17
 	.long	.Ltmp18
-.Lset10 = .Ltmp186-.Ltmp185
+.Lset10 = .Ltmp146-.Ltmp145
 	.short	.Lset10
-.Ltmp185:
+.Ltmp145:
 	.byte	85
-.Ltmp186:
+.Ltmp146:
 	.long	.Ltmp20
 	.long	.Ltmp21
-.Lset11 = .Ltmp188-.Ltmp187
+.Lset11 = .Ltmp148-.Ltmp147
 	.short	.Lset11
-.Ltmp187:
+.Ltmp147:
 	.byte	81
-.Ltmp188:
+.Ltmp148:
 	.long	0
 	.long	0
 .Ldebug_loc4:
 	.long	.Lfunc_begin1
 	.long	.Ltmp16
-.Lset12 = .Ltmp190-.Ltmp189
+.Lset12 = .Ltmp150-.Ltmp149
 	.short	.Lset12
-.Ltmp189:
+.Ltmp149:
 	.byte	83
-.Ltmp190:
+.Ltmp150:
 	.long	.Ltmp16
 	.long	.Ltmp17
-.Lset13 = .Ltmp192-.Ltmp191
+.Lset13 = .Ltmp152-.Ltmp151
 	.short	.Lset13
-.Ltmp191:
+.Ltmp151:
 	.byte	84
-.Ltmp192:
+.Ltmp152:
 	.long	.Ltmp21
 	.long	.Ltmp22
-.Lset14 = .Ltmp194-.Ltmp193
+.Lset14 = .Ltmp154-.Ltmp153
 	.short	.Lset14
-.Ltmp193:
+.Ltmp153:
 	.byte	82
-.Ltmp194:
+.Ltmp154:
 	.long	0
 	.long	0
 .Ldebug_loc5:
 	.long	.Ltmp23
 	.long	.Ltmp24
-.Lset15 = .Ltmp196-.Ltmp195
+.Lset15 = .Ltmp156-.Ltmp155
 	.short	.Lset15
-.Ltmp195:
+.Ltmp155:
 	.byte	84
-.Ltmp196:
+.Ltmp156:
 	.long	0
 	.long	0
 .Ldebug_loc6:
 	.long	.Lfunc_begin2
 	.long	.Ltmp36
-.Lset16 = .Ltmp198-.Ltmp197
+.Lset16 = .Ltmp158-.Ltmp157
 	.short	.Lset16
-.Ltmp197:
+.Ltmp157:
 	.byte	80
-.Ltmp198:
+.Ltmp158:
 	.long	.Ltmp36
 	.long	.Ltmp37
-.Lset17 = .Ltmp200-.Ltmp199
+.Lset17 = .Ltmp160-.Ltmp159
 	.short	.Lset17
-.Ltmp199:
+.Ltmp159:
 	.byte	87
-.Ltmp200:
+.Ltmp160:
 	.long	0
 	.long	0
 .Ldebug_loc7:
 	.long	.Lfunc_begin2
 	.long	.Ltmp36
-.Lset18 = .Ltmp202-.Ltmp201
+.Lset18 = .Ltmp162-.Ltmp161
 	.short	.Lset18
-.Ltmp201:
+.Ltmp161:
 	.byte	81
-.Ltmp202:
+.Ltmp162:
 	.long	.Ltmp36
 	.long	.Ltmp37
-.Lset19 = .Ltmp204-.Ltmp203
+.Lset19 = .Ltmp164-.Ltmp163
 	.short	.Lset19
-.Ltmp203:
+.Ltmp163:
 	.byte	86
-.Ltmp204:
+.Ltmp164:
 	.long	.Ltmp39
 	.long	.Ltmp40
-.Lset20 = .Ltmp206-.Ltmp205
+.Lset20 = .Ltmp166-.Ltmp165
 	.short	.Lset20
-.Ltmp205:
+.Ltmp165:
 	.byte	80
-.Ltmp206:
+.Ltmp166:
 	.long	0
 	.long	0
 .Ldebug_loc8:
 	.long	.Lfunc_begin2
 	.long	.Ltmp35
-.Lset21 = .Ltmp208-.Ltmp207
+.Lset21 = .Ltmp168-.Ltmp167
 	.short	.Lset21
-.Ltmp207:
+.Ltmp167:
 	.byte	82
-.Ltmp208:
+.Ltmp168:
 	.long	.Ltmp35
 	.long	.Ltmp36
-.Lset22 = .Ltmp210-.Ltmp209
+.Lset22 = .Ltmp170-.Ltmp169
 	.short	.Lset22
-.Ltmp209:
+.Ltmp169:
 	.byte	85
-.Ltmp210:
+.Ltmp170:
 	.long	.Ltmp40
 	.long	.Ltmp41
-.Lset23 = .Ltmp212-.Ltmp211
+.Lset23 = .Ltmp172-.Ltmp171
 	.short	.Lset23
-.Ltmp211:
+.Ltmp171:
 	.byte	81
-.Ltmp212:
+.Ltmp172:
 	.long	0
 	.long	0
 .Ldebug_loc9:
 	.long	.Lfunc_begin2
 	.long	.Ltmp35
-.Lset24 = .Ltmp214-.Ltmp213
+.Lset24 = .Ltmp174-.Ltmp173
 	.short	.Lset24
-.Ltmp213:
+.Ltmp173:
 	.byte	83
-.Ltmp214:
+.Ltmp174:
 	.long	.Ltmp35
 	.long	.Ltmp36
-.Lset25 = .Ltmp216-.Ltmp215
+.Lset25 = .Ltmp176-.Ltmp175
 	.short	.Lset25
-.Ltmp215:
+.Ltmp175:
 	.byte	84
-.Ltmp216:
+.Ltmp176:
 	.long	.Ltmp40
 	.long	.Ltmp41
-.Lset26 = .Ltmp218-.Ltmp217
+.Lset26 = .Ltmp178-.Ltmp177
 	.short	.Lset26
-.Ltmp217:
+.Ltmp177:
 	.byte	82
-.Ltmp218:
+.Ltmp178:
 	.long	0
 	.long	0
 .Ldebug_loc10:
 	.long	.Lfunc_begin2
 	.long	.Ltmp44
-.Lset27 = .Ltmp220-.Ltmp219
+.Lset27 = .Ltmp180-.Ltmp179
 	.short	.Lset27
-.Ltmp219:
+.Ltmp179:
 	.byte	126
 	.byte	36
-.Ltmp220:
+.Ltmp180:
 	.long	0
 	.long	0
 .Ldebug_loc11:
 	.long	.Ltmp42
 	.long	.Ltmp43
-.Lset28 = .Ltmp222-.Ltmp221
+.Lset28 = .Ltmp182-.Ltmp181
 	.short	.Lset28
-.Ltmp221:
+.Ltmp181:
 	.byte	84
-.Ltmp222:
+.Ltmp182:
 	.long	0
 	.long	0
 .Ldebug_loc12:
 	.long	.Lfunc_begin3
 	.long	.Ltmp56
-.Lset29 = .Ltmp224-.Ltmp223
+.Lset29 = .Ltmp184-.Ltmp183
 	.short	.Lset29
-.Ltmp223:
+.Ltmp183:
 	.byte	80
-.Ltmp224:
+.Ltmp184:
 	.long	.Ltmp56
 	.long	.Ltmp57
-.Lset30 = .Ltmp226-.Ltmp225
+.Lset30 = .Ltmp186-.Ltmp185
 	.short	.Lset30
-.Ltmp225:
+.Ltmp185:
 	.byte	87
-.Ltmp226:
+.Ltmp186:
 	.long	0
 	.long	0
 .Ldebug_loc13:
 	.long	.Lfunc_begin3
 	.long	.Ltmp56
-.Lset31 = .Ltmp228-.Ltmp227
+.Lset31 = .Ltmp188-.Ltmp187
 	.short	.Lset31
-.Ltmp227:
+.Ltmp187:
 	.byte	81
-.Ltmp228:
+.Ltmp188:
 	.long	.Ltmp56
 	.long	.Ltmp57
-.Lset32 = .Ltmp230-.Ltmp229
+.Lset32 = .Ltmp190-.Ltmp189
 	.short	.Lset32
-.Ltmp229:
+.Ltmp189:
 	.byte	86
-.Ltmp230:
+.Ltmp190:
 	.long	.Ltmp59
 	.long	.Ltmp60
-.Lset33 = .Ltmp232-.Ltmp231
+.Lset33 = .Ltmp192-.Ltmp191
 	.short	.Lset33
-.Ltmp231:
+.Ltmp191:
 	.byte	80
-.Ltmp232:
+.Ltmp192:
 	.long	0
 	.long	0
 .Ldebug_loc14:
 	.long	.Lfunc_begin3
 	.long	.Ltmp55
-.Lset34 = .Ltmp234-.Ltmp233
+.Lset34 = .Ltmp194-.Ltmp193
 	.short	.Lset34
-.Ltmp233:
+.Ltmp193:
 	.byte	82
-.Ltmp234:
+.Ltmp194:
 	.long	.Ltmp55
 	.long	.Ltmp56
-.Lset35 = .Ltmp236-.Ltmp235
+.Lset35 = .Ltmp196-.Ltmp195
 	.short	.Lset35
-.Ltmp235:
+.Ltmp195:
 	.byte	85
-.Ltmp236:
+.Ltmp196:
 	.long	.Ltmp60
 	.long	.Ltmp61
-.Lset36 = .Ltmp238-.Ltmp237
+.Lset36 = .Ltmp198-.Ltmp197
 	.short	.Lset36
-.Ltmp237:
+.Ltmp197:
 	.byte	81
-.Ltmp238:
+.Ltmp198:
 	.long	0
 	.long	0
 .Ldebug_loc15:
 	.long	.Lfunc_begin3
 	.long	.Ltmp55
-.Lset37 = .Ltmp240-.Ltmp239
+.Lset37 = .Ltmp200-.Ltmp199
 	.short	.Lset37
-.Ltmp239:
+.Ltmp199:
 	.byte	83
-.Ltmp240:
+.Ltmp200:
 	.long	.Ltmp55
 	.long	.Ltmp56
-.Lset38 = .Ltmp242-.Ltmp241
+.Lset38 = .Ltmp202-.Ltmp201
 	.short	.Lset38
-.Ltmp241:
+.Ltmp201:
 	.byte	84
-.Ltmp242:
+.Ltmp202:
 	.long	.Ltmp60
 	.long	.Ltmp61
-.Lset39 = .Ltmp244-.Ltmp243
+.Lset39 = .Ltmp204-.Ltmp203
 	.short	.Lset39
-.Ltmp243:
+.Ltmp203:
 	.byte	82
-.Ltmp244:
+.Ltmp204:
 	.long	0
 	.long	0
 .Ldebug_loc16:
 	.long	.Lfunc_begin3
 	.long	.Ltmp64
-.Lset40 = .Ltmp246-.Ltmp245
+.Lset40 = .Ltmp206-.Ltmp205
 	.short	.Lset40
-.Ltmp245:
+.Ltmp205:
 	.byte	126
 	.byte	36
-.Ltmp246:
+.Ltmp206:
 	.long	0
 	.long	0
 .Ldebug_loc17:
 	.long	.Ltmp62
 	.long	.Ltmp63
-.Lset41 = .Ltmp248-.Ltmp247
+.Lset41 = .Ltmp208-.Ltmp207
 	.short	.Lset41
-.Ltmp247:
+.Ltmp207:
 	.byte	84
-.Ltmp248:
+.Ltmp208:
 	.long	0
 	.long	0
 .Ldebug_loc18:
 	.long	.Lfunc_begin4
-	.long	.Ltmp76
-.Lset42 = .Ltmp250-.Ltmp249
-	.short	.Lset42
-.Ltmp249:
-	.byte	80
-.Ltmp250:
-	.long	.Ltmp76
 	.long	.Ltmp77
-.Lset43 = .Ltmp252-.Ltmp251
+.Lset42 = .Ltmp210-.Ltmp209
+	.short	.Lset42
+.Ltmp209:
+	.byte	80
+.Ltmp210:
+	.long	.Ltmp77
+	.long	.Ltmp79
+.Lset43 = .Ltmp212-.Ltmp211
 	.short	.Lset43
-.Ltmp251:
+.Ltmp211:
 	.byte	87
-.Ltmp252:
+.Ltmp212:
+	.long	.Ltmp79
+	.long	.Ltmp80
+.Lset44 = .Ltmp214-.Ltmp213
+	.short	.Lset44
+.Ltmp213:
+	.byte	83
+.Ltmp214:
 	.long	0
 	.long	0
 .Ldebug_loc19:
 	.long	.Lfunc_begin4
-	.long	.Ltmp76
-.Lset44 = .Ltmp254-.Ltmp253
-	.short	.Lset44
-.Ltmp253:
-	.byte	81
-.Ltmp254:
-	.long	.Ltmp76
-	.long	.Ltmp77
-.Lset45 = .Ltmp256-.Ltmp255
+	.long	.Ltmp75
+.Lset45 = .Ltmp216-.Ltmp215
 	.short	.Lset45
-.Ltmp255:
-	.byte	86
-.Ltmp256:
-	.long	.Ltmp79
-	.long	.Ltmp80
-.Lset46 = .Ltmp258-.Ltmp257
+.Ltmp215:
+	.byte	81
+.Ltmp216:
+	.long	.Ltmp75
+	.long	.Ltmp76
+.Lset46 = .Ltmp218-.Ltmp217
 	.short	.Lset46
-.Ltmp257:
+.Ltmp217:
+	.byte	86
+.Ltmp218:
+	.long	.Ltmp78
+	.long	.Ltmp79
+.Lset47 = .Ltmp220-.Ltmp219
+	.short	.Lset47
+.Ltmp219:
 	.byte	80
-.Ltmp258:
+.Ltmp220:
 	.long	0
 	.long	0
 .Ldebug_loc20:
 	.long	.Lfunc_begin4
 	.long	.Ltmp75
-.Lset47 = .Ltmp260-.Ltmp259
-	.short	.Lset47
-.Ltmp259:
+.Lset48 = .Ltmp222-.Ltmp221
+	.short	.Lset48
+.Ltmp221:
 	.byte	82
-.Ltmp260:
+.Ltmp222:
 	.long	.Ltmp75
 	.long	.Ltmp76
-.Lset48 = .Ltmp262-.Ltmp261
-	.short	.Lset48
-.Ltmp261:
-	.byte	85
-.Ltmp262:
-	.long	.Ltmp80
-	.long	.Ltmp81
-.Lset49 = .Ltmp264-.Ltmp263
+.Lset49 = .Ltmp224-.Ltmp223
 	.short	.Lset49
-.Ltmp263:
+.Ltmp223:
+	.byte	85
+.Ltmp224:
+	.long	.Ltmp78
+	.long	.Ltmp79
+.Lset50 = .Ltmp226-.Ltmp225
+	.short	.Lset50
+.Ltmp225:
 	.byte	81
-.Ltmp264:
+.Ltmp226:
 	.long	0
 	.long	0
 .Ldebug_loc21:
 	.long	.Lfunc_begin4
-	.long	.Ltmp75
-.Lset50 = .Ltmp266-.Ltmp265
-	.short	.Lset50
-.Ltmp265:
-	.byte	83
-.Ltmp266:
-	.long	.Ltmp75
-	.long	.Ltmp76
-.Lset51 = .Ltmp268-.Ltmp267
+	.long	.Ltmp74
+.Lset51 = .Ltmp228-.Ltmp227
 	.short	.Lset51
-.Ltmp267:
-	.byte	84
-.Ltmp268:
-	.long	.Ltmp80
-	.long	.Ltmp81
-.Lset52 = .Ltmp270-.Ltmp269
+.Ltmp227:
+	.byte	83
+.Ltmp228:
+	.long	.Ltmp74
+	.long	.Ltmp75
+.Lset52 = .Ltmp230-.Ltmp229
 	.short	.Lset52
-.Ltmp269:
+.Ltmp229:
+	.byte	84
+.Ltmp230:
+	.long	.Ltmp79
+	.long	.Ltmp80
+.Lset53 = .Ltmp232-.Ltmp231
+	.short	.Lset53
+.Ltmp231:
 	.byte	82
-.Ltmp270:
+.Ltmp232:
 	.long	0
 	.long	0
 .Ldebug_loc22:
-	.long	.Lfunc_begin4
-	.long	.Ltmp84
-.Lset53 = .Ltmp272-.Ltmp271
-	.short	.Lset53
-.Ltmp271:
-	.byte	126
-	.byte	36
-.Ltmp272:
+	.long	.Ltmp81
+	.long	.Ltmp82
+.Lset54 = .Ltmp234-.Ltmp233
+	.short	.Lset54
+.Ltmp233:
+	.byte	84
+.Ltmp234:
 	.long	0
 	.long	0
 .Ldebug_loc23:
-	.long	.Ltmp82
-	.long	.Ltmp83
-.Lset54 = .Ltmp274-.Ltmp273
-	.short	.Lset54
-.Ltmp273:
-	.byte	84
-.Ltmp274:
+	.long	.Lfunc_begin5
+	.long	.Ltmp94
+.Lset55 = .Ltmp236-.Ltmp235
+	.short	.Lset55
+.Ltmp235:
+	.byte	80
+.Ltmp236:
+	.long	.Ltmp94
+	.long	.Ltmp95
+.Lset56 = .Ltmp238-.Ltmp237
+	.short	.Lset56
+.Ltmp237:
+	.byte	87
+.Ltmp238:
 	.long	0
 	.long	0
 .Ldebug_loc24:
 	.long	.Lfunc_begin5
-	.long	.Ltmp97
-.Lset55 = .Ltmp276-.Ltmp275
-	.short	.Lset55
-.Ltmp275:
-	.byte	80
-.Ltmp276:
-	.long	.Ltmp97
-	.long	.Ltmp99
-.Lset56 = .Ltmp278-.Ltmp277
-	.short	.Lset56
-.Ltmp277:
-	.byte	87
-.Ltmp278:
-	.long	.Ltmp99
-	.long	.Ltmp100
-.Lset57 = .Ltmp280-.Ltmp279
+	.long	.Ltmp94
+.Lset57 = .Ltmp240-.Ltmp239
 	.short	.Lset57
-.Ltmp279:
-	.byte	83
-.Ltmp280:
+.Ltmp239:
+	.byte	81
+.Ltmp240:
+	.long	.Ltmp94
+	.long	.Ltmp95
+.Lset58 = .Ltmp242-.Ltmp241
+	.short	.Lset58
+.Ltmp241:
+	.byte	86
+.Ltmp242:
+	.long	.Ltmp97
+	.long	.Ltmp98
+.Lset59 = .Ltmp244-.Ltmp243
+	.short	.Lset59
+.Ltmp243:
+	.byte	80
+.Ltmp244:
 	.long	0
 	.long	0
 .Ldebug_loc25:
 	.long	.Lfunc_begin5
-	.long	.Ltmp95
-.Lset58 = .Ltmp282-.Ltmp281
-	.short	.Lset58
-.Ltmp281:
-	.byte	81
-.Ltmp282:
-	.long	.Ltmp95
-	.long	.Ltmp96
-.Lset59 = .Ltmp284-.Ltmp283
-	.short	.Lset59
-.Ltmp283:
-	.byte	86
-.Ltmp284:
+	.long	.Ltmp93
+.Lset60 = .Ltmp246-.Ltmp245
+	.short	.Lset60
+.Ltmp245:
+	.byte	82
+.Ltmp246:
+	.long	.Ltmp93
+	.long	.Ltmp94
+.Lset61 = .Ltmp248-.Ltmp247
+	.short	.Lset61
+.Ltmp247:
+	.byte	85
+.Ltmp248:
 	.long	.Ltmp98
 	.long	.Ltmp99
-.Lset60 = .Ltmp286-.Ltmp285
-	.short	.Lset60
-.Ltmp285:
-	.byte	80
-.Ltmp286:
+.Lset62 = .Ltmp250-.Ltmp249
+	.short	.Lset62
+.Ltmp249:
+	.byte	81
+.Ltmp250:
 	.long	0
 	.long	0
 .Ldebug_loc26:
 	.long	.Lfunc_begin5
-	.long	.Ltmp95
-.Lset61 = .Ltmp288-.Ltmp287
-	.short	.Lset61
-.Ltmp287:
-	.byte	82
-.Ltmp288:
-	.long	.Ltmp95
-	.long	.Ltmp96
-.Lset62 = .Ltmp290-.Ltmp289
-	.short	.Lset62
-.Ltmp289:
-	.byte	85
-.Ltmp290:
+	.long	.Ltmp93
+.Lset63 = .Ltmp252-.Ltmp251
+	.short	.Lset63
+.Ltmp251:
+	.byte	83
+.Ltmp252:
+	.long	.Ltmp93
+	.long	.Ltmp94
+.Lset64 = .Ltmp254-.Ltmp253
+	.short	.Lset64
+.Ltmp253:
+	.byte	84
+.Ltmp254:
 	.long	.Ltmp98
 	.long	.Ltmp99
-.Lset63 = .Ltmp292-.Ltmp291
-	.short	.Lset63
-.Ltmp291:
-	.byte	81
-.Ltmp292:
+.Lset65 = .Ltmp256-.Ltmp255
+	.short	.Lset65
+.Ltmp255:
+	.byte	82
+.Ltmp256:
 	.long	0
 	.long	0
 .Ldebug_loc27:
 	.long	.Lfunc_begin5
-	.long	.Ltmp94
-.Lset64 = .Ltmp294-.Ltmp293
-	.short	.Lset64
-.Ltmp293:
-	.byte	83
-.Ltmp294:
-	.long	.Ltmp94
-	.long	.Ltmp95
-.Lset65 = .Ltmp296-.Ltmp295
-	.short	.Lset65
-.Ltmp295:
-	.byte	84
-.Ltmp296:
-	.long	.Ltmp99
-	.long	.Ltmp100
-.Lset66 = .Ltmp298-.Ltmp297
+	.long	.Ltmp102
+.Lset66 = .Ltmp258-.Ltmp257
 	.short	.Lset66
-.Ltmp297:
-	.byte	82
-.Ltmp298:
+.Ltmp257:
+	.byte	126
+	.byte	36
+.Ltmp258:
 	.long	0
 	.long	0
 .Ldebug_loc28:
+	.long	.Ltmp100
 	.long	.Ltmp101
-	.long	.Ltmp102
-.Lset67 = .Ltmp300-.Ltmp299
+.Lset67 = .Ltmp260-.Ltmp259
 	.short	.Lset67
-.Ltmp299:
+.Ltmp259:
 	.byte	84
-.Ltmp300:
+.Ltmp260:
 	.long	0
 	.long	0
 .Ldebug_loc29:
 	.long	.Lfunc_begin6
 	.long	.Ltmp114
-.Lset68 = .Ltmp302-.Ltmp301
+.Lset68 = .Ltmp262-.Ltmp261
 	.short	.Lset68
-.Ltmp301:
+.Ltmp261:
 	.byte	80
-.Ltmp302:
+.Ltmp262:
 	.long	.Ltmp114
 	.long	.Ltmp115
-.Lset69 = .Ltmp304-.Ltmp303
+.Lset69 = .Ltmp264-.Ltmp263
 	.short	.Lset69
-.Ltmp303:
+.Ltmp263:
 	.byte	87
-.Ltmp304:
+.Ltmp264:
 	.long	0
 	.long	0
 .Ldebug_loc30:
 	.long	.Lfunc_begin6
 	.long	.Ltmp114
-.Lset70 = .Ltmp306-.Ltmp305
+.Lset70 = .Ltmp266-.Ltmp265
 	.short	.Lset70
-.Ltmp305:
+.Ltmp265:
 	.byte	81
-.Ltmp306:
+.Ltmp266:
 	.long	.Ltmp114
 	.long	.Ltmp115
-.Lset71 = .Ltmp308-.Ltmp307
+.Lset71 = .Ltmp268-.Ltmp267
 	.short	.Lset71
-.Ltmp307:
+.Ltmp267:
 	.byte	86
-.Ltmp308:
+.Ltmp268:
 	.long	.Ltmp117
 	.long	.Ltmp118
-.Lset72 = .Ltmp310-.Ltmp309
+.Lset72 = .Ltmp270-.Ltmp269
 	.short	.Lset72
-.Ltmp309:
+.Ltmp269:
 	.byte	80
-.Ltmp310:
+.Ltmp270:
 	.long	0
 	.long	0
 .Ldebug_loc31:
 	.long	.Lfunc_begin6
 	.long	.Ltmp113
-.Lset73 = .Ltmp312-.Ltmp311
+.Lset73 = .Ltmp272-.Ltmp271
 	.short	.Lset73
-.Ltmp311:
+.Ltmp271:
 	.byte	82
-.Ltmp312:
+.Ltmp272:
 	.long	.Ltmp113
 	.long	.Ltmp114
-.Lset74 = .Ltmp314-.Ltmp313
+.Lset74 = .Ltmp274-.Ltmp273
 	.short	.Lset74
-.Ltmp313:
+.Ltmp273:
 	.byte	85
-.Ltmp314:
+.Ltmp274:
 	.long	.Ltmp118
 	.long	.Ltmp119
-.Lset75 = .Ltmp316-.Ltmp315
+.Lset75 = .Ltmp276-.Ltmp275
 	.short	.Lset75
-.Ltmp315:
+.Ltmp275:
 	.byte	81
-.Ltmp316:
+.Ltmp276:
 	.long	0
 	.long	0
 .Ldebug_loc32:
 	.long	.Lfunc_begin6
 	.long	.Ltmp113
-.Lset76 = .Ltmp318-.Ltmp317
+.Lset76 = .Ltmp278-.Ltmp277
 	.short	.Lset76
-.Ltmp317:
+.Ltmp277:
 	.byte	83
-.Ltmp318:
+.Ltmp278:
 	.long	.Ltmp113
 	.long	.Ltmp114
-.Lset77 = .Ltmp320-.Ltmp319
+.Lset77 = .Ltmp280-.Ltmp279
 	.short	.Lset77
-.Ltmp319:
+.Ltmp279:
 	.byte	84
-.Ltmp320:
+.Ltmp280:
 	.long	.Ltmp118
 	.long	.Ltmp119
-.Lset78 = .Ltmp322-.Ltmp321
+.Lset78 = .Ltmp282-.Ltmp281
 	.short	.Lset78
-.Ltmp321:
+.Ltmp281:
 	.byte	82
-.Ltmp322:
+.Ltmp282:
 	.long	0
 	.long	0
 .Ldebug_loc33:
 	.long	.Lfunc_begin6
 	.long	.Ltmp122
-.Lset79 = .Ltmp324-.Ltmp323
+.Lset79 = .Ltmp284-.Ltmp283
 	.short	.Lset79
-.Ltmp323:
+.Ltmp283:
 	.byte	126
 	.byte	36
-.Ltmp324:
+.Ltmp284:
 	.long	0
 	.long	0
 .Ldebug_loc34:
 	.long	.Ltmp120
 	.long	.Ltmp121
-.Lset80 = .Ltmp326-.Ltmp325
+.Lset80 = .Ltmp286-.Ltmp285
 	.short	.Lset80
-.Ltmp325:
+.Ltmp285:
 	.byte	84
-.Ltmp326:
-	.long	0
-	.long	0
-.Ldebug_loc35:
-	.long	.Lfunc_begin7
-	.long	.Ltmp134
-.Lset81 = .Ltmp328-.Ltmp327
-	.short	.Lset81
-.Ltmp327:
-	.byte	80
-.Ltmp328:
-	.long	.Ltmp134
-	.long	.Ltmp135
-.Lset82 = .Ltmp330-.Ltmp329
-	.short	.Lset82
-.Ltmp329:
-	.byte	87
-.Ltmp330:
-	.long	0
-	.long	0
-.Ldebug_loc36:
-	.long	.Lfunc_begin7
-	.long	.Ltmp134
-.Lset83 = .Ltmp332-.Ltmp331
-	.short	.Lset83
-.Ltmp331:
-	.byte	81
-.Ltmp332:
-	.long	.Ltmp134
-	.long	.Ltmp135
-.Lset84 = .Ltmp334-.Ltmp333
-	.short	.Lset84
-.Ltmp333:
-	.byte	86
-.Ltmp334:
-	.long	.Ltmp137
-	.long	.Ltmp138
-.Lset85 = .Ltmp336-.Ltmp335
-	.short	.Lset85
-.Ltmp335:
-	.byte	80
-.Ltmp336:
-	.long	0
-	.long	0
-.Ldebug_loc37:
-	.long	.Lfunc_begin7
-	.long	.Ltmp133
-.Lset86 = .Ltmp338-.Ltmp337
-	.short	.Lset86
-.Ltmp337:
-	.byte	82
-.Ltmp338:
-	.long	.Ltmp133
-	.long	.Ltmp134
-.Lset87 = .Ltmp340-.Ltmp339
-	.short	.Lset87
-.Ltmp339:
-	.byte	85
-.Ltmp340:
-	.long	.Ltmp138
-	.long	.Ltmp139
-.Lset88 = .Ltmp342-.Ltmp341
-	.short	.Lset88
-.Ltmp341:
-	.byte	81
-.Ltmp342:
-	.long	0
-	.long	0
-.Ldebug_loc38:
-	.long	.Lfunc_begin7
-	.long	.Ltmp133
-.Lset89 = .Ltmp344-.Ltmp343
-	.short	.Lset89
-.Ltmp343:
-	.byte	83
-.Ltmp344:
-	.long	.Ltmp133
-	.long	.Ltmp134
-.Lset90 = .Ltmp346-.Ltmp345
-	.short	.Lset90
-.Ltmp345:
-	.byte	84
-.Ltmp346:
-	.long	.Ltmp138
-	.long	.Ltmp139
-.Lset91 = .Ltmp348-.Ltmp347
-	.short	.Lset91
-.Ltmp347:
-	.byte	82
-.Ltmp348:
-	.long	0
-	.long	0
-.Ldebug_loc39:
-	.long	.Lfunc_begin7
-	.long	.Ltmp142
-.Lset92 = .Ltmp350-.Ltmp349
-	.short	.Lset92
-.Ltmp349:
-	.byte	126
-	.byte	36
-.Ltmp350:
-	.long	0
-	.long	0
-.Ldebug_loc40:
-	.long	.Ltmp140
-	.long	.Ltmp141
-.Lset93 = .Ltmp352-.Ltmp351
-	.short	.Lset93
-.Ltmp351:
-	.byte	84
-.Ltmp352:
-	.long	0
-	.long	0
-.Ldebug_loc41:
-	.long	.Lfunc_begin8
-	.long	.Ltmp154
-.Lset94 = .Ltmp354-.Ltmp353
-	.short	.Lset94
-.Ltmp353:
-	.byte	80
-.Ltmp354:
-	.long	.Ltmp154
-	.long	.Ltmp155
-.Lset95 = .Ltmp356-.Ltmp355
-	.short	.Lset95
-.Ltmp355:
-	.byte	87
-.Ltmp356:
-	.long	0
-	.long	0
-.Ldebug_loc42:
-	.long	.Lfunc_begin8
-	.long	.Ltmp154
-.Lset96 = .Ltmp358-.Ltmp357
-	.short	.Lset96
-.Ltmp357:
-	.byte	81
-.Ltmp358:
-	.long	.Ltmp154
-	.long	.Ltmp155
-.Lset97 = .Ltmp360-.Ltmp359
-	.short	.Lset97
-.Ltmp359:
-	.byte	86
-.Ltmp360:
-	.long	.Ltmp157
-	.long	.Ltmp158
-.Lset98 = .Ltmp362-.Ltmp361
-	.short	.Lset98
-.Ltmp361:
-	.byte	80
-.Ltmp362:
-	.long	0
-	.long	0
-.Ldebug_loc43:
-	.long	.Lfunc_begin8
-	.long	.Ltmp153
-.Lset99 = .Ltmp364-.Ltmp363
-	.short	.Lset99
-.Ltmp363:
-	.byte	82
-.Ltmp364:
-	.long	.Ltmp153
-	.long	.Ltmp154
-.Lset100 = .Ltmp366-.Ltmp365
-	.short	.Lset100
-.Ltmp365:
-	.byte	85
-.Ltmp366:
-	.long	.Ltmp158
-	.long	.Ltmp159
-.Lset101 = .Ltmp368-.Ltmp367
-	.short	.Lset101
-.Ltmp367:
-	.byte	81
-.Ltmp368:
-	.long	0
-	.long	0
-.Ldebug_loc44:
-	.long	.Lfunc_begin8
-	.long	.Ltmp153
-.Lset102 = .Ltmp370-.Ltmp369
-	.short	.Lset102
-.Ltmp369:
-	.byte	83
-.Ltmp370:
-	.long	.Ltmp153
-	.long	.Ltmp154
-.Lset103 = .Ltmp372-.Ltmp371
-	.short	.Lset103
-.Ltmp371:
-	.byte	84
-.Ltmp372:
-	.long	.Ltmp158
-	.long	.Ltmp159
-.Lset104 = .Ltmp374-.Ltmp373
-	.short	.Lset104
-.Ltmp373:
-	.byte	82
-.Ltmp374:
-	.long	0
-	.long	0
-.Ldebug_loc45:
-	.long	.Lfunc_begin8
-	.long	.Ltmp162
-.Lset105 = .Ltmp376-.Ltmp375
-	.short	.Lset105
-.Ltmp375:
-	.byte	126
-	.byte	36
-.Ltmp376:
-	.long	0
-	.long	0
-.Ldebug_loc46:
-	.long	.Ltmp160
-	.long	.Ltmp161
-.Lset106 = .Ltmp378-.Ltmp377
-	.short	.Lset106
-.Ltmp377:
-	.byte	84
-.Ltmp378:
+.Ltmp286:
 	.long	0
 	.long	0
 	.section	.debug_pubnames,"",@progbits
-.Lset107 = .LpubNames_end0-.LpubNames_begin0
-	.long	.Lset107
+.Lset81 = .LpubNames_end0-.LpubNames_begin0
+	.long	.Lset81
 .LpubNames_begin0:
 	.short	2
 	.long	.L.debug_info_begin0
-.Lset108 = .L.debug_info_end0-.L.debug_info_begin0
-	.long	.Lset108
+.Lset82 = .L.debug_info_end0-.L.debug_info_begin0
+	.long	.Lset82
 	.long	31
 .asciiz"i2c_swlock"
 	.long	67
 .asciiz"i2c_shared_master_init"
-	.long	624
+	.long	513
 .asciiz"i2c_shared_master_write_reg"
 	.long	195
 .asciiz"i2c_shared_master_read_reg"
 	.long	99
 .asciiz"i2c_shared_master_rx"
-	.long	528
-.asciiz"i2c_shared_master_write"
 	.long	417
-.asciiz"AK4458_i2c_shared_master_read_reg"
-	.long	735
-.asciiz"AK4458_i2c_shared_master_write_reg"
-	.long	846
+.asciiz"i2c_shared_master_write"
+	.long	624
 .asciiz"i2c_shared_master_write_reg16"
 	.long	306
 .asciiz"i2c_shared_master_read_reg16"
 	.long	0
 .LpubNames_end0:
 	.section	.debug_pubtypes,"",@progbits
-.Lset109 = .LpubTypes_end0-.LpubTypes_begin0
-	.long	.Lset109
+.Lset83 = .LpubTypes_end0-.LpubTypes_begin0
+	.long	.Lset83
 .LpubTypes_begin0:
 	.short	2
 	.long	.L.debug_info_begin0
-.Lset110 = .L.debug_info_end0-.L.debug_info_begin0
-	.long	.Lset110
-	.long	990
+.Lset84 = .L.debug_info_end0-.L.debug_info_begin0
+	.long	.Lset84
+	.long	768
 .asciiz"port"
 	.long	49
 .asciiz"swlock_t"
 	.long	60
 .asciiz"unsigned int"
-	.long	957
+	.long	735
 .asciiz"int"
-	.long	1006
+	.long	784
 .asciiz"unsigned char"
-	.long	969
+	.long	747
 .asciiz"r_i2c"
 	.long	0
 .LpubTypes_end0:
 	.cfi_sections .debug_frame
 
-	.ident	"XMOS-25550-Sep-30-2017 clang version 3.6.0  (based on LLVM 3.6.0svn)"
+	.ident	"XMOS-22296-Apr-19-2018 clang version 3.6.0  (based on LLVM 3.6.0svn)"
 	.typestring i2c_shared_master_init, "f{0}(p(s(r_i2c){m(p_i2c){ui}}))"
 	.typestring swlock_acquire, "f{0}(p(ui))"
 	.typestring i2c_master_init, "f{0}(p(s(r_i2c){m(p_i2c){ui}}))"
@@ -2647,14 +2095,10 @@ i2c_swlock:
 	.typestring i2c_master_read_reg, "f{si}(si,si,p(uc),si,p(s(r_i2c){m(p_i2c){ui}}))"
 	.typestring i2c_shared_master_read_reg16, "f{si}(p(s(r_i2c){m(p_i2c){ui}}),si,si,p(uc),si)"
 	.typestring i2c_master_read_reg16, "f{si}(si,si,p(uc),si,p(s(r_i2c){m(p_i2c){ui}}))"
-	.typestring AK4458_i2c_shared_master_read_reg, "f{si}(p(s(r_i2c){m(p_i2c){ui}}),si,si,p(uc),si)"
-	.typestring AK4458_i2c_master_read_reg, "f{si}(si,si,p(uc),si,p(s(r_i2c){m(p_i2c){ui}}))"
 	.typestring i2c_shared_master_write, "f{si}(p(s(r_i2c){m(p_i2c){ui}}),si,p(c:uc),si)"
 	.typestring i2c_master_write, "f{si}(si,p(c:uc),si,p(s(r_i2c){m(p_i2c){ui}}))"
 	.typestring i2c_shared_master_write_reg, "f{si}(p(s(r_i2c){m(p_i2c){ui}}),si,si,p(c:uc),si)"
 	.typestring i2c_master_write_reg, "f{si}(si,si,p(c:uc),si,p(s(r_i2c){m(p_i2c){ui}}))"
-	.typestring AK4458_i2c_shared_master_write_reg, "f{si}(p(s(r_i2c){m(p_i2c){ui}}),si,si,p(c:uc),si)"
-	.typestring AK4458_i2c_master_write_reg, "f{si}(si,si,p(c:uc),si,p(s(r_i2c){m(p_i2c){ui}}))"
 	.typestring i2c_shared_master_write_reg16, "f{si}(p(s(r_i2c){m(p_i2c){ui}}),si,si,p(c:uc),si)"
 	.typestring i2c_master_write_reg16, "f{si}(si,si,p(c:uc),si,p(s(r_i2c){m(p_i2c){ui}}))"
 	.typestring i2c_swlock, "ui"

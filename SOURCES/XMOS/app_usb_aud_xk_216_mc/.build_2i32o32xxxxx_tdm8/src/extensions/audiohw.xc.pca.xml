@@ -1189,7 +1189,7 @@
     </values>
   </arg>
 </fCall>
-<fCall name="AK4458_i2c_shared_master_write_reg" global="true" numArgs="5">
+<fCall name="i2c_shared_master_write" global="true" numArgs="4">
   <arg num="0">
     <values>
       <value type="unknown"/>
@@ -1197,26 +1197,21 @@
   </arg>
   <arg num="1">
     <values>
-      <value type="intval"><intval isSigned="true" val="32"/></value>
+      <value type="intval"><intval isSigned="true" val="114"/></value>
     </values>
   </arg>
   <arg num="2">
     <values>
-      <value type="intval"><intval isSigned="true" val="0"/></value>
-    </values>
-  </arg>
-  <arg num="3">
-    <values>
       <value type="unknown"/>
     </values>
   </arg>
-  <arg num="4">
+  <arg num="3">
     <values>
       <value type="intval"><intval isSigned="true" val="1"/></value>
     </values>
   </arg>
 </fCall>
-<fCall name="AK4458_i2c_shared_master_write_reg" global="true" numArgs="5">
+<fCall name="i2c_shared_master_write" global="true" numArgs="4">
   <arg num="0">
     <values>
       <value type="unknown"/>
@@ -1224,26 +1219,23 @@
   </arg>
   <arg num="1">
     <values>
-      <value type="intval"><intval isSigned="true" val="32"/></value>
+      <value type="intval"><intval isSigned="true" val="114"/></value>
     </values>
   </arg>
   <arg num="2">
     <values>
-      <value type="intval"><intval isSigned="true" val="1"/></value>
-    </values>
-  </arg>
-  <arg num="3">
-    <values>
       <value type="unknown"/>
     </values>
   </arg>
-  <arg num="4">
+  <arg num="3">
     <values>
       <value type="intval"><intval isSigned="true" val="1"/></value>
     </values>
   </arg>
 </fCall>
-<fCall name="AK4458_i2c_shared_master_write_reg" global="true" numArgs="5">
+<fCall name="configAnalogIOx8" global="true" numArgs="0">
+</fCall>
+<fCall name="i2c_shared_master_write" global="true" numArgs="4">
   <arg num="0">
     <values>
       <value type="unknown"/>
@@ -1251,26 +1243,21 @@
   </arg>
   <arg num="1">
     <values>
-      <value type="intval"><intval isSigned="true" val="32"/></value>
+      <value type="intval"><intval isSigned="true" val="114"/></value>
     </values>
   </arg>
   <arg num="2">
     <values>
-      <value type="intval"><intval isSigned="true" val="2"/></value>
-    </values>
-  </arg>
-  <arg num="3">
-    <values>
       <value type="unknown"/>
     </values>
   </arg>
-  <arg num="4">
+  <arg num="3">
     <values>
       <value type="intval"><intval isSigned="true" val="1"/></value>
     </values>
   </arg>
 </fCall>
-<fCall name="AK4458_i2c_shared_master_write_reg" global="true" numArgs="5">
+<fCall name="i2c_shared_master_write" global="true" numArgs="4">
   <arg num="0">
     <values>
       <value type="unknown"/>
@@ -1278,26 +1265,23 @@
   </arg>
   <arg num="1">
     <values>
-      <value type="intval"><intval isSigned="true" val="32"/></value>
+      <value type="intval"><intval isSigned="true" val="114"/></value>
     </values>
   </arg>
   <arg num="2">
     <values>
-      <value type="intval"><intval isSigned="true" val="5"/></value>
-    </values>
-  </arg>
-  <arg num="3">
-    <values>
       <value type="unknown"/>
     </values>
   </arg>
-  <arg num="4">
+  <arg num="3">
     <values>
       <value type="intval"><intval isSigned="true" val="1"/></value>
     </values>
   </arg>
 </fCall>
-<fCall name="AK4458_i2c_shared_master_write_reg" global="true" numArgs="5">
+<fCall name="configAnalogIOx8" global="true" numArgs="0">
+</fCall>
+<fCall name="i2c_shared_master_write" global="true" numArgs="4">
   <arg num="0">
     <values>
       <value type="unknown"/>
@@ -1305,26 +1289,21 @@
   </arg>
   <arg num="1">
     <values>
-      <value type="intval"><intval isSigned="true" val="32"/></value>
+      <value type="intval"><intval isSigned="true" val="114"/></value>
     </values>
   </arg>
   <arg num="2">
     <values>
-      <value type="intval"><intval isSigned="true" val="7"/></value>
-    </values>
-  </arg>
-  <arg num="3">
-    <values>
       <value type="unknown"/>
     </values>
   </arg>
-  <arg num="4">
+  <arg num="3">
     <values>
       <value type="intval"><intval isSigned="true" val="1"/></value>
     </values>
   </arg>
 </fCall>
-<fCall name="AK4458_i2c_shared_master_write_reg" global="true" numArgs="5">
+<fCall name="i2c_shared_master_write" global="true" numArgs="4">
   <arg num="0">
     <values>
       <value type="unknown"/>
@@ -1332,26 +1311,23 @@
   </arg>
   <arg num="1">
     <values>
-      <value type="intval"><intval isSigned="true" val="32"/></value>
+      <value type="intval"><intval isSigned="true" val="112"/></value>
     </values>
   </arg>
   <arg num="2">
     <values>
-      <value type="intval"><intval isSigned="true" val="7"/></value>
-    </values>
-  </arg>
-  <arg num="3">
-    <values>
       <value type="unknown"/>
     </values>
   </arg>
-  <arg num="4">
+  <arg num="3">
     <values>
       <value type="intval"><intval isSigned="true" val="1"/></value>
     </values>
   </arg>
 </fCall>
-<fCall name="AK4458_i2c_shared_master_write_reg" global="true" numArgs="5">
+<fCall name="configAnalogIOx8" global="true" numArgs="0">
+</fCall>
+<fCall name="i2c_shared_master_write" global="true" numArgs="4">
   <arg num="0">
     <values>
       <value type="unknown"/>
@@ -1359,26 +1335,21 @@
   </arg>
   <arg num="1">
     <values>
-      <value type="intval"><intval isSigned="true" val="32"/></value>
+      <value type="intval"><intval isSigned="true" val="112"/></value>
     </values>
   </arg>
   <arg num="2">
     <values>
-      <value type="intval"><intval isSigned="true" val="10"/></value>
-    </values>
-  </arg>
-  <arg num="3">
-    <values>
       <value type="unknown"/>
     </values>
   </arg>
-  <arg num="4">
+  <arg num="3">
     <values>
       <value type="intval"><intval isSigned="true" val="1"/></value>
     </values>
   </arg>
 </fCall>
-<fCall name="AK4458_i2c_shared_master_write_reg" global="true" numArgs="5">
+<fCall name="i2c_shared_master_write" global="true" numArgs="4">
   <arg num="0">
     <values>
       <value type="unknown"/>
@@ -1386,132 +1357,21 @@
   </arg>
   <arg num="1">
     <values>
-      <value type="intval"><intval isSigned="true" val="32"/></value>
+      <value type="intval"><intval isSigned="true" val="112"/></value>
     </values>
   </arg>
   <arg num="2">
     <values>
-      <value type="intval"><intval isSigned="true" val="11"/></value>
-    </values>
-  </arg>
-  <arg num="3">
-    <values>
       <value type="unknown"/>
     </values>
   </arg>
-  <arg num="4">
+  <arg num="3">
     <values>
       <value type="intval"><intval isSigned="true" val="1"/></value>
     </values>
   </arg>
 </fCall>
-<fCall name="AK4458_i2c_shared_master_write_reg" global="true" numArgs="5">
-  <arg num="0">
-    <values>
-      <value type="unknown"/>
-    </values>
-  </arg>
-  <arg num="1">
-    <values>
-      <value type="intval"><intval isSigned="true" val="32"/></value>
-    </values>
-  </arg>
-  <arg num="2">
-    <values>
-      <value type="intval"><intval isSigned="true" val="12"/></value>
-    </values>
-  </arg>
-  <arg num="3">
-    <values>
-      <value type="unknown"/>
-    </values>
-  </arg>
-  <arg num="4">
-    <values>
-      <value type="intval"><intval isSigned="true" val="1"/></value>
-    </values>
-  </arg>
-</fCall>
-<fCall name="AK4458_i2c_shared_master_write_reg" global="true" numArgs="5">
-  <arg num="0">
-    <values>
-      <value type="unknown"/>
-    </values>
-  </arg>
-  <arg num="1">
-    <values>
-      <value type="intval"><intval isSigned="true" val="32"/></value>
-    </values>
-  </arg>
-  <arg num="2">
-    <values>
-      <value type="intval"><intval isSigned="true" val="13"/></value>
-    </values>
-  </arg>
-  <arg num="3">
-    <values>
-      <value type="unknown"/>
-    </values>
-  </arg>
-  <arg num="4">
-    <values>
-      <value type="intval"><intval isSigned="true" val="1"/></value>
-    </values>
-  </arg>
-</fCall>
-<fCall name="AK4458_i2c_shared_master_write_reg" global="true" numArgs="5">
-  <arg num="0">
-    <values>
-      <value type="unknown"/>
-    </values>
-  </arg>
-  <arg num="1">
-    <values>
-      <value type="intval"><intval isSigned="true" val="32"/></value>
-    </values>
-  </arg>
-  <arg num="2">
-    <values>
-      <value type="intval"><intval isSigned="true" val="14"/></value>
-    </values>
-  </arg>
-  <arg num="3">
-    <values>
-      <value type="unknown"/>
-    </values>
-  </arg>
-  <arg num="4">
-    <values>
-      <value type="intval"><intval isSigned="true" val="1"/></value>
-    </values>
-  </arg>
-</fCall>
-<fCall name="AK4458_i2c_shared_master_write_reg" global="true" numArgs="5">
-  <arg num="0">
-    <values>
-      <value type="unknown"/>
-    </values>
-  </arg>
-  <arg num="1">
-    <values>
-      <value type="intval"><intval isSigned="true" val="32"/></value>
-    </values>
-  </arg>
-  <arg num="2">
-    <values>
-      <value type="intval"><intval isSigned="true" val="0"/></value>
-    </values>
-  </arg>
-  <arg num="3">
-    <values>
-      <value type="unknown"/>
-    </values>
-  </arg>
-  <arg num="4">
-    <values>
-      <value type="intval"><intval isSigned="true" val="1"/></value>
-    </values>
-  </arg>
+<fCall name="configAnalogIOx8" global="true" numArgs="0">
 </fCall>
 <fCall name="i2c_shared_master_write" global="true" numArgs="4">
   <arg num="0">
