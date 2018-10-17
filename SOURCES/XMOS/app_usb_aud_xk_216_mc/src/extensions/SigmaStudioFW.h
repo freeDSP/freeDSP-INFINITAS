@@ -32,6 +32,9 @@ typedef unsigned char  ADI_REG_TYPE;
 #define SIGMASTUDIOTYPE_FIXPOINT 	0
 #define SIGMASTUDIOTYPE_INTEGER 	1
 
+int dsp_i2c_shared_master_read_reg16(REFERENCE_PARAM(struct r_i2c, i2cPorts), int device, int reg_addr, unsigned char data[], int nbytes);
+int dsp_i2c_shared_master_write_reg16(REFERENCE_PARAM(struct r_i2c, i2cPorts), int device, int reg_addr, const unsigned char data[], int nbytes);
+
 /* 
  * Write to a single Device register
  */
@@ -41,7 +44,7 @@ typedef unsigned char  ADI_REG_TYPE;
  * TODO: CUSTOM MACRO IMPLEMENTATION
  * Write to multiple Device registers 
  */
-#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }
+#define SIGMA_WRITE_REGISTER_BLOCK( devAddress, address, length, pData ) { dsp_i2c_shared_master_write_reg16( r_i2c, devAddress, address, pData, length ); }
 
 
 /* 
