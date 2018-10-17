@@ -67,6 +67,17 @@ static void waitHalf(void) {
     waitQuarter();
 }
 
+static void waitAfterNACK(port p_i2c) {
+    timer gt;
+    int time;
+
+    gt :> time;
+    time += (I2C_REPEATED_START_DELAY * XS1_TIMER_MHZ); // I2C_REPEATED_START_DELAY in us
+    gt when timerafter(time) :> int _;
+
+    p_i2c :> void; // Allow SCL to float high ahead of repeated start bit
+}
+
 static void waitBeforeNextStart(port p_i2c) {
     timer gt;
     int time;
@@ -148,6 +159,54 @@ static int tx8(port i2c, unsigned data) {
     }
     ack = highPulseSample(i2c, 0);
     return ack != 0;
+}
+
+int i2c_master_write(int device, unsigned char const s_data[], int nbytes, struct r_i2c &i2cPorts) {
+   int data;
+   int ack;
+
+   if(I2C_REPEATED_START_ON_NACK) {
+       int nacks = I2C_REPEATED_START_MAX_RETRIES;
+
+       while(nacks) {
+          startBit(i2cPorts.p_i2c);
+          if(!(ack = tx8(i2cPorts.p_i2c, device<<1))) {
+             // Ack, break from loop;
+             break;
+          }
+          waitAfterNACK(i2cPorts.p_i2c);
+          nacks--;
+       }
+       if(!nacks) {
+          /* Ran out of retries */
+          stopBit(i2cPorts.p_i2c);
+          return 0;
+        }
+    }
+    else {
+       startBit(i2cPorts.p_i2c);
+       ack = tx8(i2cPorts.p_i2c, device<<1);
+    }
+#ifdef I2C_TI_COMPATIBILITY
+  // ack |= tx8(i2cPorts.p_i2c, addr << 1 | (data >> 8) & 1);
+#else
+ //  ack |= tx8(i2cPorts.p_i2c, addr);
+#endif
+   for(int i = 0; i< nbytes; i++) {
+      data = s_data[i];
+      ack |= tx8(i2cPorts.p_i2c, data);
+   }
+   stopBit(i2cPorts.p_i2c);
+   return ack == 0;
+}
+
+int i2c_shared_master_write(REFERENCE_PARAM(struct r_i2c, i2cPorts), int device, const unsigned char data[], int nbytes)
+{
+    int retval;
+    swlock_acquire(i2c_swlock);
+    retval = i2c_master_write(device, data, nbytes, i2cPorts);
+    swlock_release(i2c_swlock);
+    return retval;
 }
 
 //==============================================================================
