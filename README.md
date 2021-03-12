@@ -6,6 +6,8 @@ BOARD STATUS: RELEASED!
 
 MAIN COORDINATOR: [dspverden](https://github.com/dspverden)
 
+DOCUMENTATION: [Getting Started](https://docs.google.com/document/d/1jxKOcB1Af_6xawysrgFLgatrspSJ-aYZdDhTxlWoG2I)
+
 IMPORTANT:
 
 Please take care on which branch you're currently working!
